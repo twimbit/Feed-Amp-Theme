@@ -3883,11 +3883,45 @@
 
         @media only screen and (max-width: 600px) {
             /* code will run when screen size is 600 or smaller */
+            .footer_amp{
+                height: 30vh;
+                background-color: white;
+            }
+            .twimbit_logo{
+                align-content: center;
+                padding-left: 20%;
+                padding-right: 20%;
+                display: block;
+
+            }
+            .signup_form{
+                display: block;
+                height: 50%;
+            }
+        }
+
+        .footer_amp{
+            height: 30vh;
+            background-color: white;
+            display: flex;
+        }
+        .twimbit_logo{
+
+            padding: 30px;
+            display: inline;
+            float: left;
+
+        }
+        .signup_form{
+            display: inline;
+            width: 70%;
         }
 
         .nav-item:hover {
             border-bottom: 3px solid #ec6963;
         }
+
+
     </style>
 
 </head>
