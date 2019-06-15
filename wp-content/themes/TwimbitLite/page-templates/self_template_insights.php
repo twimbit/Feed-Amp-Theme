@@ -26,7 +26,7 @@ function loadmore_insights($id_of_post)
     $first_story = get_post($id_of_post);
 
     // to loop posts
-    $loop_length = 4;  //specify number of posts ahead you want to display
+    $loop_length = 5;  //specify number of posts ahead you want to display
     $next_post_to_display_on_home = $first_story;
 
     global $post;
@@ -71,9 +71,9 @@ function loadmore_insights($id_of_post)
         echo '</div>';
 
         if( true)
-            {
-              $next_post_to_display_on_home = get_previous_post();
-            }
+        {
+            $next_post_to_display_on_home = get_previous_post();
+        }
 
 
 
@@ -94,29 +94,29 @@ function loadmore_insights($id_of_post)
 
 
 
-            if (get_permalink($last_post) === get_permalink($next_post_to_display_on_home)) {
-                $loop_start = $loop_length - 1;
+        if (get_permalink($last_post) === get_permalink($next_post_to_display_on_home)) {
+            $loop_start = $loop_length - 1;
+            global $post;
+            $post = $next_post_to_display_on_home;
+            setup_postdata($post);
+            global $check_help;
+            $check_help=1;
+        } else {
+            if(true)
+            {
                 global $post;
                 $post = $next_post_to_display_on_home;
                 setup_postdata($post);
-                global $check_help;
-                $check_help=1;
-            } else {
-                if(true)
-                {
-                    global $post;
-                    $post = $next_post_to_display_on_home;
-                    setup_postdata($post);
-                }
-
             }
+
+        }
 
 
 
     }
 }
 
-    ?>
+?>
 
 
     <div class="wp-block-themeisle-blocks-advanced-columns has-undefined-columns has-desktop-undefined-layout has-tablet-equal-layout has-mobile-equal-layout has-default-gap has-vertical-unset"
@@ -160,8 +160,7 @@ function loadmore_insights($id_of_post)
             $first_story = $get_post_for_story[0]; // 0 will give the 1st  story here ( oldest story)
 
             // to loop post in bookend
-            $loop_length = 4;  //specify number of posts ahead you want to display
-            $check_help = 0;    //require as a checkpoint to follow different paths in loop
+            $loop_length = 14;  //specify number of posts ahead you want to display
             global $post;
             $next_post_to_display_on_home = $first_story;
             $revert_post_content = $post;  //save current global post content to setback changes to current post after loop execution ends
@@ -223,18 +222,21 @@ function loadmore_insights($id_of_post)
 
 
 
-                    if (get_permalink($last_post) === get_permalink($next_post_to_display_on_home))
-                    {
-                        $loop_start = $loop_length - 1;
-                        //global $post;
-                        //$post = $next_post_to_display_on_home;
-                        //setup_postdata($post);
+                if (get_permalink($last_post) === get_permalink($next_post_to_display_on_home))
+                {
+                    global $check_help;
+                    $check_help=1;
+                    $loop_start = $loop_length - 1;
 
-                    } else {
-                        global $post;
-                        $post = get_previous_post();
-                        setup_postdata($post);
-                    }
+                    global $post;
+                    $post = $next_post_to_display_on_home;
+                    setup_postdata($post);
+
+                } else {
+                    global $post;
+                    $post = get_previous_post();
+                    setup_postdata($post);
+                }
 
 
 
@@ -248,44 +250,44 @@ function loadmore_insights($id_of_post)
 
 
     </div>
-    <?php
-    $current_page_last_post = get_post();
-    $current_page_last_post_id = $current_page_last_post->ID;
-    $args = array(
-        'numberposts' => 1,
-        'category' => 0,
-        'orderby' => 'date',
-        'order' => 'ASC', // Last post
-        'include' => array(),
-        'exclude' => array(),
-        'meta_key' => '',
-        'meta_value' => '',
-        'post_type' => 'post',
-        'suppress_filters' => true,
-    );
-    $get_post_for_story = get_posts($args);
+<?php
+$current_page_last_post = get_post();
+$current_page_last_post_id = $current_page_last_post->ID;
+$args = array(
+    'numberposts' => 1,
+    'category' => 0,
+    'orderby' => 'date',
+    'order' => 'ASC', // Last post
+    'include' => array(),
+    'exclude' => array(),
+    'meta_key' => '',
+    'meta_value' => '',
+    'post_type' => 'post',
+    'suppress_filters' => true,
+);
+$get_post_for_story = get_posts($args);
 
 
-    $last_post = $get_post_for_story[0];
+$last_post = $get_post_for_story[0];
 global $check_help;
 
-    if (get_permalink($last_post) === get_permalink($current_page_last_post) || $check_help===1)
-    {
-        echo '<a>No More posts</a>';
-    }
-    else
-        {
-        $current_page_last_post_id_string = "?loadmore_insights=" . $current_page_last_post_id;
-        echo '<a href="';echo $current_page_last_post_id_string;echo '" target="_self">Load More Button</a>';
-        }
+if (get_permalink($last_post) === get_permalink($current_page_last_post) || $check_help===1)
+{
+    echo '<a>No More posts</a>';
+}
+else
+{
+    $current_page_last_post_id_string = "?loadmore_insights=" . $current_page_last_post_id;
+    echo '<a href="';echo $current_page_last_post_id_string;echo '" target="_self">Load More Button</a>';
+}
 
 
-    ?>
+?>
 
     <! ---------------------       Section for Posts Ended         -------------------------------- >
 
-    <?php
+<?php
 
 
-    get_footer();
- ?>
+get_footer();
+?>
