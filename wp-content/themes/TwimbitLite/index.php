@@ -182,3 +182,4 @@ $get_event = get_posts($event_args);
 		<?php } ?>
 	</div>
 </section>
+<?php get_footer();?>
