@@ -1522,9 +1522,9 @@
             }
 
             .mbr-col-lg-5-5 {
-                -ms-flex: 0 0 45.666%;
-                flex: 0 0 45.666%;
-                max-width: 45.666%;
+                -ms-flex: 0 0 48.666%;
+                flex: 0 0 48.666%;
+                max-width: 48.666%;
                 padding-right: 1rem;
                 padding-left: 1rem;
             }
@@ -4188,6 +4188,30 @@
             -ms-flex: 0 0 100%;
             flex: 0 0 100%;
             max-width: 100%
+        }
+
+        .feature-text {
+            color: #A9A9A9;
+        }
+
+        @media only screen and (max-width: 450px) {
+
+            /* code will run when screen size is 400 or smaller */
+            .tile-img amp-img {
+                width: 120px !important;
+            }
+
+            .tile-text h3 {
+                font-size: 1rem;
+            }
+
+            .tile-text p {
+                padding-top: .5rem;
+            }
+
+            .feature-text {
+                display: none;
+            }
         }
     </style>
 

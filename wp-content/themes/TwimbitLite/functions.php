@@ -17,6 +17,6 @@ add_action('after_setup_theme', 'mytheme_post_thumbnails');
  */
 function wpdocs_custom_excerpt_length($length)
 {
-	return 10;
+	return 40;
 }
 add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);

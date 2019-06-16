@@ -1,6 +1,26 @@
 <?php get_header(); ?>
 <?php
 $args = array(
+	'numberposts' => 1,
+	'category' => 0,
+	'orderby' => 'date',
+	'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
+	'include' => array(),
+	'exclude' => array(),
+	'meta_key' => '',
+	'meta_value' => '',
+	'post_type' => 'featured',
+	'suppress_filters' => true,
+);
+$get_featued_post = get_posts($args);
+$featured_img = get_the_post_thumbnail_url($$get_featued_post);
+$featured_url = get_the_permalink($$get_featued_post);
+$featured_title = get_the_title($$get_featued_post);
+$featured_excerpt = get_the_excerpt($$get_featued_post);
+
+
+
+$args = array(
 	'numberposts' => 0,
 	'category' => 0,
 	'orderby' => 'date',
@@ -56,12 +76,12 @@ $get_event = get_posts($event_args);
 
 				</div>
 				<figure class="ampstart-image-with-heading  m0 relative mb4">
-					<amp-img src="https://cdn.pixabay.com/photo/2019/06/12/15/07/cat-4269479_960_720.jpg" width="500" height="200" layout="responsive" alt="Beautiful Image of a rectangle"></amp-img>
+					<amp-img src="<?php print $featured_img; ?>" width="500" height="200" layout="responsive" alt="Beautiful Image of a rectangle"></amp-img>
 					<figcaption class="absolute right-0 bottom-0 left-0">
 						<header class="ampstart-image-heading px2 py2 line-height-4">
-							<a href="#" style="text-decoration:none;">
-								<h1 class=" mbr-fonts-style mbr-pt-2 display-5">Views from Space</h1>
-								<h1 class=" mbr-fonts-style mbr-pt-2 display-6">Views from Space</h1>
+							<a href="<?php print $featured_url; ?>" style="text-decoration:none;">
+								<h1 class="text-white mbr-fonts-style mbr-pt-2 display-5"><?php print $featured_title; ?></h1>
+								<h1 class="feature-text mbr-fonts-style mbr-pt-2 display-6"><?php print $featured_excerpt; ?></h1>
 							</a>
 						</header>
 					</figcaption>
@@ -80,8 +100,8 @@ $get_event = get_posts($event_args);
 
 				<div class="post-cards mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-5-5 md-pb mb2" style="padding:0;">
 					<div class="mbr-row">
-						<div class="col-5 ml2" style="padding-left:0">
-							<amp-img src="<?php print $post_img; ?>" width="150" layout="responsive" height="100" alt="" class="placeholder-loader" sizes="(min-width: 80px) 180px, 100vw">
+						<div class="col-5 ml2 tile-img" style="padding-left:0">
+							<amp-img src="<?php print $post_img; ?>" width="150" layout="responsive" height="100" alt="" class="placeholder-loader " sizes="(min-width: 80px) 180px, 100vw">
 								<div placeholder="" class="placeholder">
 									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
 										<circle class="big" fill="none" stroke="#c2e0e0" stroke-width="3" stroke-dasharray="230" stroke-dashoffset="230" cx="150" cy="150" r="145"></circle>
@@ -92,9 +112,9 @@ $get_event = get_posts($event_args);
 						</div>
 						<div class="col-6">
 							<a href="<?php print $post_url; ?>">
-								<div>
-									<h3 class="card-title mbr-bold mbr-fonts-style display-6"><?php echo mb_strimwidth($post_title, 0, 50, '...'); ?></h3>
-									<p class="card-text mbr-fonts-style mbr-pt-2 display-7"><?php echo $post_excerpt; ?></p>
+								<div class="pt1 tile-text">
+									<h3 class="card-title mbr-bold mbr-fonts-style display-6"><?php echo mb_strimwidth($post_title, 0, 30, '...'); ?></h3>
+									<p class="card-text mbr-fonts-style mbr-pt-2 display-7"><?php echo mb_strimwidth($post_excerpt, 0, 25, '...'); ?></p>
 								</div>
 							</a>
 						</div>
