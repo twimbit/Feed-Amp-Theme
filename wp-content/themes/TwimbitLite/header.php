@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta name="amp-google-client-id-api" content="googleanalytics">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-    <script async="" src="https://cdn.ampproject.org/v0.js"></script>
 
     <!-- service worker tag register -->
     <script custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js" async=""></script>
@@ -781,6 +780,11 @@
             min-height: 70px;
         }
 
+        .responsive {
+            width: 100%;
+            height: auto;
+        }
+
         .menu-container {
             display: flex;
             justify-content: space-between;
@@ -1517,6 +1521,14 @@
                 padding-left: 1rem;
             }
 
+            .mbr-col-lg-5-5 {
+                -ms-flex: 0 0 45.666%;
+                flex: 0 0 45.666%;
+                max-width: 45.666%;
+                padding-right: 1rem;
+                padding-left: 1rem;
+            }
+
             .mbr-col-lg-5 {
                 -ms-flex: 0 0 41.666%;
                 flex: 0 0 41.666%;
@@ -1790,8 +1802,7 @@
 
 
 
-        @media (max-width: 992px) {
-        }
+        @media (max-width: 992px) {}
 
         .form-block input,
         .form-block textarea {
@@ -3882,37 +3893,42 @@
         }
 
         @media only screen and (max-width: 600px) {
+
             /* code will run when screen size is 600 or smaller */
-            .footer_amp{
+            .footer_amp {
                 height: 30vh;
                 background-color: white;
             }
-            .twimbit_logo{
+
+            .twimbit_logo {
                 align-content: center;
                 padding-left: 20%;
                 padding-right: 20%;
                 display: block;
 
             }
-            .signup_form{
+
+            .signup_form {
                 display: block;
                 height: 50%;
             }
         }
 
-        .footer_amp{
+        .footer_amp {
             height: 30vh;
             background-color: white;
             display: flex;
         }
-        .twimbit_logo{
+
+        .twimbit_logo {
 
             padding: 30px;
             display: inline;
             float: left;
 
         }
-        .signup_form{
+
+        .signup_form {
             display: inline;
             width: 70%;
         }
@@ -3921,75 +3937,326 @@
             border-bottom: 3px solid #ec6963;
         }
 
+        amp-carousel .ampstart-image-with-heading {
+            margin-bottom: 0
+        }
 
+        .m0 {
+            margin: 0
+        }
+
+        .relative {
+            position: relative
+        }
+
+        .mb4 {
+            margin-bottom: 2rem
+        }
+
+        .absolute {
+            position: absolute
+        }
+
+        .right-0 {
+            right: 0
+        }
+
+        .bottom-0 {
+            bottom: 0
+        }
+
+        .left-0 {
+            left: 0
+        }
+
+
+        .ampstart-image-heading {
+            color: #fff;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .65) 0, transparent)
+        }
+
+        .py2 {
+            padding-top: 1rem;
+            padding-bottom: 1rem
+        }
+
+        .px2 {
+            padding-left: 1rem;
+            padding-right: 1rem
+        }
+
+
+        .line-height-4 {
+            line-height: 2rem
+        }
+
+        .post-cards {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .post-cards:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .space-between {
+            justify-content: space-between;
+        }
+
+
+        .col,
+        .col-1,
+        .col-10,
+        .col-11,
+        .col-12,
+        .col-2,
+        .col-3,
+        .col-4,
+        .col-5,
+        .col-6,
+        .col-7,
+        .col-8,
+        .col-9,
+        .col-auto,
+        .col-lg,
+        .col-lg-1,
+        .col-lg-10,
+        .col-lg-11,
+        .col-lg-12,
+        .col-lg-2,
+        .col-lg-3,
+        .col-lg-4,
+        .col-lg-5,
+        .col-lg-6,
+        .col-lg-7,
+        .col-lg-8,
+        .col-lg-9,
+        .col-lg-auto,
+        .col-md,
+        .col-md-1,
+        .col-md-10,
+        .col-md-11,
+        .col-md-12,
+        .col-md-2,
+        .col-md-3,
+        .col-md-4,
+        .col-md-5,
+        .col-md-6,
+        .col-md-7,
+        .col-md-8,
+        .col-md-9,
+        .col-md-auto,
+        .col-sm,
+        .col-sm-1,
+        .col-sm-10,
+        .col-sm-11,
+        .col-sm-12,
+        .col-sm-2,
+        .col-sm-3,
+        .col-sm-4,
+        .col-sm-5,
+        .col-sm-6,
+        .col-sm-7,
+        .col-sm-8,
+        .col-sm-9,
+        .col-sm-auto,
+        .col-xl,
+        .col-xl-1,
+        .col-xl-10,
+        .col-xl-11,
+        .col-xl-12,
+        .col-xl-2,
+        .col-xl-3,
+        .col-xl-4,
+        .col-xl-5,
+        .col-xl-6,
+        .col-xl-7,
+        .col-xl-8,
+        .col-xl-9,
+        .col-xl-auto {
+            position: relative;
+            width: 100%;
+            min-height: 1px;
+            padding-right: 15px;
+            padding-left: 15px
+        }
+
+        .col {
+            -ms-flex-preferred-size: 0;
+            flex-basis: 0;
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            max-width: 100%
+        }
+
+        .col-6 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%
+        }
+
+        .col-auto {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            width: auto;
+            max-width: none
+        }
+
+        .col-1 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 8.333333%;
+            flex: 0 0 8.333333%;
+            max-width: 8.333333%
+        }
+
+        .col-2 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 16.666667%;
+            flex: 0 0 16.666667%;
+            max-width: 16.666667%
+        }
+
+        .col-3 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+            max-width: 25%
+        }
+
+        .col-4 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%
+        }
+
+        .col-5 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 41.666667%;
+            flex: 0 0 41.666667%;
+            max-width: 41.666667%
+        }
+
+        .col-6 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+            max-width: 50%
+        }
+
+        .col-7 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 58.333333%;
+            flex: 0 0 58.333333%;
+            max-width: 58.333333%
+        }
+
+        .col-8 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 66.666667%;
+            flex: 0 0 66.666667%;
+            max-width: 66.666667%
+        }
+
+        .col-9 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 75%;
+            flex: 0 0 75%;
+            max-width: 75%
+        }
+
+        .col-10 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 83.333333%;
+            flex: 0 0 83.333333%;
+            max-width: 83.333333%
+        }
+
+        .col-11 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 91.666667%;
+            flex: 0 0 91.666667%;
+            max-width: 91.666667%
+        }
+
+        .col-12 {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+            max-width: 100%
+        }
     </style>
 
 </head>
 
 <body>
 
-<!-- Registering Service Worker -->
-<amp-install-serviceworker src="<?php print content_url() . '/themes/TwimbitLite/src/sw.js'; ?>" layout="nodisplay" data-iframe-src="<?php print content_url() . '/themes/TwimbitLite/src/install-sw.html'; ?>">
-</amp-install-serviceworker>
+    <!-- Registering Service Worker -->
+    <amp-install-serviceworker src="<?php print content_url() . '/themes/TwimbitLite/src/sw.js'; ?>" layout="nodisplay" data-iframe-src="<?php print content_url() . '/themes/TwimbitLite/src/install-sw.html'; ?>">
+    </amp-install-serviceworker>
 
-<amp-sidebar id="sidebar" class="cid-qXijZlysdL" layout="nodisplay" side="right">
-    <div class="builder-sidebar" id="builder-sidebar">
-        <button on="tap:sidebar.close" class="close-sidebar">
-            <span></span>
-            <span></span>
-        </button>
-
-
-        <!-- NAVBAR ITEMS -->
-        <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-            <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#header2-28">Home</a></li>
-            <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#features3-24">Insights</a></li>
-            <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Stories</a></li>
-            <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Videos</a></li>
-            <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Events</a></li>
-        </ul>
-        <!-- NAVBAR ITEMS END -->
-
-    </div>
-</amp-sidebar>
-<section class="menu1 menu horizontal-menu cid-qXijZlysdL" id="menu1-o">
-
-    <!-- <div class="menu-wrapper"> -->
-    <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top">
-        <div class="menu-container container">
-            <!-- SHOW LOGO -->
-            <div class="navbar-brand">
-                <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="mr2" alt="Example logo image"></amp-img>
-                <span class="navbar-caption-wrap"><a class="navbar-caption mbr-bold text-secondary display-5" href="#top"><span>Twimbit</span></a></span>
-            </div>
-            <!-- SHOW LOGO END -->
-            <!-- COLLAPSED MENU -->
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-                <!-- NAVBAR ITEMS -->
-                <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                    <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#header2-28">Home</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#features3-24">Insights</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Stories</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Videos</a></li>
-                    <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Events</a></li>
-                </ul>
-                <!-- NAVBAR ITEMS END -->
-
-
-            </div>
-            <!-- COLLAPSED MENU END -->
-
-            <button on="tap:sidebar.toggle" class="ampstart-btn hamburger">
-                <span></span>
-                <span></span>
+    <amp-sidebar id="sidebar" class="cid-qXijZlysdL" layout="nodisplay" side="right">
+        <div class="builder-sidebar" id="builder-sidebar">
+            <button on="tap:sidebar.close" class="close-sidebar">
                 <span></span>
                 <span></span>
             </button>
-        </div>
-    </nav>
-    <!-- AMP plug -->
 
-    <!-- </div> -->
-</section>
+
+            <!-- NAVBAR ITEMS -->
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#header2-28">Home</a></li>
+                <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#features3-24">Insights</a></li>
+                <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Stories</a></li>
+                <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Videos</a></li>
+                <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Events</a></li>
+            </ul>
+            <!-- NAVBAR ITEMS END -->
+
+        </div>
+    </amp-sidebar>
+    <section class="menu1 menu horizontal-menu cid-qXijZlysdL" id="menu1-o">
+
+        <!-- <div class="menu-wrapper"> -->
+        <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top">
+            <div class="menu-container container">
+                <!-- SHOW LOGO -->
+                <div class="navbar-brand">
+                    <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="mr2" alt="Example logo image"></amp-img>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption mbr-bold text-secondary display-5" href="#top"><span>Twimbit</span></a></span>
+                </div>
+                <!-- SHOW LOGO END -->
+                <!-- COLLAPSED MENU -->
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <!-- NAVBAR ITEMS -->
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#header2-28">Home</a></li>
+                        <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#features3-24">Insights</a></li>
+                        <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Stories</a></li>
+                        <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Videos</a></li>
+                        <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Events</a></li>
+                    </ul>
+                    <!-- NAVBAR ITEMS END -->
+
+
+                </div>
+                <!-- COLLAPSED MENU END -->
+
+                <button on="tap:sidebar.toggle" class="ampstart-btn hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+        <!-- AMP plug -->
+
+        <!-- </div> -->
+    </section>

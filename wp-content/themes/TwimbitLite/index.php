@@ -47,11 +47,29 @@ $get_event = get_posts($event_args);
 <!-- Insights section -->
 <section class="features123  cid-r8J9eA34T9" id="features1-2f">
 	<div class="container">
-		<div class="title-wrap mbr-pb-4">
-			<h3 class="mbr-section-title mbr-bold mbr-fonts-style display-2">Insights</h3>
 
+
+		<div class="mbr-row p2">
+			<div class="mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-12 md-pb mb3" style="padding:0">
+				<div class="title-wrap mbr-pb-4">
+					<h3 class="mbr-section-title mbr-bold mbr-fonts-style display-2">Insights</h3>
+
+				</div>
+				<figure class="ampstart-image-with-heading  m0 relative mb4">
+					<amp-img src="https://cdn.pixabay.com/photo/2019/06/12/15/07/cat-4269479_960_720.jpg" width="500" height="200" layout="responsive" alt="Beautiful Image of a rectangle"></amp-img>
+					<figcaption class="absolute right-0 bottom-0 left-0">
+						<header class="ampstart-image-heading px2 py2 line-height-4">
+							<a href="#" style="text-decoration:none;">
+								<h1 class=" mbr-fonts-style mbr-pt-2 display-5">Views from Space</h1>
+								<h1 class=" mbr-fonts-style mbr-pt-2 display-6">Views from Space</h1>
+							</a>
+						</header>
+					</figcaption>
+				</figure>
+			</div>
 		</div>
-		<div class="mbr-row mbr-jc-c">
+
+		<div class="mbr-row space-between p2">
 			<?php
 			foreach ($get_post as $val) {
 				$post_img = get_the_post_thumbnail_url($val);
@@ -59,10 +77,11 @@ $get_event = get_posts($event_args);
 				$post_title = get_the_title($val);
 				$post_excerpt = get_the_excerpt($val);
 				?>
-				<div class="card mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-4 md-pb">
-					<div class="card-wrapper mbr-column">
-						<div class="card-img mbr-pb-3">
-							<amp-img src="<?php print $post_img; ?>" layout="responsive" width="348.5446009389671" height="232" alt="" class="placeholder-loader">
+
+				<div class="post-cards mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-5-5 md-pb mb2" style="padding:0;">
+					<div class="mbr-row">
+						<div class="col-5 ml2" style="padding-left:0">
+							<amp-img src="<?php print $post_img; ?>" width="150" layout="responsive" height="100" alt="" class="placeholder-loader" sizes="(min-width: 80px) 180px, 100vw">
 								<div placeholder="" class="placeholder">
 									<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
 										<circle class="big" fill="none" stroke="#c2e0e0" stroke-width="3" stroke-dasharray="230" stroke-dashoffset="230" cx="150" cy="150" r="145"></circle>
@@ -71,26 +90,27 @@ $get_event = get_posts($event_args);
 
 							</amp-img>
 						</div>
-						<div class="card-box">
+						<div class="col-6">
 							<a href="<?php print $post_url; ?>">
-								<h3 class="card-title mbr-bold mbr-fonts-style display-6"><?php echo mb_strimwidth($post_title, 0, 50, '...'); ?></h3>
-
-								<p class="card-text mbr-fonts-style mbr-pt-2 display-7"><?php echo $post_excerpt; ?></p>
+								<div>
+									<h3 class="card-title mbr-bold mbr-fonts-style display-6"><?php echo mb_strimwidth($post_title, 0, 50, '...'); ?></h3>
+									<p class="card-text mbr-fonts-style mbr-pt-2 display-7"><?php echo $post_excerpt; ?></p>
+								</div>
 							</a>
 						</div>
 					</div>
-				</div>
-			<?php } ?>
-			<?php if (count($get_post) >= 3) {
-				?>
 
-				<div class="mbr-row mbr-jc-c">
-					<div class="card-btn mbr-section-btn mbr-pt-2"><a class="btn btn-primary display-7" href="#">Read More</a></div>
 				</div>
+
 			<?php } ?>
 
 		</div>
-	</div>
+		<?php if (count($get_post) >= 3) {
+			?>
+			<div class="mbr-row mbr-jc-c">
+				<div class="card-btn mbr-section-btn mbr-pt-2"><a class="btn btn-primary display-7" href="#">Read More</a></div>
+			</div>
+		<?php } ?>
 </section>
 
 
@@ -182,4 +202,4 @@ $get_event = get_posts($event_args);
 		<?php } ?>
 	</div>
 </section>
-<?php get_footer();?>
+<?php get_footer(); ?>
