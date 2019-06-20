@@ -21,14 +21,18 @@ get_header(); ?>
 			<?php
 			// Start the loop.
 			while ( have_posts() ) :
-				the_post();
+				the_post(); //this helps in moving through the loop (pre existing)
+
+			//the below $id will save the id of searched posts one by one.. fetch the post content as you want to show and display using this id
+                $id=get_the_ID();
+                echo'<img src="';echo get_the_post_thumbnail_url($id); echo '" width="200px" height="200px">'; // sample to use the id
 
 				/**
 				 * Run the loop for the search to output the results.
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', 'search' );
+				get_template_part( 'template-parts/content', 'search' ); //remove this section, as it will use the existing defined template
 
 				// End the loop.
 			endwhile;
