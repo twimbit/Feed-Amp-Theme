@@ -3896,8 +3896,13 @@
 
             /* code will run when screen size is 600 or smaller */
             .footer_amp {
-                height: 30vh;
+                height: 5vh;
                 background-color: white;
+
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                z-index: 10;
             }
 
             .twimbit_logo {
@@ -3915,11 +3920,19 @@
         }
 
         .footer_amp {
-            height: 30vh;
+            height: 8vh;
             background-color: white;
             display: flex;
         }
 
+        a.nav_button{
+            background-repeat: no-repeat !important;
+            background-position: center !important;
+            width:33.33%;
+
+        a.nav_button:active {
+            background-color: #F16A6E !important;
+        }
         .twimbit_logo {
 
             padding: 30px;
