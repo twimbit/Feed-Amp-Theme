@@ -17,8 +17,7 @@
             <div class="signup_form" >
 
             </div>
-            <div class="twimbit_logo">
-                <img src='<?php print content_url() . '/themes/TwimbitLite/src/t-logo.png'; ?>' style="">
+            <div class="twimbit_logo" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/t-logo.png'; ?>'); ">
             </div>
 		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
