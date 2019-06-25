@@ -65,9 +65,9 @@ $get_event = get_posts($event_args);
 ?>
 
 <!-- Stories section -->
-<section id="stories">
+<section id="stories" style="background-color:whitesmoke;">
 	<div class="container">
-		<div class="mbr-row p2 m1" style="background-color:whitesmoke;border-radius:8px">
+		<div class="mbr-row p2 m1" style="border-radius:8px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);background-color:white">
 			<div class="mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-12 md-pb" style="padding:0">
 				<div class="title-wrap">
 					<h3 class="mbr-section-title mbr-bold mbr-fonts-style display-2">Stories</h3>
@@ -87,7 +87,7 @@ $get_event = get_posts($event_args);
 </section>
 
 <!-- Feeds cards -->
-<section id="cards-feed">
+<section id="cards-feed" style="background-color:whitesmoke;">
 	<div class="container mb4">
 		<div class="mbr-row m1">
 			<div class="mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-12" style="padding:0;">
@@ -97,16 +97,19 @@ $get_event = get_posts($event_args);
 					$story_url = get_the_permalink($val);
 					$story_title = get_the_title($val);
 					?>
-					<div class="card mb3" style="border-radius:10px;">
+					<div class="card mb3" style="border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
 						<img src="<?php print $post_img; ?>" class="card-img-top" style="border-radius:10px;">
 						<div class="card-body">
 							<div class="row">
 								<div class="col-8">
 									<h5 class="card-title mbr-bold mbr-fonts-style display-2">Card title</h5>
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<p class="card-text" style="font-style:italic">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 								</div>
 								<div class="col-4">
-									.
+									<div class="card-badge">
+										<h2 class="align-center card-badge-text">Watch</h2>
+										<img src="" alt="sdfdsf">
+									</div>
 								</div>
 							</div>
 						</div>

@@ -121,6 +121,7 @@
         * {
             box-sizing: border-box;
             outline: none;
+            font-family: 'Roboto', sans-serif;
         }
 
         .b1 {
@@ -135,7 +136,6 @@
             position: relative;
             font-style: normal;
             line-height: 1.5;
-            color: #000000;
         }
 
         section {
@@ -3883,6 +3883,23 @@
                 border-width: 1px;
                 color: #ccc;
             }
+        }
+
+        .card-badge {
+            position: relative;
+            top: -3.5rem;
+            height: 8rem;
+            background-color: whitesmoke;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            border: 1px solid #ccc;
+        }
+
+        .card-badge-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: grey;
+            margin-top: 0.5rem;
         }
     </style>
 
