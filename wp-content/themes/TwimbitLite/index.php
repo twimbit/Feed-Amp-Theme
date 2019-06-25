@@ -69,23 +69,21 @@ $get_event = get_posts($event_args);
 	<div class="container">
 
 
-		<div class="mbr-row p2">
+		<div class="mbr-row p2" style="background-color:white;border:8px">
 			<div class="mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-12 md-pb mb3" style="padding:0">
 				<div class="title-wrap mbr-pb-4">
-					<h3 class="mbr-section-title mbr-bold mbr-fonts-style display-2">Insights</h3>
-
+					<h3 class="mbr-section-title mbr-bold mbr-fonts-style display-2">Stories</h3>
 				</div>
-				<figure class="ampstart-image-with-heading  m0 relative mb4">
-					<amp-img src="<?php print $featured_img; ?>" width="500" height="200" layout="responsive" alt="Beautiful Image of a rectangle"></amp-img>
-					<figcaption class="absolute right-0 bottom-0 left-0">
-						<header class="ampstart-image-heading px2 py2 line-height-4">
-							<a href="<?php print $featured_url; ?>" style="text-decoration:none;">
-								<h1 class="text-white mbr-fonts-style mbr-pt-2 display-5"><?php print $featured_title; ?></h1>
-								<h1 class="feature-text mbr-fonts-style mbr-pt-2 display-6"><?php print $featured_excerpt; ?></h1>
-							</a>
-						</header>
-					</figcaption>
-				</figure>
+				<amp-carousel  height="100" type="carousel">
+					<?php
+					foreach ($get_post_for_story as $val) {
+						$story_img = get_the_post_thumbnail_url($val);
+						$story_url = get_the_permalink($val);
+						$story_title = get_the_title($val);
+						?>
+						<amp-img src="<?php print $story_img; ?>" width="95" height="95"></amp-img>
+					<?php } ?>
+				</amp-carousel>
 			</div>
 		</div>
 
@@ -98,8 +96,10 @@ $get_event = get_posts($event_args);
 				$post_excerpt = get_the_excerpt($val);
 				?>
 
-				<div class="post-cards mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-5-5 md-pb mb2" style="padding:0;">
+				<div class="post-cards mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-5-5 md-pb " style="padding:0;">
+					<div class="hr"></div>
 					<div class="mbr-row">
+
 						<div class="col-5 ml2 tile-img" style="padding-left:0">
 							<amp-img src="<?php print $post_img; ?>" width="150" layout="responsive" height="100" alt="" class="placeholder-loader " sizes="(min-width: 80px) 180px, 100vw">
 								<div placeholder="" class="placeholder">
@@ -119,11 +119,9 @@ $get_event = get_posts($event_args);
 							</a>
 						</div>
 					</div>
-
 				</div>
 
 			<?php } ?>
-
 		</div>
 		<?php if (count($get_post) >= 3) {
 			?>

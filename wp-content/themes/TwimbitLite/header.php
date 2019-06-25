@@ -94,9 +94,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
     <style amp-custom>
-        amp-carousel .i-amphtml-scrollable-carousel-container::-webkit-scrollbar {
+        /* amp-carousel .i-amphtml-scrollable-carousel-container::-webkit-scrollbar {
             display: none;
-        }
+        } */
 
         div,
         span,
@@ -1902,28 +1902,7 @@
             opacity: 1;
         }
 
-        .amp-carousel-button {
-            outline: none;
-            border-radius: 50%;
-            border: 10px transparent solid;
-            transform: scale(1.5) translateY(-50%);
-            height: 45px;
-            width: 45px;
-            transition: 0.4s;
-            cursor: pointer;
-        }
-
-        .amp-carousel-button:hover {
-            opacity: 1;
-        }
-
-        .amp-carousel-button-next {
-            background-position: 75% 50%;
-        }
-
-        .amp-carousel-button-prev {
-            background-position: 25% 50%;
-        }
+      
 
         button.btn-img {
             cursor: pointer;
@@ -3892,6 +3871,17 @@
             padding-right: 2rem;
         }
 
+        .post-cards {
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            background-color: white;
+        }
+
+        .post-cards:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
         @media only screen and (max-width: 600px) {
 
             /* code will run when screen size is 600 or smaller */
@@ -3910,12 +3900,29 @@
                 padding-left: 20%;
                 padding-right: 20%;
                 display: block;
+            }
 
+            .post-cards {
+                margin-bottom: 0;
+                box-shadow: none;
+                transition: none;
+                background-color: #f4f8ff;
             }
 
             .signup_form {
                 display: block;
                 height: 50%;
+            }
+
+            .hr {
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: auto;
+                margin-right: auto;
+                border-style: inset;
+                border-width: 1px;
+                color: #ccc;
             }
         }
 
@@ -4003,15 +4010,13 @@
             line-height: 2rem
         }
 
-        .post-cards {
-            background-color: white;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
+        .sept {
+            border-top: .5px solid #ccc;
+            width: 98%;
         }
 
-        .post-cards:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
+
+
 
         .space-between {
             justify-content: space-between;
@@ -4214,6 +4219,13 @@
                 width: 120px !important;
             }
 
+            .post-cards {
+                margin-bottom: 0;
+                box-shadow: none;
+                transition: none;
+                background-color: #f4f8ff;
+            }
+
             .tile-text h3 {
                 font-size: 1rem;
             }
@@ -4224,6 +4236,17 @@
 
             .feature-text {
                 display: none;
+            }
+
+            .hr {
+                display: block;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+                margin-left: auto;
+                margin-right: auto;
+                border-style: inset;
+                border-width: 1px;
+                color: #ccc;
             }
         }
     </style>
