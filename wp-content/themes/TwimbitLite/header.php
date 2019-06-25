@@ -3072,7 +3072,7 @@
         .cid-r8J9eA34T9 {
             padding-top: 5rem;
             padding-bottom: 5rem;
-            background-color: #f4f8ff;
+            background-color: #f5f5f5;
         }
 
         .cid-r8J9eA34T9 .card-wrapper {

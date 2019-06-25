@@ -40,3 +40,11 @@ get_header(); ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
+
+
+<?php if (count($get_post) >= 3) {
+			?>
+			<div class="mbr-row mbr-jc-c">
+				<div class="card-btn mbr-section-btn mbr-pt-2"><a class="btn btn-primary display-7" href="#">Read More</a></div>
+			</div>
+		<?php } ?>
