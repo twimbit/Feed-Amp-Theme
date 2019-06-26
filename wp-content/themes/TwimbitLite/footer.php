@@ -12,18 +12,8 @@
 
 		</div><!-- .site-content -->
 <!--bottom navigation bar-->
-		<footer id="colophon" class="site-footer footer_amp" role="contentinfo" >
+<!-- added comment -->
 
-            <a href="http://localhost/app-theme/" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>');">
-
-            </a>
-            <a href="http://localhost/app-theme/explore" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>');">
-
-            </a>
-            <a href="http://localhost/app-theme/menu" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/menu.svg'; ?>');">
-
-            </a>
-		</footer><!-- .site-footer -->
 	</div><!-- .site-inner -->
 </div><!-- .site -->
 
