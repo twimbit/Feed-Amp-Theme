@@ -20,7 +20,7 @@
             <a href="http://localhost/app-theme/explore" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>');">
 
             </a>
-            <a href="http://localhost/app-theme/menu" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/menu.svg'; ?>');">
+            <a on="tap:sidebar.toggle" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/menu.svg'; ?>');">
 
             </a>
 		</footer><!-- .site-footer -->

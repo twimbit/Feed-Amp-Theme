@@ -519,6 +519,7 @@
             .timeline-wrap .iconBackground {
                 left: 0;
             }
+
         }
 
         .separline {
@@ -729,6 +730,11 @@
             min-height: 100vh;
             padding-top: 3rem;
             padding-bottom: 3rem;
+        }
+
+        .justify-content-center {
+            -ms-flex-pack: center !important;
+            justify-content: center !important
         }
 
         .mbr-overlay {
@@ -3849,10 +3855,11 @@
 
         @media only screen and (max-width: 450px) {
 
-            /* code will run when screen size is 400 or smaller */
+            /* code will run when screen size is 450 or smaller */
             .tile-img amp-img {
                 width: 120px !important;
             }
+
 
             .post-cards {
                 margin-bottom: 0;
@@ -3883,23 +3890,106 @@
                 border-width: 1px;
                 color: #ccc;
             }
+
+            .card-badge {
+                position: relative;
+                top: -3.5rem;
+                height: 6rem;
+                background-color: whitesmoke;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                border: 1px solid #ccc;
+            }
+
+            .card-badge-text {
+                font-size: 1rem;
+                font-weight: 500;
+                color: grey;
+                margin-top: 0.5rem;
+            }
+
+            .img-cat {
+                position: relative;
+                width: 40%;
+                height: 64px;
+                left: 30%;
+
+            }
+
+            .category-caption {
+                position: relative;
+                top: 10px;
+                font-size: 1rem;
+            }
+
+            .story-carousel {
+                height: 100px;
+            }
+
+            .story-carousel amp-img {
+                height: 95px;
+                width: 95px;
+            }
         }
 
-        .card-badge {
-            position: relative;
-            top: -3.5rem;
-            height: 8rem;
-            background-color: whitesmoke;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            border: 1px solid #ccc;
-        }
+        @media (min-width: 768px) {
 
-        .card-badge-text {
-            font-size: 1.5rem;
-            font-weight: 500;
-            color: grey;
-            margin-top: 0.5rem;
+            .card-badge {
+                position: relative;
+                top: -3.5rem;
+                height: 8rem;
+                background-color: whitesmoke;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+                border: 1px solid #ccc;
+            }
+
+            .card-badge-text {
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: grey;
+                margin-top: 0.5rem;
+            }
+
+            .img-cat {
+                position: relative;
+                width: 40%;
+                height: 64px;
+                left: 30%;
+
+            }
+
+            .category-caption {
+                position: relative;
+                top: 30px;
+            }
+
+            .story-carousel {
+                height: 200px;
+            }
+
+            .story-carousel amp-img {
+                height: 200px;
+                width: 190px;
+            }
+
+            .cards .card {
+                width: 20rem;
+            }
+
+            .d-flex {
+                display: -ms-flexbox !important;
+                display: flex !important
+            }
+
+            .card-title {
+                font-size: 1.3rem;
+                font-weight: 800;
+            }
+
+            .card-badge {
+                height: 7rem;
+            }
         }
     </style>
 
@@ -3937,35 +4027,39 @@
         <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top">
             <div class="menu-container container">
                 <!-- SHOW LOGO -->
-                <div class="navbar-brand">
-                    <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="mr2" alt="Example logo image"></amp-img>
-                    <span class="navbar-caption-wrap"><a class="navbar-caption mbr-bold text-secondary display-5" href="#top"><span>Twimbit</span></a></span>
+                <div class="navbar-brand mx-auto">
+                    <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="ml2" alt="Example logo image"></amp-img>
+
+                    <!-- <span class="navbar-caption-wrap"><a class="navbar-caption mbr-bold text-secondary display-5" href="#top"><span>Twimbit</span></a></span> -->
+                </div>
+                <div class="align-left">
+                    <h1 class="align-right"><img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt=""></h1>
                 </div>
                 <!-- SHOW LOGO END -->
                 <!-- COLLAPSED MENU -->
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
 
-                    <!-- NAVBAR ITEMS -->
-                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                <!-- NAVBAR ITEMS -->
+                <!-- <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#header2-28">Home</a></li>
                         <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#features3-24">Insights</a></li>
                         <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Stories</a></li>
                         <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Videos</a></li>
                         <li class="nav-item"><a class="nav-link mbr-bold link text-secondary display-4" href="#contacts1-26">Events</a></li>
-                    </ul>
-                    <!-- NAVBAR ITEMS END -->
+                    </ul> -->
+                <!-- NAVBAR ITEMS END -->
 
 
-                </div>
+                <!-- </div> -->
                 <!-- COLLAPSED MENU END -->
 
-                <button on="tap:sidebar.toggle" class="ampstart-btn hamburger">
+                <!-- <button on="tap:sidebar.toggle" class="ampstart-btn hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                     <span></span>
-                </button>
+                </button> -->
             </div>
         </nav>
         <!-- AMP plug -->
