@@ -65,9 +65,9 @@ $get_event = get_posts($event_args);
 ?>
 
 <!-- Stories section -->
-<section id="stories" style="background-color:whitesmoke;">
+<section id="stories" style="background-color:#FAFAFA;">
 	<div class="container">
-		<div class="mbr-row p2 m1" style="border-radius:8px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);background-color:white">
+		<div class="mbr-row p2 m1" style="border-radius:8px;box-shadow: 0 15px 30px 0 rgba(0,0,0,0.2);background-color:white">
 			<div class="mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-12 md-pb" style="padding:0">
 				<div class="title-wrap">
 					<h3 class="mbr-section-title mbr-bold mbr-fonts-style display-2">Stories</h3>
@@ -87,7 +87,7 @@ $get_event = get_posts($event_args);
 </section>
 
 <!-- Feeds cards -->
-<section id="cards-feed" style="background-color:whitesmoke;">
+<section id="cards-feed" style="background-color:#FAFAFA;">
 	<div class="container  mb4">
 
 		<div class="wrapper">
@@ -98,7 +98,7 @@ $get_event = get_posts($event_args);
 				$post_title = get_the_title($val);
 				?>
 				<div class="cards" style="padding:0;">
-					<div class="mb3" style="border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+					<div class="mb3" style="border-radius:10px; box-shadow:0 15px 30px 0 rgba(0,0,0,0.2);">
 						<amp-img style="border-radius:10px; height: 300px; transform: translateX(-68.8333px)scaleY(1)scaleX(1.73188)scaleY(1.73188)scaleX(1)scale(var(--hover-scale));" src="<?php
 																	if ($post_img) {
 																		print $post_img;

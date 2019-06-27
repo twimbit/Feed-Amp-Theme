@@ -557,7 +557,7 @@
                 display: grid;
                 grid-template-columns: repeat(auto-fill, minmax(20rem,1fr));
                 flex-direction: column;
-                grid-gap: 15px;
+                grid-gap: 30px;
                 flex-wrap: wrap;
                 color: #444;
             }
@@ -4017,22 +4017,19 @@
             }
         }
 
-        .search {
-            border: 1px solid #ccc;
-            -moz-border-radius: 10px;
-            -webkit-border-radius: 10px;
-            border-radius: 10px;
-            -moz-box-shadow: 2px 2px 3px #666;
-            -webkit-box-shadow: 2px 2px 3px #666;
-            box-shadow: 2px 2px 3px #666;
-            font-size: 20px;
-            padding: 4px 7px;
-            outline: 0;
-            -webkit-appearance: none;
+        .search {width: fit-content;
+            height: 36px;
+            background: #fafafa;
+            /* border: 0.5px solid #707070; */
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px 0px;
+            border-radius: 20px;
         }
 
         #searchTerm{
             border: none;
+            margin-left: 20px;
+            background: transparent;
+
         }
     </style>
 
@@ -4067,22 +4064,23 @@
     <section class="menu1 menu horizontal-menu cid-qXijZlysdL" id="menu1-o">
 
         <!-- <div class="menu-wrapper"> -->
-        <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top">
+        <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top" style="box-shadow: 0 15px 30px 0 rgba(0,0,0,0.2);">
             <div class="menu-container container">
                 <!-- SHOW LOGO -->
                 <div class="mr-auto d-sm-none d-md-none">
                     <img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png'; ?>" alt="">
                 </div>
                 
-                    <form action="#">
+                    <form action="" method="get" target="_self">
                         <div class="search d-flex">
-                            <input type="text" placeholder="Search.." name="search" id="searchTerm">
-                            <a href="#"><img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt=""></a>
+                            <input type="text" placeholder="Search.." name="s" id="searchTerm">
+                            <button type="submit"  href="#"  style="    border: none;
+    background: none;"><img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" style="padding-right: 10px; " alt=""></button>
                         </div>
                     </form>
                 
                 <div class="navbar-brand mx-auto">
-                    <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="ml2 d-lg-none" alt="Example logo image"></amp-img>
+                    <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="ml2 d-lg-none"  alt="Example logo image"></amp-img>
 
 
                     <!-- <span class="navbar-caption-wrap"><a class="navbar-caption mbr-bold text-secondary display-5" href="#top"><span>Twimbit</span></a></span> -->
