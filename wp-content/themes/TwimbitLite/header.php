@@ -4031,6 +4031,12 @@
             background: transparent;
 
         }
+
+        .desktop-tool {
+
+            margin-right: 15%;
+            margin-bottom: 0% !important;
+        }
     </style>
 
 </head>
@@ -4071,7 +4077,7 @@
                     <img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png'; ?>" alt="">
                 </div>
                 
-                    <form action="" method="get" target="_self">
+                    <form action="#">
                         <div class="search d-flex">
                             <input type="text" placeholder="Search.." name="s" id="searchTerm">
                             <button type="submit"  href="#"  style="    border: none;
@@ -4080,15 +4086,31 @@
                     </form>
                 
                 <div class="navbar-brand mx-auto">
-                    <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="ml2 d-lg-none"  alt="Example logo image"></amp-img>
+                    <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="ml2 d-lg-none" alt="Example logo image"></amp-img>
 
 
                     <!-- <span class="navbar-caption-wrap"><a class="navbar-caption mbr-bold text-secondary display-5" href="#top"><span>Twimbit</span></a></span> -->
                 </div>
 
-                <div class="align-left">
+                <div class="d-flex desktop-tool">
+                    <a href="#" class="p1 d-flex">
+                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>" alt="">
+                        <p>Feed</p>
+                    </a>
+                    <a href="#" class="p1 d-flex">
+                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>" alt="">
+                        <p>Explore</p>
+                    </a>
+                    <a href="#" on="tap:sidebar.toggle" class="p1 d-flex">
+                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/menu.svg'; ?>" alt="">
+                        <p>Menu</p>
+                    </a>
+                </div>
+
+                <div class="align-left d-lg-none">
                     <h1 class="align-right"><img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt=""></h1>
                 </div>
+
                 <!-- SHOW LOGO END -->
                 <!-- COLLAPSED MENU -->
 
