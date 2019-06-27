@@ -94,9 +94,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 
     <style amp-custom>
-            amp-carousel .i-amphtml-scrollable-carousel-container::-webkit-scrollbar {
-                display: none;
-            }
+        amp-carousel .i-amphtml-scrollable-carousel-container::-webkit-scrollbar {
+            display: none;
+        }
 
         div,
         span,
@@ -518,6 +518,10 @@
         @media (max-width: 768px) {
             .timeline-wrap .iconBackground {
                 left: 0;
+            }
+
+            .d-md-none {
+                display: none !important
             }
 
         }
@@ -3864,6 +3868,10 @@
         @media only screen and (max-width: 450px) {
 
             /* code will run when screen size is 450 or smaller */
+            .d-sm-none {
+                display: none !important
+            }
+
             .tile-img amp-img {
                 width: 120px !important;
             }
@@ -4002,6 +4010,30 @@
             }
 
         }
+
+        @media (min-width: 992px) {
+            .d-lg-none {
+                display: none !important
+            }
+        }
+
+        .search {
+            border: 1px solid #ccc;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            -moz-box-shadow: 2px 2px 3px #666;
+            -webkit-box-shadow: 2px 2px 3px #666;
+            box-shadow: 2px 2px 3px #666;
+            font-size: 20px;
+            padding: 4px 7px;
+            outline: 0;
+            -webkit-appearance: none;
+        }
+
+        #searchTerm{
+            border: none;
+        }
     </style>
 
 </head>
@@ -4038,11 +4070,24 @@
         <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top">
             <div class="menu-container container">
                 <!-- SHOW LOGO -->
+                <div class="mr-auto d-sm-none d-md-none">
+                    <img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png'; ?>" alt="">
+                </div>
+                
+                    <form action="#">
+                        <div class="search d-flex">
+                            <input type="text" placeholder="Search.." name="search" id="searchTerm">
+                            <a href="#"><img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt=""></a>
+                        </div>
+                    </form>
+                
                 <div class="navbar-brand mx-auto">
-                    <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="ml2" alt="Example logo image"></amp-img>
+                    <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="ml2 d-lg-none" alt="Example logo image"></amp-img>
+
 
                     <!-- <span class="navbar-caption-wrap"><a class="navbar-caption mbr-bold text-secondary display-5" href="#top"><span>Twimbit</span></a></span> -->
                 </div>
+
                 <div class="align-left">
                     <h1 class="align-right"><img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt=""></h1>
                 </div>
