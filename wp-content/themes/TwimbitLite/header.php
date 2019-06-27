@@ -369,7 +369,7 @@
         }
 
         .gallery-img-wrap amp-img {
-            height: 100%;
+            height: 250px;
         }
 
         .gallery-img-wrap:after {
@@ -547,6 +547,16 @@
                 left: 0;
             }
         }
+            .wrapper {
+                padding-left: 6px;
+                padding-right: 6px;
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(20rem,1fr));
+                flex-direction: column;
+                grid-gap: 15px;
+                flex-wrap: wrap;
+                color: #444;
+            }
 
         amp-image-lightbox a.control {
             position: absolute;
@@ -1349,7 +1359,7 @@
 
         @media (min-width: 1200px) {
             .container {
-                max-width: 1140px;
+                max-width: 1200px;
             }
         }
 
@@ -3036,19 +3046,20 @@
             background-color: #f4f8ff;
         }
 
-        .card {
-            position: relative;
-            display: -ms-flexbox;
-            display: flex;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            min-width: 0;
-            word-wrap: break-word;
-            background-color: #fff;
-            background-clip: border-box;
-            border: 1px solid rgba(0, 0, 0, .125);
-            border-radius: .25rem
-        }
+            .card {
+                /* background-color: #444; */
+                color: #fff;
+                border-radius: 5px;
+                padding: 0;
+                margin: 5px;
+                margin: 0;
+                width: 150px;
+                width: 100%;
+                height: 200px;
+                position: relative;
+                overflow: hidden;
+                /* box-shadow: 2px 2px 4px #aaa; */
+            }
 
         .card>hr {
             margin-right: 0;
@@ -3796,22 +3807,19 @@
         .col-5 {
             -webkit-box-flex: 0;
             -ms-flex: 0 0 41.666667%;
-            flex: 0 0 41.666667%;
-            max-width: 41.666667%
+            flex: 0 0 30%;
         }
 
         .col-6 {
             -webkit-box-flex: 0;
             -ms-flex: 0 0 50%;
-            flex: 0 0 50%;
-            max-width: 50%
+            flex: 0 0 70%;
         }
 
         .col-7 {
             -webkit-box-flex: 0;
             -ms-flex: 0 0 58.333333%;
-            flex: 0 0 58.333333%;
-            max-width: 58.333333%
+            flex: 0 0 70%;
         }
 
         .col-8 {
@@ -3894,27 +3902,30 @@
             .card-badge {
                 position: relative;
                 top: -3.5rem;
-                height: 6rem;
-                background-color: whitesmoke;
+                height: fit-content;
+                padding: 5px;
+                background-color: #EAEFF2;
                 border-radius: 8px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                border: 1px solid #ccc;
             }
 
             .card-badge-text {
-                font-size: 1rem;
-                font-weight: 500;
+                font-size: 16px;
+                font-weight: 400;
                 color: grey;
                 margin-top: 0.5rem;
             }
 
             .img-cat {
                 position: relative;
-                width: 40%;
-                height: 64px;
-                left: 30%;
-
+                width: 100%;
+                /* height: 64px; */
+                padding: 5px 10px 0px 10px;
+                /* margin: 5px; */
+                /* left: 15%; */
             }
+
+
 
             .category-caption {
                 position: relative;
@@ -3937,25 +3948,27 @@
             .card-badge {
                 position: relative;
                 top: -3.5rem;
-                height: 8rem;
-                background-color: whitesmoke;
+                height: fit-content;
+                padding: 5px;
+                background-color: #EAEFF2;
                 border-radius: 8px;
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                border: 1px solid #ccc;
             }
 
             .card-badge-text {
-                font-size: 1.5rem;
-                font-weight: 500;
+                font-size: 16px;
+                font-weight: 400;
                 color: grey;
                 margin-top: 0.5rem;
             }
 
             .img-cat {
                 position: relative;
-                width: 40%;
-                height: 64px;
-                left: 30%;
+                width: 100%;
+                /* height: 64px; */
+                padding: 5px 10px 0px 10px;
+                /* margin: 5px; */
+                /* left: 15%; */
 
             }
 
@@ -3974,7 +3987,8 @@
             }
 
             .cards .card {
-                width: 20rem;
+                width: 100%;
+                margin:10px;
             }
 
             .d-flex {
@@ -3983,13 +3997,10 @@
             }
 
             .card-title {
-                font-size: 1.3rem;
-                font-weight: 800;
+                font-size: 21px;
+                font-weight: bold;
             }
 
-            .card-badge {
-                height: 7rem;
-            }
         }
     </style>
 

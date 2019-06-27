@@ -88,18 +88,18 @@ $get_event = get_posts($event_args);
 
 <!-- Feeds cards -->
 <section id="cards-feed" style="background-color:whitesmoke;">
-	<div class="container mb4">
+	<div class="container  mb4">
 
-		<div class="mbr-row m1 justify-content-center">
+		<div class="wrapper">
 			<?php
 			foreach ($get_post as $val) {
 				$post_img = get_the_post_thumbnail_url($val);
 				$post_url = get_the_permalink($val);
 				$post_title = get_the_title($val);
 				?>
-				<div class="mbr-col-sm-12 mbr-col-md-8 mbr-col-lg-4 cards d-flex" style="padding:0;">
-					<div class="card mb3" style="border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
-						<amp-img style="border-radius:10px;" src="<?php
+				<div class="cards" style="padding:0;">
+					<div class="mb3" style="border-radius:10px;box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+						<amp-img style="border-radius:10px; height: 300px; transform: translateX(-68.8333px)scaleY(1)scaleX(1.73188)scaleY(1.73188)scaleX(1)scale(var(--hover-scale));" src="<?php
 																	if ($post_img) {
 																		print $post_img;
 																	} else {
@@ -141,8 +141,9 @@ $get_event = get_posts($event_args);
 													} else if (get_post_type($val) == "explore") {
 														print content_url() . '/themes/TwimbitLite/src/timeline.svg';
 													}  ?>" alt="sdfdsf" class="img-cat">
-										<h2 class="category-caption">#Category</h2>
+
 									</div>
+                                    <h2 class="category-caption">#Category</h2>
 
 								</div>
 							</div>
