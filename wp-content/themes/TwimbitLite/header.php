@@ -20,6 +20,7 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
 
 
 
@@ -96,6 +97,79 @@
     <style amp-custom>
         amp-carousel .i-amphtml-scrollable-carousel-container::-webkit-scrollbar {
             display: none;
+        }
+
+        :root {
+            --color-primary: #005AF0;
+            --space-1: .5rem;
+            /* 8px */
+            --space-4: 2rem;
+            /* 32px */
+        }
+
+        /* Styles for the flex layout based tabs */
+        amp-selector[role=tablist].tabs-with-flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        amp-selector[role=tablist].tabs-with-flex [role=tab] {
+            flex-grow: 1;
+            /* custom styling, feel free to change */
+            text-align: center;
+            padding: var(--space-1);
+        }
+
+        amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
+            outline: none;
+            /* custom styling, feel free to change */
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        amp-selector[role=tablist].tabs-with-flex [role=tabpanel] {
+            display: none;
+            width: 100%;
+            order: 1;
+            /* must be greater than the order of the tab buttons to flex to the next line */
+            /* custom styling, feel free to change */
+            padding: var(--space-4);
+        }
+
+        amp-selector[role=tablist].tabs-with-flex [role=tab][selected]+[role=tabpanel] {
+            display: block;
+        }
+
+        /* Styles for the selector based tabs */
+        amp-selector[role=tablist].tabs-with-selector {
+            display: flex;
+        }
+
+        amp-selector[role=tablist].tabs-with-selector [role=tab][selected] {
+            outline: none;
+            /* custom styling, feel free to change */
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        amp-selector[role=tablist].tabs-with-selector {
+            display: flex;
+        }
+
+        amp-selector[role=tablist].tabs-with-selector [role=tab] {
+            /* custom styling, feel free to change */
+            width: 100%;
+            text-align: center;
+            padding: var(--space-1);
+        }
+
+        amp-selector.tabpanels [role=tabpanel] {
+            display: none;
+            /* custom styling, feel free to change */
+            padding: var(--space-4);
+        }
+
+        amp-selector.tabpanels [role=tabpanel][selected] {
+            outline: none;
+            display: block;
         }
 
         div,
@@ -551,16 +625,17 @@
                 left: 0;
             }
         }
-            .wrapper {
-                padding-left: 6px;
-                padding-right: 6px;
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(20rem,1fr));
-                flex-direction: column;
-                grid-gap: 30px;
-                flex-wrap: wrap;
-                color: #444;
-            }
+
+        .wrapper {
+            padding-left: 6px;
+            padding-right: 6px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+            flex-direction: column;
+            grid-gap: 30px;
+            flex-wrap: wrap;
+            color: #444;
+        }
 
         amp-image-lightbox a.control {
             position: absolute;
@@ -3050,20 +3125,20 @@
             background-color: #f4f8ff;
         }
 
-            .card {
-                /* background-color: #444; */
-                color: #fff;
-                border-radius: 5px;
-                padding: 0;
-                margin: 5px;
-                margin: 0;
-                width: 150px;
-                width: 100%;
-                height: 200px;
-                position: relative;
-                overflow: hidden;
-                /* box-shadow: 2px 2px 4px #aaa; */
-            }
+        .card {
+            /* background-color: #444; */
+            color: #fff;
+            border-radius: 5px;
+            padding: 0;
+            margin: 5px;
+            margin: 0;
+            width: 150px;
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+            /* box-shadow: 2px 2px 4px #aaa; */
+        }
 
         .card>hr {
             margin-right: 0;
@@ -3996,7 +4071,7 @@
 
             .cards .card {
                 width: 100%;
-                margin:10px;
+                margin: 10px;
             }
 
             .d-flex {
@@ -4017,7 +4092,8 @@
             }
         }
 
-        .search {width: fit-content;
+        .search {
+            width: fit-content;
             height: 36px;
             background: #fafafa;
             /* border: 0.5px solid #707070; */
@@ -4025,7 +4101,7 @@
             border-radius: 20px;
         }
 
-        #searchTerm{
+        #searchTerm {
             border: none;
             margin-left: 20px;
             background: transparent;
@@ -4076,15 +4152,15 @@
                 <div class="mr-auto d-sm-none d-md-none">
                     <img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png'; ?>" alt="">
                 </div>
-                
-                    <form action="#">
-                        <div class="search d-flex">
-                            <input type="text" placeholder="Search.." name="s" id="searchTerm">
-                            <button type="submit"  href="#"  style="    border: none;
+
+                <form action="#">
+                    <div class="search d-flex">
+                        <input type="text" placeholder="Search.." name="s" id="searchTerm">
+                        <button type="submit" href="#" style="    border: none;
     background: none;"><img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" style="padding-right: 10px; " alt=""></button>
-                        </div>
-                    </form>
-                
+                    </div>
+                </form>
+
                 <div class="navbar-brand mx-auto">
                     <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="ml2 d-lg-none" alt="Example logo image"></amp-img>
 
@@ -4093,14 +4169,21 @@
                 </div>
 
                 <div class="d-flex desktop-tool">
-                    <a href="#" class="p1 d-flex">
-                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>" alt="">
-                        <p>Feed</p>
-                    </a>
-                    <a href="#" class="p1 d-flex">
-                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>" alt="">
-                        <p>Explore</p>
-                    </a>
+                    <amp-selector class="tabs-with-selector" role="tablist" on="select:myTabPanels.toggle(index=event.targetOption, value=true)">
+                        <div id="sample3-tab1" role="tab" aria-controls="sample3-tabpanel1" option="0" selected>
+                            <a href="#" class="p1 d-flex">
+                                <img src="<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>" alt="">
+                                <p>Feed</p>
+                            </a>
+                        </div>
+                        <div id="sample3-tab2" role="tab" aria-controls="sample3-tabpanel2" option="1">
+                            <a href="#" class="p1 d-flex">
+                                <img src="<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>" alt="">
+                                <p>Explore</p>
+                            </a>
+                        </div>
+                    </amp-selector>
+
                     <a href="#" on="tap:sidebar.toggle" class="p1 d-flex">
                         <img src="<?php print content_url() . '/themes/TwimbitLite/src/menu.svg'; ?>" alt="">
                         <p>Menu</p>
