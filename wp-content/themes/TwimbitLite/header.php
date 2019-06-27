@@ -20,7 +20,6 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
 
 
 
@@ -97,79 +96,6 @@
     <style amp-custom>
         amp-carousel .i-amphtml-scrollable-carousel-container::-webkit-scrollbar {
             display: none;
-        }
-
-        :root {
-            --color-primary: #005AF0;
-            --space-1: .5rem;
-            /* 8px */
-            --space-4: 2rem;
-            /* 32px */
-        }
-
-        /* Styles for the flex layout based tabs */
-        amp-selector[role=tablist].tabs-with-flex {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        amp-selector[role=tablist].tabs-with-flex [role=tab] {
-            flex-grow: 1;
-            /* custom styling, feel free to change */
-            text-align: center;
-            padding: var(--space-1);
-        }
-
-        amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
-            outline: none;
-            /* custom styling, feel free to change */
-            border-bottom: 2px solid var(--color-primary);
-        }
-
-        amp-selector[role=tablist].tabs-with-flex [role=tabpanel] {
-            display: none;
-            width: 100%;
-            order: 1;
-            /* must be greater than the order of the tab buttons to flex to the next line */
-            /* custom styling, feel free to change */
-            padding: var(--space-4);
-        }
-
-        amp-selector[role=tablist].tabs-with-flex [role=tab][selected]+[role=tabpanel] {
-            display: block;
-        }
-
-        /* Styles for the selector based tabs */
-        amp-selector[role=tablist].tabs-with-selector {
-            display: flex;
-        }
-
-        amp-selector[role=tablist].tabs-with-selector [role=tab][selected] {
-            outline: none;
-            /* custom styling, feel free to change */
-            border-bottom: 2px solid var(--color-primary);
-        }
-
-        amp-selector[role=tablist].tabs-with-selector {
-            display: flex;
-        }
-
-        amp-selector[role=tablist].tabs-with-selector [role=tab] {
-            /* custom styling, feel free to change */
-            width: 100%;
-            text-align: center;
-            padding: var(--space-1);
-        }
-
-        amp-selector.tabpanels [role=tabpanel] {
-            display: none;
-            /* custom styling, feel free to change */
-            padding: var(--space-4);
-        }
-
-        amp-selector.tabpanels [role=tabpanel][selected] {
-            outline: none;
-            display: block;
         }
 
         div,
@@ -4129,10 +4055,7 @@
 
             .category-caption {
                 position: relative;
-                top: -50px;
-                font-size: 14px;
-                font-weight: 300;
-                font-style: italic;
+                top: 30px;
             }
 
             .story-carousel {
