@@ -619,22 +619,92 @@
             height: calc(100% - 20px);
             top: 40px;
         }
-
+        .masonry-wrapper {
+            padding: 1.5em;
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+        }
         @media (max-width: 768px) {
             .separline:before {
                 left: 0;
             }
         }
 
-        .wrapper {
-            padding-left: 6px;
-            padding-right: 6px;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-            flex-direction: column;
-            grid-gap: 30px;
-            flex-wrap: wrap;
-            color: #444;
+        .masonry-wrapper {
+            padding: 1.5em;
+            max-width: 1200px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .masonry {
+            columns: 1;
+            column-gap: 20px;
+        }
+
+        .masonry-item {
+            border-radius: 10px;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media only screen and (max-width: 1023px) and (min-width: 768px) {
+            .masonry {
+                columns: 2;
+            }
+        }
+
+        @media only screen and (min-width: 1024px) {
+            .masonry {
+                columns: 3;
+            }
+        }
+
+        .masonry-item,
+        .masonry-content {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .masonry-item {
+            border-radius:10px;
+            box-shadow:0px 3px 20px 0 rgba(0,0,0,0.2);
+            transition: filter .25s ease-in-out;
+        }
+
+        .masonry-item:hover {
+            filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, .3));
+            border-radius: 10px;
+        }
+
+        .masonry-content {
+            overflow: hidden;
+        }
+
+        .masonry-item {
+            border-radius: 10px;
+            color: #111111;
+            background-color: #f9f9f9;
+        }
+
+        .masonry-title,
+        .masonry-description {
+            margin: 0;
+        }
+
+        .masonry-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1rem 1.5rem;
+        }
+
+        .masonry-description {
+            padding: 1.5rem;
+            font-size: .75rem;
+            border-top: 1px solid rgba(0, 0, 0, .05);
         }
 
         amp-image-lightbox a.control {
@@ -1366,6 +1436,7 @@
 
         div.placeholder {
             z-index: 4;
+            border-radius: 10px;
             background: rgba(255, 255, 255, 0.5);
         }
 
@@ -1408,6 +1479,7 @@
 
         .placeholder-loader .amp-active>div {
             display: none;
+            box-radius:10px;
         }
 
         .container {
@@ -3125,20 +3197,14 @@
             background-color: #f4f8ff;
         }
 
-        .card {
-            /* background-color: #444; */
-            color: #fff;
-            border-radius: 5px;
-            padding: 0;
-            margin: 5px;
-            margin: 0;
-            width: 150px;
-            width: 100%;
-            height: 200px;
-            position: relative;
-            overflow: hidden;
-            /* box-shadow: 2px 2px 4px #aaa; */
-        }
+            .card {
+                /* background-color: #444; */
+                background-color: #eee;
+                display: inline-block;
+                margin: 0 0 1em;
+                width: 100%;
+                /* box-shadow: 2px 2px 4px #aaa; */
+            }
 
         .card>hr {
             margin-right: 0;
@@ -3160,7 +3226,11 @@
         }
 
         .card-text:last-child {
-            margin-bottom: 0
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 16px;
+            color: #ababab;
+            font-weight: 300;
         }
 
         .cid-r7Se9R5zrE .icons-list .iconfont-wrapper {
@@ -4012,8 +4082,10 @@
 
             .category-caption {
                 position: relative;
-                top: 10px;
-                font-size: 1rem;
+                top: -50px;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
             }
 
             .story-carousel {
@@ -4057,7 +4129,10 @@
 
             .category-caption {
                 position: relative;
-                top: 30px;
+                top: -50px;
+                font-size: 14px;
+                font-weight: 300;
+                font-style: italic;
             }
 
             .story-carousel {
@@ -4071,7 +4146,7 @@
 
             .cards .card {
                 width: 100%;
-                margin: 10px;
+                margin:10px;
             }
 
             .d-flex {
@@ -4080,8 +4155,8 @@
             }
 
             .card-title {
-                font-size: 21px;
-                font-weight: bold;
+                font-size: 18px;
+                font-weight: 500;
             }
 
         }
@@ -4092,8 +4167,7 @@
             }
         }
 
-        .search {
-            width: fit-content;
+        .search {width: fit-content;
             height: 36px;
             background: #fafafa;
             /* border: 0.5px solid #707070; */
@@ -4101,7 +4175,7 @@
             border-radius: 20px;
         }
 
-        #searchTerm {
+        #searchTerm{
             border: none;
             margin-left: 20px;
             background: transparent;
@@ -4152,15 +4226,15 @@
                 <div class="mr-auto d-sm-none d-md-none">
                     <img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png'; ?>" alt="">
                 </div>
-
-                <form action="#">
-                    <div class="search d-flex">
-                        <input type="text" placeholder="Search.." name="s" id="searchTerm">
-                        <button type="submit" href="#" style="    border: none;
+                
+                    <form action="#">
+                        <div class="search d-flex">
+                            <input type="text" placeholder="Search.." name="s" id="searchTerm">
+                            <button type="submit"  href="#"  style="    border: none;
     background: none;"><img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" style="padding-right: 10px; " alt=""></button>
-                    </div>
-                </form>
-
+                        </div>
+                    </form>
+                
                 <div class="navbar-brand mx-auto">
                     <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="ml2 d-lg-none" alt="Example logo image"></amp-img>
 
@@ -4169,21 +4243,14 @@
                 </div>
 
                 <div class="d-flex desktop-tool">
-                    <amp-selector class="tabs-with-selector" role="tablist" on="select:myTabPanels.toggle(index=event.targetOption, value=true)">
-                        <div id="sample3-tab1" role="tab" aria-controls="sample3-tabpanel1" option="0" selected>
-                            <a href="#" class="p1 d-flex">
-                                <img src="<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>" alt="">
-                                <p>Feed</p>
-                            </a>
-                        </div>
-                        <div id="sample3-tab2" role="tab" aria-controls="sample3-tabpanel2" option="1">
-                            <a href="#" class="p1 d-flex">
-                                <img src="<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>" alt="">
-                                <p>Explore</p>
-                            </a>
-                        </div>
-                    </amp-selector>
-
+                    <a href="#" class="p1 d-flex">
+                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>" alt="">
+                        <p>Feed</p>
+                    </a>
+                    <a href="#" class="p1 d-flex">
+                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>" alt="">
+                        <p>Explore</p>
+                    </a>
                     <a href="#" on="tap:sidebar.toggle" class="p1 d-flex">
                         <img src="<?php print content_url() . '/themes/TwimbitLite/src/menu.svg'; ?>" alt="">
                         <p>Menu</p>
