@@ -16,10 +16,10 @@
 <!-- .site-footer -->
 <footer id="colophon" class="site-footer footer_amp tabs_bottom d-lg-none" role="contentinfo">
 
-    <a href="http://localhost/app-theme/" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>');">
+    <a on="tap:myTabPanels.toggle(index=0, value=true)" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>');">
 
     </a>
-    <a href="http://localhost/app-theme/explore" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>');">
+    <a on="tap:myTabPanels.toggle(index=1, value=true)" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>');">
 
     </a>
     <a on="tap:sidebar.toggle" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/menu.svg'; ?>');">

@@ -1417,8 +1417,8 @@
             padding-right: 1rem;
             padding-left: 1rem;
             width: 100%;
-            /* margin-right: auto;
-            margin-left: auto; */
+            margin-right: auto;
+            margin-left: auto;
         }
 
         @media (max-width: 767px) {
@@ -4226,6 +4226,28 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #b30000;
         }
+
+        .section-heading-carousel {
+            height: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 3px 20px 0 rgba(0, 0, 0, 0.2);
+
+        }
+
+        .section-heading-carousel div {
+            border-radius: 10px;
+
+        }
+
+        .section-heading-car amp-carousel {
+            --arrow-color: green;
+
+            --dots: {
+                opacity: 50%;
+                color: blue;
+            }
+        }
     </style>
 
 </head>
@@ -4292,9 +4314,7 @@
                                 <p>Feed</p>
                             </a>
                         </div>
-                        <div id="sample3-tab2" role="tab" aria-controls="sample3-tabpanel2" option="1" style="
-    margin-right: 25px;
-">
+                        <div id="sample3-tab2" role="tab" aria-controls="sample3-tabpanel2" option="1">
                             <a class="p1 d-flex">
                                 <img src="<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>" alt="">
                                 <p>Explore</p>
