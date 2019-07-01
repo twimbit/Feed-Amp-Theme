@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the footer
  *
@@ -10,10 +11,10 @@
  */
 ?>
 
-</div><!-- .site-content -->
+
 <!--bottom navigation bar-->
 <!-- .site-footer -->
-<footer id="colophon" class="site-footer footer_amp tabs_bottom" role="contentinfo" >
+<footer id="colophon" class="site-footer footer_amp tabs_bottom d-lg-none" role="contentinfo">
 
     <a href="http://localhost/app-theme/" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>');">
 
@@ -30,4 +31,5 @@
 
 <?php wp_footer(); ?>
 </body>
+
 </html>
