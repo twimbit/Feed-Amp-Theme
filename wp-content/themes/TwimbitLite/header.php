@@ -119,6 +119,10 @@
             font: inherit;
         }
 
+        html {
+            /* overflow-y: scroll; */
+        }
+
         * {
             box-sizing: border-box;
             outline: none;
@@ -521,9 +525,7 @@
                 left: 0;
             }
 
-            .d-md-none {
-                display: none !important
-            }
+
 
         }
 
@@ -1415,8 +1417,8 @@
             padding-right: 1rem;
             padding-left: 1rem;
             width: 100%;
-            margin-right: auto;
-            margin-left: auto;
+            /* margin-right: auto;
+            margin-left: auto; */
         }
 
         @media (max-width: 767px) {
@@ -3886,6 +3888,7 @@
             -webkit-box-flex: 0;
             -ms-flex: 0 0 41.666667%;
             flex: 0 0 30%;
+            padding-left: 0;
         }
 
         .col-6 {
@@ -4028,6 +4031,9 @@
         }
 
         @media (min-width: 768px) {
+            .d-md-none {
+                display: none !important
+            }
 
             .card-badge {
                 position: relative;
@@ -4085,6 +4091,12 @@
                 font-weight: 500;
             }
 
+            .desktop-tool {
+                margin-left: 8%;
+                margin-right: 0 !important;
+                margin-bottom: 0% !important;
+            }
+
         }
 
         @media (min-width: 992px) {
@@ -4106,6 +4118,7 @@
             border: none;
             margin-left: 20px;
             background: transparent;
+            width: 78%;
 
         }
 
@@ -4116,7 +4129,7 @@
         }
 
         :root {
-            --color-primary: #005AF0;
+            --color-primary: #f16b6f;
             --space-1: .5rem;
             /* 8px */
             --space-4: 2rem;
@@ -4133,7 +4146,7 @@
             flex-grow: 1;
             /* custom styling, feel free to change */
             text-align: center;
-            padding: var(--space-1);
+            /* padding: var(--space-1); */
         }
 
         amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
@@ -4148,7 +4161,7 @@
             order: 1;
             /* must be greater than the order of the tab buttons to flex to the next line */
             /* custom styling, feel free to change */
-            padding: var(--space-4);
+            /* padding: var(--space-4); */
         }
 
         amp-selector[role=tablist].tabs-with-flex [role=tab][selected]+[role=tabpanel] {
@@ -4174,18 +4187,44 @@
             /* custom styling, feel free to change */
             width: 100%;
             text-align: center;
-            padding: var(--space-1);
+            /* padding: var(--space-1); */
         }
 
         amp-selector.tabpanels [role=tabpanel] {
             display: none;
             /* custom styling, feel free to change */
-            padding: var(--space-4);
+            /* padding: var(--space-4); */
         }
 
         amp-selector.tabpanels [role=tabpanel][selected] {
             outline: none;
             display: block;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 6px;
+            position: absolute !important;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+
+
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #f16b6f;
+            border-radius: 10px;
+            position: absolute !important;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b30000;
         }
     </style>
 
@@ -4223,11 +4262,12 @@
         <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top" style="box-shadow: 0 15px 30px 0 rgba(0,0,0,0.2);">
             <div class="menu-container container">
                 <!-- SHOW LOGO -->
-                <div class="mr-auto d-sm-none d-md-none">
+                <div class="d-sm-none" style="margin-left:10%">
                     <img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png'; ?>" alt="">
                 </div>
 
-                <form action="#" class="d-sm-none">
+                <form action="#" class="d-sm-none" style="
+    margin-left: 5%">
                     <div class="search d-flex">
                         <input type="text" placeholder="Search.." name="s" id="searchTerm">
                         <button type="submit" href="#" style="    border: none;
@@ -4235,7 +4275,7 @@
                     </div>
                 </form>
 
-                <div class="navbar-brand mx-auto">
+                <div class="navbar-brand mx-auto d-md-none">
                     <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/download.png'; ?>" width="40" height="40" layout="fixed" class="ml2 d-lg-none" alt="Example logo image"></amp-img>
 
 
@@ -4244,14 +4284,18 @@
 
                 <div class="d-flex desktop-tool d-sm-none">
                     <amp-selector class="tabs-with-selector" role="tablist" on="select:myTabPanels.toggle(index=event.targetOption, value=true)">
-                        <div id="sample3-tab1" role="tab" aria-controls="sample3-tabpanel1" option="0" selected>
-                            <a href="#" class="p1 d-flex">
+                        <div id="sample3-tab1" role="tab" aria-controls="sample3-tabpanel1" option="0" selected style="
+    margin-right: 25px;
+">
+                            <a class="p1 d-flex">
                                 <img src="<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>" alt="">
                                 <p>Feed</p>
                             </a>
                         </div>
-                        <div id="sample3-tab2" role="tab" aria-controls="sample3-tabpanel2" option="1">
-                            <a href="#" class="p1 d-flex">
+                        <div id="sample3-tab2" role="tab" aria-controls="sample3-tabpanel2" option="1" style="
+    margin-right: 25px;
+">
+                            <a class="p1 d-flex">
                                 <img src="<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>" alt="">
                                 <p>Explore</p>
                             </a>
@@ -4263,7 +4307,7 @@
                     </a>
                 </div>
 
-                <div class="align-left d-lg-none">
+                <div class="align-left d-lg-none d-md-none">
                     <h1 class="align-right"><img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt=""></h1>
                 </div>
 
