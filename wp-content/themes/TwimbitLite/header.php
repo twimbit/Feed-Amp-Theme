@@ -3944,7 +3944,7 @@
             color: #A9A9A9;
         }
 
-        @media only screen and (max-width: 450px) {
+        @media only screen and (max-width: 768px) {
 
             /* code will run when screen size is 450 or smaller */
             .d-sm-none {
@@ -4030,6 +4030,19 @@
                 height: 95px;
                 width: 95px;
             }
+
+            .section-heading-carousel {
+                height: 415px;
+                background-color: white;
+                border-radius: 10px;
+                box-shadow: 0px 3px 20px 0 rgba(0, 0, 0, 0.2);
+
+            }
+
+            .section-heading-carousel .section-img-1 {
+                border-radius: 10px !important;
+                height: 300px;
+            }
         }
 
         @media (min-width: 768px) {
@@ -4039,7 +4052,8 @@
 
             .card-badge {
                 position: relative;
-                top: -3.5rem;
+                top: -2.5rem;
+                right: 18px;
                 height: fit-content;
                 padding: 5px;
                 background-color: #EAEFF2;
@@ -4047,18 +4061,30 @@
                 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             }
 
+            .col-md-7 {
+                -ms-flex: 0 0 58.333333%;
+                flex: 0 0 58.333333%;
+                max-width: 58.333333%
+            }
+
+            .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%
+            }
+
             .card-badge-text {
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: 400;
                 color: grey;
-                margin-top: 0.5rem;
+                /* margin-top: 0.5rem; */
             }
 
             .img-cat {
                 position: relative;
                 width: 100%;
                 /* height: 64px; */
-                padding: 5px 10px 0px 10px;
+                padding: 3px 14px 0px 14px;
                 /* margin: 5px; */
                 /* left: 15%; */
 
@@ -4066,7 +4092,10 @@
 
             .category-caption {
                 position: relative;
-                top: 30px;
+                top: -22px;
+                right: 22px;
+                font-size: 13px;
+
             }
 
             .story-carousel {
@@ -4091,6 +4120,7 @@
             .card-title {
                 font-size: 18px;
                 font-weight: 500;
+                margin-top: 10px;
             }
 
             .desktop-tool {
@@ -4099,11 +4129,49 @@
                 margin-bottom: 0% !important;
             }
 
+            .section-heading-carousel {
+                height: 300px;
+
+            }
+
+            .section-heading-carousel-div {
+                width: 200px;
+                box-shadow: -1px 8px 13px 0 rgba(0, 0, 0, 0.2);
+                margin-bottom: 20px;
+                margin-left: 12px !important;
+                border-radius: 10px;
+                height: 300px;
+
+            }
+
+            .section-heading-carousel .section-img-1 {
+                border-radius: 10px !important;
+                height: 200px;
+                width: 200px;
+            }
+
+
         }
 
         @media (min-width: 992px) {
             .d-lg-none {
                 display: none !important
+            }
+
+            .section-heading-carousel-div {
+                width: 250px;
+                margin-bottom: 30px;
+                height: 370px;
+            }
+
+            .section-heading-carousel .section-img-1 {
+                border-radius: 10px !important;
+                height: 250px;
+                width: 250px;
+            }
+
+            .cat-section {
+                margin: 100px 0px 30px 0px !important;
             }
         }
 
@@ -4125,83 +4193,13 @@
         }
 
         .desktop-tool {
-
+            position: relative;
+            bottom: -13px;
             margin-right: 15%;
             margin-bottom: 0% !important;
         }
 
-        :root {
-            --color-primary: #f16b6f;
-            --space-1: .5rem;
-            /* 8px */
-            --space-4: 2rem;
-            /* 32px */
-        }
 
-        /* Styles for the flex layout based tabs */
-        amp-selector[role=tablist].tabs-with-flex {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        amp-selector[role=tablist].tabs-with-flex [role=tab] {
-            flex-grow: 1;
-            /* custom styling, feel free to change */
-            text-align: center;
-            /* padding: var(--space-1); */
-        }
-
-        amp-selector[role=tablist].tabs-with-flex [role=tab][selected] {
-            outline: none;
-            /* custom styling, feel free to change */
-            border-bottom: 2px solid var(--color-primary);
-        }
-
-        amp-selector[role=tablist].tabs-with-flex [role=tabpanel] {
-            display: none;
-            width: 100%;
-            order: 1;
-            /* must be greater than the order of the tab buttons to flex to the next line */
-            /* custom styling, feel free to change */
-            /* padding: var(--space-4); */
-        }
-
-        amp-selector[role=tablist].tabs-with-flex [role=tab][selected]+[role=tabpanel] {
-            display: block;
-        }
-
-        /* Styles for the selector based tabs */
-        amp-selector[role=tablist].tabs-with-selector {
-            display: flex;
-        }
-
-        amp-selector[role=tablist].tabs-with-selector [role=tab][selected] {
-            outline: none;
-            /* custom styling, feel free to change */
-            border-bottom: 2px solid var(--color-primary);
-        }
-
-        amp-selector[role=tablist].tabs-with-selector {
-            display: flex;
-        }
-
-        amp-selector[role=tablist].tabs-with-selector [role=tab] {
-            /* custom styling, feel free to change */
-            width: 100%;
-            text-align: center;
-            /* padding: var(--space-1); */
-        }
-
-        amp-selector.tabpanels [role=tabpanel] {
-            display: none;
-            /* custom styling, feel free to change */
-            /* padding: var(--space-4); */
-        }
-
-        amp-selector.tabpanels [role=tabpanel][selected] {
-            outline: none;
-            display: block;
-        }
 
         /* width */
         ::-webkit-scrollbar {
@@ -4229,26 +4227,29 @@
             background: #b30000;
         }
 
-        .section-heading-carousel {
-            height: 400px;
-            background-color: white;
+        .sub-cat {
+            height: 150px;
+        }
+
+        .sub-cat img {
+            width: 150px;
+            height: 150px;
             border-radius: 10px;
-            box-shadow: 0px 3px 20px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .sub-cat p {
+            position: relative;
+            top: -143px;
+            left: 15px;
+            color: white;
 
         }
 
-        .section-heading-carousel div {
-            border-radius: 10px;
-
+        .desktop-tool a:active {
+            border-bottom: 3px solid #f16c70;
         }
-
-        .section-heading-car amp-carousel {
-            --arrow-color: green;
-
-            --dots: {
-                opacity: 50%;
-                color: blue;
-            }
+        .desktop-tool a:focus {
+            border-bottom: 3px solid #f16c70;
         }
     </style>
 
