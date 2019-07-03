@@ -20,8 +20,10 @@
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
-    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
     <style amp-boilerplate>
@@ -120,7 +122,7 @@
         }
 
         html {
-            /* overflow-y: scroll; */
+            overflow-y: scroll;
         }
 
         * {
@@ -4284,7 +4286,7 @@
         <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top" style="box-shadow: 0 15px 30px 0 rgba(0,0,0,0.2);">
             <div class="menu-container container">
                 <!-- SHOW LOGO -->
-                <div class="d-sm-none" style="margin-left:10%">
+                <div class="d-sm-none">
                     <img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png'; ?>" alt="">
                 </div>
 
@@ -4305,22 +4307,16 @@
                 </div>
 
                 <div class="d-flex desktop-tool d-sm-none">
-                    <amp-selector class="tabs-with-selector" role="tablist" on="select:myTabPanels.toggle(index=event.targetOption, value=true)">
-                        <div id="sample3-tab1" role="tab" aria-controls="sample3-tabpanel1" option="0" selected style="
-    margin-right: 25px;
-">
-                            <a class="p1 d-flex">
-                                <img src="<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>" alt="">
-                                <p>Feed</p>
-                            </a>
-                        </div>
-                        <div id="sample3-tab2" role="tab" aria-controls="sample3-tabpanel2" option="1">
-                            <a class="p1 d-flex">
-                                <img src="<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>" alt="">
-                                <p>Explore</p>
-                            </a>
-                        </div>
-                    </amp-selector>
+                    <a class="p1 d-flex" id="feed">
+                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>" alt="">
+                        <p>Feed</p>
+                    </a>
+                    <a class="p1 d-flex" id="explore">
+                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>" alt="">
+                        <p>Explore</p>
+                    </a>
+
+
                     <a on="tap:sidebar.toggle" class="p1 d-flex">
                         <img src="<?php print content_url() . '/themes/TwimbitLite/src/menu.svg'; ?>" alt="">
                         <p>Menu</p>
