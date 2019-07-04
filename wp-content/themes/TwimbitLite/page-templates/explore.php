@@ -1,5 +1,5 @@
 <?php
-
+get_header();
 /**
  * Template Name: Explore template
  *
@@ -47,7 +47,7 @@ $get_trending = get_posts($trending);
             <hr>
         </div>
         <div class="section-heading-car">
-            <amp-carousel class="section-heading-carousel d-lg-none d-md-none" type="slides" controls>
+            <amp-carousel class="section-heading-carousel d-lg-none d-md-none" type="slides" controls autoplay>
                 <?php
                 foreach ($get_trending as $val) {
                     $trending_img = get_the_post_thumbnail_url($val);
@@ -100,7 +100,7 @@ $get_trending = get_posts($trending);
                 <?php } ?>
 
             </amp-carousel>
-            <amp-carousel class="section-heading-carousel d-sm-none " type="carousel" controls>
+            <amp-carousel class="section-heading-carousel d-sm-none " type="carousel" controls autoplay>
                 <?php
                 foreach ($get_trending as $val) {
                     $trending_img = get_the_post_thumbnail_url($val);
@@ -108,12 +108,13 @@ $get_trending = get_posts($trending);
                     $trending_title = get_the_title($val);
                     ?>
                     <div class="section-heading-carousel-div">
-                        <img class="section-img-1" src="<?php
-                                                        if ($trending_img) {
-                                                            print $trending_img;
-                                                        } else {
-                                                            print content_url() . '/themes/TwimbitLite/src/placeholder.png';
-                                                        }  ?>" layout="responsive">
+                        <amp-img class="section-img-1" src="<?php
+                                                            if ($trending_img) {
+                                                                print $trending_img;
+                                                            } else {
+                                                                print content_url() . '/themes/TwimbitLite/src/placeholder.png';
+                                                            }  ?>">
+                        </amp-img>
 
                         <div class="row">
                             <div class="col-md-7">
@@ -164,7 +165,7 @@ $get_trending = get_posts($trending);
                         $post_img = get_the_post_thumbnail_url($val);
                         ?>
                         <div class="sub-cat-img">
-                            <img src="<?php print $post_img; ?>">
+                            <amp-img src="<?php print $post_img; ?>"></amp-img>
                             <p>Sub-category</p>
                         </div>
                     <?php } ?>
@@ -179,7 +180,7 @@ $get_trending = get_posts($trending);
                         $post_img = get_the_post_thumbnail_url($val);
                         ?>
                         <div class="sub-cat-img">
-                            <img src="<?php print $post_img; ?>" style="border-radius:10px;">
+                            <amp-img src="<?php print $post_img; ?>" style="border-radius:10px;"></amp-img>
                             <p>Sub-category</p>
                         </div>
                     <?php } ?>
@@ -194,7 +195,7 @@ $get_trending = get_posts($trending);
                         $post_img = get_the_post_thumbnail_url($val);
                         ?>
                         <div class="sub-cat-img">
-                            <img src="<?php print $post_img; ?>" style="border-radius:10px;">
+                            <amp-img src="<?php print $post_img; ?>" style="border-radius:10px;"></amp-img>
                             <p>Sub-category</p>
                         </div>
                     <?php } ?>

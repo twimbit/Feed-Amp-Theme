@@ -21,6 +21,7 @@
     <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -3944,6 +3945,8 @@
             color: #A9A9A9;
         }
 
+
+
         @media only screen and (max-width: 768px) {
 
             /* code will run when screen size is 450 or smaller */
@@ -4150,6 +4153,27 @@
                 width: 200px;
             }
 
+            .desktop-tool p {
+                margin-left: 6px;
+                font-size: 15px;
+            }
+
+            .desktop-tool a {
+                margin-left: 7px;
+            }
+
+            .desktop-tool img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .desktop-tool svg {
+                height: 35px;
+                width: 35px;
+                transform: scale(1.2);
+                position: relative !important;
+            }
+
 
         }
 
@@ -4194,7 +4218,7 @@
 
         .desktop-tool {
             position: relative;
-            bottom: -13px;
+            bottom: -8px;
             margin-right: 15%;
             margin-bottom: 0% !important;
         }
@@ -4258,8 +4282,31 @@
         }
 
         .desktop-tool a:hover,
-        .active {
-            border-bottom: 2px solid #f16c70;
+        .active,
+        .active path {
+            border-bottom: 2.5px solid #f16c70;
+            fill: rgb(241, 107, 111) !important;
+        }
+
+        .desktop-tool p {
+            margin-top: 4px;
+        }
+
+        .amp-carousel-button {
+            background-color: rgba(241, 107, 111, 0.54);
+            border-radius: 50%;
+        }
+
+        .section-img-1 img {
+            border-radius: 10px !important;
+        }
+
+        .desktop-tool path {
+            fill: rgb(221, 221, 221);
+        }
+
+        .site-footer path {
+            fill: rgb(241, 107, 111) !important;
         }
     </style>
 
@@ -4318,12 +4365,19 @@
                 </div>
 
                 <div class="d-flex desktop-tool d-sm-none">
-                    <a class="p1 d-flex active" id="feed">
-                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>" alt="">
+
+                    <a class="p1 d-flex tool active" id="feed" href="<?php echo home_url(); ?>">
+                        <svg>
+                            <path d="M 2 26.51701164245605 L 26.82351112365723 26.51701164245605 L 26.82351112365723 22.59750747680664 L 2 22.59750747680664 L 2 26.51701164245605 Z M 25.51700782775879 9.532502174377441 L 3.306500434875488 9.532502174377441 C 2.587925434112549 9.532502174377441 2 10.12042713165283 2 10.83900260925293 L 2 18.67800521850586 C 2 19.39658164978027 2.587925434112549 19.98450660705566 3.306500434875488 19.98450660705566 L 25.51700782775879 19.98450660705566 C 26.2355842590332 19.98450660705566 26.82351112365723 19.39658164978027 26.82351112365723 18.67800521850586 L 26.82351112365723 10.83900260925293 C 26.82351112365723 10.12042713165283 26.2355842590332 9.532502174377441 25.51700782775879 9.532502174377441 Z M 2 3 L 2 6.919501304626465 L 26.82351112365723 6.919501304626465 L 26.82351112365723 3 L 2 3 Z">
+                            </path>
+                        </svg>
                         <p>Feed</p>
                     </a>
-                    <a class="p1 d-flex" id="explore">
-                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/explore.svg'; ?>" alt="">
+                    <a class="p1 d-flex tool" id="explore" href="<?php echo home_url(); ?>/explore">
+                        <svg>
+                            <path d="M 14.39246368408203 27.51700592041016 L 23.0528507232666 27.51700592041016 L 23.0528507232666 17.12454223632813 L 14.39246368408203 17.12454223632813 L 14.39246368408203 27.51700592041016 Z M 4 27.51700592041016 L 12.66038703918457 27.51700592041016 L 12.66038703918457 5 L 4 5 L 4 27.51700592041016 Z M 24.78492736816406 27.51700592041016 L 33.4453125 27.51700592041016 L 33.4453125 17.12454223632813 L 24.78492736816406 17.12454223632813 L 24.78492736816406 27.51700592041016 Z M 14.39246368408203 5 L 14.39246368408203 15.39246273040771 L 33.4453125 15.39246273040771 L 33.4453125 5 L 14.39246368408203 5 Z">
+                            </path>
+                        </svg>
                         <p>Explore</p>
                     </a>
 
@@ -4332,6 +4386,7 @@
                         <img src="<?php print content_url() . '/themes/TwimbitLite/src/menu.svg'; ?>" alt="">
                         <p>Menu</p>
                     </a>
+
                 </div>
 
                 <div class="align-left d-lg-none d-md-none">

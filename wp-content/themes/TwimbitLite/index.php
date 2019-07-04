@@ -40,7 +40,7 @@ $get_post = get_posts($post_args);
 					<div class="title-wrap">
 						<h3 class="mbr-section-title mbr-bold mbr-fonts-style display-2">Stories</h3>
 					</div>
-					<amp-carousel class="story-carousel" type="carousel">
+					<amp-carousel class="story-carousel" type="carousel" controls>
 						<?php
 						foreach ($get_post_for_story as $val) {
 							$story_img = get_the_post_thumbnail_url($val);
