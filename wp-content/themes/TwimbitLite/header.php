@@ -4229,12 +4229,15 @@
 
         .sub-cat {
             height: 150px;
+
         }
 
         .sub-cat img {
             width: 150px;
             height: 150px;
             border-radius: 10px;
+            opacity: 0.5;
+
         }
 
         .sub-cat p {
@@ -4245,11 +4248,18 @@
 
         }
 
-        .desktop-tool a:active {
-            border-bottom: 3px solid #f16c70;
+
+
+        .sub-cat-img {
+            height: 152px;
+            /* border: 1px solid red; */
+            background-color: #000000;
+            border-radius: 10px;
         }
-        .desktop-tool a:focus {
-            border-bottom: 3px solid #f16c70;
+
+        .desktop-tool a:hover,
+        .active {
+            border-bottom: 2px solid #f16c70;
         }
     </style>
 
@@ -4308,7 +4318,7 @@
                 </div>
 
                 <div class="d-flex desktop-tool d-sm-none">
-                    <a class="p1 d-flex" id="feed">
+                    <a class="p1 d-flex active" id="feed">
                         <img src="<?php print content_url() . '/themes/TwimbitLite/src/feed.svg'; ?>" alt="">
                         <p>Feed</p>
                     </a>

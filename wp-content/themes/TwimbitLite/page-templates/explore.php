@@ -164,7 +164,7 @@ $get_trending = get_posts($trending);
                         $post_img = get_the_post_thumbnail_url($val);
                         ?>
                         <div class="sub-cat-img">
-                            <img src="<?php print $post_img; ?>" style="border-radius:10px;">
+                            <img src="<?php print $post_img; ?>">
                             <p>Sub-category</p>
                         </div>
                     <?php } ?>
