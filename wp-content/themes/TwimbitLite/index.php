@@ -70,12 +70,12 @@ $get_post = get_posts($post_args);
 						<div class="masonry-item" style="padding:0;">
 							<div class="mb3" style="">
 								<img style="border-radius:10px !important; 
-												height: 300px; " src="<?php
-																		if ($post_img) {
-																			print $post_img;
-																		} else {
-																			print content_url() . '/themes/TwimbitLite/src/placeholder.png';
-																		}  ?>" layout="responsive" width="348.5446009389671" height="232" alt="" class="placeholder-loader">
+										height: 300px; " src="<?php
+																if ($post_img) {
+																	print $post_img;
+																} else {
+																	print content_url() . '/themes/TwimbitLite/src/placeholder.png';
+																}  ?>" layout="responsive" width="348.5446009389671" height="232" alt="" class="placeholder-loader">
 								<!--							<div placeholder="" class="placeholder">-->
 								<!--								<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">-->
 								<!--									<circle class="big" fill="none" stroke="#c2e0e0" stroke-width="3" stroke-dasharray="230" stroke-dashoffset="230" cx="150" cy="150" r="145"></circle>-->
@@ -87,33 +87,34 @@ $get_post = get_posts($post_args);
 								<div class="card-body">
 									<div class="row">
 										<div class="col-7">
-											<h5 class="card-title mbr-bold mbr-fonts-style display-2"><?php print $post_title; ?></h5>
+											<h5 class="card-title mbr-bold mbr-fonts-style"><?php print mb_strimwidth($post_title, 0, 40, "..."); ?></h5>
 											<p class="card-text" style="font-style:italic"><?php print get_the_excerpt($val); ?></p>
 										</div>
-										<div class="col-5">
-											<div class="card-badge ">
-												<h2 class="align-center card-badge-text">
-													<?php if (get_post_type($val) == "post") {
-														print "Read";
-													} else if (get_post_type($val) == "video") {
-														print "Watch";
-													} else if (get_post_type($val) == "podcast") {
-														print "Listen";
-													} else if (get_post_type($val) == "explore") {
-														print "Explore";
-													}  ?>
-												</h2>
-												<img src="<?php if (get_post_type($val) == "post") {
-																print content_url() . '/themes/TwimbitLite/src/read.svg';
-															} else if (get_post_type($val) == "video") {
-																print content_url() . '/themes/TwimbitLite/src/play.svg';
-															} else if (get_post_type($val) == "podcast") {
-																print content_url() . '/themes/TwimbitLite/src/podcast.svg';
-															} else if (get_post_type($val) == "explore") {
-																print content_url() . '/themes/TwimbitLite/src/timeline.svg';
-															}  ?>" alt="sdfdsf" class="img-cat">
+										<div class="col-5"><a href="<?php print $post_url; ?>">
+												<div class="card-badge ">
+													<h2 class="align-center card-badge-text">
+														<?php if (get_post_type($val) == "post") {
+															print "Read";
+														} else if (get_post_type($val) == "video") {
+															print "Watch";
+														} else if (get_post_type($val) == "podcast") {
+															print "Listen";
+														} else if (get_post_type($val) == "explore") {
+															print "Explore";
+														}  ?>
+													</h2>
+													<img src="<?php if (get_post_type($val) == "post") {
+																	print content_url() . '/themes/TwimbitLite/src/read.svg';
+																} else if (get_post_type($val) == "video") {
+																	print content_url() . '/themes/TwimbitLite/src/play.svg';
+																} else if (get_post_type($val) == "podcast") {
+																	print content_url() . '/themes/TwimbitLite/src/podcast.svg';
+																} else if (get_post_type($val) == "explore") {
+																	print content_url() . '/themes/TwimbitLite/src/timeline.svg';
+																}  ?>" alt="sdfdsf" class="img-cat">
 
-											</div>
+												</div>
+											</a>
 											<h2 class="category-caption">#Category</h2>
 
 										</div>

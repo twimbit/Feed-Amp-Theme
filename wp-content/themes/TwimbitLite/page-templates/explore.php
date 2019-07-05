@@ -47,7 +47,7 @@ $get_trending = get_posts($trending);
             <hr>
         </div>
         <div class="section-heading-car">
-            <amp-carousel class="section-heading-carousel d-lg-none d-md-none" type="slides" controls autoplay>
+            <amp-carousel class="section-heading-carousel d-lg-none d-md-none" type="slides" controls>
                 <?php
                 foreach ($get_trending as $val) {
                     $trending_img = get_the_post_thumbnail_url($val);
@@ -64,7 +64,7 @@ $get_trending = get_posts($trending);
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-7">
-                                    <h5 class="card-title mbr-bold mbr-fonts-style display-2"><?php print $trending_title; ?></h5>
+                                    <h5 class="card-title mbr-bold mbr-fonts-style"><?php print mb_strimwidth($trending_title, 0, 40, "..."); ?></h5>
                                     <p class="card-text" style="font-style:italic"><?php print get_the_excerpt($val); ?></p>
                                 </div>
                                 <div class="col-5">
@@ -204,3 +204,4 @@ $get_trending = get_posts($trending);
         </div>
     </div>
 </section>
+<?php get_footer(); ?>

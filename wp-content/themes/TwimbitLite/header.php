@@ -3992,7 +3992,8 @@
             .card-badge {
                 position: relative;
                 top: -3.5rem;
-                height: fit-content;
+                width: 76%;
+                height: 80%;
                 padding: 5px;
                 background-color: #EAEFF2;
                 border-radius: 8px;
@@ -4008,11 +4009,12 @@
 
             .img-cat {
                 position: relative;
-                width: 100%;
+                width: 52%;
                 /* height: 64px; */
-                padding: 5px 10px 0px 10px;
+                /* padding: 5px 10px 0px 10px; */
                 /* margin: 5px; */
-                /* left: 15%; */
+                left: 23%;
+                height: 41%;
             }
 
 
@@ -4045,6 +4047,20 @@
             .section-heading-carousel .section-img-1 {
                 border-radius: 10px !important;
                 height: 300px;
+            }
+
+            .card-title {
+                /* font-size: 19px; */
+                font-weight: 500;
+
+            }
+
+            .card-text:last-child {
+                margin-bottom: 0;
+                font-size: 14px;
+                line-height: 13px;
+                color: rgb(235, 53, 58);
+                font-weight: 400;
             }
         }
 
@@ -4091,6 +4107,7 @@
                 /* margin: 5px; */
                 /* left: 15%; */
 
+
             }
 
             .category-caption {
@@ -4121,7 +4138,7 @@
             }
 
             .card-title {
-                font-size: 18px;
+                /* font-size: 18px; */
                 font-weight: 500;
                 margin-top: 10px;
             }
@@ -4308,6 +4325,61 @@
         .site-footer path {
             fill: rgb(241, 107, 111) !important;
         }
+
+        .background-overlay {
+            background-color: #000000;
+            opacity: 0.57;
+            transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+
+        }
+
+        .featured-image-text h2 {
+            color: #ffffff;
+            font-size: 25px;
+            font-weight: 600;
+            position: relative;
+            bottom: -194px;
+
+        }
+
+        .featured-image-text {
+            text-align: center;
+        }
+
+        .single-date-name span {
+            color: #969696;
+            padding-left: 5px;
+            margin-right: 8px;
+            margin-left: 8px;
+            font-size: 17px;
+
+        }
+
+        .single-date-name svg {
+            transform: translate(19px, 2.5px);
+            fill: #969696;
+        }
+
+        .separator {
+            margin: 40px 0px;
+            /* border: 1px solid #000000; */
+            border-top-style: dotted;
+            border-top-width: 1px;
+            width: 100%;
+
+        }
+
+        .more-to-explore h1 {
+            color: #000000;
+            font-weight: 600;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
     </style>
 
 </head>
@@ -4338,12 +4410,21 @@
 
         </div>
     </amp-sidebar>
+
     <section class="menu1 menu horizontal-menu cid-qXijZlysdL" id="menu1-o">
 
         <!-- <div class="menu-wrapper"> -->
         <nav class="navbar navbar-dropdown navbar-expand-lg navbar-fixed-top" style="box-shadow: 0 15px 30px 0 rgba(0,0,0,0.2);">
-            <div class="menu-container container">
+            <div class="menu-container container-fluid">
                 <!-- SHOW LOGO -->
+                <?php if (is_singular()) { ?>
+                    <div class="d-lg-none d-md-none">
+                        <a href="javascript:history.go(-1)">
+                            <img src="<?php print content_url() . '/themes/TwimbitLite/src/back.svg'; ?>" alt="">
+                        </a>
+                    </div>
+                <?php } ?>
+
                 <div class="d-sm-none">
                     <img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png'; ?>" alt="">
                 </div>
