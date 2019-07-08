@@ -818,6 +818,11 @@
             padding-left: 1rem
         }
 
+        .pl2-5 {
+            padding-left: 2.5rem
+        }
+
+
         .py2 {
             padding-top: 1rem;
             padding-bottom: 1rem
@@ -2606,9 +2611,9 @@
 
     <section>
         <!-- Start Navbar -->
-        <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr4">
-            <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide pr2">☰</div>
-            <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="110" height="33" layout="fixed" class="my0 mx-auto" alt="Example logo image"></amp-img>
+        <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2-5 pr2">
+            <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" class="my0 mx-auto" alt="Example logo image"></amp-img>
+            <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div>
             <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
                 <ul class="list-reset center m0 p0 flex justify-end nowrap">
                     <!-- Start Dropdown -->
@@ -2656,7 +2661,7 @@
         </header>
 
         <!-- Start Sidebar -->
-        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 md-hide lg-hide" layout="nodisplay">
+        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 md-hide lg-hide" layout="nodisplay" side="right">
             <div class="flex justify-start items-center ampstart-sidebar-header">
                 <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
             </div>

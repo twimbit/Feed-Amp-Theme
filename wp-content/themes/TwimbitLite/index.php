@@ -54,115 +54,40 @@ $get_post = get_posts($post_args);
 <section id="cards-feed">
 	<div class="container mt4">
 		<div class="lg-col-8 md-col-8 xs-col-12">
-			<div class="feed-card">
-				<div class="feed-thumbnail">
-					<amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/cat.jpg'; ?>"></amp-img>
-					<div class="fade"></div>
-					<a href="/topics/6-science-backed-tips-for-having-a-fantastic-vacation-curiosity/" class="feed-link">
-						<div class="feed-title">
-							<h3>6 Science-Backed Tips for Having a Fantastic Vacation</h3>
+			<?php
+			foreach ($get_post as $val) {
+				$post_img = get_the_post_thumbnail_url($val);
+				$post_url = get_the_permalink($val);
+				$post_title = get_the_title($val);
+				?>
+				<div class="feed-card">
+					<div class="feed-thumbnail">
+						<amp-img src="<?php print $post_img; ?>"></amp-img>
+						<div class="fade"></div>
+						<a href="<?php print $post_url; ?>" class="feed-link">
+							<div class="feed-title">
+								<h3><?php print $post_title; ?></h3>
 
-							<p class="feed-subtitle">#5: Lay off the social media.</p>
+								<p class="feed-subtitle">#5: Lay off the social media.</p>
 
-						</div>
-					</a>
-					<div class="feed-action">
-						<div class="feed-button">
-							<div class="feed-wrap">
-								<div class="feed-button-in">
-									<div class="atomic-heart" style="background-image:url(<?php print content_url() . '/themes/TwimbitLite/src/atom_sprite_black.png'; ?>)">
+							</div>
+						</a>
+						<div class="feed-action">
+							<div class="feed-button">
+								<div class="feed-wrap">
+									<div class="feed-button-in">
+										<div class="atomic-heart" style="background-image:url(<?php print content_url() . '/themes/TwimbitLite/src/atom_sprite_black.png'; ?>)">
+										</div>
 									</div>
-								</div>
-								<div class="count">
-									1.23k
+									<div class="count">
+										1.23k
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="feed-card">
-				<div class="feed-thumbnail">
-					<amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/cat.jpg'; ?>"></amp-img>
-					<div class="fade"></div>
-					<a href="/topics/6-science-backed-tips-for-having-a-fantastic-vacation-curiosity/" class="feed-link">
-						<div class="feed-title">
-							<h3>6 Science-Backed Tips for Having a Fantastic Vacation</h3>
-
-							<p class="feed-subtitle">#5: Lay off the social media.</p>
-
-						</div>
-					</a>
-					<div class="feed-action">
-						<div class="feed-button">
-							<div class="feed-wrap">
-								<div class="feed-button-in">
-									<div class="atomic-heart" style="background-image:url(<?php print content_url() . '/themes/TwimbitLite/src/atom_sprite_black.png'; ?>)">
-									</div>
-								</div>
-								<div class="count">
-									1.23k
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="feed-card">
-				<div class="feed-thumbnail">
-					<amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/cat.jpg'; ?>"></amp-img>
-					<div class="fade"></div>
-					<a href="/topics/6-science-backed-tips-for-having-a-fantastic-vacation-curiosity/" class="feed-link">
-						<div class="feed-title">
-							<h3>6 Science-Backed Tips for Having a Fantastic Vacation</h3>
-
-							<p class="feed-subtitle">#5: Lay off the social media.</p>
-
-						</div>
-					</a>
-					<div class="feed-action">
-						<div class="feed-button">
-							<div class="feed-wrap">
-								<div class="feed-button-in">
-									<div class="atomic-heart" style="background-image:url(<?php print content_url() . '/themes/TwimbitLite/src/atom_sprite_black.png'; ?>)">
-									</div>
-								</div>
-								<div class="count">
-									1.23k
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="feed-card">
-				<div class="feed-thumbnail">
-					<amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/cat.jpg'; ?>"></amp-img>
-					<div class="fade"></div>
-					<a href="/topics/6-science-backed-tips-for-having-a-fantastic-vacation-curiosity/" class="feed-link">
-						<div class="feed-title">
-							<h3>6 Science-Backed Tips for Having a Fantastic Vacation</h3>
-
-							<p class="feed-subtitle">#5: Lay off the social media.</p>
-
-						</div>
-					</a>
-					<div class="feed-action">
-						<div class="feed-button">
-							<div class="feed-wrap">
-								<div class="feed-button-in">
-									<div class="atomic-heart" style="background-image:url(<?php print content_url() . '/themes/TwimbitLite/src/atom_sprite_black.png'; ?>)">
-									</div>
-								</div>
-								<div class="count">
-									1.23k
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
+			<?php } ?>
 		</div>
 	</div>
 </section>
