@@ -82,7 +82,7 @@ $firstCategory = $category[0]->cat_name;
             </section>
             <section id="more-to-explore" style="padding: 0px;">
                 <div class="row">
-                    <div class="col more-to-explore mb4 mr2 ml2">
+                    <div class="col more-to-explore mb4 mr1 ml1">
                         <div class="separator"></div>
                         <h1>More to Explore</h1>
                         <amp-carousel class="section-heading-carousel d-lg-none d-md-none" type="slides" controls autoplay>
@@ -202,3 +202,16 @@ $firstCategory = $category[0]->cat_name;
     <?php } ?>
 
 </section>
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector(".navbar").style.top = "0";
+        } else {
+            document.querySelector(".navbar").style.top = "-70px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>

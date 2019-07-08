@@ -72,6 +72,18 @@
             this.className += " active";
         });
     }
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector(".navbar").style.top = "0";
+            document.querySelector("#colophon").style.bottom = "0";
+        } else {
+            document.querySelector(".navbar").style.top = "-70px";
+            document.querySelector("#colophon").style.bottom = "-70px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
 </script>
 </body>
 
