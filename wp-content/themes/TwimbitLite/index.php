@@ -75,8 +75,8 @@ $get_post = get_posts($post_args);
 	</div>
 </section>
 <!-- Feeds cards -->
-<section id="cards-feed">
-	<div class="container mt2">
+<section id="cards-feed" class="mb4">
+	<div class="container mt2" style="margin-bottom: 6rem;">
 		<div class="lg-col-8 md-col-8 xs-col-12">
 			<?php
 			foreach ($get_post as $val) {

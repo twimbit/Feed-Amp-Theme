@@ -2112,7 +2112,8 @@
             background-color: #fff;
             color: #000;
             z-index: 999;
-            box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1)
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
+            height: 64px;
         }
 
         .ampstart-headerbar+:not(amp-sidebar),
@@ -2635,22 +2636,41 @@
 
         .site-footer {
             position: fixed;
-            display: flex;
-            justify-content: space-around;
             /* z-index: 99999999999999999; */
             bottom: 0px;
             background-color: white;
             width: 100%;
+            box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
+            height: 65px;
         }
 
         .site-footer a {
             width: 50px;
             height: 50px;
+            margin-top: 9px;
         }
 
         .site-footer svg {
-            transform: translate(10px, 10px);
+            transform: translate(34px, 19px) scale(1.2);
+            fill: rgba(0, 0, 0, 0.57);
 
+        }
+
+        @media (max-width: 64rem) and (min-width: 52.06rem) {
+            .md-hide {
+                display: none;
+            }
+        }
+
+        @media (min-width: 64.06rem) {
+            .lg-hide {
+                display: none;
+            }
+        }
+
+        .footer-content {
+            justify-content: space-around;
+            height: 100%;
         }
     </style>
 </head>
@@ -2673,7 +2693,7 @@
                 </div>
             <?php } ?>
             <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" class="my0 mx-auto" alt="Example logo image"></amp-img>
-            <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div>
+            <!-- <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div> -->
             <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
                 <ul class="list-reset center m0 p0 flex justify-end nowrap">
                     <!-- Start Dropdown -->
