@@ -14,7 +14,7 @@
 
 <!--bottom navigation bar-->
 <!-- .site-footer -->
-<footer id="colophon" class="site-footer footer_amp tabs_bottom d-lg-none d-md-none" role="contentinfo">
+<footer id="colophon" class="site-footer footer_amp tabs_bottom lg-hide md-hide" role="contentinfo">
 
     <a id="feed_bottom" class="nav_button" href="<?php print home_url(); ?>">
         <svg>
@@ -28,7 +28,10 @@
             </path>
         </svg>
     </a>
-    <a on="tap:sidebar.toggle" class="nav_button" style="background:url('<?php print content_url() . '/themes/TwimbitLite/src/menu.svg'; ?>');">
+    <a on="tap:sidebar.toggle" class="nav_button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="26.003" height="20.375" viewBox="0 0 26.003 20.375">
+            <path id="ic_dehaze_24px" d="M2,22.479v3.4H28v-3.4Zm0-8.49v3.4H28v-3.4ZM2,5.5V8.9H28V5.5Z" transform="translate(-2 -5.5)" fill="#d8d8d8" />
+        </svg>
 
     </a>
 </footer>

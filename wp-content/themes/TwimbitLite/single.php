@@ -44,11 +44,13 @@ $firstCategory = $category[0]->cat_name;
 ?>
 
 <section class="featured-image" style="padding: 0px;background-image:url('<?php print the_post_thumbnail_url(); ?>'); height:300px">
+    <div class="single-thumbnail">
 
-    <div class="background-overlay">
-    </div>
-    <div class="featured-image-text">
-        <h2><?php the_title(); ?></h2>
+        <div class="featured-image-text">
+            <h2><?php the_title(); ?></h2>
+        </div>
+        <div class="fade">
+        </div>
     </div>
 
 </section>
@@ -77,122 +79,6 @@ $firstCategory = $category[0]->cat_name;
                 <div class="row mt2">
                     <div class="col">
                         <?php the_content(); ?>
-                    </div>
-                </div>
-            </section>
-            <section id="more-to-explore" style="padding: 0px;">
-                <div class="row">
-                    <div class="col more-to-explore mb4 mr1 ml1">
-                        <div class="separator"></div>
-                        <h1>More to Explore</h1>
-                        <amp-carousel class="section-heading-carousel d-lg-none d-md-none" type="slides" controls autoplay>
-                            <?php
-                            foreach ($get_trending as $val) {
-                                $trending_img = get_the_post_thumbnail_url($val);
-                                $trending_url = get_the_permalink($val);
-                                $trending_title = get_the_title($val);
-                                ?>
-                                <div class="section-heading-carousel-div">
-                                    <img class="section-img-1" src="<?php
-                                                                    if ($trending_img) {
-                                                                        print $trending_img;
-                                                                    } else {
-                                                                        print content_url() . '/themes/TwimbitLite/src/placeholder.png';
-                                                                    }  ?>" alt="" class="placeholder-loader">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-7">
-                                                <h5 class="card-title mbr-bold mbr-fonts-style"><?php print mb_strimwidth($trending_title, 0, 40, "..."); ?></h5>
-                                                <p class="card-text" style="font-style:italic"><?php print mb_strimwidth(get_the_excerpt($val), 0, 50, "..."); ?></p>
-                                            </div>
-                                            <div class="col-5"><a href="<?php print $post_url; ?>">
-                                                    <div class="card-badge ">
-                                                        <h2 class="align-center card-badge-text">
-                                                            <?php if (get_post_type($val) == "post") {
-                                                                print "Read";
-                                                            } else if (get_post_type($val) == "video") {
-                                                                print "Watch";
-                                                            } else if (get_post_type($val) == "podcast") {
-                                                                print "Listen";
-                                                            } else if (get_post_type($val) == "explore") {
-                                                                print "Explore";
-                                                            }  ?>
-                                                        </h2>
-                                                        <img src="<?php if (get_post_type($val) == "post") {
-                                                                        print content_url() . '/themes/TwimbitLite/src/read.svg';
-                                                                    } else if (get_post_type($val) == "video") {
-                                                                        print content_url() . '/themes/TwimbitLite/src/play.svg';
-                                                                    } else if (get_post_type($val) == "podcast") {
-                                                                        print content_url() . '/themes/TwimbitLite/src/podcast.svg';
-                                                                    } else if (get_post_type($val) == "explore") {
-                                                                        print content_url() . '/themes/TwimbitLite/src/timeline.svg';
-                                                                    }  ?>" alt="sdfdsf" class="img-cat">
-
-                                                    </div>
-                                                </a>
-                                                <h2 class="category-caption">#Category</h2>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php } ?>
-
-                        </amp-carousel>
-                        <amp-carousel class="section-heading-carousel d-sm-none " type="carousel" controls autoplay>
-                            <?php
-                            foreach ($get_trending as $val) {
-                                $trending_img = get_the_post_thumbnail_url($val);
-                                $trending_url = get_the_permalink($val);
-                                $trending_title = get_the_title($val);
-                                ?>
-                                <div class="section-heading-carousel-div">
-                                    <amp-img class="section-img-1" src="<?php
-                                                                        if ($trending_img) {
-                                                                            print $trending_img;
-                                                                        } else {
-                                                                            print content_url() . '/themes/TwimbitLite/src/placeholder.png';
-                                                                        }  ?>">
-                                    </amp-img>
-
-                                    <div class="row">
-                                        <div class="col-md-7">
-                                            <h5 class="card-title mbr-bold mbr-fonts-style ml2"><?php print mb_strimwidth($trending_title, 0, 10, "..."); ?></h5>
-                                            <p class="card-text ml2" style="font-style:italic"><?php print get_the_excerpt($val); ?></p>
-                                        </div>
-                                        <div class="col-md-5">
-                                            <div class="card-badge ">
-                                                <h2 class="align-center card-badge-text">
-                                                    <?php if (get_post_type($val) == "post") {
-                                                        print "Read";
-                                                    } else if (get_post_type($val) == "video") {
-                                                        print "Watch";
-                                                    } else if (get_post_type($val) == "podcast") {
-                                                        print "Listen";
-                                                    } else if (get_post_type($val) == "explore") {
-                                                        print "Explore";
-                                                    }  ?>
-                                                </h2>
-                                                <img src="<?php if (get_post_type($val) == "post") {
-                                                                print content_url() . '/themes/TwimbitLite/src/read.svg';
-                                                            } else if (get_post_type($val) == "video") {
-                                                                print content_url() . '/themes/TwimbitLite/src/play.svg';
-                                                            } else if (get_post_type($val) == "podcast") {
-                                                                print content_url() . '/themes/TwimbitLite/src/podcast.svg';
-                                                            } else if (get_post_type($val) == "explore") {
-                                                                print content_url() . '/themes/TwimbitLite/src/timeline.svg';
-                                                            }  ?>" alt="sdfdsf" class="img-cat">
-
-                                            </div>
-                                            <span class="category-caption">#Category</span>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-                            <?php } ?>
-
-                        </amp-carousel>
                     </div>
                 </div>
             </section>

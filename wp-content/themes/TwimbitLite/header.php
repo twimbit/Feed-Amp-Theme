@@ -91,14 +91,14 @@
             }
         </style>
     </noscript>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
 
     <style amp-custom="">
         /*! Bassplate | MIT License | http://github.com/basscss/bassplate */
 
         /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
         html {
-            font-family: sans-serif;
+            font-family: 'Montserrat', sans-serif;
             line-height: 1.15;
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%
@@ -2469,7 +2469,7 @@
             left: 0;
             top: 0;
             opacity: .9;
-            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, .9) 100%);
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.23) 0, rgb(0, 0, 0) 100%);
 
         }
 
@@ -2550,14 +2550,14 @@
         }
 
         .feed-button-in {
-            margin-left: 8px;
+            /* margin-left: 8px; */
             border-radius: 30px;
             background: #000;
             transform: scale(.85);
             display: inline-flex;
             align-items: center;
             cursor: pointer;
-            box-shadow: 0 0 4px 1px rgba(126, 126, 126, .25);
+            box-shadow: 0 0 4px 1px rgba(255, 240, 240, 0.25);
             border-radius: 30px;
             background: #000;
             height: 51px;
@@ -2568,7 +2568,7 @@
             filter: invert(100%);
             filter: invert(100%);
             width: 51px;
-            height: 48px;
+            height: 51px;
             background-repeat: no-repeat;
             background-size: 50px auto;
             background-position: 0 0;
@@ -2585,6 +2585,10 @@
             animation-timing-function: steps(23, end);
         }
 
+        .atomic-heart svg {
+            transform: translate(0px, 7px) scale(0.7);
+        }
+
         .count {
             font-weight: 600;
             letter-spacing: 2px;
@@ -2599,6 +2603,55 @@
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
             padding: 10px 10px;
         }
+
+        .single-thumbnail {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .featured-image-text {
+            text-align: center;
+        }
+
+        .featured-image-text h2 {
+            color: white;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style: none;
+            padding: 5px;
+        }
+
+        .menu {
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+        }
+
+        .menu-item {
+            padding: 5px;
+        }
+
+        .site-footer {
+            position: fixed;
+            display: flex;
+            justify-content: space-around;
+            /* z-index: 99999999999999999; */
+            bottom: 0px;
+            background-color: white;
+            width: 100%;
+        }
+
+        .site-footer a {
+            width: 50px;
+            height: 50px;
+        }
+
+        .site-footer svg {
+            transform: translate(10px, 10px);
+
+        }
     </style>
 </head>
 
@@ -2611,7 +2664,14 @@
 
     <section>
         <!-- Start Navbar -->
-        <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2-5 pr2">
+        <header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr2">
+            <?php if (is_singular()) { ?>
+                <div class="lg-hide md-hide">
+                    <a href="javascript:history.go(-1)">
+                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/back.svg'; ?>" alt="">
+                    </a>
+                </div>
+            <?php } ?>
             <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" class="my0 mx-auto" alt="Example logo image"></amp-img>
             <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div>
             <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
