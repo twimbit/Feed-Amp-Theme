@@ -2113,7 +2113,7 @@
             color: #000;
             z-index: 999;
             box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
-            height: 64px;
+            height: 55px;
         }
 
         .ampstart-headerbar+:not(amp-sidebar),
@@ -2641,17 +2641,17 @@
             background-color: white;
             width: 100%;
             box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
-            height: 65px;
+            height: 42px;
         }
 
         .site-footer a {
             width: 50px;
             height: 50px;
-            margin-top: 9px;
+            /* margin-top: 5px; */
         }
 
         .site-footer svg {
-            transform: translate(34px, 19px) scale(1.2);
+            transform: translate(9px, 5px) scale(1);
             fill: rgba(0, 0, 0, 0.57);
 
         }
@@ -2671,6 +2671,22 @@
         .footer-content {
             justify-content: space-around;
             height: 100%;
+        }
+
+        .search-img img {
+            width: 30px;
+            height: 26px;
+            margin-top: 8px;
+        }
+
+        .treanding-carousel {
+            width: 100%;
+            height: 300px;
+        }
+
+        .sub-cat {
+            width: 50px;
+            height: 50px;
         }
     </style>
 </head>
@@ -2738,6 +2754,9 @@
                     </li>
                 </ul>
             </nav>
+            <div class="search-img lg-hide md-hide">
+                <img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt="">
+            </div>
         </header>
 
         <!-- Start Sidebar -->
