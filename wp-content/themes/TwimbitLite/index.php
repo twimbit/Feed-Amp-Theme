@@ -16,7 +16,7 @@ $args = array(
 $get_post_for_story = get_posts($args);
 
 $post_args = array(
-	'numberposts' => 0,
+	'numberposts' => 50,
 	'category' => 0,
 	'orderby' => 'date',
 	'order' => 'ASC', // the 1st array element will be 1st story(oldest story)

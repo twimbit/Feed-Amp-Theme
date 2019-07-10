@@ -2766,7 +2766,9 @@
                     </a>
                 </div>
             <?php } ?>
-            <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" class="my0 mx-auto" alt="Example logo image"></amp-img>
+            <a href="<?php print home_url(); ?>" class="my0 mx-auto">
+                <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" alt="Example logo image"></amp-img>
+            </a>
             <!-- <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div> -->
             <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
                 <ul class="list-reset center m0 p0 flex justify-end nowrap">
@@ -2802,10 +2804,10 @@
                         </form>
                     </li>
                     <li class="ampstart-nav-item ">
-                        <a href="#" class="text-decoration-none block">Feed</a>
+                        <a href="<?php print home_url(); ?>" class="text-decoration-none block">Feed</a>
                     </li>
                     <li class="ampstart-nav-item ">
-                        <a href="#" class="text-decoration-none block">Explore</a>
+                        <a href="<?php print home_url(); ?>/explore" class="text-decoration-none block">Explore</a>
                     </li>
                     <li class="ampstart-nav-item ">
                         <a href="#" class="text-decoration-none block">Stories</a>
