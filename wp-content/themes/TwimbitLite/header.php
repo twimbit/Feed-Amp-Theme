@@ -7,10 +7,10 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
 
     <!-- service worker tag register -->
-    <script custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js" async=""></script>
+    <!-- <script custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js" async=""></script> -->
 
     <!-- Manifest file -->
-    <link rel="manifest" href="<?php print content_url() . '/themes/TwimbitLite/src/manifest.json'; ?>">
+    <!-- <link rel="manifest" href="<?php print content_url() . '/themes/TwimbitLite/src/manifest.json'; ?>"> -->
 
 
     <!-- AMP Scripts -->
@@ -2114,6 +2114,7 @@
             z-index: 999;
             box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
             height: 55px;
+            transition: all 0.3s ease-in-out;
         }
 
         .ampstart-headerbar+:not(amp-sidebar),
@@ -2614,6 +2615,10 @@
 
         .featured-image-text {
             text-align: center;
+            width: 100%;
+            /* justify-self: end; */
+            position: absolute;
+            bottom: 50px;
         }
 
         .featured-image-text h2 {
@@ -2743,8 +2748,68 @@
             margin-bottom: -19px;
         }
 
-        .amp-scrollable-carousel-slide {
+        .sub-cat-img.amp-scrollable-carousel-slide {
             margin-left: 24px;
+        }
+
+        .single-content {
+            padding: 0px 15px;
+        }
+
+        .featured-image {
+            background-attachment: fixed;
+            height: 400px;
+            background-size: cover;
+        }
+
+        .post-content {
+            display: flex;
+            justify-content: center;
+        }
+
+        .single-date-name {
+            display: flex;
+            justify-content: center;
+        }
+
+        .post-content figure img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #colophon {
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* for xtra small devices */
+        @media only screen and (max-width:40rem) {
+            .wp-block-embed__wrapper iframe {
+                width: 100%;
+                height: 100%;
+            }
+
+            .featured-image-text h2 {
+                font-size: 25px;
+                line-height: 2rem;
+            }
+
+
+        }
+
+        /* for small devices */
+        @media (min-width:40.06rem) and (max-width:52rem) {}
+
+        /* for medium devices */
+        @media (min-width:52.06rem) and (max-width:64rem) {}
+
+        /* for large devices */
+        @media (min-width:64.06rem) {}
+
+        /* for above small devices */
+        @media (min-width:40rem) {
+            .featured-image {
+                height: 500px;
+            }
         }
     </style>
 </head>
@@ -2752,8 +2817,10 @@
 <body>
 
     <!-- Registering Service Worker -->
-    <amp-install-serviceworker src="<?php print content_url() . '/themes/TwimbitLite/src/sw.js'; ?>" layout="nodisplay" data-iframe-src="<?php print content_url() . '/themes/TwimbitLite/src/install-sw.html'; ?>">
-    </amp-install-serviceworker>
+    <!-- <amp-install-serviceworker src="<?php // print content_url() . '/themes/TwimbitLite/src/sw.js'; 
+                                            ?>" layout="nodisplay" data-iframe-src="<?php // print content_url() . '/themes/TwimbitLite/src/install-sw.html'; 
+                                                                                    ?>">
+    </amp-install-serviceworker> -->
 
 
     <section>

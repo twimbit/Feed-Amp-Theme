@@ -46,6 +46,18 @@
         /*! Fades in page on load */
         $('body').css('display', 'none');
         $('body').fadeIn(1000);
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+            var currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.querySelector(".ampstart-headerbar").style.top = "0";
+                document.querySelector("#colophon").style.bottom = "0";
+            } else {
+                document.querySelector(".ampstart-headerbar").style.top = "-70px";
+                document.querySelector("#colophon").style.bottom = "-70px";
+            }
+            prevScrollpos = currentScrollPos;
+        }
 
     });
     // let feed = document.querySelector('#feed');
@@ -82,18 +94,6 @@
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
         });
-    }
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-            document.querySelector(".navbar").style.top = "0";
-            document.querySelector("#colophon").style.bottom = "0";
-        } else {
-            document.querySelector(".navbar").style.top = "-70px";
-            document.querySelector("#colophon").style.bottom = "-70px";
-        }
-        prevScrollpos = currentScrollPos;
     }
 </script>
 </body>
