@@ -28,69 +28,69 @@
             -webkit-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
             -moz-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
             -ms-animation: -amp-start 8s steps(1, end) 0s 1 normal both;
-            animation: -amp-start 8s steps(1, end) 0s 1 normal both;
+            animation: -amp-start 8s steps(1, end) 0s 1 normal both
         }
 
         @-webkit-keyframes -amp-start {
             from {
-                visibility: hidden;
+                visibility: hidden
             }
 
             to {
-                visibility: visible;
+                visibility: visible
             }
         }
 
         @-moz-keyframes -amp-start {
             from {
-                visibility: hidden;
+                visibility: hidden
             }
 
             to {
-                visibility: visible;
+                visibility: visible
             }
         }
 
         @-ms-keyframes -amp-start {
             from {
-                visibility: hidden;
+                visibility: hidden
             }
 
             to {
-                visibility: visible;
+                visibility: visible
             }
         }
 
         @-o-keyframes -amp-start {
             from {
-                visibility: hidden;
+                visibility: hidden
             }
 
             to {
-                visibility: visible;
+                visibility: visible
             }
         }
 
         @keyframes -amp-start {
             from {
-                visibility: hidden;
+                visibility: hidden
             }
 
             to {
-                visibility: visible;
+                visibility: visible
             }
         }
-    </style>
-    <noscript>
+    </style><noscript>
         <style amp-boilerplate>
             body {
                 -webkit-animation: none;
                 -moz-animation: none;
                 -ms-animation: none;
-                animation: none;
+                animation: none
             }
         </style>
     </noscript>
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
 
     <style amp-custom="">
@@ -2642,6 +2642,7 @@
             width: 100%;
             box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
             height: 42px;
+            z-index: 99;
         }
 
         .site-footer a {
@@ -2681,12 +2682,69 @@
 
         .treanding-carousel {
             width: 100%;
-            height: 300px;
+            height: 400px;
+        }
+
+        .amp-carousel-button-prev {
+            background-size: 12px 12px;
+        }
+
+        .amp-carousel-button {
+            height: 21px;
+            width: 21px;
+        }
+
+        .amp-carousel-button-next {
+            background-size: 12px 12px;
+        }
+
+        .cat-section {
+            /* margin: 100px 0px 30px 0px !important; */
         }
 
         .sub-cat {
-            width: 50px;
-            height: 50px;
+            /* margin-left: 24px; */
+            height: 140px;
+            /* width: 100%; */
+        }
+
+        .sub-cat amp-img {
+            width: 140px;
+            height: 140px;
+            opacity: 0.5;
+        }
+
+        .sub-cat img {
+            object-fit: cover;
+        }
+
+        .sub-cat p {
+            position: relative;
+            top: -130px;
+            left: 15px;
+            color: #ffffff;
+        }
+
+        .sub-cat-img {
+            height: 140px;
+            /* border: 1px solid red; */
+            background-color: #000000;
+            border-radius: 4px;
+            width: 140px;
+            /* margin-left: 34px; */
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+        }
+
+        .sub-cat-img.amp-scrollable-carousel-slide:first-child {
+            margin-left: 34px;
+        }
+
+        .divider {
+            margin-bottom: -19px;
+        }
+
+        .amp-scrollable-carousel-slide {
+            margin-left: 24px;
         }
     </style>
 </head>

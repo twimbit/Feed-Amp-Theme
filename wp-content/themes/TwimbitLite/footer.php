@@ -41,6 +41,13 @@
 
 <?php wp_footer(); ?>
 <script>
+    $(document).ready(function() {
+
+        /*! Fades in page on load */
+        $('body').css('display', 'none');
+        $('body').fadeIn(1000);
+
+    });
     // let feed = document.querySelector('#feed');
     // feed.addEventListener('click', function(event) {
     //     $.get("http://localhost/wordpress/feed-2", function(data) {

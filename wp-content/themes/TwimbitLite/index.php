@@ -77,7 +77,7 @@ $get_post = get_posts($post_args);
 <!-- Feeds cards -->
 <section id="cards-feed" class="mb4">
 	<div class="container mt2" style="margin-bottom: 6rem;">
-		<div class="lg-col-8 md-col-8 xs-col-12">
+		<div class="lg-col-8 md-col-8 sm-col-8 xs-col-12">
 			<?php
 			foreach ($get_post as $val) {
 				$post_img = get_the_post_thumbnail_url($val);

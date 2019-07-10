@@ -38,13 +38,46 @@ $trending = array(
     'suppress_filters' => true,
 );
 $get_trending = get_posts($trending);
+
+
+$business = get_category_by_slug('business_model');
+$business_child = get_categories(array('child_of' => $business->term_id, 'hide_empty' => FALSE));
+
+
+$careers = get_category_by_slug('careers');
+$careers_child = get_categories(array('child_of' => $careers->term_id, 'hide_empty' => FALSE));
+
+
+$companies = get_category_by_slug('companies');
+$companies_child = get_categories(array('child_of' => $companies->term_id, 'hide_empty' => FALSE));
+
+
+$technology = get_category_by_slug('technology');
+$technology_child = get_categories(array('child_of' => $technology->term_id, 'hide_empty' => FALSE));
+
+
+$events = get_category_by_slug('events');
+$events_child = get_categories(array('child_of' => $events->term_id, 'hide_empty' => FALSE));
+
+
+$exclusive = get_category_by_slug('exclusive');
+$exclusive_child = get_categories(array('child_of' => $exclusive->term_id, 'hide_empty' => FALSE));
+
+
+$geography = get_category_by_slug('geographies');
+$geography_child = get_categories(array('child_of' => $geography->term_id, 'hide_empty' => FALSE));
+
+
+$industry = get_category_by_slug('industry');
+$industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_empty' => FALSE));
+
 ?>
 
 <section id="explore">
     <div class="container" style="margin-top:5rem">
         <div class="section-heading">
             <h3>Trending</h3>
-            <hr>
+            <hr class="divider">
         </div>
         <amp-carousel class="treanding-carousel d-lg-none d-md-none" type="slides" controls>
             <?php
@@ -53,7 +86,7 @@ $get_trending = get_posts($trending);
                 $trending_url = get_the_permalink($val);
                 $trending_title = get_the_title($val);
                 ?>
-                <div class="feed-card">
+                <div class="feed-card" style="height: 313px;">
                     <div class="single-thumbnail">
                         <amp-img src="<?php print $trending_img; ?>"></amp-img>
                         <div class="fade"></div>
@@ -116,22 +149,208 @@ $get_trending = get_posts($trending);
     </div>
 
 
-    <div class="container cat-section">
-        <div class="section-heading" style="margin:30px 0px 30px 0px">
-            <h3>Category</h3>
-            <hr>
-            <amp-carousel class="sub-cat" type="carousel" controls>
-                <?php
-                foreach ($get_post as $val) {
-                    $post_img = get_the_post_thumbnail_url($val);
-                    ?>
-                    <div class="sub-cat-img">
-                        <amp-img src="<?php print $post_img; ?>"></amp-img>
-                        <p>Sub-category</p>
-                    </div>
-                <?php } ?>
-            </amp-carousel>
+    <!-- Business model -->
+    <section id="business_model">
+        <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="section-heading" style="margin:0px 0px 30px 0px">
+                <div style="padding-left:15px;">
+                    <h3><?php print get_cat_name($business->term_id); ?></h3>
+                    <hr>
+                </div>
+
+                <amp-carousel class="sub-cat" type="carousel" controls>
+                    <?php
+                    foreach ($business_child as $val) {
+                        $post_img = get_field('featured_image', $val);
+                        ?>
+                        <div class="sub-cat-img">
+                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                            <p><?php print $val->name; ?></p>
+                        </div>
+                    <?php } ?>
+                </amp-carousel>
+            </div>
         </div>
-    </div>
+    </section>
+
+
+    <!-- careers section -->
+    <section id="careers_model">
+        <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="section-heading" style="margin:0px 0px 30px 0px">
+                <div style="padding-left:15px;">
+                    <h3><?php print get_cat_name($careers->term_id); ?></h3>
+                    <hr>
+                </div>
+
+                <amp-carousel class="sub-cat" type="carousel" controls>
+                    <?php
+                    foreach ($careers_child as $val) {
+                        $post_img = get_field('featured_image', $val);
+                        ?>
+                        <div class="sub-cat-img">
+                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                            <p><?php print $val->name; ?></p>
+                        </div>
+                    <?php } ?>
+                </amp-carousel>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- companies section -->
+    <section id="companies_model">
+        <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="section-heading" style="margin:0px 0px 30px 0px">
+                <div style="padding-left:15px;">
+                    <h3><?php print get_cat_name($companies->term_id); ?></h3>
+                    <hr>
+                </div>
+
+                <amp-carousel class="sub-cat" type="carousel" controls>
+                    <?php
+                    foreach ($companies_child as $val) {
+                        $post_img = get_field('featured_image', $val);
+                        ?>
+                        <div class="sub-cat-img">
+                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                            <p><?php print $val->name; ?></p>
+                        </div>
+                    <?php } ?>
+                </amp-carousel>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- technology section -->
+    <section id="technology_model">
+        <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="section-heading" style="margin:0px 0px 30px 0px">
+                <div style="padding-left:15px;">
+                    <h3><?php print get_cat_name($technology->term_id); ?></h3>
+                    <hr>
+                </div>
+
+                <amp-carousel class="sub-cat" type="carousel" controls>
+                    <?php
+                    foreach ($technology_child as $val) {
+                        $post_img = get_field('featured_image', $val);
+                        ?>
+                        <div class="sub-cat-img">
+                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                            <p><?php print $val->name; ?></p>
+                        </div>
+                    <?php } ?>
+                </amp-carousel>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- events section -->
+    <section id="events_model">
+        <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="section-heading" style="margin:0px 0px 30px 0px">
+                <div style="padding-left:15px;">
+                    <h3><?php print get_cat_name($events->term_id); ?></h3>
+                    <hr>
+                </div>
+
+                <amp-carousel class="sub-cat" type="carousel" controls>
+                    <?php
+                    foreach ($events_child as $val) {
+                        $post_img = get_field('featured_image', $val);
+                        ?>
+                        <div class="sub-cat-img">
+                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                            <p><?php print $val->name; ?></p>
+                        </div>
+                    <?php } ?>
+                </amp-carousel>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- exclusive section -->
+    <section id="exclusive_model">
+        <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="section-heading" style="margin:0px 0px 30px 0px">
+                <div style="padding-left:15px;">
+                    <h3><?php print get_cat_name($exclusive->term_id); ?></h3>
+                    <hr>
+                </div>
+
+                <amp-carousel class="sub-cat" type="carousel" controls>
+                    <?php
+                    foreach ($exclusive_child as $val) {
+                        $post_img = get_field('featured_image', $val);
+                        ?>
+                        <div class="sub-cat-img">
+                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                            <p><?php print $val->name; ?></p>
+                        </div>
+                    <?php } ?>
+                </amp-carousel>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- geography section -->
+    <section id="geography_model">
+        <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="section-heading" style="margin:0px 0px 30px 0px">
+                <div style="padding-left:15px;">
+                    <h3><?php print get_cat_name($geography->term_id); ?></h3>
+                    <hr>
+                </div>
+
+                <amp-carousel class="sub-cat" type="carousel" controls>
+                    <?php
+                    foreach ($geography_child as $val) {
+                        $post_img = get_field('featured_image', $val);
+                        ?>
+                        <div class="sub-cat-img">
+                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                            <p><?php print $val->name; ?></p>
+                        </div>
+                    <?php } ?>
+                </amp-carousel>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- industry section -->
+    <section id="industry_model">
+        <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="section-heading" style="margin:0px 0px 30px 0px">
+                <div style="padding-left:15px;">
+                    <h3><?php print get_cat_name($industry->term_id); ?></h3>
+                    <hr>
+                </div>
+
+                <amp-carousel class="sub-cat" type="carousel" controls>
+                    <?php
+                    foreach ($industry_child as $val) {
+                        $post_img = get_field('featured_image', $val);
+                        ?>
+                        <div class="sub-cat-img">
+                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                            <p><?php print $val->name; ?></p>
+                        </div>
+                    <?php } ?>
+                </amp-carousel>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
 </section>
 <?php get_footer(); ?>
