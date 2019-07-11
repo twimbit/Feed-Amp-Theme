@@ -2614,11 +2614,17 @@
         }
 
         .featured-image-text {
-            text-align: center;
-            width: 100%;
+            /*text-align: center;*/
+            /*width: 100%;*/
             /* justify-self: end; */
             position: absolute;
             bottom: 50px;
+            padding: 0px 15px;
+        }
+        .featured-image-text-container{
+            display:flex;
+            justify-content: center;
+            width: 100%;
         }
 
         .featured-image-text h2 {
@@ -2765,7 +2771,9 @@
         .post-content {
             display: flex;
             justify-content: center;
+
         }
+
 
         .single-date-name {
             display: flex;
@@ -2797,7 +2805,9 @@
         }
 
         /* for small devices */
-        @media (min-width:40.06rem) and (max-width:52rem) {}
+        @media (min-width:40.06rem) and (max-width:52rem) {
+
+        }
 
         /* for medium devices */
         @media (min-width:52.06rem) and (max-width:64rem) {}
