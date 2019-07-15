@@ -2822,6 +2822,15 @@
             font-weight: 200;
         }
 
+        .post-content p {
+            margin-bottom: 0.9rem;
+            /* text-align: justify; */
+            /* line-height: 2em; */
+            color: #000000;
+            font-size: 16px;
+            font-weight: 200;
+        }
+
         /* for xtra small devices */
         @media only screen and (max-width:40rem) {
             .wp-block-embed__wrapper iframe {
@@ -2865,7 +2874,7 @@
             position: sticky;
             top: 4%;
             width: 100%;
-            height: 300px;
+            /* height: 300px; */
             background-color: #f4f4f4;
             box-shadow: 5px 3px 8px -3px rgba(0, 0, 0, 0.23);
         }
@@ -2886,11 +2895,16 @@
 
         .pre-next-dialog-content p {
             width: 100%;
-            word-break: break-all;
+            /* word-break: break-all; */
             background-color: #fff;
             padding: 10px;
             margin-bottom: 10px;
             box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.23);
+            transition: all 0.3s;
+        }
+
+        .pre-next-dialog-content p:hover {
+            box-shadow: 0 2px 14px 0px rgba(0, 0, 0, .5);
         }
 
         .pre-next-dialog-content a {
