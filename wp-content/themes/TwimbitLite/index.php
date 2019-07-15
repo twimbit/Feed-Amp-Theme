@@ -17,7 +17,7 @@ $get_post_for_story = get_posts($args);
 
 $post_args = array(
 	'numberposts' => 50,
-	'category' => 0,
+	'category' => array('business_model'),
 	'orderby' => 'date',
 	'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
 	'include' => array(),
@@ -34,6 +34,7 @@ $get_post = get_posts($post_args);
 <section id="stories">
 	<div class="container">
 		<div class="story-section">
+			<h4 style="margin-left:10px; font-size:16px;">Nutshell</h4>
 			<amp-carousel class="story-carousel" type="carousel" controls>
 				<?php
 				foreach ($get_post_for_story as $val) {

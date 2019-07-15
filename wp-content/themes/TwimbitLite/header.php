@@ -10,7 +10,8 @@
     <!-- <script custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js" async=""></script> -->
 
     <!-- Manifest file -->
-    <!-- <link rel="manifest" href="<?php print content_url() . '/themes/TwimbitLite/src/manifest.json'; ?>"> -->
+    <!-- <link rel="manifest" href="<?php //print content_url() . '/themes/TwimbitLite/src/manifest.json'; 
+                                    ?>"> -->
 
 
     <!-- AMP Scripts -->
@@ -91,7 +92,7 @@
         </style>
     </noscript>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
 
     <style amp-custom="">
         /*! Bassplate | MIT License | http://github.com/basscss/bassplate */
@@ -2514,7 +2515,7 @@
 
         @media (min-width: 768px) {
             .feed-card {
-                height: 400px;
+                height: 350px;
             }
 
             .feed-title {
@@ -2768,7 +2769,7 @@
             margin-bottom: -19px;
         }
 
-        .sub-cat-img.amp-scrollable-carousel-slide {
+        .amp-scrollable-carousel-slide {
             margin-left: 24px;
         }
 
@@ -2803,6 +2804,24 @@
             transition: all 0.3s ease-in-out;
         }
 
+        .cont p {
+            margin-bottom: 0.9rem;
+            text-align: justify;
+            line-height: 2em;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 200;
+        }
+
+        .cont li {
+            margin-bottom: 0.9rem;
+            text-align: justify;
+            line-height: 2em;
+            color: #000000;
+            font-size: 16px;
+            font-weight: 200;
+        }
+
         /* for xtra small devices */
         @media only screen and (max-width:40rem) {
             .wp-block-embed__wrapper iframe {
@@ -2813,6 +2832,14 @@
             .featured-image-text h2 {
                 font-size: 25px;
                 line-height: 2rem;
+            }
+
+            .cont p {
+                line-height: 1.5em;
+            }
+
+            .cont li {
+                line-height: 1.5em;
             }
 
 
@@ -2836,7 +2863,7 @@
 
         .pre-next-dialog {
             position: sticky;
-            top: 1.5%;
+            top: 4%;
             width: 100%;
             height: 300px;
             background-color: #f4f4f4;
@@ -2866,7 +2893,7 @@
             box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.23);
         }
 
-        .pre-next-dialog-content p a {
+        .pre-next-dialog-content a {
             text-decoration: none;
         }
     </style>
@@ -2967,8 +2994,8 @@
 
                         <!-- End Dropdown-inline -->
                     </li>
-                    <li class="ampstart-nav-item"><a href="#">Feed</a></li>
-                    <li class="ampstart-nav-item"><a href="#">Explore</a></li>
+                    <li class="ampstart-nav-item"><a href="<?php print home_url(); ?>">Feed</a></li>
+                    <li class="ampstart-nav-item"><a href="<?php print home_url(); ?>/explore">Explore</a></li>
                     <li class="ampstart-nav-item"><a href="#">Stories</a></li>
                 </ul>
             </nav>
