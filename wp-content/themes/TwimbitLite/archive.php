@@ -35,16 +35,16 @@ $get_sub_cat = get_posts($args);
         <div class="col-12">
             <div class="feed-card">
                 <div class="single-thumbnail">
-                    <amp-img src="<?php print get_field('featured_image', get_the_category()[0])['url']; ?>"></amp-img>
+                    <amp-img src="<?php echo get_field('featured_image', get_the_category()[0])['url']; ?>"></amp-img>
                     <div class="fade"></div>
-                    <a class="feed-link">
+                    <div class="feed-link">
                         <div class="feed-title" style="bottom:auto">
-                            <h3><?php print get_the_category()[0]->name; ?></h3>
+                            <h3><?php echo get_the_category()[0]->name; ?></h3>
 
-                            <p class="feed-subtitle"><?php print get_the_category()[0]->description; ?></p>
+                            <p class="feed-subtitle"><?php echo get_the_category()[0]->description; ?></p>
 
                         </div>
-                    </a>
+                    </div>
 
                 </div>
             </div>
@@ -52,14 +52,14 @@ $get_sub_cat = get_posts($args);
         </div>
     </div>
 </section>
-<?php //print_r(get_the_category()[0]);
+<?php print_r(get_the_category());
 ?>
 <!-- Remaining categories -->
 <section id="cards-feed" class="mb4">
     <div class="container mt2" style="margin-bottom: 6rem;">
         <div class="lg-col-7 md-col-6 sm-col-7 xs-col-12">
             <?php
-            foreach (array_slice($get_sub_cat, 1,) as $val) {
+            foreach (array_slice($get_sub_cat, 0) as $val) {
                 $post_img = get_the_post_thumbnail_url($val);
                 $post_url = get_the_permalink($val);
                 $post_title = get_the_title($val);
