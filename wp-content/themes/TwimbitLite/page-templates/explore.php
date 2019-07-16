@@ -163,10 +163,13 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     foreach ($business_child as $val) {
                         $post_img = get_field('featured_image', $val);
                         ?>
-                        <div class="sub-cat-img">
-                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                            <p><?php print $val->name; ?></p>
-                        </div>
+                        <a href="<?php echo get_category_link($val->term_id); ?>">
+                            <div class="sub-cat-img">
+                                <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                <p><?php print $val->name; ?></p>
+                            </div>
+                        </a>
+
                     <?php } ?>
                 </amp-carousel>
             </div>
@@ -188,10 +191,12 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     foreach ($careers_child as $val) {
                         $post_img = get_field('featured_image', $val);
                         ?>
-                        <div class="sub-cat-img">
-                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                            <p><?php print $val->name; ?></p>
-                        </div>
+                        <a href="<?php echo get_category_link($val->term_id); ?>">
+                            <div class="sub-cat-img">
+                                <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                <p><?php print $val->name; ?></p>
+                            </div>
+                        </a>
                     <?php } ?>
                 </amp-carousel>
             </div>
@@ -213,10 +218,12 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     foreach ($companies_child as $val) {
                         $post_img = get_field('featured_image', $val);
                         ?>
-                        <div class="sub-cat-img">
-                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                            <p><?php print $val->name; ?></p>
-                        </div>
+                        <a href="<?php echo get_category_link($val->term_id); ?>">
+                            <div class="sub-cat-img">
+                                <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                <p><?php print $val->name; ?></p>
+                            </div>
+                        </a>
                     <?php } ?>
                 </amp-carousel>
             </div>
@@ -238,10 +245,12 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     foreach ($technology_child as $val) {
                         $post_img = get_field('featured_image', $val);
                         ?>
-                        <div class="sub-cat-img">
-                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                            <p><?php print $val->name; ?></p>
-                        </div>
+                        <a href="<?php echo get_category_link($val->term_id); ?>">
+                            <div class="sub-cat-img">
+                                <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                <p><?php print $val->name; ?></p>
+                            </div>
+                        </a>
                     <?php } ?>
                 </amp-carousel>
             </div>
@@ -263,10 +272,12 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     foreach ($events_child as $val) {
                         $post_img = get_field('featured_image', $val);
                         ?>
-                        <div class="sub-cat-img">
-                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                            <p><?php print $val->name; ?></p>
-                        </div>
+                        <a href="<?php echo get_category_link($val->term_id); ?>">
+                            <div class="sub-cat-img">
+                                <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                <p><?php print $val->name; ?></p>
+                            </div>
+                        </a>
                     <?php } ?>
                 </amp-carousel>
             </div>
@@ -288,10 +299,12 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     foreach ($exclusive_child as $val) {
                         $post_img = get_field('featured_image', $val);
                         ?>
-                        <div class="sub-cat-img">
-                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                            <p><?php print $val->name; ?></p>
-                        </div>
+                        <a href="<?php echo get_category_link($val->term_id); ?>">
+                            <div class="sub-cat-img">
+                                <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                <p><?php print $val->name; ?></p>
+                            </div>
+                        </a>
                     <?php } ?>
                 </amp-carousel>
             </div>
@@ -313,10 +326,12 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     foreach ($geography_child as $val) {
                         $post_img = get_field('featured_image', $val);
                         ?>
-                        <div class="sub-cat-img">
-                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                            <p><?php print $val->name; ?></p>
-                        </div>
+                        <a href="<?php echo get_category_link($val->term_id); ?>">
+                            <div class="sub-cat-img">
+                                <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                <p><?php print $val->name; ?></p>
+                            </div>
+                        </a>
                     <?php } ?>
                 </amp-carousel>
             </div>
@@ -338,10 +353,12 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     foreach ($industry_child as $val) {
                         $post_img = get_field('featured_image', $val);
                         ?>
-                        <div class="sub-cat-img">
-                            <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                            <p><?php print $val->name; ?></p>
-                        </div>
+                        <a href="<?php echo get_category_link($val->term_id); ?>">
+                            <div class="sub-cat-img">
+                                <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                <p><?php print $val->name; ?></p>
+                            </div>
+                        </a>
                     <?php } ?>
                 </amp-carousel>
             </div>

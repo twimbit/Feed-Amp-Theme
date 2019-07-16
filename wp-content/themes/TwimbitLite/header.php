@@ -2761,7 +2761,7 @@
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
         }
 
-        .sub-cat-img.amp-scrollable-carousel-slide:first-child {
+        a.amp-scrollable-carousel-slide:first-child {
             margin-left: 34px;
         }
 
@@ -2910,6 +2910,8 @@
         .pre-next-dialog-content a {
             text-decoration: none;
         }
+
+        .feed-title-category {}
     </style>
 </head>
 

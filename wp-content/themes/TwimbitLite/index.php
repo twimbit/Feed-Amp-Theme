@@ -51,7 +51,6 @@ $get_post = get_posts($post_args);
 	</div>
 </section>
 
-
 <!-- Filter section -->
 <section id="filer">
 	<div class="container mt4">
