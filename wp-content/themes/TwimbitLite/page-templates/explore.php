@@ -156,7 +156,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                 <div style="padding-left:15px;">
                     <h3><?php print get_cat_name($business->term_id); ?></h3>
                     <hr>
-                </div>
+                </div>// aded
 
                 <amp-carousel class="sub-cat" type="carousel" controls>
                     <?php
