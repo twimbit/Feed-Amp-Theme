@@ -2911,7 +2911,9 @@
             text-decoration: none;
         }
 
-        .feed-title-category {}
+        .feed-card-archive:hover {
+            /* box-shadow: none; */
+        }
     </style>
 </head>
 

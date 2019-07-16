@@ -11,7 +11,8 @@
 get_header();
 global $post;
 $current_post = $post; // remember the current post
-$post = $current_post;
+
+// $post = $current_post;
 
 
 // $post_args = array(
@@ -98,9 +99,10 @@ $post = $current_post;
 
                                     <?php break;
                                 }
-                                setup_postdata($current_post);
                                 ?>
-                            <?php } ?>
+                            <?php
+                            }
+                            $post = $current_post; ?>   
                         </div>
                     </div>
                 </div>

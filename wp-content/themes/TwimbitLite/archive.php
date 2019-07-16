@@ -33,7 +33,7 @@ $get_sub_cat = get_posts($args);
 <section id="cards-feed" class="mb4" style="margin-top:4.5rem">
     <div class="container mt2">
         <div class="col-12">
-            <div class="feed-card">
+            <div class="feed-card feed-card-archive">
                 <div class="single-thumbnail">
                     <amp-img src="<?php echo get_field('featured_image', get_the_category()[0])['url']; ?>"></amp-img>
                     <div class="fade"></div>
@@ -52,7 +52,7 @@ $get_sub_cat = get_posts($args);
         </div>
     </div>
 </section>
-<?php print_r(get_the_category());
+<?php //print_r(get_the_category());
 ?>
 <!-- Remaining categories -->
 <section id="cards-feed" class="mb4">
