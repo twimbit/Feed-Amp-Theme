@@ -46,22 +46,23 @@ $current_post = $post; // remember the current post
 // $firstCategory = $category[0]->cat_name;
 ?>
 
-<section class="featured-image" style="padding: 0px;background-image:url('<?php print the_post_thumbnail_url(); ?>');">
+<section class="featured-image" style="padding: 0px;background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
     <?php while (have_posts()) {
-        the_post(); ?>
+        the_post();
+        $type = get_post_type($val); ?>
         <div class="single-thumbnail">
             <div class="fade">
             </div>
             <div class="featured-image-text-container">
                 <div class="featured-image-text xs-col-12 sm-col-8 md-col-7 lg-col-6">
-                    <a href="#"><?php if (get_post_type($val) == "post") {
-                                    print "Insight";
-                                } else if (get_post_type($val) == "video") {
-                                    print "Video";
-                                } else if (get_post_type($val) == "podcast") {
-                                    print "Podcast";
-                                } else if (get_post_type($val) == "amp_story") {
-                                    print "Story";
+                    <a href="#"><?php if ($type == "post") {
+                                    echo "Insight";
+                                } else if ($type == "video") {
+                                    echo "Video";
+                                } else if ($type == "podcast") {
+                                    echo "Podcast";
+                                } else if ($type == "amp_story") {
+                                    echo "Story";
                                 }  ?></a href="#">
                     <h2><?php the_title(); ?></h2>
                     <h6 style="color: #f5f5f5" class="mt2"><?php the_date(); ?></h6>
@@ -102,7 +103,7 @@ $current_post = $post; // remember the current post
                                 ?>
                             <?php
                             }
-                            $post = $current_post; ?>   
+                            $post = $current_post; ?>
                         </div>
                     </div>
                 </div>

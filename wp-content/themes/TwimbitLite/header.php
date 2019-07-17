@@ -2932,12 +2932,12 @@
             <?php if (is_singular()) { ?>
                 <div class="lg-hide md-hide">
                     <a href="javascript:history.go(-1)">
-                        <img src="<?php print content_url() . '/themes/TwimbitLite/src/back.svg'; ?>" alt="">
+                        <img src="<?php echo content_url() . '/themes/TwimbitLite/src/back.svg'; ?>" alt="">
                     </a>
                 </div>
             <?php } ?>
-            <a href="<?php print home_url(); ?>" class="my0 mx-auto">
-                <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" alt="Example logo image"></amp-img>
+            <a href="<?php echo home_url(); ?>" class="my0 mx-auto">
+                <amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" alt="Example logo image"></amp-img>
             </a>
             <!-- <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div> -->
             <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
@@ -2968,16 +2968,16 @@
                                 <input type="text" placeholder="Search.." name="s" id="searchTerm">
                                 <button type="submit" href="#" style="    border: none;
     background: none;">
-                                    <amp-img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg' ?>" width="20" height="20" class="my0 mx-auto"></amp-img>
+                                    <amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg' ?>" width="20" height="20" class="my0 mx-auto"></amp-img>
                                 </button>
                             </div>
                         </form>
                     </li>
                     <li class="ampstart-nav-item ">
-                        <a href="<?php print home_url(); ?>" class="text-decoration-none block">Feed</a>
+                        <a href="<?php echo home_url(); ?>" class="text-decoration-none block">Feed</a>
                     </li>
                     <li class="ampstart-nav-item ">
-                        <a href="<?php print home_url(); ?>/explore" class="text-decoration-none block">Explore</a>
+                        <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">Explore</a>
                     </li>
                     <li class="ampstart-nav-item ">
                         <a href="#" class="text-decoration-none block">Stories</a>
@@ -2985,7 +2985,7 @@
                 </ul>
             </nav>
             <div class="search-img lg-hide md-hide">
-                <img src="<?php print content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt="">
+                <img src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt="">
             </div>
         </header>
 
@@ -3012,8 +3012,8 @@
 
                         <!-- End Dropdown-inline -->
                     </li>
-                    <li class="ampstart-nav-item"><a href="<?php print home_url(); ?>">Feed</a></li>
-                    <li class="ampstart-nav-item"><a href="<?php print home_url(); ?>/explore">Explore</a></li>
+                    <li class="ampstart-nav-item"><a href="<?php echo home_url(); ?>">Feed</a></li>
+                    <li class="ampstart-nav-item"><a href="<?php echo home_url(); ?>/explore">Explore</a></li>
                     <li class="ampstart-nav-item"><a href="#">Stories</a></li>
                 </ul>
             </nav>
