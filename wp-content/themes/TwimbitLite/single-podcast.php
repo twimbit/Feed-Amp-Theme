@@ -26,7 +26,7 @@ $post_title = get_the_title();
 $author = get_the_author();
 $category = get_the_category();
 
-$audio = get_field('audio_types');
+$audio = get_field('audio_type');
 
 ?>
 
@@ -41,9 +41,9 @@ $audio = get_field('audio_types');
                 <div class="fade"></div>
                 <div class="feed-link">
                     <div class="feed-title">
-                        <p class="feed-subtitle">#5: Lay off the social media.</p>
-                        <span>By Author</span>
-                        <span>#Category</span>
+                        <p class="feed-subtitle"><?php echo $post_title; ?></p>
+                        <span><?php echo $author; ?></span>
+                        <span><?php echo $category; ?></span>
                     </div>
                     <div class="audio">
                         <audio controls src="<?php echo $audio['url']; ?>" class="player" controls controlsList="nodownload">
@@ -52,7 +52,7 @@ $audio = get_field('audio_types');
                     </div>
                     <div class="desc">
                         <span>
-                            Podcast description
+                            <?php echo mb_strimwidth(the_content(), 0, 250, "..."); ?>
                         </span>
                     </div>
                 </div>
@@ -77,7 +77,7 @@ $audio = get_field('audio_types');
 
             $get_post = get_posts($post_args);
 
-            foreach (array_slice($get_post, 0, 4) as $val) {
+            foreach (array_slice($get_post, 1, 4) as $val) {
                 $post_img = get_the_post_thumbnail_url($val);
                 $post_url = get_permalink($val);
                 $post_title = get_the_title($val);
