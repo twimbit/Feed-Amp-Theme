@@ -17,7 +17,7 @@ $get_post_for_story = get_posts($args);
 
 $post_args = array(
 	'numberposts' => 50,
-	'category' => array('business_model'),
+	'category' => 0,
 	'orderby' => 'date',
 	'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
 	'include' => array(),

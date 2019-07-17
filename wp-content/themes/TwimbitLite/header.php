@@ -2529,6 +2529,23 @@
             .feed-title p {
                 font-size: 14px;
             }
+
+            .podcast-cover .feed-title p {
+                font-size: 16px;
+            }
+
+            .podcast-cover .feed-title span {
+                font-size: 12px;
+                margin-right: 10px;
+            }
+        }
+
+        .podcast-cover .feed-title {
+            bottom: auto;
+        }
+
+        .podcast-cover .feed-title p {
+            font-weight: 600;
         }
 
         .feed-action {
@@ -2831,11 +2848,65 @@
             font-weight: 200;
         }
 
+        .right-side {
+            margin: 36px 25px 10px 0px;
+        }
+
+        .podcast-cover .feed-card {
+            margin: 36px;
+            height: 313px;
+        }
+
+        .next {
+            color: #000000;
+            /* margin-top: -20px; */
+            /* margin-left: -15px; */
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        .audio {
+            position: relative;
+            top: 75px;
+            /* position: absolute; */
+            padding: 24px;
+        }
+
+        .player {
+            width: 85%;
+            height: 35px;
+        }
+
+        .desc {
+            position: relative;
+            top: 61px;
+            margin-left: 24px;
+        }
+
+        .desc span {
+            color: #FFF;
+        }
+
         /* for xtra small devices */
         @media only screen and (max-width:40rem) {
             .wp-block-embed__wrapper iframe {
                 width: 100%;
                 height: 100%;
+            }
+
+            .podcast-cover .feed-title span {
+                font-size: 12px;
+                margin-right: 10px;
+            }
+
+            .player {
+                width: 100%;
+                height: 30px;
+            }
+
+            .desc span {
+                color: #FFF;
+                font-size: 13px;
             }
 
             .featured-image-text h2 {
@@ -2858,7 +2929,58 @@
             .filter-bar-container {
                 order: 1;
             }
+
+            [class*="col-"] .short-image {
+                /* height: 350px;
+                width: 419px;
+                margin-left: 0px;
+                margin-right: 30px;
+                margin-top: 0px; */
+            }
+
+            [class*="col-"] .short-card {
+                /* width: 96%;
+                height: 22%;
+                margin-left: 10px;
+                margin-top: 40px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5); */
+            }
+
+            .icon {
+                /* margin-left: -340px;
+                margin-top: 100px;
+                height: 146px;
+                width: 170px; */
+            }
+
+            [class*="col-"] .details h3 {
+                margin-left: 150px;
+                margin-top: -270px;
+                width: 800px;
+                font-size: 20px;
+                align: right;
+                color: #000000;
+                font-variant: small-caps;
+            }
+
+            [class*="col-"] .sub1 {
+                font-size: 40px;
+                margin-top: 26px;
+                color: #000000;
+                /* margin-left: 20px; */
+
+            }
+
+            .right-side {
+                margin: 0px 36px 10px 36px;
+            }
+
+            .podcast-cover .feed-card {
+                margin: 20px 36px 20px 36px;
+            }
         }
+
+
 
         /* for small devices */
         @media (min-width:40.06rem) and (max-width:52rem) {}
@@ -2867,7 +2989,12 @@
         @media (min-width:52.06rem) and (max-width:64rem) {}
 
         /* for large devices */
-        @media (min-width:64.06rem) {}
+        @media (min-width:64.06rem) {
+            .podcast-cover .feed-card {
+                margin: 36px;
+                height: 400px;
+            }
+        }
 
         /* for above small devices */
         @media (min-width:40rem) {
@@ -2928,6 +3055,105 @@
         .filter-bar-container {
             flex: 1 150px;
             height: 200px;
+        }
+
+        .podcast {
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        .short-card {
+            display: flex;
+            /* width: 90%; */
+            height: 90px;
+            background-color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-left: 0px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+            transition: all .4s;
+        }
+
+        .short-card:hover {
+            box-shadow: 5px 6px 15px 0px rgba(0, 0, 0, .5);
+        }
+
+        .short-image {
+            height: 100%;
+            width: 110px;
+            /* margin-left: 0px; */
+            margin-right: 20px;
+            /* margin-top: 0px; */
+            border-radius: 10px;
+        }
+
+        .icon {
+            /* margin-left: -135px;
+            margin-top: 43px; */
+            height: 50px;
+            width: 50px;
+            transform: translate(30px, -75px);
+        }
+
+        .details {
+            /* margin-left: 150px;
+            margin-top: -270px;
+            width: 270px; */
+            font-size: 20px;
+            align: right;
+            color: #000000;
+            font-variant: small-caps;
+            flex-grow: 1;
+        }
+
+        .sub1 h2 {
+            font-size: 13px;
+            color: #000000;
+        }
+
+        .sub1 {
+            margin-top: 26px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+
+
+        .detail1 {
+            font-size: 18px;
+            position: relative;
+            top: 10px;
+            /* margin-top: -20px;
+            margin-left: 20px; */
+        }
+
+        /* for  iphone 5/se*/
+        @media only screen and (max-width: 320px) {
+            .sub1 h2 {
+                line-height: 22px;
+            }
+
+            .short-card {
+                height: 80px;
+            }
+
+            .short-image {
+                height: 100%;
+                width: 90px;
+                margin-right: 15px;
+            }
+
+            [class*="col-"] .sub1 {
+                margin-top: 25px;
+            }
+
+            .podcast-cover .feed-card {
+                height: 260px;
+            }
+
+            .icon {
+                transform: translate(20px, -70px);
+            }
         }
     </style>
 </head>
