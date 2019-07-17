@@ -54,6 +54,38 @@ $get_sub_cat = get_posts($args);
 </section>
 <?php //print_r(get_the_category());
 ?>
+
+<!-- Filter section -->
+<section id="filter">
+    <div class="container mt4">
+        <div class="col-12">
+            <div class="menu">
+                <ul>
+                    <li class="menu-item">
+                        <button class="tablinks active" onclick="toggler(event,'All')"> All </button>
+                    </li>
+                    <li class="menu-item">
+                        <button class="tablinks" onclick="toggler(event,'post')"> Insights </button>
+                    </li>
+                    <li class="menu-item">
+                        <button class="tablinks" onclick="toggler(event,'video')"> Videos </button>
+                    </li>
+                    <li class="menu-item">
+                        <button class="tablinks" onclick="toggler(event,'podcast')"> Podcasts </button>
+                    </li>
+                    <li class="menu-item">
+                        <button class="tablinks" onclick="toggler(event,'amp_story')"> Stories </button>
+                    </li>
+
+
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Remaining categories -->
 <section id="cards-feed" class="mb4">
     <div class="flex container" style="flex-wrap:wrap">
@@ -65,7 +97,7 @@ $get_sub_cat = get_posts($args);
                 $post_title = get_the_title($val);
                 $type = get_post_type($val);
                 ?>
-                <div class="feed-card">
+                <div class="feed-card feed-toggle fade-animate <?php echo $type?>">
                     <div class="single-thumbnail">
                         <amp-img src="<?php echo $post_img; ?>"></amp-img>
                         <div class="fade"></div>
@@ -124,10 +156,6 @@ $get_sub_cat = get_posts($args);
                 </div>
             <?php } ?>
         </div>
-        <div class="filter-bar-container">
-            <div>
-                hello
-            </div>
-        </div>
+
     </div>
 </section>

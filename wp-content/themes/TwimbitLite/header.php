@@ -2,6 +2,8 @@
 <html amp="">
 
 <head>
+
+    <script type="application/javascript" src="<?php echo content_url() . '/themes/TwimbitLite/src/toggler.js' ?>"> </script>
     <meta charset="utf-8">
     <meta name="amp-google-client-id-api" content="googleanalytics">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
@@ -108,7 +110,18 @@
         body {
             margin: 0
         }
+        .active{
+            background-color: #0d84e3;
+        }
+        .fade-animate{
+            animation: fadeEffect 1s; /* Fading effect takes 1 second */
+        }
 
+        /* Go from zero to full opacity */
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
         article,
         aside,
         footer,
