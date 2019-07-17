@@ -1,12 +1,12 @@
 <?php
 
-/**
- * The template for displaying all single posts and attachments
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
- */
+/*
+     * The template for displaying all audio template
+     *
+     * Template Name:posts
+     * Template Post Type: post
+     */
+
 
 get_header();
 global $post;
@@ -46,7 +46,7 @@ $current_post = $post; // remember the current post
 // $firstCategory = $category[0]->cat_name;
 ?>
 
-<section class="featured-image" style="padding: 0px;background-image:url('<?php print the_post_thumbnail_url(); ?>');">
+<section class="featured-image" style="padding: 0px;background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
     <?php while (have_posts()) {
         the_post();
         $type = get_post_type(); ?>
@@ -56,13 +56,13 @@ $current_post = $post; // remember the current post
             <div class="featured-image-text-container">
                 <div class="featured-image-text xs-col-12 sm-col-8 md-col-7 lg-col-6">
                     <a href="#"><?php if ($type == "post") {
-                                    print "Insight";
+                                    echo "Insight";
                                 } else if ($type == "video") {
-                                    print "Video";
+                                    echo "Video";
                                 } else if ($type == "podcast") {
-                                    print "Podcast";
+                                    echo "Podcast";
                                 } else if ($type == "amp_story") {
-                                    print "Story";
+                                    echo "Story";
                                 }  ?></a href="#">
                     <h2><?php the_title(); ?></h2>
                     <h6 style="color: #f5f5f5" class="mt2"><?php the_date(); ?></h6>
@@ -103,7 +103,7 @@ $current_post = $post; // remember the current post
                                 ?>
                             <?php
                             }
-                            $post = $current_post; ?>   
+                            $post = $current_post; ?>
                         </div>
                     </div>
                 </div>
