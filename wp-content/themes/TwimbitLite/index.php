@@ -43,7 +43,7 @@ $get_post = get_posts($post_args);
 					$story_title = get_the_title($val);
 					?>
 
-					<amp-img src="<?php print $story_img; ?>"></amp-img>
+					<amp-img src="<?php echo $story_img; ?>"></amp-img>
 
 				<?php } ?>
 			</amp-carousel>
@@ -88,11 +88,11 @@ $get_post = get_posts($post_args);
 				?>
 				<div class="feed-card">
 					<div class="single-thumbnail">
-						<amp-img src="<?php print $post_img; ?>"></amp-img>
+						<amp-img src="<?php echo $post_img; ?>"></amp-img>
 						<div class="fade"></div>
-						<a href="<?php print $post_url; ?>" class="feed-link <?php echo $type?>">
+						<a href="<?php echo $post_url; ?>" class="feed-link <?php echo $type?>">
 							<div class="feed-title">
-								<h3><?php print $post_title; ?></h3>
+								<h3><?php echo $post_title; ?></h3>
 
 								<p class="feed-subtitle">#5: Lay off the social media.</p>
 
@@ -131,13 +131,13 @@ $get_post = get_posts($post_args);
                                    <!-- adding type-->
 									<div class="count">
 										<?php if ($type == "post") {
-											print "Insight";
+											echo "Insight";
 										} else if ($type == "video") {
-											print "Video";
+											echo "Video";
 										} else if ($type == "podcast") {
-											print "Podcast";
+											echo "Podcast";
 										} else if ($type == "amp_story") {
-											print "Story";
+											echo "Story";
 										}  ?>
 									</div>
 								</div>

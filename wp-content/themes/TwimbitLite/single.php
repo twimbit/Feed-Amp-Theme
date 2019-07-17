@@ -48,19 +48,20 @@ $current_post = $post; // remember the current post
 
 <section class="featured-image" style="padding: 0px;background-image:url('<?php print the_post_thumbnail_url(); ?>');">
     <?php while (have_posts()) {
-        the_post(); ?>
+        the_post();
+        $type = get_post_type(); ?>
         <div class="single-thumbnail">
             <div class="fade">
             </div>
             <div class="featured-image-text-container">
                 <div class="featured-image-text xs-col-12 sm-col-8 md-col-7 lg-col-6">
-                    <a href="#"><?php if (get_post_type($val) == "post") {
+                    <a href="#"><?php if ($type == "post") {
                                     print "Insight";
-                                } else if (get_post_type($val) == "video") {
+                                } else if ($type == "video") {
                                     print "Video";
-                                } else if (get_post_type($val) == "podcast") {
+                                } else if ($type == "podcast") {
                                     print "Podcast";
-                                } else if (get_post_type($val) == "amp_story") {
+                                } else if ($type == "amp_story") {
                                     print "Story";
                                 }  ?></a href="#">
                     <h2><?php the_title(); ?></h2>
