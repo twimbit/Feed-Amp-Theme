@@ -4,10 +4,8 @@
      * The template for displaying all audio template
      *
      * Template Name:posts
-     * Template Post Type: post
-     */
 
-
+*/
 get_header();
 global $post;
 $current_post = $post; // remember the current post
