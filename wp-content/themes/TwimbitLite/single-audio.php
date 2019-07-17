@@ -3,6 +3,7 @@
      * The template for displaying all audio template
      *
      * Template Name:audio_template
+     * Template Post Type: podcast
      */
 
     ?>
@@ -734,14 +735,14 @@ $post_args = array(
 'post_type' => array('podcast'),
 'suppress_filters' => true,
 );
-$get_post = get_posts($post_args);
-foreach ( $get_post as $val ) {
-    $post_img   = get_the_post_thumbnail_url( $val );
-    $post_url   = get_the_permalink( $val );
-    $post_title = get_the_title( $val );
-	$author = get_the_author($val);
 
-}
+the_post();
+    $post_img   = get_the_post_thumbnail_url();
+    $post_url   = get_permalink();
+    $post_title = get_the_title();
+	$author = get_the_author();
+
+
 ?>
 
 <div class="row">
@@ -795,17 +796,19 @@ foreach ( $get_post as $val ) {
                 margin-bottom: 20px;">
 
 	        <?php
+
+	        $get_post = get_posts($post_args);
 	        foreach ( array_slice($get_post, 0, 4) as $val) {
 	        $post_img = get_the_post_thumbnail_url($val);
-	        $post_url = get_the_permalink($val);
+	        $post_url = get_permalink($val);
 	        $post_title = get_the_title($val);
 	        $author= get_the_author($val);
 	        ?>
             <div class="short-card" style="height: 120px; width: 100%; background-color: white; border-radius: 10px; margin-bottom: 20px; box-shadow:0 2px 4px 0 rgba(0, 0, 0, .5);">
-            <a href="#content" target="content" name="feed">
+            <a href="<?php echo $post_url;?>"  name="feed">
 
                 <div class="short-image" style=" ">
-                    <img style="border-radius: 10px !important; height: 120px; width: 130px; margin-left: -16px; margin-right: 30px;margin-top: -8px;" src="http://localhost/wordpress/wp-content/uploads/2019/07/3.Landmark-VOID.jpg" layout="responsive" width="100px" height="100px" alt="" align="left">
+                    <img style="border-radius: 10px !important; height: 120px; width: 130px; margin-left: -16px; margin-right: 30px;margin-top: -8px;" src="<?php echo $post_img ?>" layout="responsive" width="100px" height="100px" alt="" align="left">
 
                         <svg xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink"
