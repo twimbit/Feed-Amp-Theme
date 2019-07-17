@@ -2851,7 +2851,13 @@
                 line-height: 1.5em;
             }
 
+            .feed-card-container {
+                order: 2;
+            }
 
+            .filter-bar-container {
+                order: 1;
+            }
         }
 
         /* for small devices */
@@ -2913,6 +2919,15 @@
 
         .feed-card-archive:hover {
             /* box-shadow: none; */
+        }
+
+        .feed-card-container {
+            flex: 2 400px;
+        }
+
+        .filter-bar-container {
+            flex: 1 150px;
+            height: 200px;
         }
     </style>
 </head>

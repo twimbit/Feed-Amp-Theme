@@ -49,7 +49,7 @@ $current_post = $post; // remember the current post
 <section class="featured-image" style="padding: 0px;background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
     <?php while (have_posts()) {
         the_post();
-        $type = get_post_type($val); ?>
+        $type = get_post_type(); ?>
         <div class="single-thumbnail">
             <div class="fade">
             </div>

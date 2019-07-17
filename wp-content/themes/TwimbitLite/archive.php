@@ -55,9 +55,9 @@ $get_sub_cat = get_posts($args);
 <?php //print_r(get_the_category());
 ?>
 <!-- Remaining categories -->
-<section id="cards-feed" class="mb4 row">
-    <div class="container mt2" style="margin-bottom: 6rem;">
-        <div class="lg-col-7 md-col-6 sm-col-7 xs-col-12">
+<section id="cards-feed" class="mb4">
+    <div class="flex container" style="flex-wrap:wrap">
+        <div class="feed-card-container">
             <?php
             foreach (array_slice($get_sub_cat, 0) as $val) {
                 $post_img = get_the_post_thumbnail_url($val);
@@ -70,7 +70,7 @@ $get_sub_cat = get_posts($args);
                         <amp-img src="<?php echo $post_img; ?>"></amp-img>
                         <div class="fade"></div>
                         <a href="<?php echo $post_url; ?>" class="feed-link">
-                            <div class="feed-title" style="bottom:auto">
+                            <div class="feed-title">
                                 <h3><?php echo $post_title; ?></h3>
 
                                 <p class="feed-subtitle">#5: Lay off the social media.</p>
@@ -124,10 +124,10 @@ $get_sub_cat = get_posts($args);
                 </div>
             <?php } ?>
         </div>
-    </div>
-    <div class="container">
-        <div class="lg-col-4 md-col-5 sm-col-6 xs-col-12">
-            hello
+        <div class="filter-bar-container">
+            <div>
+                hello
+            </div>
         </div>
     </div>
 </section>
