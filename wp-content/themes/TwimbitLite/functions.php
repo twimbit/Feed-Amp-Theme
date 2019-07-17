@@ -132,8 +132,9 @@ add_action( 'init', 'cptui_register_my_cpts' );
 
 
 /**** Theme template for post *****/
+
 function audio_template() {
-	wp_enqueue_style( 'customstyle', '/Applications/XAMPP/xamppfiles/htdocs/wordpress/wp-content/themes/TwimbitLite/style.css', array(), '1.0.0', 'all' );
+	wp_enqueue_style( 'customstyle', '/Applications/XAMPP/xamppfiles/htdocs/app-theme/wp-content/themes/TwimbitLite/style.css', array(), '1.0.0', 'all' );
 }
 add_action('wp_enqueue_scripts()','audio_template');
 add_theme_support('post-formats',array('aside','audio','video','image'));
