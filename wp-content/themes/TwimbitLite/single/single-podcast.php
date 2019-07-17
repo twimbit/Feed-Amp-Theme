@@ -2,8 +2,8 @@
 /*
  * The template for displaying all audio template
  *
- * Template Name:audio_template
- */
+ *
+ * */
 
 get_header();
 ?>
