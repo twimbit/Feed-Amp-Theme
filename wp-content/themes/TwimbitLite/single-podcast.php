@@ -35,24 +35,34 @@ $audio = get_field('audio_type');
     <div class="lg-col-7 md-col-7 sm-col-7 xs-col-12 podcast-cover">
         <!-- 1st div divided into 66%size of the page-->
 
-        <div class="feed-card">
+        <div class="feed-card podcast-card">
             <div class="single-thumbnail">
                 <amp-img src="<?php echo $post_img; ?>"></amp-img>
                 <div class="fade"></div>
                 <div class="feed-link">
                     <div class="feed-title">
                         <p class="feed-subtitle"><?php echo $post_title; ?></p>
-                        <span><?php echo $author; ?></span>
-                        <span><?php echo $category; ?></span>
+                        <span>By <?php echo $author; ?></span>
+                        <span></span>
+                        <span># <?php echo '<a href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->name ) . '</a>'; ?>
+                        </span>
                     </div>
                     <div class="audio">
-                        <audio controls src="<?php echo $audio['url']; ?>" class="player" controls controlsList="nodownload">
+                        <audio controls src="<?php echo $audio['url']; ?>" autoplay="true" class="player" controls controlsList="nodownload">
                             <!-- podcast playlist-->
                         </audio>
                     </div>
                     <div class="desc">
+                        <span style="font-style: italic; text-transform: capitalize; font-size: medium;">
+                            Description
+                        </span>
+                        <br>
                         <span>
-                            <?php echo mb_strimwidth(the_content(), 0, 50, "..."); ?>
+                            <?php
+                            $char_limit = 300; //character limit
+                            $content = $post->post_content; //contents saved in a variable
+                            echo substr(strip_tags($content), 0, $char_limit);
+                            ?>
                         </span>
                     </div>
                 </div>
@@ -72,7 +82,7 @@ $audio = get_field('audio_type');
             </div>
             <div class="head">
                 <a href="<?php echo $next_post_url = get_permalink(get_adjacent_post(false, '', false)->ID); ?>" class="next">
-                    UP NEXT
+                    up next
                     <!-- next option-->
                 </a>
             </div>
@@ -89,10 +99,10 @@ $audio = get_field('audio_type');
                 $post_url = get_permalink($val);
                 $post_title = get_the_title($val);
                 $author = get_the_author($val);
-                $category = get_the_category_by_ID($val);
+                $category = get_the_category();
                 ?>
 
-                <a href="<?php echo $post_url; ?>" style="text-decoration:none">
+                <a href="<?php echo $post_url; ?>" style="text-decoration:none;">
                     <div class="short-card">
                         <!-- podcast option -->
 
@@ -132,14 +142,12 @@ $audio = get_field('audio_type');
                         </div>
                         <div class="details">
                             <!--podcast details -->
-                            <p class="detail1">
+                            <p class="detail1 ">
                                 <?php echo $post_title; ?>
                             </p> <!-- podcast title -->
                             <div class="sub1">
-                                <h2 style="margin-right: 10px;">
-                                    <?php echo $author; ?>
-                                </h2>
-                                <h2><?php echo $category; ?></h2>
+                                <span style="margin-right: 10px;">By <?php echo $author; ?></span>
+                                <span>#  <?php echo esc_html($category[0]->name); ?></span>
                             </div>
                         </div>
 
