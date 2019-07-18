@@ -69,11 +69,11 @@ $audio = get_field('audio_type');
                     UP NEXT
                     <!-- next option-->
                 </a>
-                <p class="social" style="margin-left:100px;">
-                    <amp-social-share type="facebook" width="30" height="30" data-param-app_id="254325784911610"></amp-social-share>
-                    <amp-social-share type="linkedin" width="30" height="30" ></amp-social-share>
-                    <amp-social-share type="twitter" width="30" height="30" ></amp-social-share>
-                    <amp-social-share type="whatsapp" width="30" height="30" ></amp-social-share>
+                <p class="social">
+                    <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+                    <amp-social-share class=social1"  height="30px" width="30px" type="linkedin"></amp-social-share>
+                    <amp-social-share class="social1"  height="30px" width="30px" type="twitter"></amp-social-share>
+                    <amp-social-share class="social1"  height="30px" width="30px" type="whatsapp"></amp-social-share>
                 </p>
             </div>
             <hr>

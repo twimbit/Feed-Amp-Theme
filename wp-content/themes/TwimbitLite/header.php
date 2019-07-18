@@ -3124,13 +3124,18 @@
             /* margin-top: -20px;
             margin-left: 20px; */
         }
+        .social
+        {
+            margin-left: 70px;
+            width: 140px;
+            height: 23px;
+            display: inline-block;
+
+        }
 
         /* for  iphone 5/se*/
         @media only screen and (max-width: 320px) {
-            .social
-            {
-                margin-left: 60px;
-            }
+
             .sub1 h2 {
                 line-height: 22px;
             }
@@ -3147,6 +3152,23 @@
 
             [class*="col-"] .sub1 {
                 margin-top: 25px;
+            }
+            .social
+            {
+                margin-left: 55px;
+                width: 140px;
+                height: 23px;
+
+
+            }
+            .social1
+            {
+
+                display: inline-block;
+                margin-left: 0px;
+                height:22px;
+                width:22px;
+
             }
 
             .podcast-cover .feed-card {
