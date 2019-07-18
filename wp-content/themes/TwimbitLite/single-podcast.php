@@ -12,7 +12,7 @@ $post_args = array(
     'orderby' => 'date',
     'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
-    'exclude' => array(),
+    'exclude' => array(get_the_ID()),
     'meta_key' => '',
     'meta_value' => '',
     'post_type' => array('podcast'),
@@ -84,7 +84,7 @@ $audio = get_field('audio_type');
 
             $get_post = get_posts($post_args);
 
-            foreach (array_slice($get_post, 1, 4) as $val) {
+            foreach (array_slice($get_post, 0,) as $val) {
                 $post_img = get_the_post_thumbnail_url($val);
                 $post_url = get_permalink($val);
                 $post_title = get_the_title($val);
