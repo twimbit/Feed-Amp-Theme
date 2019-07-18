@@ -2530,8 +2530,8 @@
         .feed-title p {
             margin: 8px 0 0;
             font-weight: 400;
-            font-size: 13px;
-            line-height: 1.4;
+            font-size: 17px;
+            line-height: 0.9;
         }
 
         @media (min-width: 768px) {
@@ -2558,6 +2558,8 @@
             .podcast-cover .feed-title span {
                 font-size: 16px;
                 margin-right: 10px;
+                text-transform: capitalize;
+                font-style: italic;
             }
 
 
@@ -2569,6 +2571,9 @@
 
         .podcast-cover .feed-title p {
             font-weight: 600;
+            font-family: sans-serif;
+            text-transform: capitalize;
+
         }
 
         .feed-action {
@@ -2868,10 +2873,12 @@
 
         .next {
             color: #000000;
-            /* margin-top: -20px; */
+            margin-top: 8px;
+            margin-bottom: 0px;
             /* margin-left: -15px; */
             font-size: 20px;
             text-decoration: none;
+            text-transform: capitalize;
         }
 
         .audio {
@@ -2888,11 +2895,12 @@
 
         .desc {
             position: relative;
-            top: 60px;
+            top: 70px;
             margin-left: 24px;
             padding: 10px;
-            font-size: 15px;
+            font-size: 13px;
             line-height: 20px;
+            text-transform: capitalize;
         }
 
         .head {
@@ -2900,9 +2908,17 @@
             x
         }
 
-        .desc span {
+        .desc p{
             color: #FFF;
+            text-align: justify;
+            font-size: 13px;
+            line-height: initial;
         }
+        .desc head1{
+            color:#000;
+        }
+
+
 
         /* for xtra small devices */
         @media only screen and (max-width:40rem) {
@@ -2914,6 +2930,7 @@
             .podcast-cover .feed-title span {
                 font-size: 12px;
                 margin-right: 10px;
+                text-transform: capitalize;
             }
 
             .player {
@@ -2921,9 +2938,11 @@
                 height: 30px;
             }
 
-            .desc span {
+            .desc p {
                 color: #FFF;
-                font-size: 13px;
+                font-size: 10px;
+                text-transform: capitalize;
+                line-height: initial;
             }
 
             .featured-image-text h2 {
@@ -2977,7 +2996,7 @@
                 font-size: 20px;
                 align: right;
                 color: #000000;
-                font-variant: small-caps;
+                text-transform: capitalize;
             }
 
             [class*="col-"] .sub1 {
@@ -3037,6 +3056,12 @@
             .featured-image {
                 height: 500px;
             }
+        }
+        .desc{
+            font-size: 3px;
+            right: 15px;
+            line-height: 10px;
+            text-align: justify;
         }
 
         .pre-next-dialog {
@@ -3103,15 +3128,17 @@
             /* width: 90%; */
             height: 90px;
             background-color: white;
-            border-radius: 10px;
+            border-radius: 4px;
+            margin-top: 20px;
             margin-bottom: 20px;
             margin-left: 0px;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-            transition: all .4s;
+            transition: all .2s;
+
         }
 
-        .short-card:hover {
-            box-shadow: 5px 6px 15px 0px rgba(0, 0, 0, .5);
+        .short-card:hover{
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
 
         .short-image {
@@ -3120,7 +3147,7 @@
             /* margin-left: 0px; */
             margin-right: 20px;
             /* margin-top: 0px; */
-            border-radius: 10px;
+            border-radius: 4px;
         }
 
         .icon {
@@ -3138,13 +3165,13 @@
             font-size: 20px;
             align: right;
             color: #000000;
-            font-variant: small-caps;
             flex-grow: 1;
         }
 
-        .sub1 h2 {
+        .sub1 span {
             font-size: 13px;
             color: #000000;
+            text-transform: capitalize;
         }
 
         .sub1 {
@@ -3159,12 +3186,13 @@
             font-size: 18px;
             position: relative;
             top: 10px;
+            text-transform: capitalize;
             /* margin-top: -20px;
             margin-left: 20px; */
         }
-
-        .social {
-            margin-left: 70px;
+        .social
+        {
+            margin-left: 0px;
             width: 140px;
             height: 23px;
             display: inline-block;
@@ -3192,25 +3220,35 @@
                 margin-top: 25px;
             }
 
-            .social {
-                margin-left: 55px;
+            .social
+            {
+                margin-left: 3px;
                 width: 140px;
                 height: 23px;
-
-
+            }
+            .audio{
+                padding:15px;
+            }
+            .desc{
+                font-size: 3px;
+                right: 15px;
+                line-height: 8px;
+                text-align: justify;
             }
 
-            .social1 {
-
+            .social1{
                 display: inline-block;
                 margin-left: 0px;
                 height: 22px;
                 width: 22px;
 
             }
-
             .podcast-cover .feed-card {
-                height: 260px;
+                height: 290px;
+
+            }
+            .audio .player {
+                width: 100%;
             }
 
 
@@ -3218,6 +3256,14 @@
                 transform: translate(20px, -70px);
             }
         }
+
+        .podcast-card:hover
+        {
+            pointer-events:none;
+        }
+        .podcast-card
+        {
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
 
         @media (max-width: 64rem) and (min-width: 52.06rem) {
             .md-hide {
@@ -3229,6 +3275,7 @@
             .lg-hide {
                 display: none;
             }
+
         }
     </style>
 </head>
