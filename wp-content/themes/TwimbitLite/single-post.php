@@ -68,7 +68,7 @@ $get_trending = get_posts($trending);
                 </div>
             </div>
 
-        </div>
+        </div><!-- skfjsdkjfhjskdsd -->
 
     </section>
 
