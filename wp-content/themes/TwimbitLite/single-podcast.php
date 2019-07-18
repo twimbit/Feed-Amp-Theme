@@ -78,6 +78,7 @@ $audio = get_field('audio_type');
                 <amp-social-share class=social1"  height="30px" width="30px" type="linkedin"></amp-social-share>
                 <amp-social-share class="social1"  height="30px" width="30px" type="twitter"></amp-social-share>
                 <amp-social-share class="social1"  height="30px" width="30px" type="whatsapp"></amp-social-share>
+
             </div>
             <div class="head">
                 <a href="<?php echo $next_post_url = get_permalink(get_adjacent_post(false, '', false)->ID); ?>" class="next">

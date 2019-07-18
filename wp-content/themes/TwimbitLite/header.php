@@ -22,6 +22,9 @@
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async></script>
     <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async></script>
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -3084,7 +3087,6 @@
             margin-top: 50px;
             justify-content: center;
         }
-
         .short-card {
             display: flex;
             /* width: 90%; */
@@ -3096,13 +3098,10 @@
             margin-left: 0px;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
             transition: all .2s;
-
         }
-
         .short-card:hover{
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
-
         .short-image {
             height: 100%;
             width: 110px;
@@ -3129,7 +3128,6 @@
             color: #000000;
             flex-grow: 1;
         }
-
         .sub1 span {
             font-size: 13px;
             color: #000000;
@@ -3141,8 +3139,6 @@
             display: flex;
             flex-wrap: wrap;
         }
-
-
 
         .detail1 {
             font-size: 18px;
@@ -3225,6 +3221,30 @@
         {
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
+
+
+        /* Video player css */
+        .video-player {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Overlay fills the parent and sits on top of the video */
+        .click-to-play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .poster-image {
+            position: absolute;
+            z-index: 1;
+        }
+
+
+
     </style>
 </head>
 
