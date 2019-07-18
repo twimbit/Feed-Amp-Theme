@@ -103,7 +103,7 @@ $current_post = $post; // remember the current post
                                 ?>
                             <?php
                             }
-                            $post = $current_post; ?>   
+                            $post = $current_post; ?>
                         </div>
                     </div>
                 </div>
@@ -120,6 +120,8 @@ $current_post = $post; // remember the current post
     <?php } ?>
 
 </section>
+
+
 
 <script>
     $(document).ready(function() {
