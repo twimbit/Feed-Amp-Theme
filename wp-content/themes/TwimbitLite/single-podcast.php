@@ -40,11 +40,11 @@ $audio = get_field('audio_type');
                 <amp-img src="<?php echo $post_img; ?>"></amp-img>
                 <div class="fade"></div>
                 <div class="feed-link">
-                    <div class="feed-title">
+                    <div class="feed-title"  style="text-decoration: none;">
                         <p class="feed-subtitle"><?php echo $post_title; ?></p>
                         <span>By <?php echo $author; ?></span>
                         <span></span>
-                        <span># <?php echo '<a href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->name ) . '</a>'; ?>
+                        <span style="text-decoration: none;"># <?php echo '<a href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->name ) . '</a>'; ?>
                         </span>
                     </div>
                     <div class="audio">
@@ -53,7 +53,7 @@ $audio = get_field('audio_type');
                         </audio>
                     </div>
                     <div class="desc">
-                        <span style="font-style: italic; text-transform: capitalize; font-size: medium;">
+                        <span style="font-style: italic; text-transform: capitalize; font-size: medium; bottom: 10px;">
                             Description
                         </span>
                         <br>

@@ -2856,8 +2856,8 @@
 
         .next {
             color: #000000;
-            margin-top: 0px;
-            margin-bottom:-7px;
+            margin-top: 8px;
+            margin-bottom: 0px;
             /* margin-left: -15px; */
             font-size: 20px;
             text-decoration: none;
@@ -2893,6 +2893,7 @@
             color: #FFF;
             text-align: justify;
             font-size: 13px;
+            line-height: initial;
         }
         .desc head1{
             color:#000;
@@ -2922,6 +2923,7 @@
                 color: #FFF;
                 font-size: 10px;
                 text-transform: capitalize;
+                line-height: initial;
             }
 
             .featured-image-text h2 {
@@ -3017,6 +3019,12 @@
                 height: 500px;
             }
         }
+        .desc{
+            font-size: 3px;
+            right: 15px;
+            line-height: 10px;
+            text-align: justify;
+        }
 
         .pre-next-dialog {
             position: sticky;
@@ -3086,10 +3094,9 @@
             margin-bottom: 20px;
             margin-left: 0px;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-            transition: all .4s;
         }
 
-        .short-card:hover {
+        .short-card{
             box-shadow: 5px 6px 15px 0px rgba(0, 0, 0, .5);
         }
 
@@ -3177,6 +3184,15 @@
                 width: 140px;
                 height: 23px;
             }
+            .audio{
+                padding:15px;
+            }
+            .desc{
+                font-size: 3px;
+                right: 15px;
+                line-height: 8px;
+                text-align: justify;
+            }
             .social1
             {
                 display: inline-block;
@@ -3201,6 +3217,10 @@
         .podcast-card:hover
         {
             box-shadow: none;
+        }
+        .podcast-card
+        {
+            box-shadow:5px 6px 15px 0px rgba(0, 0, 0, .5);
         }
     </style>
 </head>
