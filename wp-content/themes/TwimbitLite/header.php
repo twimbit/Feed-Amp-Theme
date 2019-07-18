@@ -2559,6 +2559,8 @@
                 font-size: 16px;
                 margin-right: 10px;
             }
+
+
         }
 
         .podcast-cover .feed-title {
@@ -2995,10 +2997,29 @@
             }
         }
 
+        .more-to-explore-card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
 
         /* for small devices */
         @media (min-width:40.06rem) and (max-width:52rem) {}
+
+        /* for small devices and less*/
+        @media (max-width:52rem) {
+            .more-to-explore-card-container {
+                display: block;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .more-to-explore-card-container .feed-card {
+                width: 100% !important;
+            }
+        }
+
 
         /* for medium devices */
         @media (min-width:52.06rem) and (max-width:64rem) {}
