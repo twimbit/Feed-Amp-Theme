@@ -73,11 +73,11 @@ $audio = get_field('audio_type');
     <div class="lg-col-4 md-col-5 sm-col-5 xs-col-12">
         <!-- main div divded into 33% of the page -->
         <div class="right-side">
-            <div class="social">
+            <div class="social" >
                 <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
-                <amp-social-share class=social1"  height="30px" width="30px" type="linkedin"></amp-social-share>
-                <amp-social-share class="social1"  height="30px" width="30px" type="twitter"></amp-social-share>
-                <amp-social-share class="social1"  height="30px" width="30px" type="whatsapp"></amp-social-share>
+                <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
+                <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
+                <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
             </div>
             <div class="head">
                 <a href="<?php echo $next_post_url = get_permalink(get_adjacent_post(false, '', false)->ID); ?>" class="next">
@@ -88,7 +88,7 @@ $audio = get_field('audio_type');
             <hr>
             <!--hr tag-->
 
-            <!--dynamic containers-->
+            <!--dynamic container-->
             <?php
 
             $get_post = get_posts($post_args);
