@@ -52,7 +52,7 @@ $audio = get_field('audio_type');
                     </div>
                     <div class="desc">
                         <span>
-                            <?php echo mb_strimwidth(the_content(), 0, 250, "..."); ?>
+                            <?php echo mb_strimwidth(the_content(), 0, 50, "..."); ?>
                         </span>
                     </div>
                 </div>
@@ -64,11 +64,18 @@ $audio = get_field('audio_type');
     <div class="lg-col-4 md-col-5 sm-col-5 xs-col-12">
         <!-- main div divded into 33% of the page -->
         <div class="right-side">
-            <a href="<?php echo $next_post_url = get_permalink(get_adjacent_post(false, '', false)->ID); ?>" class="next">
-                UP NEXT
-                <!-- next option-->
-            </a>
-
+            <div class="head">
+                <a href="<?php echo $next_post_url = get_permalink(get_adjacent_post(false, '', false)->ID); ?>" class="next">
+                    UP NEXT
+                    <!-- next option-->
+                </a>
+                <p class="social" style="margin-left:100px;">
+                    <amp-social-share type="facebook" width="30" height="30" data-param-app_id="254325784911610"></amp-social-share>
+                    <amp-social-share type="linkedin" width="30" height="30" ></amp-social-share>
+                    <amp-social-share type="twitter" width="30" height="30" ></amp-social-share>
+                    <amp-social-share type="whatsapp" width="30" height="30" ></amp-social-share>
+                </p>
+            </div>
             <hr>
             <!--hr tag-->
 

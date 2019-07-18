@@ -21,6 +21,7 @@
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async></script>
     <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -2410,38 +2411,31 @@
             -ms-flex-wrap: wrap;
             flex-wrap: wrap;
             margin-right: -15px;
-            margin-left: -15px
+            margin-left: -15px;
         }
-
         #stories {
             margin-top: 5rem;
         }
-
         .story-carousel {
             height: 96px;
             padding: 0 10px;
         }
-
         .story-carousel amp-img {
             height: 95px;
             width: 95px;
             border-radius: 8px;
         }
-
         .story-carousel amp-img img {
             border-radius: 8px;
         }
-
         .amp-carousel-button {
             background-color: rgba(241, 107, 111, 0.54);
             border-radius: 50%;
         }
-
         .amp-carousel-slide>.i-amphtml-replaced-content {
             -o-object-fit: contain;
             object-fit: cover;
         }
-
         .feed-card {
             margin-bottom: 30px;
             overflow: hidden;
@@ -2451,7 +2445,6 @@
             height: 245px;
             transition: all .4s;
         }
-
         .feed-thumbnail {
             border: none !important;
             position: relative;
@@ -2460,24 +2453,19 @@
             display: flex;
             align-items: center;
         }
-
         .feed-card amp-img {
             height: 100%;
             width: 100%;
             transition: all .2s;
         }
-
         .feed-card amp-img img {
             object-fit: cover;
             transform: scale(1);
             transition: all .2s;
-
         }
-
         .feed-card:hover {
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
-
         .fade {
             position: absolute;
             bottom: 0;
@@ -2486,9 +2474,7 @@
             top: 0;
             opacity: .9;
             background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.23) 0, rgb(0, 0, 0) 100%);
-
         }
-
         .feed-link {
             position: absolute;
             bottom: 0;
@@ -2501,7 +2487,7 @@
             position: absolute;
             bottom: 0;
             right: 0;
-            left: 0;
+            left: 10px;
             margin: 0;
             color: #FFF;
             padding: 16px;
@@ -2544,11 +2530,11 @@
             }
 
             .podcast-cover .feed-title p {
-                font-size: 16px;
+                font-size: 28px;
             }
 
             .podcast-cover .feed-title span {
-                font-size: 12px;
+                font-size: 16px;
                 margin-right: 10px;
             }
         }
@@ -2662,10 +2648,6 @@
             text-decoration: none;
             border-bottom: 1.5px solid rgba(255, 255, 255, .75);
         }
-
-
-
-
         .featured-image-text-container {
             display: flex;
             justify-content: center;
@@ -2812,14 +2794,11 @@
             height: 400px;
             background-size: cover;
         }
-
         .post-content {
             display: flex;
             justify-content: center;
 
         }
-
-
         .single-date-name {
             display: flex;
             justify-content: center;
@@ -2880,9 +2859,9 @@
 
         .audio {
             position: relative;
-            top: 75px;
+            top: 83px;
             /* position: absolute; */
-            padding: 24px;
+            padding: 30px;
         }
 
         .player {
@@ -2892,10 +2871,16 @@
 
         .desc {
             position: relative;
-            top: 61px;
+            top: 60px;
             margin-left: 24px;
+            padding: 10px;
+            font-size: 15px;
+            line-height: 20px;
         }
-
+        .head
+        {
+            display: flex;x
+        }
         .desc span {
             color: #FFF;
         }
@@ -3142,6 +3127,10 @@
 
         /* for  iphone 5/se*/
         @media only screen and (max-width: 320px) {
+            .social
+            {
+                margin-left: 60px;
+            }
             .sub1 h2 {
                 line-height: 22px;
             }
@@ -3163,6 +3152,7 @@
             .podcast-cover .feed-card {
                 height: 260px;
             }
+
 
             .icon {
                 transform: translate(20px, -70px);
