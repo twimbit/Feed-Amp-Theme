@@ -53,17 +53,16 @@ $audio = get_field('audio_type');
                         </audio>
                     </div>
                     <div class="desc">
-                        <span style="font-style: italic; text-transform: capitalize; font-size: medium; bottom: 10px;">
+                        <p style="font-style: italic; text-transform: capitalize; font-size: medium; margin-bottom: 10px; font-weight: bold;">
                             Description
-                        </span>
-                        <br>
-                        <span>
+                        </p>
+                        <p>
                             <?php
                             $char_limit = 300; //character limit
                             $content = $post->post_content; //contents saved in a variable
                             echo substr(strip_tags($content), 0, $char_limit);
                             ?>
-                        </span>
+                        </p>
                     </div>
                 </div>
 
@@ -147,7 +146,8 @@ $audio = get_field('audio_type');
                             </p> <!-- podcast title -->
                             <div class="sub1">
                                 <span style="margin-right: 10px;">By <?php echo $author; ?></span>
-                                <span>#  <?php echo esc_html($category[0]->name); ?></span>
+                                <span></span>
+                                <span># <?php echo esc_html($category[0]->name); ?></span>
                             </div>
                         </div>
 

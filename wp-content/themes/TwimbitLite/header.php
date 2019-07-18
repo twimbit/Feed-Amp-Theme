@@ -2878,7 +2878,7 @@
 
         .desc {
             position: relative;
-            top: 60px;
+            top: 70px;
             margin-left: 24px;
             padding: 10px;
             font-size: 13px;
@@ -2889,7 +2889,7 @@
         {
             display: flex;x
         }
-        .desc span{
+        .desc p{
             color: #FFF;
             text-align: justify;
             font-size: 13px;
@@ -2919,7 +2919,7 @@
                 height: 30px;
             }
 
-            .desc span {
+            .desc p {
                 color: #FFF;
                 font-size: 10px;
                 text-transform: capitalize;
@@ -3090,15 +3090,17 @@
             /* width: 90%; */
             height: 90px;
             background-color: white;
-            border-radius: 10px;
+            border-radius: 4px;
             margin-top: 20px;
             margin-bottom: 20px;
             margin-left: 0px;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+            transition: all .2s;
+
         }
 
-        .short-card{
-            box-shadow: 5px 6px 15px 0px rgba(0, 0, 0, .5);
+        .short-card:hover{
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
 
         .short-image {
@@ -3107,7 +3109,7 @@
             /* margin-left: 0px; */
             margin-right: 20px;
             /* margin-top: 0px; */
-            border-radius: 10px;
+            border-radius: 4px;
         }
 
         .icon {
@@ -3203,7 +3205,7 @@
 
             }
             .podcast-cover .feed-card {
-                height: 260px;
+                height: 290px;
 
             }
             .audio .player {
@@ -3217,11 +3219,11 @@
         }
         .podcast-card:hover
         {
-            box-shadow: none;
+            pointer-events:none;
         }
         .podcast-card
         {
-            box-shadow:5px 6px 15px 0px rgba(0, 0, 0, .5);
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
     </style>
 </head>
