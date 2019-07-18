@@ -106,10 +106,21 @@ $get_trending = get_posts($trending);
                     </div>
                 </div>
                 <div class="xs-col-12 sm-col-7 md-col-6 lg-col-5 mt4 cont">
+                    <div class="social lg-hide md-hide" style="margin-left:auto;">
+                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+                        <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
+                    </div>
                     <?php the_content(); ?>
                 </div>
                 <div class="xs-col-12 sm-col-2 md-col-2 lg-col-2 mt4 ml2 sm-hide xs-hide">
-                    next and previous post
+                    <div class="social">
+                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+                        <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
+                    </div>
                 </div>
             </section>
         </div>
