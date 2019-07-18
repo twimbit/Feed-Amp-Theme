@@ -68,7 +68,7 @@ $get_trending = get_posts($trending);
                 </div>
             </div>
 
-        </div><!-- skfjsdkjfhjskdsd -->
+        </div>
 
     </section>
 
@@ -80,20 +80,31 @@ $get_trending = get_posts($trending);
                         <div class="pre-next-dialog-content">
                             <h2 style="flex:1">Up next</h2>
                             <?php $taxonomy = "post";
+                            $post_title = array();
+                            $post_permalink = array();
+                            $post_thumbnail = array();
+                            $post_type = array();
                             for ($i = 1; $i <= 2; $i++) {
                                 $post = get_next_post(); // this uses $post->ID
+                                $post_thumbnail[$i] = get_the_post_thumbnail_url();
+                                $post_type[$i] = get_post_type();
+                                $post_title[$i] = get_the_title();
+                                $post_permalink[$i] = get_the_permalink();
                                 if (!empty($post)) { ?>
-                                    <a href="<?php echo get_the_permalink(); ?>">
-                                        <p style="flex:2"><?php the_title(); ?></p>
+                                    <a href="<?php echo $post_permalink[$i]; ?>">
+                                        <p style="flex:2"><?php echo $post_title[$i]; ?></p>
                                     </a>
                                 <?php } else {
                                     $first_post =  get_posts(array(
                                         'numberposts' => 1,
                                         'post_type' => array('post'),
                                         'order' => 'ASC',
-                                    ))[0]; ?>
-                                    <a href="<?php echo get_the_permalink($first_post); ?>">
-                                        <p style="flex:2"><?php echo get_the_title($first_post); ?></p>
+                                    ))[0];
+                                    $first_post_title = get_the_title($first_post);
+                                    $first_post_permalink = get_the_permalink($first_post);
+                                    ?>
+                                    <a href="<?php echo $first_post_permalink; ?>">
+                                        <p style="flex:2"><?php echo $first_post_title; ?></p>
                                     </a>
 
                                     <?php break;
@@ -130,21 +141,22 @@ $get_trending = get_posts($trending);
 
 </section>
 
+<!-- More to explore section -->
 <section id="more-to-explore" style="margin-top:3rem">
     <div class="container">
         <div class="more-to-explore-heading">
             <h3>More to explore</h3>
             <hr>
         </div>
-        <amp-carousel class="treanding-carousel d-lg-none d-md-none" type="slides" controls>
+        <div class="more-to-explore-card-container">
             <?php
-            foreach ($get_trending as $val) {
-                $trending_img = get_the_post_thumbnail_url($val);
-                $trending_url = get_the_permalink($val);
-                $trending_title = get_the_title($val);
-                $type = get_post_type($val);
+            for ($i = 1; $i <= 2; $i++) {
+                $trending_img = $post_thumbnail[$i];
+                $trending_url = $post_permalink[$i];
+                $trending_title = $post_title[$i];
+                $type = $post_type[$i];
                 ?>
-                <div class="feed-card" style="height: 313px;">
+                <div class="feed-card" style="height: 313px;width:49%">
                     <div class="single-thumbnail">
                         <amp-img src="<?php echo $trending_img; ?>"></amp-img>
                         <div class="fade"></div>
@@ -202,8 +214,7 @@ $get_trending = get_posts($trending);
                     </div>
                 </div>
             <?php } ?>
-
-        </amp-carousel>
+        </div>
     </div>
 </section>
 
