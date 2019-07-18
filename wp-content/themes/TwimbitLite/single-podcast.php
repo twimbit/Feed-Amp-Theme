@@ -79,7 +79,7 @@ $audio = get_field('audio_type');
             <hr>
             <!--hr tag-->
 
-            <!--dynamic containers-->
+            <!--dynamic container-->
             <?php
 
             $get_post = get_posts($post_args);
