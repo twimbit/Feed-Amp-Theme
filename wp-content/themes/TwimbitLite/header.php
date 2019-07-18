@@ -3091,6 +3091,7 @@
             height: 90px;
             background-color: white;
             border-radius: 10px;
+            margin-top: 20px;
             margin-bottom: 20px;
             margin-left: 0px;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
