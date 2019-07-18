@@ -111,18 +111,27 @@
         body {
             margin: 0
         }
-        .active{
+
+        .active {
             background-color: #0d84e3;
         }
-        .fade-animate{
-            animation: fadeEffect 1s; /* Fading effect takes 1 second */
+
+        .fade-animate {
+            animation: fadeEffect 1s;
+            /* Fading effect takes 1 second */
         }
 
         /* Go from zero to full opacity */
         @keyframes fadeEffect {
-            from {opacity: 0;}
-            to {opacity: 1;}
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
+
         article,
         aside,
         footer,
@@ -2413,29 +2422,36 @@
             margin-right: -15px;
             margin-left: -15px;
         }
+
         #stories {
             margin-top: 5rem;
         }
+
         .story-carousel {
             height: 96px;
             padding: 0 10px;
         }
+
         .story-carousel amp-img {
             height: 95px;
             width: 95px;
             border-radius: 8px;
         }
+
         .story-carousel amp-img img {
             border-radius: 8px;
         }
+
         .amp-carousel-button {
             background-color: rgba(241, 107, 111, 0.54);
             border-radius: 50%;
         }
+
         .amp-carousel-slide>.i-amphtml-replaced-content {
             -o-object-fit: contain;
             object-fit: cover;
         }
+
         .feed-card {
             margin-bottom: 30px;
             overflow: hidden;
@@ -2445,6 +2461,7 @@
             height: 245px;
             transition: all .4s;
         }
+
         .feed-thumbnail {
             border: none !important;
             position: relative;
@@ -2453,19 +2470,23 @@
             display: flex;
             align-items: center;
         }
+
         .feed-card amp-img {
             height: 100%;
             width: 100%;
             transition: all .2s;
         }
+
         .feed-card amp-img img {
             object-fit: cover;
             transform: scale(1);
             transition: all .2s;
         }
+
         .feed-card:hover {
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
+
         .fade {
             position: absolute;
             bottom: 0;
@@ -2475,6 +2496,7 @@
             opacity: .9;
             background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.23) 0, rgb(0, 0, 0) 100%);
         }
+
         .feed-link {
             position: absolute;
             bottom: 0;
@@ -2648,6 +2670,7 @@
             text-decoration: none;
             border-bottom: 1.5px solid rgba(255, 255, 255, .75);
         }
+
         .featured-image-text-container {
             display: flex;
             justify-content: center;
@@ -2695,17 +2718,7 @@
 
         }
 
-        @media (max-width: 64rem) and (min-width: 52.06rem) {
-            .md-hide {
-                display: none;
-            }
-        }
 
-        @media (min-width: 64.06rem) {
-            .lg-hide {
-                display: none;
-            }
-        }
 
         .footer-content {
             justify-content: space-around;
@@ -2794,11 +2807,13 @@
             height: 400px;
             background-size: cover;
         }
+
         .post-content {
             display: flex;
             justify-content: center;
 
         }
+
         .single-date-name {
             display: flex;
             justify-content: center;
@@ -2877,10 +2892,12 @@
             font-size: 15px;
             line-height: 20px;
         }
-        .head
-        {
-            display: flex;x
+
+        .head {
+            display: flex;
+            x
         }
+
         .desc span {
             color: #FFF;
         }
@@ -3124,8 +3141,8 @@
             /* margin-top: -20px;
             margin-left: 20px; */
         }
-        .social
-        {
+
+        .social {
             margin-left: 70px;
             width: 140px;
             height: 23px;
@@ -3153,21 +3170,21 @@
             [class*="col-"] .sub1 {
                 margin-top: 25px;
             }
-            .social
-            {
+
+            .social {
                 margin-left: 55px;
                 width: 140px;
                 height: 23px;
 
 
             }
-            .social1
-            {
+
+            .social1 {
 
                 display: inline-block;
                 margin-left: 0px;
-                height:22px;
-                width:22px;
+                height: 22px;
+                width: 22px;
 
             }
 
@@ -3178,6 +3195,18 @@
 
             .icon {
                 transform: translate(20px, -70px);
+            }
+        }
+
+        @media (max-width: 64rem) and (min-width: 52.06rem) {
+            .md-hide {
+                display: none;
+            }
+        }
+
+        @media (min-width: 64.06rem) {
+            .lg-hide {
+                display: none;
             }
         }
     </style>
