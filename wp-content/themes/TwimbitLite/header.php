@@ -24,6 +24,7 @@
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
 
 
     <!-- jQuery -->
@@ -2515,6 +2516,31 @@
             line-height: 0.9;
         }
 
+        .audio {
+            position: relative;
+            top: 85%;
+            /* position: absolute; */
+            padding: 6px;
+        }
+
+
+        /* Video player css */
+        .video1 {
+            position: relative;
+            /*overflow: hidden;*/
+        }
+
+        .video-card
+        {
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform .2s;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+            height: 245px;
+        }
+
+
         @media (min-width: 768px) {
             .feed-card {
                 height: 350px;
@@ -2542,8 +2568,18 @@
                 text-transform: capitalize;
                 font-style: italic;
             }
-        }
 
+            .video-card
+            {
+                margin-bottom: 30px;
+                overflow: hidden;
+                transition: transform .2s;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+                height: 245px;
+            }
+
+        }
         .podcast-cover .feed-title {
             bottom: auto;
         }
@@ -2702,6 +2738,11 @@
             fill: rgba(0, 0, 0, 0.57);
 
         }
+        .icon1
+        {height: 40px;
+            width: 51px;
+            transform: translate(-50px, -1px);
+        }
 
         @media (max-width: 64rem) and (min-width: 52.06rem) {
             .md-hide {
@@ -2859,19 +2900,12 @@
 
         .next {
             color: #000000;
-            margin-top: 8px;
+            margin-top: -8px;
             margin-bottom: 0px;
             /* margin-left: -15px; */
             font-size: 20px;
             text-decoration: none;
             text-transform: capitalize;
-        }
-
-        .audio {
-            position: relative;
-            top: 83px;
-            /* position: absolute; */
-            padding: 30px;
         }
 
         .player {
@@ -2881,8 +2915,8 @@
 
         .desc {
             position: relative;
-            top: 70px;
-            margin-left: 24px;
+            top: -20px;
+            margin-left: 45px;
             padding: 10px;
             font-size: 13px;
             line-height: 20px;
@@ -2893,7 +2927,8 @@
             display: flex;x
         }
         .desc p{
-            color: #FFF;
+            color: #000000;
+            font-family: "Open Sans", sans-serif;
             text-align: justify;
             font-size: 13px;
             line-height: initial;
@@ -2921,9 +2956,8 @@
                 width: 100%;
                 height: 30px;
             }
-
             .desc p {
-                color: #FFF;
+                color: #000000;
                 font-size: 10px;
                 text-transform: capitalize;
                 line-height: initial;
@@ -3003,10 +3037,13 @@
 
 
         /* for small devices */
-        @media (min-width:40.06rem) and (max-width:52rem) {}
+        @media (min-width:40.06rem) and (max-width:52rem) {
+        }
 
         /* for medium devices */
-        @media (min-width:52.06rem) and (max-width:64rem) {}
+        @media (min-width:52.06rem) and (max-width:64rem) {
+
+        }
 
         /* for large devices */
         @media (min-width:64.06rem) {
@@ -3014,14 +3051,22 @@
                 margin: 36px;
                 height: 400px;
             }
+
         }
 
         /* for above small devices */
-        @media (min-width:40rem) {
+        @media (min-width:40rem) and (max-width:52rem) {
             .featured-image {
                 height: 500px;
             }
+            .audio {
+                padding: 7px;
+                top: 265px;
+            }
         }
+
+
+
         .desc{
             font-size: 3px;
             right: 15px;
@@ -3119,6 +3164,8 @@
             transform: translate(30px, -75px);
         }
 
+
+
         .details {
             /* margin-left: 150px;
             margin-top: -270px;
@@ -3150,12 +3197,78 @@
         }
         .social
         {
-            margin-left: 0px;
-            width: 140px;
+            margin-left: 40px;
+            width: 180px;
             height: 23px;
             display: inline-block;
+        }
+        light1 {
+            margin-left: 100px;
+        }
+        .share1
+        {
+            height: 30px;
+            width: 30px;
+            /* right: 10px; */
+            /* margin: 30px; */
+            align-content: right;
+            /* margin-right: 22px; */
+            margin-left: 261px;
+        }
+        .light2
+        {
+            display: flex;
+            justify-content: space-between;
 
         }
+        .light1
+        {
+            margin-left:38px;
+        }
+        .lightbox {
+            background: rgba(0,0,0,2.8);
+            width: 50%;
+            height: 28%;
+            margin: 123px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox p {
+            color: white;
+            margin: 20px;
+            font-size: 20px;
+            display:flex;
+        }
+        .cross
+        {
+            width: 17px;
+            height: 17px;
+            display: flex;
+            margin: 80px 11px 10px 84px;
+            left: 180px;
+
+        }
+        .description {
+            background-color: #1a1a1a;
+            border: none;
+            color: white;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: -10px 7px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            border-radius: 4px;
+        }
+        .description1 {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+
 
         /* for  iphone 5/se*/
         @media only screen and (max-width: 320px) {
@@ -3179,12 +3292,9 @@
             }
             .social
             {
-                margin-left: 3px;
-                width: 140px;
+                margin-left: 40px;
+                width: 180px;
                 height: 23px;
-            }
-            .audio{
-                padding:15px;
             }
             .desc{
                 font-size: 3px;
@@ -3204,15 +3314,40 @@
                 height: 290px;
 
             }
+
             .audio .player {
                 width: 100%;
             }
-
-
+            .audio {
+                padding:7px;
+                top:248px;
+            }
             .icon {
                 transform: translate(20px, -70px);
             }
+
+            .video-card
+            {
+                margin-bottom: 30px;
+                overflow: hidden;
+                transition: transform .2s;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+                height: 245px;
+            }
+
+            .cross
+            {
+                width: 17px;
+                height: 17px;
+                display: flex;
+                margin: 80px 11px 10px 84px;
+                left: 180px;
+            }
+
+
         }
+
         .podcast-card:hover
         {
             pointer-events:none;
@@ -3223,25 +3358,7 @@
         }
 
 
-        /* Video player css */
-        .video-player {
-            position: relative;
-            overflow: hidden;
-        }
 
-        /* Overlay fills the parent and sits on top of the video */
-        .click-to-play-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-
-        .poster-image {
-            position: absolute;
-            z-index: 1;
-        }
 
 
 
