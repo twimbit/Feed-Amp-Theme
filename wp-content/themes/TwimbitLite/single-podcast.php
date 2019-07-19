@@ -74,7 +74,7 @@ $audio = get_field('audio_type');
         <!-- main div divded into 33% of the page -->
         <div class="right-side">
             <div class="social" >
-                <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+                <amp-social-share class="social1" height="30px" width="30px" type="system"></amp-social-share>
                 <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
                 <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
                 <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>

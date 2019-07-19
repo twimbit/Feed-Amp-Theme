@@ -1,5 +1,6 @@
 function toggler(evt, postType) {
 
+
     // Declare all variables
     var i, tabcontent, tablinks;
     if(postType === 'All'){
@@ -12,9 +13,11 @@ function toggler(evt, postType) {
         for (i = 0; i < x.length; i++) {
             x[i].style.display="block";
         }
-        evt.currentTarget.classList.add('active')
+        evt.currentTarget.style.display="none";
     }
-    else{ tabcontent = document.getElementsByClassName("feed-toggle");
+    else{
+        document.getElementById("allButton").style.display="block";
+        tabcontent = document.getElementsByClassName("feed-toggle");
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
         }
@@ -28,6 +31,7 @@ function toggler(evt, postType) {
             x[i].style.display="block";
         }
         evt.currentTarget.classList.add('active')
+
 
     }
 

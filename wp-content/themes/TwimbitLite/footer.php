@@ -30,7 +30,7 @@
         </a>
         <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button">
             <svg>
-                <path id="ic_dehaze_24px" d="M2,22.479v3.4H28v-3.4Zm0-8.49v3.4H28v-3.4ZM2,5.5V8.9H28V5.5Z" transform="translate(8px, 1px);" />
+                <path id="ic_dehaze_24px" d="M2,22.479v3.4H28v-3.4Zm0-8.49v3.4H28v-3.4ZM2,5.5V8.9H28V5.5Z"></path>
             </svg>
         </a>
     </div>
@@ -86,7 +86,7 @@
     // });
 
     // Add active class to the current button (highlight it)
-    var header = document.querySelector(".desktop-tool");
+    /*var header = document.querySelector(".desktop-tool");
     var btns = header.getElementsByClassName("tool");
     for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function() {
@@ -94,7 +94,7 @@
             current[0].className = current[0].className.replace(" active", "");
             this.className += " active";
         });
-    }
+    }*/
 </script>
 </body>
 

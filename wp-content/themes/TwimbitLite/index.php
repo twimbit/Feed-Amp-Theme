@@ -58,7 +58,7 @@ $get_post = get_posts($post_args);
                 <div class="menu">
                     <ul>
                         <li class="menu-item">
-                            <button class="tablinks active" onclick="toggler(event,'All')"> All </button>
+                            <button class="tablinks" id="allButton" style="display: none;"  onclick="toggler(event,'All')"> All </button>
                         </li>
                         <li class="menu-item">
                            <button class="tablinks" onclick="toggler(event,'post')"> Insights </button>
