@@ -39,6 +39,7 @@ $trending = array(
     'suppress_filters' => true,
 );
 $get_trending = get_posts($trending);
+$category = get_the_category();
 
 // $category = get_the_category();
 // $firstCategory = $category[0]->cat_name;
@@ -63,8 +64,11 @@ $get_trending = get_posts($trending);
                                     echo "Story";
                                 }  ?></a href="#">
                     <h2><?php the_title(); ?></h2>
-                    <h6 style="color: #f5f5f5" class="mt2"><?php the_date(); ?></h6>
-                    <h6 style="color: #f5f5f5"><?php the_author(); ?></h6>
+                    <!-- <h6 style="color: #f5f5f5" class="mt2"><?php //the_date(); 
+                                                                ?></h6> -->
+                    <h6 style="color: #f5f5f5">by <?php the_author(); ?></h6>
+                    <h6>#<a href="<?php echo get_category_link($category[0]->term_id); ?>" style="border:none;font-size:0.76rem"> <?php echo $category[0]->name; ?></a>
+                    </h6>
                 </div>
             </div>
 
@@ -72,7 +76,7 @@ $get_trending = get_posts($trending);
 
     </section>
 
-    <section class="single-content">
+    <section class=" single-content">
         <div class="single-content-div">
             <section class="post-content">
                 <div class="xs-col-12 sm-col-3 md-col-3 lg-col-2 mt4 mr2  xs-hide" style="margin-right:50px;">
