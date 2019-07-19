@@ -54,7 +54,7 @@ $category = get_the_category();
             </div>
             <div class="featured-image-text-container">
                 <div class="featured-image-text xs-col-12 sm-col-8 md-col-7 lg-col-6">
-                    <a href="#"><?php if ($type == "post") {
+                    <a><?php if ($type == "post") {
                                     echo "Insight";
                                 } else if ($type == "video") {
                                     echo "Video";
@@ -66,8 +66,8 @@ $category = get_the_category();
                     <h2><?php the_title(); ?></h2>
                     <!-- <h6 style="color: #f5f5f5" class="mt2"><?php //the_date(); 
                                                                 ?></h6> -->
-                    <h6 style="color: #f5f5f5">by <?php the_author(); ?></h6>
-                    <h6>#<a href="<?php echo get_category_link($category[0]->term_id); ?>" style="border:none;font-size:0.76rem"> <?php echo $category[0]->name; ?></a>
+                    <h6 style="color: #f5f5f5;margin-top:6px;">by <?php the_author(); ?></h6>
+                    <h6><a href="<?php echo get_category_link($category[0]->term_id); ?>" style="font-size:0.76rem">#<?php echo $category[0]->name; ?></a>
                     </h6>
                 </div>
             </div>
@@ -82,7 +82,7 @@ $category = get_the_category();
                 <div class="xs-col-12 sm-col-3 md-col-3 lg-col-2 mt4 mr2  xs-hide" style="margin-right:50px;">
                     <div class="pre-next-dialog flex" style="top:10%;">
                         <div class="pre-next-dialog-content">
-                            <h2 style="flex:1">Up next</h2>
+                            <h2 style="flex:1;color: #f16c70;">Up next</h2>
                             <?php $taxonomy = "post";
                             for ($i = 1; $i <= 2; $i++) {
                                 $post = get_next_post(); // this uses $post->ID
@@ -141,7 +141,7 @@ $category = get_the_category();
 <section id="more-to-explore" style="margin-top:3rem">
     <div class="container">
         <div class="more-to-explore-heading">
-            <h3>More to explore</h3>
+            <h3 style="color: #f16c70;">More to explore</h3>
             <hr>
         </div>
         <div class="more-to-explore-card-container">
