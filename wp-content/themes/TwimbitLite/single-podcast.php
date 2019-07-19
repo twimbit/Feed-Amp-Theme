@@ -47,84 +47,73 @@ $audio = get_field('audio_type');
                         <span style="text-decoration: none;"># <?php echo '<a href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->name ) . '</a>'; ?>
                         </span>
                     </div>
-
                     <div class="audio">
-                        <amp-audio controls src="<?php echo $audio['url']; ?>" height="auto" width="auto" autoplay="true" class="player" controls controlsList="nodownload" >
+                        <amp-audio controls src="<?php echo $audio['url']; ?>"
+                                   height="auto"
+                                   width="auto"
+                                   autoplay="true"
+                                   class="player"
+                                   controls controlsList="nodownload" >
                             <!-- podcast playlist-->
                         </amp-audio>
                     </div>
                 </div>
             </div>
         </div>
-<!--        <div class="desc">-->
 
-            <div class="light2 container">
-                <div class="light1">
-                        <amp-lightbox id="my-lightbox" layout="nodisplay">
-                            <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
-                                <p>
-                                    <?php
-                                    $char_limit = 300; //character limit
-                                    $content = $post->post_content; //contents saved in a variable
-                                    echo substr(strip_tags($content), 0, $char_limit);
-                                    ?>
-                                </p>
-                            </div>
-                            <p on="tap:my-lightbox.close" class="cross">
-                                <amp-img id="my-lightbox" src="http://www.clker.com/cliparts/s/7/f/f/X/u/x-button.svg.hi.png" class="cross" height="auto" width="auto" >
+        <!-- lightbox container for description and share icon -->
 
-                                </amp-img>
-                            </p>
-                        </amp-lightbox>
-                        <button on="tap:my-lightbox" class="description description1">
-                            Description
-                        </button>
-                </div>
-
-
-                <div class="share1">
-                    <amp-lightbox id="my-lightbox" layout="nodisplay">
-                        <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
-
-                            <div class="social">
-                                <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
-                                <amp-social-share class=social1"  height="30px" width="30px" type="linkedin"></amp-social-share>
-                                <amp-social-share class="social1"  height="30px" width="30px" type="twitter"></amp-social-share>
-                                <amp-social-share class="social1"  height="30px" width="30px" type="whatsapp"></amp-social-share>
-                                <amp-social-share class="social1"  height="30px" width="30px" type="email"></amp-social-share>
-                                <amp-social-share class="social1"  height="30px" width="30px" type="print"></amp-social-share>
-
-
-                            </div>
-
-                        </div>
-                        <p on="tap:my-lightbox.close" class="cross">
-                            <amp-img id="my-lightbox" src="http://www.clker.com/cliparts/s/7/f/f/X/u/x-button.svg.hi.png" class="cross" height="auto" width="auto" >
-
-                            </amp-img>
+        <div class="light2 container">
+            <div class="light1">
+                <amp-lightbox id="my-lightbox" layout="nodisplay" class="info">
+                    <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
+                        <p>
+                            <?php
+                                $char_limit = 300; //character limit
+                                $content = $post->post_content; //contents saved in a variable
+                                echo substr(strip_tags($content), 0, $char_limit);
+                            ?>
                         </p>
-                    </amp-lightbox>
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 473.932 473.932" class="icon1" style="enable-background:new 0 0 473.932 473.932;" xml:space="preserve">
+                    </div>
+                    <p on="tap:my-lightbox.close" class="cross">
+                        <amp-img id="my-lightbox" src="http://www.clker.com/cliparts/s/7/f/f/X/u/x-button.svg.hi.png" class="cross" height="auto" width="auto" >
+
+                        </amp-img>
+                    </p>
+                </amp-lightbox>
+                <button on="tap:my-lightbox" class="description description1">
+                    Description
+                </button>
+            </div>
+            <div class="share1">
+                <amp-lightbox id="my-lightbox1" layout="nodisplay">
+                    <div class="lightbox1" on="tap:my-lightbox1.close" role="button" tabindex="0">
+                        <p class="social" on="tap:my-light-box1.close" role="button" tabindex="0">
+                            <amp-social-share class="social1" height="2em" width="5em" style="margin-right:10px;" type="facebook"></amp-social-share>
+                            <amp-social-share class=social1" height="2em" width="5em" style="margin-right:10px;" type="linkedin"></amp-social-share>
+                            <amp-social-share class="social1"  height="2em" width="5em" style="margin-right:10px;" type="twitter"></amp-social-share>
+                            <amp-social-share class="social1"  height="2em" width="5em" style="margin-right:10px;" type="whatsapp"></amp-social-share>
+                            <amp-social-share class="social1" height="2em" width="5em" style="margin-right:10px;" type="email"></amp-social-share>
+                        </p>
+                    </div>
+                    <p on="tap:my-lightbox1.close1" class="cross">
+                        <amp-img id="my-lightbox1" src="http://www.clker.com/cliparts/s/7/f/f/X/u/x-button.svg.hi.png"
+                                 class="cross"
+                                 height="auto"
+                                 width="auto">
+
+                        </amp-img>
+                    </p>
+                </amp-lightbox>
+                <svg on="tap:my-lightbox1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 473.932 473.932" class="icon1" style="enable-background:new 0 0 473.932 473.932;" xml:space="preserve">
                     <g>
                         <g>
                             <path style="fill:#010002;" d="M385.513,301.214c-27.438,0-51.64,13.072-67.452,33.09l-146.66-75.002    c1.92-7.161,3.3-14.56,3.3-22.347c0-8.477-1.639-16.458-3.926-24.224l146.013-74.656c15.725,20.924,40.553,34.6,68.746,34.6    c47.758,0,86.391-38.633,86.391-86.348C471.926,38.655,433.292,0,385.535,0c-47.65,0-86.326,38.655-86.326,86.326    c0,7.809,1.381,15.229,3.322,22.412L155.892,183.74c-15.833-20.039-40.079-33.154-67.56-33.154    c-47.715,0-86.326,38.676-86.326,86.369s38.612,86.348,86.326,86.348c28.236,0,53.043-13.719,68.832-34.664l145.948,74.656    c-2.287,7.744-3.947,15.79-3.947,24.289c0,47.693,38.676,86.348,86.326,86.348c47.758,0,86.391-38.655,86.391-86.348    C471.904,339.848,433.271,301.214,385.513,301.214z"/>
                         </g>
-
                     </g>
-                    </svg>
-
-
-
-
-
-                </div>
+                </svg>
             </div>
-<!--            <p style="font-style: italic; text-transform: capitalize; font-size: medium; margin-bottom: 10px; font-weight: bold;">-->
-<!--                -->
-<!--            </p>-->
-
-<!--        </div>-->
-
+        </div>
     </div>
 
     <div class="lg-col-4 md-col-5 sm-col-5 xs-col-12">

@@ -1,13 +1,5 @@
 <?php
 
-/**
- * The template for displaying all single posts and attachments
- *
- * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
- */
-
 get_header();
 global $post;
 $current_post = $post; // remember the current post
@@ -71,9 +63,8 @@ $current_post = $post; // remember the current post
             </div>
 
         </div>
-
     </section>
-
+    
     <section class="single-content">
         <div class="single-content-div">
             <section class="post-content">
@@ -103,7 +94,7 @@ $current_post = $post; // remember the current post
                                 ?>
                             <?php
                             }
-                            $post = $current_post; ?>   
+                            $post = $current_post; ?>
                         </div>
                     </div>
                 </div>
@@ -119,6 +110,12 @@ $current_post = $post; // remember the current post
 
     <?php } ?>
 
+</section>
+
+<section id="more-to-explore">
+    <div class="container">
+        sdsfsadasdsadasdas
+    </div>
 </section>
 
 <script>
