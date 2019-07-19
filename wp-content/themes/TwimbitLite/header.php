@@ -2690,6 +2690,7 @@
 
         .menu ul {
             display: flex;
+            flex-direction: column;
             list-style: none;
             padding: 5px;
         }
@@ -2908,14 +2909,15 @@
             x
         }
 
-        .desc p{
+        .desc p {
             color: #FFF;
             text-align: justify;
             font-size: 13px;
             line-height: initial;
         }
-        .desc head1{
-            color:#000;
+
+        .desc head1 {
+            color: #000;
         }
 
 
@@ -3022,6 +3024,11 @@
             justify-content: space-between;
         }
 
+        .archive-filter-card-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
 
         /* for small devices */
         @media (min-width:40.06rem) and (max-width:52rem) {}
@@ -3057,7 +3064,8 @@
                 height: 500px;
             }
         }
-        .desc{
+
+        .desc {
             font-size: 3px;
             right: 15px;
             line-height: 10px;
@@ -3137,7 +3145,7 @@
 
         }
 
-        .short-card:hover{
+        .short-card:hover {
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
 
@@ -3190,8 +3198,8 @@
             /* margin-top: -20px;
             margin-left: 20px; */
         }
-        .social
-        {
+
+        .social {
             margin-left: 0px;
             width: 140px;
             height: 23px;
@@ -3220,33 +3228,36 @@
                 margin-top: 25px;
             }
 
-            .social
-            {
+            .social {
                 margin-left: 3px;
                 width: 140px;
                 height: 23px;
             }
-            .audio{
-                padding:15px;
+
+            .audio {
+                padding: 15px;
             }
-            .desc{
+
+            .desc {
                 font-size: 3px;
                 right: 15px;
                 line-height: 8px;
                 text-align: justify;
             }
 
-            .social1{
+            .social1 {
                 display: inline-block;
                 margin-left: 0px;
                 height: 22px;
                 width: 22px;
 
             }
+
             .podcast-cover .feed-card {
                 height: 290px;
 
             }
+
             .audio .player {
                 width: 100%;
             }
@@ -3257,26 +3268,25 @@
             }
         }
 
-        .podcast-card:hover
-        {
-            pointer-events:none;
+        .podcast-card:hover {
+            pointer-events: none;
         }
-        .podcast-card
-        {
+
+        .podcast-card {
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
 
-        @media (max-width: 64rem) and (min-width: 52.06rem) {
-            .md-hide {
-                display: none;
-            }
-        }
-
-        @media (min-width: 64.06rem) {
-            .lg-hide {
-                display: none;
+            @media (max-width: 64rem) and (min-width: 52.06rem) {
+                .md-hide {
+                    display: none;
+                }
             }
 
-        }
+            @media (min-width: 64.06rem) {
+                .lg-hide {
+                    display: none;
+                }
+
+            }
     </style>
 </head>
 
