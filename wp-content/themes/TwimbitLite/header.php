@@ -2159,18 +2159,19 @@
         .ampstart-nav-item:active,
         .ampstart-nav-item:focus,
         .ampstart-nav-item:hover {
-            opacity: 1
+            opacity: 1;
+            color: #f16c70;
         }
 
         .ampstart-navbar-trigger:focus {
-            outline: none
+            outline: none;
         }
 
         .ampstart-nav a,
         .ampstart-navbar-trigger,
         .ampstart-sidebar-faq a {
             cursor: pointer;
-            text-decoration: none
+            text-decoration: none;
         }
 
         .ampstart-nav .ampstart-label {
@@ -2428,7 +2429,7 @@
         }
 
         .story-carousel {
-            height: 96px;
+            height: 100px;
             padding: 0 10px;
         }
 
@@ -2439,7 +2440,8 @@
         }
 
         .story-carousel amp-img img {
-            border-radius: 8px;
+            border-radius: 6px;
+            box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, .5);
         }
 
         .amp-carousel-button {
@@ -2745,16 +2747,16 @@
         }
 
         .amp-carousel-button-prev {
-            background-size: 12px 12px;
+            background-size: 32px 18px;
         }
 
         .amp-carousel-button {
-            height: 21px;
-            width: 21px;
+            height: 32px;
+            width: 32px;
         }
 
         .amp-carousel-button-next {
-            background-size: 12px 12px;
+            background-size: 32px 18px;
         }
 
         .cat-section {
@@ -2920,6 +2922,9 @@
             color: #000;
         }
 
+        .explore-title {
+            color: #f16c70;
+        }
 
 
         /* for xtra small devices */
@@ -3082,11 +3087,11 @@
         }
 
         .pre-next-dialog-content {
-            width: 100%;
+            /* width: 100%;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; */
             /* justify-content: center; */
-            align-items: center;
+            /* align-items: center; */
             padding: 0 10px;
         }
 
@@ -3274,19 +3279,32 @@
 
         .podcast-card {
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
+        }
 
-            @media (max-width: 64rem) and (min-width: 52.06rem) {
-                .md-hide {
-                    display: none;
-                }
+        @media (max-width: 64rem) and (min-width: 52.06rem) {
+            .md-hide {
+                display: none;
+            }
+        }
+
+        @media (min-width: 64.06rem) {
+            .lg-hide {
+                display: none;
             }
 
-            @media (min-width: 64.06rem) {
-                .lg-hide {
-                    display: none;
-                }
+        }
 
-            }
+        .amp-story-carousel a {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+        }
+
+        .amp-story-carousel {
+            position: relative;
+        }
     </style>
 </head>
 
@@ -3353,7 +3371,9 @@
                         <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">Explore</a>
                     </li>
                     <li class="ampstart-nav-item ">
-                        <a href="#" class="text-decoration-none block">Stories</a>
+                        <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button">
+                            Menu
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -3363,7 +3383,7 @@
         </header>
 
         <!-- Start Sidebar -->
-        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 md-hide lg-hide" layout="nodisplay" side="right">
+        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3" layout="nodisplay" side="right">
             <div class="flex justify-start items-center ampstart-sidebar-header">
                 <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
             </div>
