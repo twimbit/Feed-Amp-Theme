@@ -120,7 +120,12 @@
         }
 
         .active {
-            background-color: #0d84e3;
+            fill: #f16c70!important;
+            border-color: #f16c70!important;
+
+        }
+        .active svg {
+            fill: #f16c70!important;
         }
 
         .fade-animate {
@@ -2627,8 +2632,28 @@
             width: 2em;
         }
 
+
         @media (min-width:320px) and (max-width:768px) {
 
+        .tablinks svg {
+            transform: scale(0.6);
+            fill: #094d5f;
+        }
+        .tablinks {
+            font-size: 12px;
+            background: none;
+            border-width: 0 0 3px 0;
+            width: 100%;
+            height: 40px;
+            color: #094d5f;
+            border-color: #f8f8f836;
+            display: flex;
+            transition-duration: 0.3s;
+        }
+        .tablinks:hover {
+            box-shadow: 0px 7px 10px 0px gainsboro;
+        }
+        
             /*description box */
             .content {
                 font-size: 80%;
@@ -2640,6 +2665,9 @@
                 margin-left: 15%;
                 text-align: justify;
                 font-family: sans-serif;
+            }
+            .menu ul {
+                flex-direction: row !important;
             }
         }
 

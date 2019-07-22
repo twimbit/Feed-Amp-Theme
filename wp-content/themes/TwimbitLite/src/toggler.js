@@ -13,10 +13,8 @@ function toggler(evt, postType) {
         for (i = 0; i < x.length; i++) {
             x[i].style.display="block";
         }
-        evt.currentTarget.style.display="none";
     }
     else{
-        document.getElementById("allButton").style.display="block";
         tabcontent = document.getElementsByClassName("feed-toggle");
         for (i = 0; i < tabcontent.length; i++) {
             tabcontent[i].style.display = "none";
