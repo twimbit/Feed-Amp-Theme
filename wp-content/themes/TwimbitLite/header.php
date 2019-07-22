@@ -3912,7 +3912,7 @@
         </header>
 
         <!-- Start Sidebar -->
-        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 md-hide lg-hide" layout="nodisplay" side="right">
+        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3" layout="nodisplay" side="right">
             <div class="flex justify-start items-center ampstart-sidebar-header">
                 <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
             </div>
