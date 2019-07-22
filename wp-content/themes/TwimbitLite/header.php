@@ -113,7 +113,8 @@
         }
 
         body {
-            margin: 0
+            margin: 0;
+            display: none;
         }
 
         .active {
@@ -2163,18 +2164,19 @@
         .ampstart-nav-item:active,
         .ampstart-nav-item:focus,
         .ampstart-nav-item:hover {
-            opacity: 1
+            opacity: 1;
+            color: #f16c70;
         }
 
         .ampstart-navbar-trigger:focus {
-            outline: none
+            outline: none;
         }
 
         .ampstart-nav a,
         .ampstart-navbar-trigger,
         .ampstart-sidebar-faq a {
             cursor: pointer;
-            text-decoration: none
+            text-decoration: none;
         }
 
         .ampstart-nav .ampstart-label {
@@ -2432,7 +2434,7 @@
         }
 
         .story-carousel {
-            height: 96px;
+            height: 100px;
             padding: 0 10px;
         }
 
@@ -2443,7 +2445,8 @@
         }
 
         .story-carousel amp-img img {
-            border-radius: 8px;
+            border-radius: 6px;
+            box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, .5);
         }
 
         .amp-carousel-button {
@@ -2613,12 +2616,71 @@
             width: 2em;
         }
 
+        @media (min-width:320px) and (max-width:768px)
+        {
+            /*description box */
+            .content{
+                font-size: 80%;
+                padding: 15em 1em;
+            }
+            .content p {
+                padding: 5em 1em;
+                margin-left: 15%;
+                text-align: justify;
+                font-family: sans-serif;
+            }
+        }
+        /*social icon in podcast */
+        .social
+        {
+            margin-left: 40px;
+            width: 180px;
+            height: 23px;
+            display: inline-block;
+        }
+        .social1{
+            display: inline-block;
+            margin-left: 0px;
+            height: 3em;
+            width: 3em;
+        }
 
+        /* for above small devices */
+        @media (min-width:40rem) and (max-width:52rem) {
+            .featured-image {
+                height: 500px;
+            }
+
+            /* audio player in podcast */
+            .audio {
+                padding: 7px;
+                top: 83%;
+            }
+            .light1 {
+                margin-left: 20px;
+            }
+            .share1
+            {
+                margin-left: 240px;
+            }
+            .icon1 {
+                height: 30px;
+                width: 40px;
+                transform: translate(-50px, 2px);
+            }
+            .right-side {
+                margin: 21px 36px 10px 36px;
+            }
+        }
 
 
         @media (min-width: 768px) {
             .feed-card {
                 height: 350px;
+            }
+
+            .feed-card-search {
+                height: 250px;
             }
 
             .feed-title {
@@ -2782,6 +2844,7 @@
 
         .menu ul {
             display: flex;
+            flex-direction: column;
             list-style: none;
             padding: 5px;
         }
@@ -2847,16 +2910,16 @@
         }
 
         .amp-carousel-button-prev {
-            background-size: 12px 12px;
+            background-size: 32px 18px;
         }
 
         .amp-carousel-button {
-            height: 21px;
-            width: 21px;
+            height: 32px;
+            width: 32px;
         }
 
         .amp-carousel-button-next {
-            background-size: 12px 12px;
+            background-size: 32px 18px;
         }
 
         .cat-section {
@@ -3018,8 +3081,9 @@
             font-size: 13px;
             line-height: initial;
         }
-        .desc head1{
-            color:#000;
+
+        .desc head1 {
+            color: #000;
         }
 
         .head {
@@ -3054,20 +3118,17 @@
                 text-transform: capitalize;
             }
 
-            /*podcast player size and description */
             .player {
                 width: 100%;
                 height: 30px;
             }
+
             .desc p {
-                color: #000000;
+                color: #FFF;
                 font-size: 10px;
                 text-transform: capitalize;
                 line-height: initial;
             }
-
-
-
 
             .featured-image-text h2 {
                 font-size: 25px;
@@ -3113,9 +3174,6 @@
                 width: 170px; */
             }
 
-
-            /* podcast artist details */
-
             [class*="col-"] .details h3 {
                 margin-left: 150px;
                 margin-top: -270px;
@@ -3125,6 +3183,7 @@
                 color: #000000;
                 text-transform: capitalize;
             }
+
             [class*="col-"] .sub1 {
                 font-size: 40px;
                 margin-top: 26px;
@@ -3132,12 +3191,30 @@
                 /* margin-left: 20px; */
 
             }
+
             .right-side {
                 margin: 0px 36px 10px 36px;
             }
 
 
-        }
+            .podcast-cover .feed-card {
+                margin: 20px 36px 20px 36px;
+            }
+
+            .feed-card-search {
+                height: 150px;
+            }
+
+            .feed-title h3 {
+                font-size: 20px;
+            }
+
+            .feed-title p {
+                font-size: 13px;
+            }
+
+
+      }
 
 
 
@@ -3146,6 +3223,11 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+        }
+
+        .archive-filter-card-container {
+            display: flex;
+            flex-wrap: wrap;
         }
 
 
@@ -3173,9 +3255,7 @@
 
 
         /* for medium devices */
-        @media (min-width:52.06rem) and (max-width:64rem) {
-
-        }
+        @media (min-width:52.06rem) and (max-width:64rem) {}
 
         /* for large devices */
         @media (min-width:64.06rem) {
@@ -3183,7 +3263,6 @@
                 margin: 36px;
                 height: 400px;
             }
-
         }
         @media (min-width:320px) and (max-width:768px)
         {
@@ -3212,6 +3291,7 @@
                 height: 2em;
                 width: 2em;
             }
+
 
         }
 
@@ -3261,18 +3341,21 @@
             background-color: #f4f4f4;
             box-shadow: 5px 3px 8px -3px rgba(0, 0, 0, 0.23);
         }
+
         .pre-next-dialog-content {
-            width: 100%;
+            /* width: 100%;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; */
             /* justify-content: center; */
-            align-items: center;
+            /* align-items: center; */
             padding: 0 10px;
         }
+
         .pre-next-dialog-content h2 {
             margin-bottom: 10px;
             font-size: 22px;
         }
+
         .pre-next-dialog-content p {
             width: 100%;
             /* word-break: break-all; */
@@ -3282,33 +3365,33 @@
             box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.23);
             transition: all 0.3s;
         }
+
         .pre-next-dialog-content p:hover {
             box-shadow: 0 2px 14px 0px rgba(0, 0, 0, .5);
         }
+
         .pre-next-dialog-content a {
             text-decoration: none;
         }
+
         .feed-card-archive:hover {
             /* box-shadow: none; */
         }
+
         .feed-card-container {
             flex: 2 400px;
         }
+
         .filter-bar-container {
             flex: 1 150px;
             height: 200px;
         }
 
-
-
-
-        /*podcast main div */
         .podcast {
             margin-top: 50px;
             justify-content: center;
         }
 
-        /* next play short card */
         .short-card {
             display: flex;
             /* width: 90%; */
@@ -3353,11 +3436,13 @@
             color: #000000;
             flex-grow: 1;
         }
+
         .sub1 span {
             font-size: 13px;
             color: #000000;
             text-transform: capitalize;
         }
+
         .sub1 {
             margin-top: 26px;
             display: flex;
@@ -3484,9 +3569,11 @@
                 height: 2em;
                 width: 2em;
             }
+
             .podcast-cover .feed-card {
                 height: 240px;
             }
+
             .audio .player {
                 width: 100%;
             }
@@ -3554,7 +3641,6 @@
 
         }
 
-
         .podcast-card {
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
@@ -3572,6 +3658,22 @@
 
         }
 
+        .amp-story-carousel a {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+        }
+
+        .amp-story-carousel {
+            position: relative;
+        }
+
+
+        .active-nav {
+            color: #f16c70;
+        }
 
 
 
@@ -3579,7 +3681,7 @@
 
 
 
-    </style>
+  </style>
 </head>
 
 <body>
@@ -3631,21 +3733,23 @@
                         <form action="#">
                             <div class="search d-flex">
                                 <input type="text" placeholder="Search.." name="s" id="searchTerm">
-                                <button type="submit" href="#" style="    border: none;
-    background: none;">
+                                <button type="submit" href="#" style="border:none;background:none;">
                                     <amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg' ?>" width="20" height="20" class="my0 mx-auto"></amp-img>
                                 </button>
                             </div>
                         </form>
                     </li>
-                    <li class="ampstart-nav-item ">
+                    <li class="ampstart-nav-item tool active-nav">
                         <a href="<?php echo home_url(); ?>" class="text-decoration-none block">Feed</a>
                     </li>
-                    <li class="ampstart-nav-item ">
+                    <li class="ampstart-nav-item tool">
                         <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">Explore</a>
                     </li>
-                    <li class="ampstart-nav-item ">
-                        <a href="#" class="text-decoration-none block">Stories</a>
+
+                    <li class="ampstart-nav-item">
+                        <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button">
+                            Menu
+                        </a>
                     </li>
                 </ul>
             </nav>

@@ -76,7 +76,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 <section id="explore">
     <div class="container" style="margin-top:5rem">
         <div class="section-heading">
-            <h3>Trending</h3>
+            <h3 class="explore-title">Trending</h3>
             <hr class="divider">
         </div>
         <amp-carousel class="treanding-carousel d-lg-none d-md-none" type="slides" controls>
@@ -155,7 +155,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
             <div class="section-heading" style="margin:0px 0px 30px 0px">
                 <div style="padding-left:15px;">
-                    <h3><?php echo get_cat_name($business->term_id); ?></h3>
+                    <h3 class="explore-title"><?php echo get_cat_name($business->term_id); ?></h3>
                     <hr>
                 </div>
 
@@ -183,7 +183,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
             <div class="section-heading" style="margin:0px 0px 30px 0px">
                 <div style="padding-left:15px;">
-                    <h3><?php echo get_cat_name($careers->term_id); ?></h3>
+                    <h3 class="explore-title"><?php echo get_cat_name($careers->term_id); ?></h3>
                     <hr>
                 </div>
 
@@ -210,7 +210,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
             <div class="section-heading" style="margin:0px 0px 30px 0px">
                 <div style="padding-left:15px;">
-                    <h3><?php echo get_cat_name($companies->term_id); ?></h3>
+                    <h3 class="explore-title"><?php echo get_cat_name($companies->term_id); ?></h3>
                     <hr>
                 </div>
 
@@ -237,7 +237,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
             <div class="section-heading" style="margin:0px 0px 30px 0px">
                 <div style="padding-left:15px;">
-                    <h3><?php echo get_cat_name($technology->term_id); ?></h3>
+                    <h3 class="explore-title"><?php echo get_cat_name($technology->term_id); ?></h3>
                     <hr>
                 </div>
 
@@ -264,7 +264,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
             <div class="section-heading" style="margin:0px 0px 30px 0px">
                 <div style="padding-left:15px;">
-                    <h3><?php echo get_cat_name($events->term_id); ?></h3>
+                    <h3 class="explore-title"><?php echo get_cat_name($events->term_id); ?></h3>
                     <hr>
                 </div>
 
@@ -291,7 +291,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
             <div class="section-heading" style="margin:0px 0px 30px 0px">
                 <div style="padding-left:15px;">
-                    <h3><?php echo get_cat_name($exclusive->term_id); ?></h3>
+                    <h3 class="explore-title"><?php echo get_cat_name($exclusive->term_id); ?></h3>
                     <hr>
                 </div>
 
@@ -318,7 +318,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
             <div class="section-heading" style="margin:0px 0px 30px 0px">
                 <div style="padding-left:15px;">
-                    <h3><?php echo get_cat_name($geography->term_id); ?></h3>
+                    <h3 class="explore-title"><?php echo get_cat_name($geography->term_id); ?></h3>
                     <hr>
                 </div>
 
@@ -345,7 +345,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
             <div class="section-heading" style="margin:0px 0px 30px 0px">
                 <div style="padding-left:15px;">
-                    <h3><?php echo get_cat_name($industry->term_id); ?></h3>
+                    <h3 class="explore-title"><?php echo get_cat_name($industry->term_id); ?></h3>
                     <hr>
                 </div>
 
