@@ -143,7 +143,7 @@ $audio = get_field('audio_type');
                 $post_url = get_permalink($val);
                 $post_title = get_the_title($val);
                 $author = get_the_author($val);
-                $category = get_the_category();
+                $category_post = get_the_category($val);
                 ?>
 
                 <a href="<?php echo $post_url; ?>" style="text-decoration:none;">
@@ -192,13 +192,14 @@ $audio = get_field('audio_type');
                             <div class="sub1">
                                 <span style="margin-right: 10px;">By <?php echo $author; ?></span>
                                 <span></span>
-                                <span># <?php echo esc_html($category[0]->name); ?></span>
+                                <span># <?php echo esc_html($category_post[0]->name); ?></span>
                             </div>
                         </div>
 
                     </div>
                 </a>
-            <?php } ?>
+            <?php }
+            get_footer()?>
         </div>
     </div>
 
