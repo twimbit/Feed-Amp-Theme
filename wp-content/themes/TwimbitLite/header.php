@@ -3554,10 +3554,7 @@
 
         }
 
-        .podcast-card:hover
-        {
-            pointer-events:none;
-        }
+
         .podcast-card {
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }

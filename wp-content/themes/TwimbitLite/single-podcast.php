@@ -44,7 +44,8 @@ $audio = get_field('audio_type');
                         <p class="feed-subtitle"><?php echo $post_title; ?></p>
                         <span>By <?php echo $author; ?></span>
                         <span></span>
-                        <span style="text-decoration: none;"># <?php echo '<a href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->name ) . '</a>'; ?>
+                        <span style="text-decoration: none;">#
+                            <?php echo '<a href="' . esc_url( get_category_link( $category[0]->post_id ) ) . '">' . esc_html( $category[0]->name ) . '</a>'; ?>
                         </span>
                     </div>
                     <div class="audio">
