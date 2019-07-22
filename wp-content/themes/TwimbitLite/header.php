@@ -2163,18 +2163,19 @@
         .ampstart-nav-item:active,
         .ampstart-nav-item:focus,
         .ampstart-nav-item:hover {
-            opacity: 1
+            opacity: 1;
+            color: #f16c70;
         }
 
         .ampstart-navbar-trigger:focus {
-            outline: none
+            outline: none;
         }
 
         .ampstart-nav a,
         .ampstart-navbar-trigger,
         .ampstart-sidebar-faq a {
             cursor: pointer;
-            text-decoration: none
+            text-decoration: none;
         }
 
         .ampstart-nav .ampstart-label {
@@ -2432,7 +2433,7 @@
         }
 
         .story-carousel {
-            height: 96px;
+            height: 100px;
             padding: 0 10px;
         }
 
@@ -2443,7 +2444,8 @@
         }
 
         .story-carousel amp-img img {
-            border-radius: 8px;
+            border-radius: 6px;
+            box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, .5);
         }
 
         .amp-carousel-button {
@@ -2610,7 +2612,62 @@
             width: 3em;
         }
 
+        @media (min-width:320px) and (max-width:768px)
+        {
+            /*description box */
+            .content{
+                font-size: 80%;
+                padding: 15em 1em;
+            }
+            .content p {
+                padding: 5em 1em;
+                margin-left: 15%;
+                text-align: justify;
+                font-family: sans-serif;
+            }
+        }
+        /*social icon in podcast */
+        .social
+        {
+            margin-left: 40px;
+            width: 180px;
+            height: 23px;
+            display: inline-block;
+        }
+        .social1{
+            display: inline-block;
+            margin-left: 0px;
+            height: 3em;
+            width: 3em;
+        }
 
+        /* for above small devices */
+        @media (min-width:40rem) and (max-width:52rem) {
+            .featured-image {
+                height: 500px;
+            }
+
+            /* audio player in podcast */
+            .audio {
+                padding: 7px;
+                top: 83%;
+            }
+            .light1 {
+                margin-left: 20px;
+            }
+            .share1
+            {
+                margin-left: 240px;
+            }
+            .icon1 {
+                height: 30px;
+                width: 40px;
+                transform: translate(-50px, 2px);
+            }
+            .right-side {
+                margin: 21px 36px 10px 36px;
+            }
+        }
 
 
         @media (min-width: 768px) {
@@ -2779,6 +2836,7 @@
 
         .menu ul {
             display: flex;
+            flex-direction: column;
             list-style: none;
             padding: 5px;
         }
@@ -2840,16 +2898,16 @@
         }
 
         .amp-carousel-button-prev {
-            background-size: 12px 12px;
+            background-size: 32px 18px;
         }
 
         .amp-carousel-button {
-            height: 21px;
-            width: 21px;
+            height: 32px;
+            width: 32px;
         }
 
         .amp-carousel-button-next {
-            background-size: 12px 12px;
+            background-size: 32px 18px;
         }
 
         .cat-section {

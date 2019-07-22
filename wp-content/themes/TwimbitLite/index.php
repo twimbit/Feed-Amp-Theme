@@ -59,7 +59,7 @@ $get_post = get_posts($post_args);
                     <div class="menu">
                         <ul>
                             <li class="menu-item">
-                                <button class="tablinks"   onclick="toggler(event,'All')"> ALL</button>
+                                <button class="tablinks" id="allButton"  onclick="toggler(event,'All')"> ALL</button>
                             </li>
                             <li class="menu-item">
                                 <button class="tablinks" onclick="toggler(event,'post')"><svg xmlns="http://www.w3.org/2000/svg" width="41.817" height="37.171" viewBox="0 0 41.817 37.171">
