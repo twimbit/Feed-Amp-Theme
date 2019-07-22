@@ -159,3 +159,5 @@ $get_sub_cat = get_posts($args);
         </div>
     </section>
 </div>
+
+<?php get_footer(); ?>
