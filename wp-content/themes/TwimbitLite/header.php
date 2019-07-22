@@ -2400,7 +2400,7 @@
             }
         }
 
-        @media (min-width:992px) {
+        @media (min-width:992px) { style
             .container {
                 max-width: 960px
             }
@@ -3730,7 +3730,7 @@
                     </li> -->
                     <!-- End Dropdown -->
                     <li class="ampstart-nav-item">
-                        <form action="#">
+                        <form action="<?php echo site_url(); ?>">
                             <div class="search d-flex">
                                 <input type="text" placeholder="Search.." name="s" id="searchTerm">
                                 <button type="submit" href="#" style="border:none;background:none;">
