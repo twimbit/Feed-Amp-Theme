@@ -44,12 +44,12 @@ $video = get_field('video_file');
                            width="1280"
                            height="720"
                            layout="responsive"
-                           src="/static/samples/video/bullfinch.mp4">
+                           src="<?php echo $video['url']; ?>">
                 </amp-video>
 
 
                     <amp-img class="poster-image"
-                             layout="fill"
+                             layout="responsive"
                              src="/static/samples/img/bullfinch_poster.jpg"></amp-img>
             </div>
         </div>

@@ -2561,6 +2561,56 @@
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
             height: 245px;
         }
+        /*description box */
+        .overlay {
+            position: fixed; /* Sit on top of the page content */
+            /*display: none; !* Hidden by default *!*/
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            display: flex;
+            cursor: pointer; /* Add a pointer on hover */
+        }
+        .content{
+            line-height: 1.5em;
+            color: #000000;
+            font-size: 1em;
+            padding: 17em 14em;
+            font-family: "Open Sans", sans-serif;
+        }
+        .content p {
+            background-color: white;
+            width: 70%;
+            height: auto;
+            padding: 5em 2em;
+            margin-left: 30%;
+            align-content: center;
+            border-radius: 4px;
+        }
+        .share1 .content p{
+            width: auto;
+            height: 9em;
+        }
+        /*social icon in podcast */
+        .social
+        {
+            margin-left: 40%;
+            width: 60%;
+            height: 20%;
+            display: inline-block;
+        }
+        .social1{
+            display: inline-block;
+            margin-left: 0px;
+            height: 3em;
+            width: 3em;
+        }
+
+
 
 
         @media (min-width: 768px) {
@@ -2769,7 +2819,7 @@
         {
             height: 35px;
             width: 43px;
-            transform: translate(-50px, -1px);
+            transform: translate(-26px, -1px);
         }
 
 
@@ -2935,6 +2985,13 @@
             width: 85%;
             height: 35px;
         }
+        /*lightbox in podcast */
+        light1 {
+            margin-left: 100px;
+        }
+        .share1 {
+            margin-left:1em;
+        }
 
 
         /* description in podcast */
@@ -2960,6 +3017,18 @@
 
         .head {
             display: flex;
+        }
+        /*cross sign in podcast lightbox */
+        .cross1
+        {
+            height: 1em;
+            transform: translate(-2em, 10px);
+        }
+
+
+        }
+        .info{
+            display:flex;
         }
 
 
@@ -3106,6 +3175,36 @@
             .podcast-cover .feed-card {
                 margin: 36px;
                 height: 400px;
+            }
+
+        }
+        @media (min-width:320px) and (max-width:768px)
+        {
+            /*description box */
+            .content{
+                font-size: 80%;
+                padding: 15em 1em;
+            }
+            .content p {
+                padding: 5em 1em;
+                margin-left: 15%;
+                text-align: justify;
+                font-family: sans-serif;
+            }
+            }
+            /*social icon in podcast */
+            .social
+            {
+                margin-left: 40px;
+                width: 180px;
+                height: 23px;
+                display: inline-block;
+            }
+            .social1{
+                display: inline-block;
+                margin-left: 0px;
+                height: 3em;
+                width: 3em;
             }
 
         }
@@ -3275,20 +3374,10 @@
             width: 180px;
             height: 23px;
             display: inline-block;
+
         }
 
-        /*lightbox in podcast */
-        light1 {
-            margin-left: 100px;
-        }
-        /*main share option in podcast */
-        .share1
-        {
-            height: 30px;
-            width: 30px;
-            align-content: right;
-            margin-left: 1 em;
-        }
+
         /*ligthbox options in podcast */
         .light2
         {
@@ -3333,21 +3422,12 @@
             display:flex;
         }
 
-        /*cross sign in podcast lightbox */
-        .cross
-        {
-            width: 17px;
-            height: 17px;
-            display: flex;
-            margin: 80px 11px 10px 84px;
-            left: 180px;
 
-        }
         /*description of album in podcast */
         .description {
-            background-color: #1a1a1a;
+            background-color: #FFFFFF;
             border: none;
-            color: white;
+            color: #000000;
             padding: 10px 10px;
             text-align: center;
             text-decoration: none;
@@ -3360,7 +3440,7 @@
             border-radius: 4px;
         }
         .description1 {
-            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
 
 
@@ -3396,8 +3476,8 @@
             .social1{
                 display: inline-block;
                 margin-left: 0px;
-                height: 22px;
-                width: 22px;
+                height: 3em;
+                width: 3em;
             }
             .podcast-cover .feed-card {
                 height: 240px;
@@ -3427,7 +3507,7 @@
 
             .icon1 {
                 height: 24px;
-                transform: translate(-50px, 5px);
+                transform: translate(-20px, 3px);
             }
             .next {
                 margin-top: 8px;
@@ -3436,10 +3516,7 @@
                 margin-left: 1em;
             }
             .share1 {
-                height: 30px;
-                width: 30px;
-                margin-top: -6px;
-                margin-left: 179px;
+                margin-left:1em;
             }
             .right-side {
                 margin: 11px 36px 10px 36px;
@@ -3454,13 +3531,18 @@
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
                 height: 245px;
             }
-            .cross
-            {
-                width: 17px;
-                height: 17px;
-                display: flex;
-                margin: 80px 11px 10px 84px;
-                left: 180px;
+            /*description box */
+            .content{
+                font-size: 80%;
+                padding: 14em 1em;
+            }
+            .content p {
+                width: 100%;
+                padding: 3em 1em;
+                margin-left: 5%;
+                text-align: justify;
+                font-family: sans-serif;
+
             }
 
 
@@ -3486,6 +3568,8 @@
             }
 
         }
+
+
 
 
 

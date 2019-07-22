@@ -65,8 +65,8 @@ $audio = get_field('audio_type');
 
         <div class="light2 container">
             <div class="light1">
-                <amp-lightbox id="my-lightbox" layout="nodisplay" class="info">
-                    <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
+                <amp-lightbox id="my-lightbox" layout="nodisplay">
+                    <div class="overlay content" on="tap:my-lightbox.close" role="button" tabindex="0">
                         <p>
                             <?php
                                 $char_limit = 300; //character limit
@@ -74,11 +74,14 @@ $audio = get_field('audio_type');
                                 echo substr(strip_tags($content), 0, $char_limit);
                             ?>
                         </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" class="cross1" xml:space="preserve">
+                            <g id="Close">
+                                <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/>
+                            </g>
+                        </svg>
                     </div>
-                    <p on="tap:my-lightbox.close" class="cross">
-                        <amp-img id="my-lightbox" src="http://www.clker.com/cliparts/s/7/f/f/X/u/x-button.svg.hi.png" class="cross" height="auto" width="auto" >
+                    <p on="tap:my-lightbox.close">
 
-                        </amp-img>
                     </p>
                 </amp-lightbox>
                 <button on="tap:my-lightbox" class="description description1">
@@ -87,23 +90,24 @@ $audio = get_field('audio_type');
             </div>
             <div class="share1">
                 <amp-lightbox id="my-lightbox1" layout="nodisplay">
-                    <div class="lightbox1" on="tap:my-lightbox1.close" role="button" tabindex="0">
-                        <p class="social" on="tap:my-light-box1.close" role="button" tabindex="0">
-                            <amp-social-share class="social1" height="2em" width="5em" style="margin-right:10px;" type="facebook"></amp-social-share>
-                            <amp-social-share class=social1" height="2em" width="5em" style="margin-right:10px;" type="linkedin"></amp-social-share>
-                            <amp-social-share class="social1"  height="2em" width="5em" style="margin-right:10px;" type="twitter"></amp-social-share>
-                            <amp-social-share class="social1"  height="2em" width="5em" style="margin-right:10px;" type="whatsapp"></amp-social-share>
-                            <amp-social-share class="social1" height="2em" width="5em" style="margin-right:10px;" type="email"></amp-social-share>
+                    <div class="overlay content" on="tap:my-lightbox1.close" role="button" tabindex="0">
+                        <p>
+                            <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="facebook"></amp-social-share>
+                            <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="linkedin" width="60" height="44"></amp-social-share>
+                            <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="twitter"></amp-social-share>
+                            <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="whatsapp"></amp-social-share>
+                            <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="email"></amp-social-share>
                         </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" class="cross1" xml:space="preserve">
+                            <g id="Close">
+                                <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/>
+                            </g>
+                        </svg>
                     </div>
-                    <p on="tap:my-lightbox1.close1" class="cross">
-                        <amp-img id="my-lightbox1" src="http://www.clker.com/cliparts/s/7/f/f/X/u/x-button.svg.hi.png"
-                                 class="cross"
-                                 height="auto"
-                                 width="auto">
+                    <p on="tap:my-lightbox.close">
 
-                        </amp-img>
                     </p>
+
                 </amp-lightbox>
                 <svg on="tap:my-lightbox1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 473.932 473.932" class="icon1" style="enable-background:new 0 0 473.932 473.932;" xml:space="preserve">
                     <g>
@@ -114,6 +118,7 @@ $audio = get_field('audio_type');
                 </svg>
             </div>
         </div>
+
     </div>
 
     <div class="lg-col-4 md-col-5 sm-col-5 xs-col-12">
