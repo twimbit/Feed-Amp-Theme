@@ -73,9 +73,6 @@ $get_post = get_posts($post_args);
                     <li class="menu-item">
                         <button class="tablinks" onclick="toggler(event,'amp_story')"> Stories </button>
                     </li>
-
-
-
                     </li>
                 </ul>
             </div>

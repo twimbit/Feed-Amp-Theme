@@ -109,7 +109,8 @@
         }
 
         body {
-            margin: 0
+            margin: 0;
+            display: none;
         }
 
         .active {
@@ -2541,6 +2542,10 @@
                 height: 350px;
             }
 
+            .feed-card-search {
+                height: 250px;
+            }
+
             .feed-title {
                 padding: 24px;
             }
@@ -3021,6 +3026,18 @@
             .podcast-cover .feed-card {
                 margin: 20px 36px 20px 36px;
             }
+
+            .feed-card-search {
+                height: 150px;
+            }
+
+            .feed-title h3 {
+                font-size: 20px;
+            }
+
+            .feed-title p {
+                font-size: 13px;
+            }
         }
 
         .more-to-explore-card-container {
@@ -3305,6 +3322,10 @@
         .amp-story-carousel {
             position: relative;
         }
+
+        .active-nav {
+            color: #f16c70;
+        }
     </style>
 </head>
 
@@ -3357,20 +3378,19 @@
                         <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
                             <div class="search d-flex">
                                 <input type="text" placeholder="Search.." name="s" id="searchTerm">
-                                <button type="submit" href="#" style="    border: none;
-    background: none;">
+                                <button type="submit" href="#" style="border:none;background:none;">
                                     <amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg' ?>" width="20" height="20" class="my0 mx-auto"></amp-img>
                                 </button>
                             </div>
                         </form>
                     </li>
-                    <li class="ampstart-nav-item ">
+                    <li class="ampstart-nav-item tool active-nav">
                         <a href="<?php echo home_url(); ?>" class="text-decoration-none block">Feed</a>
                     </li>
-                    <li class="ampstart-nav-item ">
+                    <li class="ampstart-nav-item tool">
                         <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">Explore</a>
                     </li>
-                    <li class="ampstart-nav-item ">
+                    <li class="ampstart-nav-item">
                         <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button">
                             Menu
                         </a>
