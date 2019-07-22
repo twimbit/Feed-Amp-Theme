@@ -46,6 +46,7 @@ $get_post = get_posts($post_args);
                         <amp-img src="<?php echo $story_img; ?>"></amp-img>
                         <a href="<?php echo $story_url; ?>"></a>
                     </div>
+
 					<?php } ?>
                 </amp-carousel>
             </div>

@@ -11,8 +11,6 @@ global $post;
 $current_post = $post; // remember the current post
 
 // $post = $current_post;
-
-
 // $post_args = array(
 //     'orderby' => 'date',
 //     'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
@@ -55,14 +53,14 @@ $category = get_the_category();
             <div class="featured-image-text-container">
                 <div class="featured-image-text xs-col-12 sm-col-8 md-col-7 lg-col-6">
                     <a><?php if ($type == "post") {
-                                    echo "Insight";
-                                } else if ($type == "video") {
-                                    echo "Video";
-                                } else if ($type == "podcast") {
-                                    echo "Podcast";
-                                } else if ($type == "amp_story") {
-                                    echo "Story";
-                                }  ?></a href="#">
+                            echo "Insight";
+                        } else if ($type == "video") {
+                            echo "Video";
+                        } else if ($type == "podcast") {
+                            echo "Podcast";
+                        } else if ($type == "amp_story") {
+                            echo "Story";
+                        }  ?></a href="#">
                     <h2><?php the_title(); ?></h2>
                     <!-- <h6 style="color: #f5f5f5" class="mt2"><?php //the_date(); 
                                                                 ?></h6> -->
@@ -71,9 +69,7 @@ $category = get_the_category();
                     </h6>
                 </div>
             </div>
-
         </div>
-
     </section>
 
     <section class=" single-content">
@@ -131,10 +127,7 @@ $category = get_the_category();
                 </div>
             </section>
         </div>
-
-
     <?php } ?>
-
 </section>
 
 <!-- More to explore section -->
@@ -281,8 +274,8 @@ $category = get_the_category();
         </div>
     </div>
 </section>
-
-<script>
+<?php get_footer(); ?>
+<!-- <script>
     $(document).ready(function() {
         //$(".pre-next-dialog").hide();
         //$(".pre-next-dialog").css('opacity','0');
@@ -312,4 +305,4 @@ $category = get_the_category();
         // });
 
     });
-</script>
+</script> -->

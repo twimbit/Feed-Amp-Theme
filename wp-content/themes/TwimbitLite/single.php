@@ -112,11 +112,7 @@ $current_post = $post; // remember the current post
 
 </section>
 
-<section id="more-to-explore">
-    <div class="container">
-        sdsfsadasdsadasdas
-    </div>
-</section>
+
 
 <script>
     $(document).ready(function() {
