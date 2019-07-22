@@ -17,6 +17,8 @@
 
 
     <!-- AMP Scripts -->
+    <!-- Import the `amp-lightbox` component in the header -->
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <script custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js" async></script>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async></script>
@@ -28,7 +30,7 @@
 
 
     <!-- jQuery -->
-    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
     <style amp-boilerplate>
@@ -2400,8 +2402,8 @@
             }
         }
 
-        @media (min-width:992px) { style
-            .container {
+        @media (min-width:992px) {
+            style .container {
                 max-width: 960px
             }
         }
@@ -2555,8 +2557,7 @@
             /*overflow: hidden;*/
         }
 
-        .video-card
-        {
+        .video-card {
             margin-bottom: 30px;
             overflow: hidden;
             transition: transform .2s;
@@ -2564,29 +2565,37 @@
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
             height: 245px;
         }
+
         /*description box */
         .overlay {
-            position: fixed; /* Sit on top of the page content */
+            position: fixed;
+            /* Sit on top of the page content */
             /*display: none; !* Hidden by default *!*/
-            width: 100%; /* Full width (cover the whole page) */
-            height: 100%; /* Full height (cover the whole page) */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black background with opacity */
             display: flex;
             flex-direction: row;
             justify-content: center;
-            cursor: pointer; /* Add a pointer on hover */
+            cursor: pointer;
+            /* Add a pointer on hover */
         }
-        .content{
+
+        .content {
             line-height: 1.5em;
             color: #000000;
             font-size: 1em;
             padding: 12em 12em;
             font-family: "Open Sans", sans-serif;
         }
+
         .content p {
             background-color: white;
             width: 70%;
@@ -2597,32 +2606,35 @@
             /*align-content: center;*/
             border-radius: 4px;
         }
-        .share1 .content p{
+
+        .share1 .content p {
             width: auto;
             height: 9em;
         }
+
         /*social icon in podcast */
-        .social
-        {
+        .social {
             margin-left: 40%;
             width: 60%;
             height: 20%;
             display: inline-block;
         }
-        .social1{
+
+        .social1 {
             display: inline-block;
             margin-left: 0px;
             height: 2em;
             width: 2em;
         }
 
-        @media (min-width:320px) and (max-width:768px)
-        {
+        @media (min-width:320px) and (max-width:768px) {
+
             /*description box */
-            .content{
+            .content {
                 font-size: 80%;
                 padding: 15em 1em;
             }
+
             .content p {
                 padding: 5em 1em;
                 margin-left: 15%;
@@ -2630,15 +2642,16 @@
                 font-family: sans-serif;
             }
         }
+
         /*social icon in podcast */
-        .social
-        {
+        .social {
             margin-left: 40px;
             width: 180px;
             height: 23px;
             display: inline-block;
         }
-        .social1{
+
+        .social1 {
             display: inline-block;
             margin-left: 0px;
             height: 3em;
@@ -2656,18 +2669,21 @@
                 padding: 7px;
                 top: 83%;
             }
+
             .light1 {
                 margin-left: 20px;
             }
-            .share1
-            {
+
+            .share1 {
                 margin-left: 240px;
             }
+
             .icon1 {
                 height: 30px;
                 width: 40px;
                 transform: translate(-50px, 2px);
             }
+
             .right-side {
                 margin: 21px 36px 10px 36px;
             }
@@ -2707,8 +2723,7 @@
             }
 
             /* video template */
-            .video-card
-            {
+            .video-card {
                 margin-bottom: 30px;
                 overflow: hidden;
                 transition: transform .2s;
@@ -2881,11 +2896,11 @@
         }
 
         /*share icon in podcast */
-        .icon1
-        {
+        .icon1 {
 
             transform: translate(-26px, -1px);
         }
+
         /*pop-up icon for description in podcast */
         .popup {
             transform: translate(5px, 0px);
@@ -3055,12 +3070,14 @@
             width: 85%;
             height: 35px;
         }
+
         /*lightbox in podcast */
         light1 {
             margin-left: 100px;
         }
+
         .share1 {
-            margin-left:1em;
+            margin-left: 1em;
         }
 
 
@@ -3074,7 +3091,8 @@
             line-height: 20px;
             text-transform: capitalize;
         }
-        .desc p{
+
+        .desc p {
             color: #000000;
             font-family: "Open Sans", sans-serif;
             text-align: justify;
@@ -3089,17 +3107,18 @@
         .head {
             display: flex;
         }
+
         /*cross sign in podcast lightbox */
-        .cross1
-        {
+        .cross1 {
             height: 1em;
             transform: translate(-2em, 10px);
         }
 
 
         }
-        .info{
-            display:flex;
+
+        .info {
+            display: flex;
         }
 
 
@@ -3214,7 +3233,7 @@
             }
 
 
-      }
+        }
 
 
 
@@ -3232,13 +3251,7 @@
 
 
         /* for small devices */
-        @media (min-width:40.06rem) and (max-width:52rem) {
-
-
-
-
-
-        }
+        @media (min-width:40.06rem) and (max-width:52rem) {}
 
         /* for small devices and less*/
         @media (max-width:52rem) {
@@ -3264,33 +3277,36 @@
                 height: 400px;
             }
         }
-        @media (min-width:320px) and (max-width:768px)
-        {
+
+        @media (min-width:320px) and (max-width:768px) {
+
             /*description box */
-            .content{
+            .content {
                 font-size: 80%;
                 padding: 15em 1em;
             }
+
             .content p {
                 padding: 5em 1em;
                 text-align: justify;
                 font-family: sans-serif;
             }
-            }
-            /*social icon in podcast */
-            .social
-            {
-                margin-left: 40px;
-                width: 180px;
-                height: 23px;
-                display: inline-block;
-            }
-            .social1{
-                display: inline-block;
-                margin-left: 0px;
-                height: 2em;
-                width: 2em;
-            }
+        }
+
+        /*social icon in podcast */
+        .social {
+            margin-left: 40px;
+            width: 180px;
+            height: 23px;
+            display: inline-block;
+        }
+
+        .social1 {
+            display: inline-block;
+            margin-left: 0px;
+            height: 2em;
+            width: 2em;
+        }
 
 
         }
@@ -3306,17 +3322,20 @@
                 padding: 7px;
                 top: 83%;
             }
+
             .light1 {
                 margin-left: 20px;
             }
-            .share1
-            {
+
+            .share1 {
                 margin-left: 240px;
             }
+
             .icon1 {
 
                 transform: translate(-50px, 2px);
             }
+
             .right-side {
                 margin: 21px 36px 10px 36px;
             }
@@ -3325,7 +3344,7 @@
 
 
         /* description in podcast */
-        .desc{
+        .desc {
             font-size: 3px;
             right: 15px;
             line-height: 10px;
@@ -3404,7 +3423,8 @@
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
             transition: all .2s;
         }
-        .short-card:hover{
+
+        .short-card:hover {
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
 
@@ -3448,6 +3468,7 @@
             display: flex;
             flex-wrap: wrap;
         }
+
         .detail1 {
             font-size: 18px;
             position: relative;
@@ -3458,8 +3479,7 @@
         }
 
         /*social icon in podcast */
-        .social
-        {
+        .social {
             margin-left: 40px;
             width: 180px;
             height: 23px;
@@ -3469,17 +3489,17 @@
 
 
         /*ligthbox options in podcast */
-        .light2
-        {
+        .light2 {
             display: flex;
             justify-content: space-between;
         }
-        .light1
-        {
-            margin-left:1em;
+
+        .light1 {
+            margin-left: 1em;
         }
+
         .lightbox {
-            background: rgba(0,0,0,2.8);
+            background: rgba(0, 0, 0, 2.8);
             width: 90%;
             height: 40%;
             margin: 1.5em;
@@ -3488,15 +3508,16 @@
             align-items: center;
             justify-content: center;
         }
+
         .lightbox p {
             color: white;
             margin: 20px;
             font-size: 20px;
-            display:flex;
+            display: flex;
         }
 
         .lightbox1 {
-            background: rgba(3,4,5,1.8);
+            background: rgba(3, 4, 5, 1.8);
             width: 42%;
             height: 30%;
             margin: 300px 20px 30px 210px;
@@ -3505,11 +3526,12 @@
             align-items: center;
             justify-content: center;
         }
+
         .lightbox1 p {
             color: white;
             margin: 20px;
             font-size: 20px;
-            display:flex;
+            display: flex;
         }
 
 
@@ -3529,6 +3551,7 @@
             transition-duration: 0.4s;
             border-radius: 4px;
         }
+
         .description1 {
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
@@ -3540,30 +3563,35 @@
             .sub1 h2 {
                 line-height: 22px;
             }
+
             .short-card {
                 height: 80px;
             }
+
             .short-image {
                 height: 100%;
                 width: 90px;
                 margin-right: 15px;
             }
+
             [class*="col-"] .sub1 {
                 margin-top: 25px;
             }
-            .social
-            {
+
+            .social {
                 margin-left: 40px;
                 width: 180px;
                 height: 23px;
             }
-            .desc{
+
+            .desc {
                 font-size: 3px;
                 right: 15px;
                 line-height: 8px;
                 text-align: justify;
             }
-            .social1{
+
+            .social1 {
                 display: inline-block;
                 margin-left: 0px;
                 height: 2em;
@@ -3577,23 +3605,25 @@
             .audio .player {
                 width: 100%;
             }
-            .lightbox1
-            {
+
+            .lightbox1 {
 
                 width: 71%;
                 height: 30%;
                 margin: 4em;
             }
-            .lightbox
-            {
+
+            .lightbox {
                 margin-top: 0em;
-                height:auto;
+                height: auto;
                 margin-left: 1.5em;
             }
+
             .lightbox p {
                 font-size: 1em;
             }
-            .audio{
+
+            .audio {
                 margin-top: -3%;
             }
 
@@ -3602,21 +3632,25 @@
                 transform: translate(-20px, 3px);
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
             }
+
             .next {
                 margin-top: 8px;
             }
+
             .light1 {
                 margin-left: 1em;
             }
+
             .share1 {
-                margin-left:1em;
+                margin-left: 1em;
             }
+
             .right-side {
                 margin: 11px 36px 10px 36px;
             }
+
             /* div for video player */
-            .video-card
-            {
+            .video-card {
                 margin-bottom: 30px;
                 overflow: hidden;
                 transition: transform .2s;
@@ -3624,11 +3658,13 @@
                 box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
                 height: 245px;
             }
+
             /*description box */
-            .content{
+            .content {
                 font-size: 80%;
                 padding: 13em 1em;
             }
+
             .content p {
                 width: 100%;
                 padding: 3em 1em;
@@ -3670,18 +3706,77 @@
             position: relative;
         }
 
-
         .active-nav {
             color: #f16c70;
         }
 
+        .search-lightbox {
+            background: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+        }
 
+        .overlay-content {
+            position: relative;
+            top: 2%;
+            width: 95%;
+            text-align: center;
+            margin-top: 30px;
+            margin: auto;
+        }
 
+        .search-overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+            cursor: pointer;
+            color: white;
+        }
 
+        .search-overlay .closebtn:hover {
+            color: #ccc;
+        }
 
+        .search-overlay input[type=text] {
+            padding: 15px;
+            font-size: 17px;
+            border: none;
+            float: left;
+            width: 80%;
+            background: white;
+        }
 
+        .search-overlay input[type=text]:hover {
+            background: #f1f1f1;
+        }
 
-  </style>
+        .search-overlay button {
+            float: left;
+            width: 20%;
+            padding: 5px;
+            background: #ddd;
+            /* font-size: 17px; */
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-overlay button:hover {
+            background: #bbb;
+        }
+
+        .overlay-content form {
+            display: flex;
+        }
+
+        .overlay-content img {
+            margin-top: 1px;
+        }
+    </style>
 </head>
 
 <body>
@@ -3754,7 +3849,24 @@
                 </ul>
             </nav>
             <div class="search-img lg-hide md-hide">
-                <img src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt="">
+                <amp-lightbox id="my-lightbox" layout="nodisplay">
+                    <div class="search-lightbox" role="button" tabindex="0">
+                        <div id="myOverlay" class="search-overlay">
+                            <span class="closebtn" on="tap:my-lightbox.close" title="Close Overlay">×</span>
+                            <div class="overlay-content">
+                                <form action="<?php echo site_url(); ?>">
+                                    <input type="text" placeholder="Search.." name="s">
+                                    <button type="submit" href="#">
+                                        <amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg' ?>" width="20" height="20" class="my0 mx-auto"></amp-img>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </amp-lightbox>
+                <img role="button" on="tap:my-lightbox" src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt="">
+
+
             </div>
         </header>
 
