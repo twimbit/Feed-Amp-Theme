@@ -26,6 +26,7 @@
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
 
 
     <!-- jQuery -->
@@ -3762,11 +3763,10 @@
             margin: auto;
         }
 
-        .search-overlay .closebtn {
-            position: absolute;
+        .search-overlay .closebtn {    position: absolute;
             top: 20px;
-            right: 45px;
-            font-size: 60px;
+            right: 10px;
+            font-size: 41px;
             cursor: pointer;
             color: white;
         }
