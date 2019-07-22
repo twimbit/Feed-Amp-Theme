@@ -3354,7 +3354,7 @@
                     </li> -->
                     <!-- End Dropdown -->
                     <li class="ampstart-nav-item">
-                        <form action="#">
+                        <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
                             <div class="search d-flex">
                                 <input type="text" placeholder="Search.." name="s" id="searchTerm">
                                 <button type="submit" href="#" style="    border: none;
