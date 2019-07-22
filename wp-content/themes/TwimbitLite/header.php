@@ -2550,8 +2550,9 @@
 
 
         /* Video player css */
-        .video1 {
+        .video {
             position: relative;
+            margin-top:2em;
             /*overflow: hidden;*/
         }
 
