@@ -58,7 +58,7 @@ $get_sub_cat = get_posts($args);
 
 <div class="archive-filter-card-container container">
     <!-- Filter section -->
-    <section id="filter">
+    <section id="filter" style="margin-left: auto;margin-right: auto;">
         <div class="container mt4">
             <div class="col-12">
                 <div class="menu">
