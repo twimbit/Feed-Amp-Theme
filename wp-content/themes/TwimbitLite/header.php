@@ -2664,9 +2664,8 @@
                 margin-left: 240px;
             }
             .icon1 {
-                height: 30px;
-                width: 40px;
-                transform: translate(-50px, 2px);
+
+                transform: translate(0px, 25px);
             }
             .right-side {
                 margin: 21px 36px 10px 36px;
@@ -2883,13 +2882,18 @@
         /*share icon in podcast */
         .icon1
         {
-
-            transform: translate(-26px, -1px);
+            transform: translate(0px, 27px);
         }
         /*pop-up icon for description in podcast */
         .popup {
-            transform: translate(5px, 0px);
+            transform: translate(5px, 26px);
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+        }
+
+        /*description and share icon margin*/
+        .share2 {
+            margin-left: 1.5em;
+
         }
 
 
@@ -3235,9 +3239,6 @@
         @media (min-width:40.06rem) and (max-width:52rem) {
 
 
-
-
-
         }
 
         /* for small devices and less*/
@@ -3472,7 +3473,7 @@
         .light2
         {
             display: flex;
-            justify-content: space-between;
+            margin-top:-2em;
         }
         .light1
         {
@@ -3599,8 +3600,14 @@
 
             .icon1 {
                 height: 24px;
-                transform: translate(-20px, 3px);
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+                transform: translate(0px, 23px);
+
+            }
+            .share2
+            {
+                margin-left: 1.5em;
+                margin-top: -0.4em;
+
             }
             .next {
                 margin-top: 8px;

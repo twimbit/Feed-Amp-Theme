@@ -87,7 +87,9 @@ $audio = get_field('audio_type');
                 </amp-lightbox>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" on="tap:my-lightbox" class="popup">
                     <path id="ic_launch_24px" d="M19,19H5V5h7V3H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V12H19ZM14,3V5h3.59L7.76,14.83l1.41,1.41L19,6.41V10h2V3Z" transform="translate(-3 -3)"/>
+                    <p style="margin-left:2em;">Description</p>
                 </svg>
+
 
             </div>
             <div class="share1">
@@ -113,6 +115,7 @@ $audio = get_field('audio_type');
                 </amp-lightbox>
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19.92" viewBox="0 0 18 19.92" class="icon1" on="tap:my-lightbox1">
                     <path id="ic_share_24px" d="M18,16.08a2.912,2.912,0,0,0-1.96.77L8.91,12.7A3.274,3.274,0,0,0,9,12a3.274,3.274,0,0,0-.09-.7l7.05-4.11A2.993,2.993,0,1,0,15,5a3.274,3.274,0,0,0,.09.7L8.04,9.81a3,3,0,1,0,0,4.38l7.12,4.16a2.821,2.821,0,0,0-.08.65A2.92,2.92,0,1,0,18,16.08Z" transform="translate(-3 -2)"/>
+                    <p class="share2">Share</p>
                 </svg>
 
             </div>
