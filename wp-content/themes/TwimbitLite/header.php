@@ -22,6 +22,10 @@
     <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async></script>
     <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async></script>
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -2537,6 +2541,136 @@
             line-height: 0.9;
         }
 
+        /* audio player in podcast */
+        .audio {
+            position: relative;
+            top: 85%;
+            padding: 6px;
+        }
+
+
+        /* Video player css */
+        .video1 {
+            position: relative;
+            /*overflow: hidden;*/
+        }
+
+        .video-card
+        {
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform .2s;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+            height: 245px;
+        }
+        /*description box */
+        .overlay {
+            position: fixed; /* Sit on top of the page content */
+            /*display: none; !* Hidden by default *!*/
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            display: flex;
+            cursor: pointer; /* Add a pointer on hover */
+        }
+        .content{
+            line-height: 1.5em;
+            color: #000000;
+            font-size: 1em;
+            padding: 17em 14em;
+            font-family: "Open Sans", sans-serif;
+        }
+        .content p {
+            background-color: white;
+            width: 70%;
+            height: auto;
+            padding: 5em 2em;
+            margin-left: 30%;
+            align-content: center;
+            border-radius: 4px;
+        }
+        .share1 .content p{
+            width: auto;
+            height: 9em;
+        }
+        /*social icon in podcast */
+        .social
+        {
+            margin-left: 40%;
+            width: 60%;
+            height: 20%;
+            display: inline-block;
+        }
+        .social1{
+            display: inline-block;
+            margin-left: 0px;
+            height: 3em;
+            width: 3em;
+        }
+
+        @media (min-width:320px) and (max-width:768px)
+        {
+            /*description box */
+            .content{
+                font-size: 80%;
+                padding: 15em 1em;
+            }
+            .content p {
+                padding: 5em 1em;
+                margin-left: 15%;
+                text-align: justify;
+                font-family: sans-serif;
+            }
+        }
+        /*social icon in podcast */
+        .social
+        {
+            margin-left: 40px;
+            width: 180px;
+            height: 23px;
+            display: inline-block;
+        }
+        .social1{
+            display: inline-block;
+            margin-left: 0px;
+            height: 3em;
+            width: 3em;
+        }
+
+        /* for above small devices */
+        @media (min-width:40rem) and (max-width:52rem) {
+            .featured-image {
+                height: 500px;
+            }
+
+            /* audio player in podcast */
+            .audio {
+                padding: 7px;
+                top: 83%;
+            }
+            .light1 {
+                margin-left: 20px;
+            }
+            .share1
+            {
+                margin-left: 240px;
+            }
+            .icon1 {
+                height: 30px;
+                width: 40px;
+                transform: translate(-50px, 2px);
+            }
+            .right-side {
+                margin: 21px 36px 10px 36px;
+            }
+        }
+
+
         @media (min-width: 768px) {
             .feed-card {
                 height: 350px;
@@ -2569,6 +2703,16 @@
                 font-style: italic;
             }
 
+            /* video template */
+            .video-card
+            {
+                margin-bottom: 30px;
+                overflow: hidden;
+                transition: transform .2s;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+                height: 245px;
+            }
 
         }
 
@@ -2733,6 +2877,13 @@
 
         }
 
+        /*share icon in podcast */
+        .icon1
+        {
+            height: 35px;
+            width: 43px;
+            transform: translate(-26px, -1px);
+        }
 
 
         .footer-content {
@@ -2870,6 +3021,8 @@
             font-weight: 200;
         }
 
+
+        /*podcast right side */
         .right-side {
             margin: 36px 25px 10px 0px;
         }
@@ -2879,45 +3032,44 @@
             height: 313px;
         }
 
+        /* up next in podcast */
+
         .next {
             color: #000000;
-            margin-top: 8px;
+            margin-top: 1em;
             margin-bottom: 0px;
-            /* margin-left: -15px; */
             font-size: 20px;
             text-decoration: none;
             text-transform: capitalize;
         }
 
-        .audio {
-            position: relative;
-            top: 83px;
-            /* position: absolute; */
-            padding: 30px;
-        }
-
+        /* styling of amp audio player */
         .player {
             width: 85%;
             height: 35px;
         }
+        /*lightbox in podcast */
+        light1 {
+            margin-left: 100px;
+        }
+        .share1 {
+            margin-left:1em;
+        }
 
+
+        /* description in podcast */
         .desc {
             position: relative;
-            top: 70px;
-            margin-left: 24px;
+            top: -20px;
+            margin-left: 45px;
             padding: 10px;
             font-size: 13px;
             line-height: 20px;
             text-transform: capitalize;
         }
-
-        .head {
-            display: flex;
-            x
-        }
-
-        .desc p {
-            color: #FFF;
+        .desc p{
+            color: #000000;
+            font-family: "Open Sans", sans-serif;
             text-align: justify;
             font-size: 13px;
             line-height: initial;
@@ -2927,9 +3079,23 @@
             color: #000;
         }
 
-        .explore-title {
-            color: #f16c70;
+        .head {
+            display: flex;
         }
+        /*cross sign in podcast lightbox */
+        .cross1
+        {
+            height: 1em;
+            transform: translate(-2em, 10px);
+        }
+
+
+        }
+        .info{
+            display:flex;
+        }
+
+
 
 
         /* for xtra small devices */
@@ -3023,6 +3189,7 @@
                 margin: 0px 36px 10px 36px;
             }
 
+
             .podcast-cover .feed-card {
                 margin: 20px 36px 20px 36px;
             }
@@ -3038,7 +3205,12 @@
             .feed-title p {
                 font-size: 13px;
             }
-        }
+
+
+      }
+
+
+
 
         .more-to-explore-card-container {
             display: flex;
@@ -3053,7 +3225,13 @@
 
 
         /* for small devices */
-        @media (min-width:40.06rem) and (max-width:52rem) {}
+        @media (min-width:40.06rem) and (max-width:52rem) {
+
+
+
+
+
+        }
 
         /* for small devices and less*/
         @media (max-width:52rem) {
@@ -3081,18 +3259,43 @@
         }
 
         /* for above small devices */
-        @media (min-width:40rem) {
+        @media (min-width:40rem) and (max-width:52rem) {
             .featured-image {
                 height: 500px;
             }
+
+            /* audio player in podcast */
+            .audio {
+                padding: 7px;
+                top: 83%;
+            }
+            .light1 {
+                margin-left: 20px;
+            }
+            .share1
+            {
+                margin-left: 240px;
+            }
+            .icon1 {
+                height: 30px;
+                width: 40px;
+                transform: translate(-50px, 2px);
+            }
+            .right-side {
+                margin: 21px 36px 10px 36px;
+            }
         }
 
-        .desc {
+
+
+        /* description in podcast */
+        .desc{
             font-size: 3px;
             right: 15px;
             line-height: 10px;
             text-align: justify;
         }
+
 
         .pre-next-dialog {
             position: sticky;
@@ -3164,13 +3367,12 @@
             margin-left: 0px;
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
             transition: all .2s;
-
         }
-
-        .short-card:hover {
+        .short-card:hover{
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
         }
 
+        /*album image in podcast */
         .short-image {
             height: 100%;
             width: 110px;
@@ -3180,14 +3382,15 @@
             border-radius: 4px;
         }
 
+        /*play icon in podcast */
         .icon {
-            /* margin-left: -135px;
-            margin-top: 43px; */
             height: 50px;
             width: 50px;
             transform: translate(30px, -75px);
         }
 
+
+        /*podcast next play details*/
         .details {
             /* margin-left: 150px;
             margin-top: -270px;
@@ -3209,9 +3412,6 @@
             display: flex;
             flex-wrap: wrap;
         }
-
-
-
         .detail1 {
             font-size: 18px;
             position: relative;
@@ -3221,13 +3421,82 @@
             margin-left: 20px; */
         }
 
-        .social {
-            margin-left: 0px;
-            width: 140px;
+        /*social icon in podcast */
+        .social
+        {
+            margin-left: 40px;
+            width: 180px;
             height: 23px;
             display: inline-block;
 
         }
+
+
+        /*ligthbox options in podcast */
+        .light2
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+        .light1
+        {
+            margin-left:1em;
+        }
+        .lightbox {
+            background: rgba(0,0,0,2.8);
+            width: 90%;
+            height: 40%;
+            margin: 1.5em;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox p {
+            color: white;
+            margin: 20px;
+            font-size: 20px;
+            display:flex;
+        }
+
+        .lightbox1 {
+            background: rgba(3,4,5,1.8);
+            width: 42%;
+            height: 30%;
+            margin: 300px 20px 30px 210px;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox1 p {
+            color: white;
+            margin: 20px;
+            font-size: 20px;
+            display:flex;
+        }
+
+
+        /*description of album in podcast */
+        .description {
+            background-color: #FFFFFF;
+            border: none;
+            color: #000000;
+            padding: 10px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: -10px 7px;
+            cursor: pointer;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            border-radius: 4px;
+        }
+        .description1 {
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
+        }
+
 
         /* for  iphone 5/se*/
         @media only screen and (max-width: 320px) {
@@ -3235,59 +3504,104 @@
             .sub1 h2 {
                 line-height: 22px;
             }
-
             .short-card {
                 height: 80px;
             }
-
             .short-image {
                 height: 100%;
                 width: 90px;
                 margin-right: 15px;
             }
-
             [class*="col-"] .sub1 {
                 margin-top: 25px;
             }
-
-            .social {
-                margin-left: 3px;
-                width: 140px;
+            .social
+            {
+                margin-left: 40px;
+                width: 180px;
                 height: 23px;
             }
-
-            .audio {
-                padding: 15px;
-            }
-
-            .desc {
+            .desc{
                 font-size: 3px;
                 right: 15px;
                 line-height: 8px;
                 text-align: justify;
             }
-
-            .social1 {
+            .social1{
                 display: inline-block;
                 margin-left: 0px;
-                height: 22px;
-                width: 22px;
-
+                height: 3em;
+                width: 3em;
             }
 
             .podcast-cover .feed-card {
-                height: 290px;
-
+                height: 240px;
             }
 
             .audio .player {
                 width: 100%;
             }
+            .lightbox1
+            {
 
-
-            .icon {
-                transform: translate(20px, -70px);
+                width: 71%;
+                height: 30%;
+                margin: 4em;
             }
+            .lightbox
+            {
+                margin-top: 0em;
+                height:auto;
+                margin-left: 1.5em;
+            }
+            .lightbox p {
+                font-size: 1em;
+            }
+            .audio{
+                margin-top: -3%;
+            }
+
+            .icon1 {
+                height: 24px;
+                transform: translate(-20px, 3px);
+            }
+            .next {
+                margin-top: 8px;
+            }
+            .light1 {
+                margin-left: 1em;
+            }
+            .share1 {
+                margin-left:1em;
+            }
+            .right-side {
+                margin: 11px 36px 10px 36px;
+            }
+            /* div for video player */
+            .video-card
+            {
+                margin-bottom: 30px;
+                overflow: hidden;
+                transition: transform .2s;
+                border-radius: 4px;
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+                height: 245px;
+            }
+            /*description box */
+            .content{
+                font-size: 80%;
+                padding: 14em 1em;
+            }
+            .content p {
+                width: 100%;
+                padding: 3em 1em;
+                margin-left: 5%;
+                text-align: justify;
+                font-family: sans-serif;
+
+            }
+
+
         }
 
         .podcast-card:hover {
@@ -3323,10 +3637,18 @@
             position: relative;
         }
 
+
         .active-nav {
             color: #f16c70;
         }
-    </style>
+
+
+
+
+
+
+
+  </style>
 </head>
 
 <body>
@@ -3375,7 +3697,7 @@
                     </li> -->
                     <!-- End Dropdown -->
                     <li class="ampstart-nav-item">
-                        <form role="search" method="get" class="search-form" action="<?php echo esc_url(home_url('/')); ?>">
+                        <form action="#">
                             <div class="search d-flex">
                                 <input type="text" placeholder="Search.." name="s" id="searchTerm">
                                 <button type="submit" href="#" style="border:none;background:none;">
@@ -3390,6 +3712,7 @@
                     <li class="ampstart-nav-item tool">
                         <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">Explore</a>
                     </li>
+
                     <li class="ampstart-nav-item">
                         <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button">
                             Menu
@@ -3403,7 +3726,7 @@
         </header>
 
         <!-- Start Sidebar -->
-        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3" layout="nodisplay" side="right">
+        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 md-hide lg-hide" layout="nodisplay" side="right">
             <div class="flex justify-start items-center ampstart-sidebar-header">
                 <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
             </div>
