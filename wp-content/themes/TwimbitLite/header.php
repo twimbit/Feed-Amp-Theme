@@ -3850,7 +3850,7 @@
             </nav>
             <div class="search-img lg-hide md-hide">
                 <amp-lightbox id="my-lightbox" layout="nodisplay">
-                    <div class="search-lightbox" role="button" tabindex="0">
+                    <div class="search-lightbox" role="button" tabindex="0" on="tap:my-lightbox.close">
                         <div id="myOverlay" class="search-overlay">
                             <span class="closebtn" on="tap:my-lightbox.close" title="Close Overlay">×</span>
                             <div class="overlay-content">
