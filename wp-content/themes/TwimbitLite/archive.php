@@ -58,29 +58,30 @@ $get_sub_cat = get_posts($args);
 
 <div class="archive-filter-card-container container">
     <!-- Filter section -->
-    <section id="filter" style="flex: 1 1 150px;margin-right:20px;">
-        <div class="menu">
-            <ul>
-                <li class="menu-item">
-                    <button class="tablinks active" onclick="toggler(event,'All')"> All </button>
-                </li>
-                <li class="menu-item">
-                    <button class="tablinks" onclick="toggler(event,'post')"> Insights </button>
-                </li>
-                <li class="menu-item">
-                    <button class="tablinks" onclick="toggler(event,'video')"> Videos </button>
-                </li>
-                <li class="menu-item">
-                    <button class="tablinks" onclick="toggler(event,'podcast')"> Podcasts </button>
-                </li>
-                <li class="menu-item">
-                    <button class="tablinks" onclick="toggler(event,'amp_story')"> Stories </button>
-                </li>
-
-
-
-                </li>
-            </ul>
+    <section id="filter">
+        <div class="container mt4">
+            <div class="col-12">
+                <div class="menu">
+                    <ul>
+                        <li class="menu-item">
+                            <button class="tablinks" id="allButton" style="display: none;" onclick="toggler(event,'All')"> All </button>
+                        </li>
+                        <li class="menu-item">
+                            <button class="tablinks" onclick="toggler(event,'post')"> Insights </button>
+                        </li>
+                        <li class="menu-item">
+                            <button class="tablinks" onclick="toggler(event,'video')"> Videos </button>
+                        </li>
+                        <li class="menu-item">
+                            <button class="tablinks" onclick="toggler(event,'podcast')"> Podcasts </button>
+                        </li>
+                        <li class="menu-item">
+                            <button class="tablinks" onclick="toggler(event,'amp_story')"> Stories </button>
+                        </li>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 

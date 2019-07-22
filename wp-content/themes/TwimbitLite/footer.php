@@ -41,11 +41,17 @@
 
 <?php wp_footer(); ?>
 <script>
+    $(window).on('load', function() {
+        /*! Fades in page on load */
+        $("body").fadeIn("slow");
+        //$('body').fadeIn(1000);
+    });
     $(document).ready(function() {
 
-        /*! Fades in page on load */
-        $('body').css('display', 'none');
-        $('body').fadeIn(1000);
+        let activeTab = localStorage.getItem('active-item');
+        //activeTab.className += " active-nav"
+        console.log('active tab ' + activeTab);
+        $('.tool a[href =' + activeTab + ']').addClass('active-nav');
         var prevScrollpos = window.pageYOffset;
         window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
@@ -60,41 +66,19 @@
         }
 
     });
-    // let feed = document.querySelector('#feed');
-    // feed.addEventListener('click', function(event) {
-    //     $.get("http://localhost/wordpress/feed-2", function(data) {
-    //         $('#main').html(data);
-    //     });
-    // });
-    // let feed_bottom = document.querySelector('#feed_bottom');
-    // feed_bottom.addEventListener('click', function(event) {
-    //     $.get("http://localhost/wordpress/feed-2", function(data) {
-    //         $('#main').html(data);
-    //     });
-    // });
-    // let explore = document.querySelector('#explore');
-    // explore.addEventListener('click', function(event) {q
-    //     $.get("http://localhost/wordpress/explore/", function(data) {
-    //         $('#main').html(data);
-    //     });
-    // });
-    // let explore_bottom = document.querySelector('#explore_bottom');
-    // explore_bottom.addEventListener('click', function(event) {
-    //     $.get("http://localhost/wordpress/explore/", function(data) {
-    //         $('#main').html(data);
-    //     });
-    // });
 
     // Add active class to the current button (highlight it)
-    /*var header = document.querySelector(".desktop-tool");
+    var header = document.querySelector(".list-reset");
     var btns = header.getElementsByClassName("tool");
     for (var i = 0; i < btns.length; i++) {
         btns[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
+            var current = document.getElementsByClassName("active-nav");
+            current[0].className = current[0].className.replace(" active-nav", "");
+            this.className += " active-nav";
+            //console.log($(this).parent().index());
+            localStorage.setItem('active-item', document.location.toString());
         });
-    }*/
+    }
 </script>
 </body>
 
