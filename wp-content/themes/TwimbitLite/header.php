@@ -26,7 +26,6 @@
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
-    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
 
 
     <!-- jQuery -->
@@ -2602,15 +2601,17 @@
             font-family: "Open Sans", sans-serif;
         }
 
-        .content p {
-            background-color: white;
-            width: 70%;
-            height: auto;
+        .content p {    background-color: white;
+            width: fit-content;
+            min-width: 300px;
+            height: fit-content;
+            min-height: 300px;
             padding: 3em 1em;
-            /*margin-left: 17%;*/
+            /* margin-left: 17%; */
             text-align: justify;
-            /*align-content: center;*/
+            /* align-content: center; */
             border-radius: 4px;
+        }
         }
 
         .share1 .content p {
@@ -2662,8 +2663,7 @@
             }
 
             .content p {
-                padding: 5em 1em;
-                margin-left: 15%;
+                padding: 10em 1em;
                 text-align: justify;
                 font-family: sans-serif;
             }
@@ -2714,10 +2714,7 @@
                 margin-left: 240px;
             }
 
-            .icon1 {
 
-                transform: translate(0px, 25px);
-            }
 
             .right-side {
                 margin: 21px 36px 10px 36px;
@@ -2931,10 +2928,7 @@
         }
 
         /*share icon in podcast */
-        .icon1 {
 
-            transform: translate(0px, 27px);
-        }
 
         /*pop-up icon for description in podcast */
         .popup {
@@ -3326,11 +3320,11 @@
             /*description box */
             .content {
                 font-size: 80%;
-                padding: 15em 1em;
+                padding: 1em 1em;
             }
 
             .content p {
-                padding: 5em 1em;
+                padding: 1em 1em;
                 text-align: justify;
                 font-family: sans-serif;
             }
@@ -3372,11 +3366,6 @@
 
             .share1 {
                 margin-left: 240px;
-            }
-
-            .icon1 {
-
-                transform: translate(-50px, 2px);
             }
 
             .right-side {
@@ -3670,11 +3659,6 @@
                 margin-top: -3%;
             }
 
-            .icon1 {
-                height: 24px;
-                transform: translate(0px, 23px);
-
-            }
             .share2
             {
                 margin-left: 1.5em;
@@ -3711,12 +3695,12 @@
             /*description box */
             .content {
                 font-size: 80%;
-                padding: 13em 1em;
+                padding: 1em 1em;
             }
 
             .content p {
                 width: 100%;
-                padding: 3em 1em;
+                padding: 1em 1em;
 
                 text-align: justify;
                 font-family: sans-serif;
@@ -3902,10 +3886,10 @@
                 </ul>
             </nav>
             <div class="search-img lg-hide md-hide">
-                <amp-lightbox id="my-lightbox" layout="nodisplay">
-                    <div class="search-lightbox" role="button" tabindex="0" on="tap:my-lightbox.close">
+                <amp-lightbox id="search-lightbox" layout="nodisplay">
+                    <div class="search-lightbox" role="button" tabindex="0" on="tap:search-lightbox.close">
                         <div id="myOverlay" class="search-overlay">
-                            <span class="closebtn" on="tap:my-lightbox.close" title="Close Overlay">×</span>
+                            <span class="closebtn" on="tap:search-lightbox.close" title="Close Overlay">×</span>
                             <div class="overlay-content">
                                 <form action="<?php echo site_url(); ?>">
                                     <input type="text" placeholder="Search.." name="s">
@@ -3917,7 +3901,7 @@
                         </div>
                     </div>
                 </amp-lightbox>
-                <img role="button" on="tap:my-lightbox" src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt="">
+                <img role="button" on="tap:search-lightbox" src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt="">
 
 
             </div>
