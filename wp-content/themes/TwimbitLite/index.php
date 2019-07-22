@@ -53,13 +53,13 @@ $get_post = get_posts($post_args);
 </section>
 <div class="archive-filter-card-container container">
     <!-- Filter section -->
-    <section id="filter" style="flex: 1 1 150px;margin-right:20px;">
-        <div class="container mt4">
-            <div class="col-12">
+    <section id="filter"  >
+        <div class="mt4">
+            <div class="col-12" style="min-width: fit-content;">
                 <div class="menu">
                     <ul>
                         <li class="menu-item">
-                            <button class="tablinks" id="allButton" onclick="toggler(event,'All')"> ALL</button>
+                            <button class="tablinks active" id="allButton" onclick="toggler(event,'All')"> ALL</button>
                         </li>
                         <li class="menu-item">
                             <button class="tablinks" onclick="toggler(event,'post')"><svg xmlns="http://www.w3.org/2000/svg" width="41.817" height="37.171" viewBox="0 0 41.817 37.171">
@@ -88,7 +88,7 @@ $get_post = get_posts($post_args);
         </div>
     </section>
     <!-- Feeds cards -->
-    <section id="cards-feed" class="mb4" style="flex: 3 1 500px;">
+    <section id="cards-feed" class="mb4" >
         <div class="container mt2" style="margin-bottom: 6rem;">
             <div>
                 <!--            Fetching all the post for Feed-->

@@ -2633,7 +2633,7 @@
         }
 
 
-        @media (min-width:320px) and (max-width:768px) {
+
 
         .tablinks svg {
             transform: scale(0.6);
@@ -2653,7 +2653,7 @@
         .tablinks:hover {
             box-shadow: 0px 7px 10px 0px gainsboro;
         }
-        
+        @media (min-width:320px) and (max-width:768px) {
             /*description box */
             .content {
                 font-size: 80%;
@@ -2668,6 +2668,10 @@
             }
             .menu ul {
                 flex-direction: row !important;
+
+            }
+            #filter {
+            overflow-x: scroll;
             }
         }
 
@@ -2688,6 +2692,9 @@
 
         /* for above small devices */
         @media (min-width:40rem) and (max-width:52rem) {
+            #filter {
+                overflow-x: scroll;
+            }
             .featured-image {
                 height: 500px;
             }
@@ -2719,6 +2726,7 @@
 
 
         @media (min-width: 768px) {
+
             .feed-card {
                 height: 350px;
             }
@@ -2886,8 +2894,7 @@
         }
 
         .menu ul {
-            display: flex;
-            flex-direction: column;
+            display:flex;
             list-style: none;
             padding: 5px;
         }
@@ -3259,7 +3266,9 @@
             .feed-title p {
                 font-size: 13px;
             }
-
+            #filter {
+                overflow-x: scroll;
+            }
 
         }
 
@@ -3273,7 +3282,7 @@
         }
 
         .archive-filter-card-container {
-            display: flex;
+
             flex-wrap: wrap;
         }
 
@@ -3803,6 +3812,10 @@
 
         .overlay-content img {
             margin-top: 1px;
+        }
+
+        #cards-feed{
+            max-width: 700px;
         }
     </style>
 </head>

@@ -30,7 +30,7 @@ $get_sub_cat = get_posts($args);
 ?>
 
 <!-- Top Category -->
-<section id="cards-feed" class="mb4" style="margin-top:4.5rem">
+<section class="mb4" style="margin-top:4.5rem">
     <div class="container mt2">
         <div class="col-12">
             <div class="feed-card feed-card-archive">
