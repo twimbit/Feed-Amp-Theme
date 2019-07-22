@@ -2924,7 +2924,7 @@
 
         .site-footer svg {
             transform: translate(9px, 5px) scale(1);
-            fill: rgba(0, 0, 0, 0.57);
+            fill: rgb(9, 77, 95);
 
         }
 
