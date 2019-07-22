@@ -84,9 +84,10 @@ $audio = get_field('audio_type');
 
                     </p>
                 </amp-lightbox>
-                <button on="tap:my-lightbox" class="description description1">
-                    Description
-                </button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" on="tap:my-lightbox" class="popup">
+                    <path id="ic_launch_24px" d="M19,19H5V5h7V3H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V12H19ZM14,3V5h3.59L7.76,14.83l1.41,1.41L19,6.41V10h2V3Z" transform="translate(-3 -3)"/>
+                </svg>
+
             </div>
             <div class="share1">
                 <amp-lightbox id="my-lightbox1" layout="nodisplay">
@@ -109,13 +110,10 @@ $audio = get_field('audio_type');
                     </p>
 
                 </amp-lightbox>
-                <svg on="tap:my-lightbox1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 473.932 473.932" class="icon1" style="enable-background:new 0 0 473.932 473.932;" xml:space="preserve">
-                    <g>
-                        <g>
-                            <path style="fill:#010002;" d="M385.513,301.214c-27.438,0-51.64,13.072-67.452,33.09l-146.66-75.002    c1.92-7.161,3.3-14.56,3.3-22.347c0-8.477-1.639-16.458-3.926-24.224l146.013-74.656c15.725,20.924,40.553,34.6,68.746,34.6    c47.758,0,86.391-38.633,86.391-86.348C471.926,38.655,433.292,0,385.535,0c-47.65,0-86.326,38.655-86.326,86.326    c0,7.809,1.381,15.229,3.322,22.412L155.892,183.74c-15.833-20.039-40.079-33.154-67.56-33.154    c-47.715,0-86.326,38.676-86.326,86.369s38.612,86.348,86.326,86.348c28.236,0,53.043-13.719,68.832-34.664l145.948,74.656    c-2.287,7.744-3.947,15.79-3.947,24.289c0,47.693,38.676,86.348,86.326,86.348c47.758,0,86.391-38.655,86.391-86.348    C471.904,339.848,433.271,301.214,385.513,301.214z"/>
-                        </g>
-                    </g>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19.92" viewBox="0 0 18 19.92" class="icon1" on="tap:my-lightbox1">
+                    <path id="ic_share_24px" d="M18,16.08a2.912,2.912,0,0,0-1.96.77L8.91,12.7A3.274,3.274,0,0,0,9,12a3.274,3.274,0,0,0-.09-.7l7.05-4.11A2.993,2.993,0,1,0,15,5a3.274,3.274,0,0,0,.09.7L8.04,9.81a3,3,0,1,0,0,4.38l7.12,4.16a2.821,2.821,0,0,0-.08.65A2.92,2.92,0,1,0,18,16.08Z" transform="translate(-3 -2)"/>
                 </svg>
+
             </div>
         </div>
 
