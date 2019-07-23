@@ -26,7 +26,7 @@
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
-    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+
 
 
     <!-- jQuery -->
@@ -571,287 +571,287 @@
         }
 
         .align-bottom {
-            vertical-align: bottom
+            vertical-align: bottom;
         }
 
         .m0 {
-            margin: 0
+            margin: 0;
         }
 
         .mt0 {
-            margin-top: 0
+            margin-top: 0;
         }
 
         .mr0 {
-            margin-right: 0
+            margin-right: 0;
         }
 
         .mb0 {
-            margin-bottom: 0
+            margin-bottom: 0;
         }
 
         .ml0,
         .mx0 {
-            margin-left: 0
+            margin-left: 0;
         }
 
         .mx0 {
-            margin-right: 0
+            margin-right: 0;
         }
 
         .my0 {
             margin-top: 0;
-            margin-bottom: 0
+            margin-bottom: 0;
         }
 
         .m1 {
-            margin: .5rem
+            margin: .5rem;
         }
 
         .mt1 {
-            margin-top: .5rem
+            margin-top: .5rem;
         }
 
         .mr1 {
-            margin-right: .5rem
+            margin-right: .5rem;
         }
 
         .mb1 {
-            margin-bottom: .5rem
+            margin-bottom: .5rem;
         }
 
         .ml1,
         .mx1 {
-            margin-left: .5rem
+            margin-left: .5rem;
         }
 
         .mx1 {
-            margin-right: .5rem
+            margin-right: .5rem;
         }
 
         .my1 {
             margin-top: .5rem;
-            margin-bottom: .5rem
+            margin-bottom: .5rem;
         }
 
         .m2 {
-            margin: 1rem
+            margin: 1rem;
         }
 
         .mt2 {
-            margin-top: 1rem
+            margin-top: 1rem;
         }
 
         .mr2 {
-            margin-right: 1rem
+            margin-right: 1rem;
         }
 
         .mb2 {
-            margin-bottom: 1rem
+            margin-bottom: 1rem;
         }
 
         .ml2,
         .mx2 {
-            margin-left: 1rem
+            margin-left: 1rem;
         }
 
         .mx2 {
-            margin-right: 1rem
+            margin-right: 1rem;
         }
 
         .my2 {
             margin-top: 1rem;
-            margin-bottom: 1rem
+            margin-bottom: 1rem;
         }
 
         .m3 {
-            margin: 1.5rem
+            margin: 1.5rem;
         }
 
         .mt3 {
-            margin-top: 1.5rem
+            margin-top: 1.5rem;
         }
 
         .mr3 {
-            margin-right: 1.5rem
+            margin-right: 1.5rem;
         }
 
         .mb3 {
-            margin-bottom: 1.5rem
+            margin-bottom: 1.5rem;
         }
 
         .ml3,
         .mx3 {
-            margin-left: 1.5rem
+            margin-left: 1.5rem;
         }
 
         .mx3 {
-            margin-right: 1.5rem
+            margin-right: 1.5rem;
         }
 
         .my3 {
             margin-top: 1.5rem;
-            margin-bottom: 1.5rem
+            margin-bottom: 1.5rem;
         }
 
         .m4 {
-            margin: 2rem
+            margin: 2rem;
         }
 
         .mt4 {
-            margin-top: 2rem
+            margin-top: 2rem;
         }
 
         .mr4 {
-            margin-right: 2rem
+            margin-right: 2rem;
         }
 
         .mb4 {
-            margin-bottom: 2rem
+            margin-bottom: 2rem;
         }
 
         .ml4,
         .mx4 {
-            margin-left: 2rem
+            margin-left: 2rem;
         }
 
         .mx4 {
-            margin-right: 2rem
+            margin-right: 2rem;
         }
 
         .my4 {
             margin-top: 2rem;
-            margin-bottom: 2rem
+            margin-bottom: 2rem;
         }
 
         .mxn1 {
             margin-left: calc(.5rem * -1);
-            margin-right: calc(.5rem * -1)
+            margin-right: calc(.5rem * -1);
         }
 
         .mxn2 {
             margin-left: calc(1rem * -1);
-            margin-right: calc(1rem * -1)
+            margin-right: calc(1rem * -1);
         }
 
         .mxn3 {
             margin-left: calc(1.5rem * -1);
-            margin-right: calc(1.5rem * -1)
+            margin-right: calc(1.5rem * -1);
         }
 
         .mxn4 {
             margin-left: calc(2rem * -1);
-            margin-right: calc(2rem * -1)
+            margin-right: calc(2rem * -1);
         }
 
         .m-auto {
-            margin: auto
+            margin: auto;
         }
 
         .mt-auto {
-            margin-top: auto
+            margin-top: auto;
         }
 
         .mr-auto {
-            margin-right: auto
+            margin-right: auto;
         }
 
         .mb-auto {
-            margin-bottom: auto
+            margin-bottom: auto;
         }
 
         .ml-auto,
         .mx-auto {
-            margin-left: auto
+            margin-left: auto;
         }
 
         .mx-auto {
-            margin-right: auto
+            margin-right: auto;
         }
 
         .my-auto {
             margin-top: auto;
-            margin-bottom: auto
+            margin-bottom: auto;
         }
 
         .p0 {
-            padding: 0
+            padding: 0;
         }
 
         .pt0 {
-            padding-top: 0
+            padding-top: 0;
         }
 
         .pr0 {
-            padding-right: 0
+            padding-right: 0;
         }
 
         .pb0 {
-            padding-bottom: 0
+            padding-bottom: 0;
         }
 
         .pl0,
         .px0 {
-            padding-left: 0
+            padding-left: 0;
         }
 
         .px0 {
-            padding-right: 0
+            padding-right: 0;
         }
 
         .py0 {
             padding-top: 0;
-            padding-bottom: 0
+            padding-bottom: 0;
         }
 
         .p1 {
-            padding: .5rem
+            padding: .5rem;
         }
 
         .pt1 {
-            padding-top: .5rem
+            padding-top: .5rem;
         }
 
         .pr1 {
-            padding-right: .5rem
+            padding-right: .5rem;
         }
 
         .pb1 {
-            padding-bottom: .5rem
+            padding-bottom: .5rem;
         }
 
         .pl1 {
-            padding-left: .5rem
+            padding-left: .5rem;
         }
 
         .py1 {
             padding-top: .5rem;
-            padding-bottom: .5rem
+            padding-bottom: .5rem;
         }
 
         .px1 {
             padding-left: .5rem;
-            padding-right: .5rem
+            padding-right: .5rem;
         }
 
         .p2 {
-            padding: 1rem
+            padding: 1rem;
         }
 
         .pt2 {
-            padding-top: 1rem
+            padding-top: 1rem;
         }
 
         .pr2 {
-            padding-right: 1rem
+            padding-right: 1rem;
         }
 
         .pb2 {
-            padding-bottom: 1rem
+            padding-bottom: 1rem;
         }
 
         .pl2 {
-            padding-left: 1rem
+            padding-left: 1rem;
         }
 
         .pl2-5 {
@@ -979,46 +979,46 @@
         }
 
         .col-10 {
-            width: 83.33333%
+            width: 83.33333%;
         }
 
         .col-11 {
-            width: 91.66667%
+            width: 91.66667%;
         }
 
         .col-12 {
-            width: 100%
+            width: 100%;
         }
 
         @media (max-width:40.06rem) {
             .xs-col {
                 float: left;
-                box-sizing: border-box
+                box-sizing: border-box;
             }
 
             .xs-col-right {
                 float: right;
-                box-sizing: border-box
+                box-sizing: border-box;
             }
 
             .xs-col-1 {
-                width: 8.33333%
+                width: 8.33333%;
             }
 
             .xs-col-2 {
-                width: 16.66667%
+                width: 16.66667%;
             }
 
             .xs-col-3 {
-                width: 25%
+                width: 25%;
             }
 
             .xs-col-4 {
-                width: 33.33333%
+                width: 33.33333%;
             }
 
             .xs-col-5 {
-                width: 41.66667%
+                width: 41.66667%;
             }
 
             .xs-col-6 {
@@ -1232,20 +1232,20 @@
 
         .flex {
             display: -ms-flexbox;
-            display: flex
+            display: flex;
         }
 
         @media (min-width:40.06rem) {
             .sm-flex {
                 display: -ms-flexbox;
-                display: flex
+                display: flex;
             }
         }
 
         @media (min-width:52.06rem) {
             .md-flex {
                 display: -ms-flexbox;
-                display: flex
+                display: flex;
             }
         }
 
@@ -1563,7 +1563,7 @@
             min-width: 315px;
             overflow-x: hidden;
             font-smooth: always;
-            -webkit-font-smoothing: antialiased
+            -webkit-font-smoothing: antialiased;
         }
 
         main {
@@ -2557,20 +2557,44 @@
 
 
         /* Video player css */
-        .video {
-            position: relative;
-            margin-top:2em;
-            /*overflow: hidden;*/
+       .video-container {
+            margin: 2em;
+            height: auto;
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
+       }
+
+       /* description and share option in video player */
+        .description-share-option {
+
+        }
+        .description-share-option ul {
+            display: flex;
+            list-style: none;
+            padding: 5px;
+            margin-left: 1em;
+            margin-top: -2em;
+        }
+        /* description and share option in video */
+        .detail-option{
+            padding: 5px;
+        }
+        /* detail and share linking */
+        .detail-link {
+            font-size: 12px;
+            background: none;
+            border-width: 0 0 3px 0;
+            width: 100%;
+            height: 40px;
+            color: #094d5f;
+            border-color: #f8f8f836;
+            display: flex;
+            transition-duration: 0.3s;
+        }
+        .margin-set .content p{
+            width: auto;
+            height: 9em;
         }
 
-        .video-card {
-            margin-bottom: 30px;
-            overflow: hidden;
-            transition: transform .2s;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-            height: 245px;
-        }
 
         /*description box */
         .overlay {
@@ -2757,17 +2781,6 @@
                 text-transform: capitalize;
                 font-style: italic;
             }
-
-            /* video template */
-            .video-card {
-                margin-bottom: 30px;
-                overflow: hidden;
-                transition: transform .2s;
-                border-radius: 4px;
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-                height: 245px;
-            }
-
         }
 
         .podcast-cover .feed-title {
@@ -3577,29 +3590,6 @@
             display: flex;
         }
 
-
-        /*description of album in podcast */
-        .description {
-            background-color: #FFFFFF;
-            border: none;
-            color: #000000;
-            padding: 10px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: -10px 7px;
-            cursor: pointer;
-            -webkit-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-            border-radius: 4px;
-        }
-
-        .description1 {
-            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
-        }
-
-
         /* for  iphone 5/se*/
         @media only screen and (max-width: 320px) {
 
@@ -3698,16 +3688,6 @@
                 margin: 11px 36px 10px 36px;
             }
 
-            /* div for video player */
-            .video-card {
-                margin-bottom: 30px;
-                overflow: hidden;
-                transition: transform .2s;
-                border-radius: 4px;
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-                height: 245px;
-            }
-
             /*description box */
             .content {
                 font-size: 80%;
@@ -3720,10 +3700,7 @@
 
                 text-align: justify;
                 font-family: sans-serif;
-
             }
-
-
         }
 
         .podcast-card {
