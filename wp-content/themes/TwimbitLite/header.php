@@ -2510,6 +2510,16 @@
             opacity: .9;
             background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.23) 0, rgb(0, 0, 0) 100%);
         }
+        .audio-fade
+        {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+            opacity: .9;
+            background: linear-gradient(rgba(0, 0, 0, 0.52) 10%, rgba(0, 0, 0, 0) 50%);
+        }
 
         .feed-link {
             position: absolute;
@@ -2615,12 +2625,16 @@
 
 
 
+
+
         /*description box */
         .overlay {
             position: fixed;
             /* Sit on top of the page content */
             /*display: none; !* Hidden by default *!*/
+
             width: 100%;
+
             /* Full width (cover the whole page) */
             height: 100%;
             /* Full height (cover the whole page) */
@@ -2635,28 +2649,33 @@
             justify-content: center;
             cursor: pointer;
             /* Add a pointer on hover */
+            overflow-y: scroll;
         }
 
         .content {
             line-height: 1.5em;
+            /*width: fit-content;*/
             color: #000000;
             font-size: 1em;
             padding: 12em 12em;
             justify-content: center;
             font-family: "Open Sans", sans-serif;
+            display: flex;
+            align-items: center;
         }
 
-        .content p {    background-color: white;
+        .share-icons{    background-color: white;
             width: fit-content;
             /*min-width: 300px;*/
             height: fit-content;
             /*min-height: 300px;*/
+            z-index: 10;
             padding: 3em 1em;
             /* margin-left: 17%; */
             text-align: justify;
             /* align-content: center; */
             border-radius: 4px;
-        }
+
         }
 
         .share1 .content p {
@@ -3180,7 +3199,8 @@
         /*cross sign in podcast lightbox */
         .cross1 {
             height: 1em;
-            transform: translate(-2em, 10px);
+            transform: translate(14em, -40px);
+            z-index: 99;
         }
 
 
@@ -3701,7 +3721,7 @@
             /*description box */
             .content {
                 font-size: 80%;
-                padding: 1em 1em;
+                padding: 8em 1em;
             }
 
             .content p {

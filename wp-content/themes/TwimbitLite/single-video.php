@@ -30,9 +30,10 @@ $video = get_field('video_type');
 
 ?>
 
+
 <div class="row podcast">     <!--Main div   -->
 	<div class="lg-col-7 md-col-7 sm-col-7 xs-col-12" style="display: inline-table;">      	<!-- 1st div divided into 66%size of the page-->
-	    <div class="video-container">
+	    <div class="video-container"  oncontextmenu="return false;">
             <amp-video controls src="<?php echo $video['url']?>"
                        layout="responsive"
                        media="(min-width: 320px)"
@@ -181,4 +182,5 @@ $video = get_field('video_type');
         </div>
     </div>
 </div>
+
 
