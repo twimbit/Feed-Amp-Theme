@@ -120,12 +120,13 @@
         }
 
         .active {
-            fill: #f16c70!important;
-            border-color: #f16c70!important;
+            fill: #f16c70 !important;
+            border-color: #f16c70 !important;
 
         }
+
         .active svg {
-            fill: #f16c70!important;
+            fill: #f16c70 !important;
         }
 
         .fade-animate {
@@ -2172,7 +2173,10 @@
         .ampstart-nav-item:focus,
         .ampstart-nav-item:hover {
             opacity: 1;
-            color: #f16c70;
+        }
+
+        .ampstart-nav-item {
+            color: #094d5f;
         }
 
         .ampstart-navbar-trigger:focus {
@@ -2559,7 +2563,7 @@
         /* Video player css */
         .video {
             position: relative;
-            margin-top:2em;
+            margin-top: 2em;
             /*overflow: hidden;*/
         }
 
@@ -2602,7 +2606,8 @@
             font-family: "Open Sans", sans-serif;
         }
 
-        .content p {    background-color: white;
+        .content p {
+            background-color: white;
             width: fit-content;
             min-width: 300px;
             height: fit-content;
@@ -2642,6 +2647,7 @@
             transform: scale(0.6);
             fill: #094d5f;
         }
+
         .tablinks {
             font-size: 12px;
             background: none;
@@ -2653,10 +2659,13 @@
             display: flex;
             transition-duration: 0.3s;
         }
+
         .tablinks:hover {
             box-shadow: 0px 7px 10px 0px gainsboro;
         }
+
         @media (min-width:320px) and (max-width:768px) {
+
             /*description box */
             .content {
                 font-size: 80%;
@@ -2668,12 +2677,14 @@
                 text-align: justify;
                 font-family: sans-serif;
             }
+
             .menu ul {
                 flex-direction: row !important;
 
             }
+
             #filter {
-            overflow-x: scroll;
+                overflow-x: scroll;
             }
         }
 
@@ -2697,6 +2708,7 @@
             #filter {
                 overflow-x: scroll;
             }
+
             .featured-image {
                 height: 500px;
             }
@@ -2892,7 +2904,7 @@
         }
 
         .menu ul {
-            display:flex;
+            display: flex;
             list-style: none;
             padding: 5px;
         }
@@ -3076,9 +3088,14 @@
             /* line-height: 2em; */
             color: #000000;
             font-size: 16px;
-            font-weight: 200;
+            font-weight: 300;
         }
 
+        .post-content li {
+            /* text-align: justify; */
+            /* line-height: 2em; */
+            font-weight: 300;
+        }
 
         /*podcast right side */
         .right-side {
@@ -3267,6 +3284,7 @@
             .feed-title p {
                 font-size: 13px;
             }
+
             #filter {
                 overflow-x: scroll;
             }
@@ -3524,7 +3542,7 @@
         /*ligthbox options in podcast */
         .light2 {
             display: flex;
-            margin-top:-2em;
+            margin-top: -2em;
         }
 
         .light1 {
@@ -3660,8 +3678,7 @@
                 margin-top: -3%;
             }
 
-            .share2
-            {
+            .share2 {
                 margin-left: 1.5em;
                 margin-top: -0.4em;
 
@@ -3742,6 +3759,7 @@
 
         .active-nav {
             color: #f16c70;
+            border-bottom: 3px solid #f16c70;
         }
 
         .search-lightbox {
@@ -3763,7 +3781,8 @@
             margin: auto;
         }
 
-        .search-overlay .closebtn {    position: absolute;
+        .search-overlay .closebtn {
+            position: absolute;
             top: 20px;
             right: 10px;
             font-size: 41px;
@@ -3810,8 +3829,36 @@
             margin-top: 1px;
         }
 
-        #cards-feed{
+        #cards-feed {
             max-width: 700px;
+        }
+
+        .text-decoration-none svg {
+            width: 40px;
+            height: 30px;
+            transform: translate(0px, 9px);
+        }
+
+        .text-decoration-none svg {
+            width: 40px;
+            height: 30px;
+            transform: translate(0px, 9px);
+            fill: #094d5f;
+        }
+
+        .active-nav svg {
+            fill: #f16c70;
+        }
+
+        .text-decoration-none {
+            /* border-bottom: 3px solid #f8f8f836; */
+            position: relative;
+            bottom: -3px;
+        }
+
+
+        .feed-menu svg {
+            transform: translate(9px, 10px);
         }
     </style>
 </head>
@@ -3861,7 +3908,7 @@
                         
                     </li> -->
                     <!-- End Dropdown -->
-                    <li class="ampstart-nav-item">
+                    <li class="ampstart-nav-item mr4">
                         <form action="<?php echo site_url(); ?>">
                             <div class="search d-flex">
                                 <input type="text" placeholder="Search.." name="s" id="searchTerm">
@@ -3871,15 +3918,28 @@
                             </div>
                         </form>
                     </li>
-                    <li class="ampstart-nav-item tool active-nav">
-                        <a href="<?php echo home_url(); ?>" class="text-decoration-none block">Feed</a>
+                    <li class="ampstart-nav-item tool" id="header-feed">
+                        <a href="<?php echo home_url(); ?>" class="text-decoration-none block feed-menu">
+                            <svg>
+                                <path d="M 2 26.51701164245605 L 26.82351112365723 26.51701164245605 L 26.82351112365723 22.59750747680664 L 2 22.59750747680664 L 2 26.51701164245605 Z M 25.51700782775879 9.532502174377441 L 3.306500434875488 9.532502174377441 C 2.587925434112549 9.532502174377441 2 10.12042713165283 2 10.83900260925293 L 2 18.67800521850586 C 2 19.39658164978027 2.587925434112549 19.98450660705566 3.306500434875488 19.98450660705566 L 25.51700782775879 19.98450660705566 C 26.2355842590332 19.98450660705566 26.82351112365723 19.39658164978027 26.82351112365723 18.67800521850586 L 26.82351112365723 10.83900260925293 C 26.82351112365723 10.12042713165283 26.2355842590332 9.532502174377441 25.51700782775879 9.532502174377441 Z M 2 3 L 2 6.919501304626465 L 26.82351112365723 6.919501304626465 L 26.82351112365723 3 L 2 3 Z">
+                                </path>
+                            </svg>
+                            Feed</a>
                     </li>
-                    <li class="ampstart-nav-item tool">
-                        <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">Explore</a>
+                    <li class="ampstart-nav-item tool" id="header-explore">
+
+                        <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">
+                            <svg>
+                                <path d="M 14.39246368408203 27.51700592041016 L 23.0528507232666 27.51700592041016 L 23.0528507232666 17.12454223632813 L 14.39246368408203 17.12454223632813 L 14.39246368408203 27.51700592041016 Z M 4 27.51700592041016 L 12.66038703918457 27.51700592041016 L 12.66038703918457 5 L 4 5 L 4 27.51700592041016 Z M 24.78492736816406 27.51700592041016 L 33.4453125 27.51700592041016 L 33.4453125 17.12454223632813 L 24.78492736816406 17.12454223632813 L 24.78492736816406 27.51700592041016 Z M 14.39246368408203 5 L 14.39246368408203 15.39246273040771 L 33.4453125 15.39246273040771 L 33.4453125 5 L 14.39246368408203 5 Z">
+                                </path>
+                            </svg>Explore</a>
                     </li>
 
                     <li class="ampstart-nav-item">
-                        <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button">
+                        <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button text-decoration-none feed-menu block">
+                            <svg>
+                                <path id="ic_dehaze_24px" d="M2,22.479v3.4H28v-3.4Zm0-8.49v3.4H28v-3.4ZM2,5.5V8.9H28V5.5Z"></path>
+                            </svg>
                             Menu
                         </a>
                     </li>
@@ -3887,7 +3947,7 @@
             </nav>
             <div class="search-img lg-hide md-hide">
                 <amp-lightbox id="search-lightbox" layout="nodisplay">
-                    <div class="search-lightbox" role="button" tabindex="0" on="tap:search-lightbox.close">
+                    <div class="search-lightbox" role="button" tabindex="0">
                         <div id="myOverlay" class="search-overlay">
                             <span class="closebtn" on="tap:search-lightbox.close" title="Close Overlay">×</span>
                             <div class="overlay-content">

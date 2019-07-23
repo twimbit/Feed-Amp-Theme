@@ -48,10 +48,21 @@
     });
     $(document).ready(function() {
 
-        let activeTab = localStorage.getItem('active-item');
+        // let activeTab = localStorage.getItem('active-item');
+        //console.log(window.location);
+        if (window.location.pathname.includes('explore')) {
+            document.querySelector('#header-feed').className.replace(' active-nav', "");
+            document.querySelector('#header-explore').className += ' active-nav';
+            console.log('if');
+        } else {
+            document.querySelector('#header-explore').className.replace(' active-nav', "");
+            document.querySelector('#header-feed').className += ' active-nav';
+            console.log('else');
+
+        }
         //activeTab.className += " active-nav"
-        console.log('active tab ' + activeTab);
-        $('.tool a[href =' + activeTab + ']').addClass('active-nav');
+        //console.log('active tab ' + activeTab);
+        //$('.tool a[href =' + activeTab + ']').addClass('active-nav');
         var prevScrollpos = window.pageYOffset;
         window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
@@ -68,17 +79,17 @@
     });
 
     // Add active class to the current button (highlight it)
-    var header = document.querySelector(".list-reset");
-    var btns = header.getElementsByClassName("tool");
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-            var current = document.getElementsByClassName("active-nav");
-            current[0].className = current[0].className.replace(" active-nav", "");
-            this.className += " active-nav";
-            //console.log($(this).parent().index());
-            localStorage.setItem('active-item', document.location.toString());
-        });
-    }
+    // var header = document.querySelector(".list-reset");
+    // var btns = header.getElementsByClassName("tool");
+    // for (var i = 0; i < btns.length; i++) {
+    //     btns[i].addEventListener("click", function() {
+    //         var current = document.getElementsByClassName("active-nav");
+    //         current[0].className = current[0].className.replace(" active-nav", "");
+    //         this.className += " active-nav";
+    //         //console.log($(this).parent().index());
+    //         localStorage.setItem('active-item', document.location.toString());
+    //     });
+    // }
 </script>
 </body>
 
