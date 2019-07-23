@@ -2173,7 +2173,10 @@
         .ampstart-nav-item:focus,
         .ampstart-nav-item:hover {
             opacity: 1;
-            color: #f16c70;
+        }
+
+        .ampstart-nav-item {
+            color: #094d5f;
         }
 
         .ampstart-navbar-trigger:focus {
@@ -2558,8 +2561,9 @@
 
 
         /* Video player css */
-        .video1 {
+        .video {
             position: relative;
+            margin-top: 2em;
             /*overflow: hidden;*/
         }
 
@@ -2604,13 +2608,16 @@
 
         .content p {
             background-color: white;
-            width: 70%;
-            height: auto;
+            width: fit-content;
+            min-width: 300px;
+            height: fit-content;
+            min-height: 300px;
             padding: 3em 1em;
-            /*margin-left: 17%;*/
+            /* margin-left: 17%; */
             text-align: justify;
-            /*align-content: center;*/
+            /* align-content: center; */
             border-radius: 4px;
+        }
         }
 
         .share1 .content p {
@@ -2666,8 +2673,7 @@
             }
 
             .content p {
-                padding: 5em 1em;
-                margin-left: 15%;
+                padding: 10em 1em;
                 text-align: justify;
                 font-family: sans-serif;
             }
@@ -2721,11 +2727,7 @@
                 margin-left: 240px;
             }
 
-            .icon1 {
-                height: 30px;
-                width: 40px;
-                transform: translate(-50px, 2px);
-            }
+
 
             .right-side {
                 margin: 21px 36px 10px 36px;
@@ -2934,20 +2936,23 @@
 
         .site-footer svg {
             transform: translate(9px, 5px) scale(1);
-            fill: rgba(0, 0, 0, 0.57);
+            fill: rgb(9, 77, 95);
 
         }
 
         /*share icon in podcast */
-        .icon1 {
 
-            transform: translate(-26px, -1px);
-        }
 
         /*pop-up icon for description in podcast */
         .popup {
-            transform: translate(5px, 0px);
+            transform: translate(5px, 26px);
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+        }
+
+        /*description and share icon margin*/
+        .share2 {
+            margin-left: 1.5em;
+
         }
 
 
@@ -3334,11 +3339,11 @@
             /*description box */
             .content {
                 font-size: 80%;
-                padding: 15em 1em;
+                padding: 1em 1em;
             }
 
             .content p {
-                padding: 5em 1em;
+                padding: 1em 1em;
                 text-align: justify;
                 font-family: sans-serif;
             }
@@ -3380,11 +3385,6 @@
 
             .share1 {
                 margin-left: 240px;
-            }
-
-            .icon1 {
-
-                transform: translate(-50px, 2px);
             }
 
             .right-side {
@@ -3542,7 +3542,7 @@
         /*ligthbox options in podcast */
         .light2 {
             display: flex;
-            justify-content: space-between;
+            margin-top: -2em;
         }
 
         .light1 {
@@ -3678,10 +3678,10 @@
                 margin-top: -3%;
             }
 
-            .icon1 {
-                height: 24px;
-                transform: translate(-20px, 3px);
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+            .share2 {
+                margin-left: 1.5em;
+                margin-top: -0.4em;
+
             }
 
             .next {
@@ -3713,12 +3713,12 @@
             /*description box */
             .content {
                 font-size: 80%;
-                padding: 13em 1em;
+                padding: 1em 1em;
             }
 
             .content p {
                 width: 100%;
-                padding: 3em 1em;
+                padding: 1em 1em;
 
                 text-align: justify;
                 font-family: sans-serif;
@@ -3759,6 +3759,7 @@
 
         .active-nav {
             color: #f16c70;
+            border-bottom: 3px solid #f16c70;
         }
 
         .search-lightbox {
@@ -3773,7 +3774,7 @@
 
         .overlay-content {
             position: relative;
-            top: 12%;
+            top: 2%;
             width: 95%;
             text-align: center;
             margin-top: 30px;
@@ -3783,8 +3784,8 @@
         .search-overlay .closebtn {
             position: absolute;
             top: 20px;
-            right: 45px;
-            font-size: 60px;
+            right: 10px;
+            font-size: 41px;
             cursor: pointer;
             color: white;
         }
@@ -3830,6 +3831,34 @@
 
         #cards-feed {
             max-width: 700px;
+        }
+
+        .text-decoration-none svg {
+            width: 40px;
+            height: 30px;
+            transform: translate(0px, 9px);
+        }
+
+        .text-decoration-none svg {
+            width: 40px;
+            height: 30px;
+            transform: translate(0px, 9px);
+            fill: #094d5f;
+        }
+
+        .active-nav svg {
+            fill: #f16c70;
+        }
+
+        .text-decoration-none {
+            /* border-bottom: 3px solid #f8f8f836; */
+            position: relative;
+            bottom: -3px;
+        }
+
+
+        .feed-menu svg {
+            transform: translate(9px, 10px);
         }
     </style>
 </head>
@@ -3879,7 +3908,7 @@
                         
                     </li> -->
                     <!-- End Dropdown -->
-                    <li class="ampstart-nav-item">
+                    <li class="ampstart-nav-item mr4">
                         <form action="<?php echo site_url(); ?>">
                             <div class="search d-flex">
                                 <input type="text" placeholder="Search.." name="s" id="searchTerm">
@@ -3889,25 +3918,38 @@
                             </div>
                         </form>
                     </li>
-                    <li class="ampstart-nav-item tool active-nav">
-                        <a href="<?php echo home_url(); ?>" class="text-decoration-none block">Feed</a>
+                    <li class="ampstart-nav-item tool" id="header-feed">
+                        <a href="<?php echo home_url(); ?>" class="text-decoration-none block feed-menu">
+                            <svg>
+                                <path d="M 2 26.51701164245605 L 26.82351112365723 26.51701164245605 L 26.82351112365723 22.59750747680664 L 2 22.59750747680664 L 2 26.51701164245605 Z M 25.51700782775879 9.532502174377441 L 3.306500434875488 9.532502174377441 C 2.587925434112549 9.532502174377441 2 10.12042713165283 2 10.83900260925293 L 2 18.67800521850586 C 2 19.39658164978027 2.587925434112549 19.98450660705566 3.306500434875488 19.98450660705566 L 25.51700782775879 19.98450660705566 C 26.2355842590332 19.98450660705566 26.82351112365723 19.39658164978027 26.82351112365723 18.67800521850586 L 26.82351112365723 10.83900260925293 C 26.82351112365723 10.12042713165283 26.2355842590332 9.532502174377441 25.51700782775879 9.532502174377441 Z M 2 3 L 2 6.919501304626465 L 26.82351112365723 6.919501304626465 L 26.82351112365723 3 L 2 3 Z">
+                                </path>
+                            </svg>
+                            Feed</a>
                     </li>
-                    <li class="ampstart-nav-item tool">
-                        <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">Explore</a>
+                    <li class="ampstart-nav-item tool" id="header-explore">
+
+                        <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">
+                            <svg>
+                                <path d="M 14.39246368408203 27.51700592041016 L 23.0528507232666 27.51700592041016 L 23.0528507232666 17.12454223632813 L 14.39246368408203 17.12454223632813 L 14.39246368408203 27.51700592041016 Z M 4 27.51700592041016 L 12.66038703918457 27.51700592041016 L 12.66038703918457 5 L 4 5 L 4 27.51700592041016 Z M 24.78492736816406 27.51700592041016 L 33.4453125 27.51700592041016 L 33.4453125 17.12454223632813 L 24.78492736816406 17.12454223632813 L 24.78492736816406 27.51700592041016 Z M 14.39246368408203 5 L 14.39246368408203 15.39246273040771 L 33.4453125 15.39246273040771 L 33.4453125 5 L 14.39246368408203 5 Z">
+                                </path>
+                            </svg>Explore</a>
                     </li>
 
                     <li class="ampstart-nav-item">
-                        <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button">
+                        <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button text-decoration-none feed-menu block">
+                            <svg>
+                                <path id="ic_dehaze_24px" d="M2,22.479v3.4H28v-3.4Zm0-8.49v3.4H28v-3.4ZM2,5.5V8.9H28V5.5Z"></path>
+                            </svg>
                             Menu
                         </a>
                     </li>
                 </ul>
             </nav>
             <div class="search-img lg-hide md-hide">
-                <amp-lightbox id="my-lightbox" layout="nodisplay">
+                <amp-lightbox id="search-lightbox" layout="nodisplay">
                     <div class="search-lightbox" role="button" tabindex="0">
                         <div id="myOverlay" class="search-overlay">
-                            <span class="closebtn" on="tap:my-lightbox.close" title="Close Overlay">×</span>
+                            <span class="closebtn" on="tap:search-lightbox.close" title="Close Overlay">×</span>
                             <div class="overlay-content">
                                 <form action="<?php echo site_url(); ?>">
                                     <input type="text" placeholder="Search.." name="s">
@@ -3919,14 +3961,14 @@
                         </div>
                     </div>
                 </amp-lightbox>
-                <img role="button" on="tap:my-lightbox" src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt="">
+                <img role="button" on="tap:search-lightbox" src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg'; ?>" alt="">
 
 
             </div>
         </header>
 
         <!-- Start Sidebar -->
-        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3 md-hide lg-hide" layout="nodisplay" side="right">
+        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3" layout="nodisplay" side="right">
             <div class="flex justify-start items-center ampstart-sidebar-header">
                 <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
             </div>
