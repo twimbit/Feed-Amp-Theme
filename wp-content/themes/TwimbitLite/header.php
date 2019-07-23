@@ -2558,7 +2558,7 @@
 
         /* Video player css */
        .video-container {
-            margin: 2em;
+            margin: 1.5em;
             height: auto;
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
        }
@@ -2594,6 +2594,25 @@
             width: auto;
             height: 9em;
         }
+        .video-description {
+            margin-top: -1em;
+            padding: 2em;
+            /*display: flex;*/
+        }
+        .video-title {
+            font-family: "Open Sans", sans-serif;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: black;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+        }
+        .video-description span {
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+
+
 
 
         /*description box */
@@ -2623,14 +2642,15 @@
             color: #000000;
             font-size: 1em;
             padding: 12em 12em;
+            justify-content: center;
             font-family: "Open Sans", sans-serif;
         }
 
         .content p {    background-color: white;
             width: fit-content;
-            min-width: 300px;
+            /*min-width: 300px;*/
             height: fit-content;
-            min-height: 300px;
+            /*min-height: 300px;*/
             padding: 3em 1em;
             /* margin-left: 17%; */
             text-align: justify;
@@ -3284,6 +3304,11 @@
                 overflow-x: scroll;
             }
 
+            .video-container{
+                margin-top: 1.5em;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
         }
 
 
@@ -3681,11 +3706,17 @@
 
             .content p {
                 width: 100%;
-                padding: 1em 1em;
-
+                padding: 2em 2em;
+                justify-content: center;
                 text-align: justify;
                 font-family: sans-serif;
             }
+            .video-container{
+                margin-top: 1.5em;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
+
         }
 
         .podcast-card {

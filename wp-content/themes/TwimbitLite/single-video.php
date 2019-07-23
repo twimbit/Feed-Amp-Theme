@@ -20,86 +20,102 @@ $post_args = array(
 );
 
 the_post();
-$post_img   = get_the_post_thumbnail_url();
-$post_url   = get_permalink();
-$post_title = get_the_title();
+$video_img   = get_the_post_thumbnail_url();
+$video_url   = get_permalink();
+$video_title = get_the_title();
 $author = get_the_author();
-$category = get_the_category();
+$video_category = get_the_category();
 
 $video = get_field('video_type');
 
 ?>
 
 <div class="row podcast">     <!--Main div   -->
-	<div class="lg-col-7 md-col-7 sm-col-7 xs-col-12">      	<!-- 1st div divided into 66%size of the page-->
+	<div class="lg-col-7 md-col-7 sm-col-7 xs-col-12" style="display: inline-table;">      	<!-- 1st div divided into 66%size of the page-->
 	    <div class="video-container">
             <amp-video controls src="<?php echo $video['url']?>"
                        layout="responsive"
                        media="(min-width: 320px)"
                        width="800px"
                        height="450px"
+                       display="fit-content"
                        controlsList="nodownload">
             </amp-video>
         </div>
 
-        <div class="col-12" style="min-width: fit-content;">
-            <div class="description-share-option">
-                <ul>
-                    <li class="detail-option">
-                        <amp-lightbox id="description-lightbox" layout="nodisplay">
-                            <div class="overlay content" on="tap:description-lightbox.close" role="button" tabindex="0">
-                                <p>
-                                    <?php
-                                    $char_limit = 300; //character limit
-                                    $content = $post->post_content; //contents saved in a variable
-                                    echo substr(strip_tags($content), 0, $char_limit);
-                                    ?>
-                                </p>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" class="cross1" xml:space="preserve">
-                                    <g id="Close">
-                                        <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/>
-                                    </g>
-                                </svg>
-                            </div>
-                        </amp-lightbox>
-                        <button class="detail-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" on="tap:description-lightbox">
-                                <path id="ic_launch_24px" d="M19,19H5V5h7V3H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V12H19ZM14,3V5h3.59L7.76,14.83l1.41,1.41L19,6.41V10h2V3Z" transform="translate(-3 -3)"/>
-                            </svg>
-                            <br> <p style="padding:6px;" on="tap:description-lightbox">Description</p>
-                        </button>
-                    </li>
 
-                    <li class="detail-option margin-set">
-                        <amp-lightbox id="share-lightbox1" layout="nodisplay">
-                            <div class="overlay content" on="tap:share-lightbox1.close" role="button" tabindex="0">
-                                <p>
-                                    <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="facebook"></amp-social-share>
-                                    <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="linkedin"></amp-social-share>
-                                    <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="twitter"></amp-social-share>
-                                    <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="whatsapp"></amp-social-share>
-                                    <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="email"></amp-social-share>
-                                </p>
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" class="cross1" xml:space="preserve">
-                                    <g id="Close">
-                                        <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/>
-                                    </g>
-                                </svg>
-                            </div>
-                        </amp-lightbox>
-                        <button class="detail-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="19.92" viewBox="0 0 18 19.92" on="tap:share-lightbox1">
-                                <path id="ic_share_24px" d="M18,16.08a2.912,2.912,0,0,0-1.96.77L8.91,12.7A3.274,3.274,0,0,0,9,12a3.274,3.274,0,0,0-.09-.7l7.05-4.11A2.993,2.993,0,1,0,15,5a3.274,3.274,0,0,0,.09.7L8.04,9.81a3,3,0,1,0,0,4.38l7.12,4.16a2.821,2.821,0,0,0-.08.65A2.92,2.92,0,1,0,18,16.08Z" transform="translate(-3 -2)"/>
-                            </svg>
-                            <br> <p style="padding:6px;" on="tap:share-lightbox1">Share</p>
-                        </button>
-                    </li>
-                </ul>
+        <!-- description div for video title, author and category -->
+        <div class="video-description"  style="text-decoration: none;">
+            <p class="video-title"><?php echo $video_title; ?></p>
+            <span>By <?php echo $author; ?></span>
+            <span style="margin-left:0.5em;"></span>
+            <span style="text-decoration: none;">
+                      <h6><a href="<?php echo get_category_link($video_category[0]->term_id); ?>" style="font-size:0.76rem">#<?php echo $video_category[0]->name; ?></a>
+                    </h6>  </span>
+        </div>
+
+        <!-- div for descrition and share box -->
+        <div class="detail-video" style="min-width: fit-content;">
+            <div class="description-share-option">
+
+                <!-- lightbox container for description and share icon -->
+
+                <amp-lightbox id="video-description-lightbox" layout="nodisplay">
+                    <div class="overlay content" on="tap:video-description-lightbox.close" role="button" tabindex="0">
+                        <p>
+	                        <?php
+	                        $content = $post->post_content; //contents saved in a variable
+	                        echo $content;
+	                        ?>
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" class="cross1" xml:space="preserve">
+                            <g id="Close">
+                                <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <p on="tap:video-description-lightbox.close">
+
+                    </p>
+                </amp-lightbox>
+
+                <amp-lightbox id="video-share-lightbox" layout="nodisplay">
+                    <div class="overlay content margin-set" on="tap:video-share-lightbox.close" role="button" tabindex="0">
+                        <p>
+                            <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="facebook"></amp-social-share>
+                            <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="linkedin"></amp-social-share>
+                            <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="twitter"></amp-social-share>
+                            <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="whatsapp"></amp-social-share>
+                            <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="email"></amp-social-share>
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" class="cross1" xml:space="preserve">
+                            <g id="Close">
+                                <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"/>
+                            </g>
+                        </svg>
+                    </div>
+                </amp-lightbox>
+
+                <div class="menu">
+                    <ul>
+
+                        <li class="menu-item">
+                            <button class="tablinks" on="tap:video-description-lightbox" ><svg xmlns="http://www.w3.org/2000/svg" width="41.817" height="37.171" viewBox="0 0 41.817 37.171">
+                                    <path class="a" d="M19,19H5V5h7V3H5A2,2,0,0,0,3,5V19a2,2,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V12H19ZM14,3V5h3.59L7.76,14.83l1.41,1.41L19,6.41V10h2V3Z" transform="translate(0 0) scale(1.6)" />
+                                </svg><br>DESCRIPTION</button>
+                        </li>
+                        <li class="menu-item">
+                            <button class="tablinks" on="tap:video-share-lightbox" ><svg xmlns="http://www.w3.org/2000/svg" width="41.817" height="37.171" viewBox="0 0 41.817 37.171">
+                                    <path class="a" d="M18,16.08a2.912,2.912,0,0,0-1.96.77L8.91,12.7A3.274,3.274,0,0,0,9,12a3.274,3.274,0,0,0-.09-.7l7.05-4.11A2.993,2.993,0,1,0,15,5a3.274,3.274,0,0,0,.09.7L8.04,9.81a3,3,0,1,0,0,4.38l7.12,4.16a2.821,2.821,0,0,0-.08.65A2.92,2.92,0,1,0,18,16.08Z" transform="translate(0 0) scale(1.6)" />
+                                </svg><br>SHARE</button>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="lg-col-4 md-col-5 sm-col-5 xs-col-12">     <!-- main div divded into 33% of the page -->
+    <div class="lg-col-4 md-col-5 sm-col-5 xs-col-12" style="margin-top: -1em;">     <!-- main div divded into 33% of the page -->
         <div class="right-side">
             <div class="head">
                 <a href="<?php echo $next_post_url = get_permalink(get_adjacent_post(false, '', false)->ID); ?>" class="next">
@@ -121,7 +137,7 @@ $video = get_field('video_type');
              <a href="<?php echo $video_url; ?>" style="text-decoration:none;">
                  <div class="short-card"> <!-- container of next video option -->
                      <div class="short-image"> <!-- next video short play -->
-                         <img class="short-image" src="<?php echo $video['url']?>">
+                         <img class="short-image" src="<?php echo $video_img ?>">
                          <!--svg play icon-->
                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85.658" height="85.658" viewBox="0 0 85.658 85.658" class="icon">
                              <defs>
