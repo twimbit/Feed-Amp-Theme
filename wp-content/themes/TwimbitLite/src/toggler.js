@@ -13,6 +13,7 @@ function toggler(evt, postType) {
         for (i = 0; i < x.length; i++) {
             x[i].style.display="block";
         }
+        document.getElementById("allButton").classList.add("active");
     }
     else{
         tabcontent = document.getElementsByClassName("feed-toggle");

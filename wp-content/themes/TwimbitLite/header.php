@@ -120,12 +120,13 @@
         }
 
         .active {
-            fill: #f16c70!important;
-            border-color: #f16c70!important;
+            fill: #f16c70 !important;
+            border-color: #f16c70 !important;
 
         }
+
         .active svg {
-            fill: #f16c70!important;
+            fill: #f16c70 !important;
         }
 
         .fade-animate {
@@ -2633,12 +2634,13 @@
         }
 
 
-        @media (min-width:320px) and (max-width:768px) {
+
 
         .tablinks svg {
             transform: scale(0.6);
             fill: #094d5f;
         }
+
         .tablinks {
             font-size: 12px;
             background: none;
@@ -2650,10 +2652,13 @@
             display: flex;
             transition-duration: 0.3s;
         }
+
         .tablinks:hover {
             box-shadow: 0px 7px 10px 0px gainsboro;
         }
-        
+
+        @media (min-width:320px) and (max-width:768px) {
+
             /*description box */
             .content {
                 font-size: 80%;
@@ -2666,8 +2671,14 @@
                 text-align: justify;
                 font-family: sans-serif;
             }
+
             .menu ul {
                 flex-direction: row !important;
+
+            }
+
+            #filter {
+                overflow-x: scroll;
             }
         }
 
@@ -2688,6 +2699,10 @@
 
         /* for above small devices */
         @media (min-width:40rem) and (max-width:52rem) {
+            #filter {
+                overflow-x: scroll;
+            }
+
             .featured-image {
                 height: 500px;
             }
@@ -2719,6 +2734,7 @@
 
 
         @media (min-width: 768px) {
+
             .feed-card {
                 height: 350px;
             }
@@ -2887,13 +2903,12 @@
 
         .menu ul {
             display: flex;
-            flex-direction: column;
             list-style: none;
             padding: 5px;
         }
 
         .menu {
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+            box-shadow: 0px 1px 0.5px 0 rgba(0, 0, 0, 0.11);
         }
 
         .menu-item {
@@ -3068,9 +3083,14 @@
             /* line-height: 2em; */
             color: #000000;
             font-size: 16px;
-            font-weight: 200;
+            font-weight: 300;
         }
 
+        .post-content li {
+            /* text-align: justify; */
+            /* line-height: 2em; */
+            font-weight: 300;
+        }
 
         /*podcast right side */
         .right-side {
@@ -3260,6 +3280,9 @@
                 font-size: 13px;
             }
 
+            #filter {
+                overflow-x: scroll;
+            }
 
         }
 
@@ -3273,7 +3296,7 @@
         }
 
         .archive-filter-card-container {
-            display: flex;
+
             flex-wrap: wrap;
         }
 
@@ -3804,6 +3827,10 @@
         .overlay-content img {
             margin-top: 1px;
         }
+
+        #cards-feed {
+            max-width: 700px;
+        }
     </style>
 </head>
 
@@ -3878,7 +3905,7 @@
             </nav>
             <div class="search-img lg-hide md-hide">
                 <amp-lightbox id="my-lightbox" layout="nodisplay">
-                    <div class="search-lightbox" role="button" tabindex="0" >
+                    <div class="search-lightbox" role="button" tabindex="0">
                         <div id="myOverlay" class="search-overlay">
                             <span class="closebtn" on="tap:my-lightbox.close" title="Close Overlay">×</span>
                             <div class="overlay-content">
