@@ -45,7 +45,7 @@
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
-    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+
 
 
     <!-- jQuery -->
@@ -139,13 +139,12 @@
         }
 
         .active {
-            fill: #f16c70 !important;
-            border-color: #f16c70 !important;
+            fill: #f16c70!important;
+            border-color: #f16c70!important;
 
         }
-
         .active svg {
-            fill: #f16c70 !important;
+            fill: #f16c70!important;
         }
 
         .fade-animate {
@@ -591,53 +590,53 @@
         }
 
         .align-bottom {
-            vertical-align: bottom
+            vertical-align: bottom;
         }
 
         .m0 {
-            margin: 0
+            margin: 0;
         }
 
         .mt0 {
-            margin-top: 0
+            margin-top: 0;
         }
 
         .mr0 {
-            margin-right: 0
+            margin-right: 0;
         }
 
         .mb0 {
-            margin-bottom: 0
+            margin-bottom: 0;
         }
 
         .ml0,
         .mx0 {
-            margin-left: 0
+            margin-left: 0;
         }
 
         .mx0 {
-            margin-right: 0
+            margin-right: 0;
         }
 
         .my0 {
             margin-top: 0;
-            margin-bottom: 0
+            margin-bottom: 0;
         }
 
         .m1 {
-            margin: .5rem
+            margin: .5rem;
         }
 
         .mt1 {
-            margin-top: .5rem
+            margin-top: .5rem;
         }
 
         .mr1 {
-            margin-right: .5rem
+            margin-right: .5rem;
         }
 
         .mb1 {
-            margin-bottom: .5rem
+            margin-bottom: .5rem;
         }
 
         .ml1,
@@ -2192,10 +2191,7 @@
         .ampstart-nav-item:focus,
         .ampstart-nav-item:hover {
             opacity: 1;
-        }
-
-        .ampstart-nav-item {
-            color: #094d5f;
+            color: #f16c70;
         }
 
         .ampstart-navbar-trigger:focus {
@@ -2533,6 +2529,16 @@
             opacity: .9;
             background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.23) 0, rgb(0, 0, 0) 100%);
         }
+        .audio-fade
+        {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+            opacity: .9;
+            background: linear-gradient(rgba(0, 0, 0, 0.52) 10%, rgba(0, 0, 0, 0) 50%);
+        }
 
         .feed-link {
             position: absolute;
@@ -2580,27 +2586,74 @@
 
 
         /* Video player css */
-        .video {
-            position: relative;
-            margin-top: 2em;
-            /*overflow: hidden;*/
+       .video-container {
+            margin: 1.5em;
+            height: auto;
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
+       }
+
+       /* description and share option in video player */
+        .description-share-option {
+
+        }
+        .description-share-option ul {
+            display: flex;
+            list-style: none;
+            padding: 5px;
+            margin-left: 1em;
+            margin-top: -2em;
+        }
+        /* description and share option in video */
+        .detail-option{
+            padding: 5px;
+        }
+        /* detail and share linking */
+        .detail-link {
+            font-size: 12px;
+            background: none;
+            border-width: 0 0 3px 0;
+            width: 100%;
+            height: 40px;
+            color: #094d5f;
+            border-color: #f8f8f836;
+            display: flex;
+            transition-duration: 0.3s;
+        }
+        .margin-set .content p{
+            width: auto;
+            height: 9em;
+        }
+        .video-description {
+            margin-top: -1em;
+            padding: 2em;
+            /*display: flex;*/
+        }
+        .video-title {
+            font-family: "Open Sans", sans-serif;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: black;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+        }
+        .video-description span {
+            text-decoration: none;
+            text-transform: capitalize;
         }
 
-        .video-card {
-            margin-bottom: 30px;
-            overflow: hidden;
-            transition: transform .2s;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-            height: 245px;
-        }
+
+
+
+
 
         /*description box */
         .overlay {
             position: fixed;
             /* Sit on top of the page content */
             /*display: none; !* Hidden by default *!*/
+
             width: 100%;
+
             /* Full width (cover the whole page) */
             height: 100%;
             /* Full height (cover the whole page) */
@@ -2615,28 +2668,34 @@
             justify-content: center;
             cursor: pointer;
             /* Add a pointer on hover */
+            overflow-y: scroll;
         }
 
         .content {
             line-height: 1.5em;
+            /*width: fit-content;*/
             color: #000000;
             font-size: 1em;
             padding: 12em 12em;
+            justify-content: center;
             font-family: "Open Sans", sans-serif;
+            display: flex;
+            align-items: center;
         }
 
-        .content p {
+        .share-icons{
             background-color: white;
             width: fit-content;
-            min-width: 300px;
+            /*min-width: 300px;*/
             height: fit-content;
-            min-height: 300px;
+            /*min-height: 300px;*/
+            z-index: 10;
             padding: 3em 1em;
             /* margin-left: 17%; */
             text-align: justify;
             /* align-content: center; */
             border-radius: 4px;
-        }
+
         }
 
         .share1 .content p {
@@ -2666,7 +2725,6 @@
             transform: scale(0.6);
             fill: #094d5f;
         }
-
         .tablinks {
             font-size: 12px;
             background: none;
@@ -2678,13 +2736,10 @@
             display: flex;
             transition-duration: 0.3s;
         }
-
         .tablinks:hover {
             box-shadow: 0px 7px 10px 0px gainsboro;
         }
-
         @media (min-width:320px) and (max-width:768px) {
-
             /*description box */
             .content {
                 font-size: 80%;
@@ -2696,14 +2751,12 @@
                 text-align: justify;
                 font-family: sans-serif;
             }
-
             .menu ul {
                 flex-direction: row !important;
 
             }
-
             #filter {
-                overflow-x: scroll;
+            overflow-x: scroll;
             }
         }
 
@@ -2727,7 +2780,6 @@
             #filter {
                 overflow-x: scroll;
             }
-
             .featured-image {
                 height: 500px;
             }
@@ -2786,17 +2838,6 @@
                 text-transform: capitalize;
                 font-style: italic;
             }
-
-            /* video template */
-            .video-card {
-                margin-bottom: 30px;
-                overflow: hidden;
-                transition: transform .2s;
-                border-radius: 4px;
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-                height: 245px;
-            }
-
         }
 
         .podcast-cover .feed-title {
@@ -2923,7 +2964,7 @@
         }
 
         .menu ul {
-            display: flex;
+            display:flex;
             list-style: none;
             padding: 5px;
         }
@@ -3107,14 +3148,9 @@
             /* line-height: 2em; */
             color: #000000;
             font-size: 16px;
-            font-weight: 300;
+            font-weight: 200;
         }
 
-        .post-content li {
-            /* text-align: justify; */
-            /* line-height: 2em; */
-            font-weight: 300;
-        }
 
         /*podcast right side */
         .right-side {
@@ -3183,7 +3219,8 @@
         /*cross sign in podcast lightbox */
         .cross1 {
             height: 1em;
-            transform: translate(-2em, 10px);
+            transform: translate(14em, -40px);
+            z-index: 99;
         }
 
 
@@ -3308,6 +3345,11 @@
                 overflow-x: scroll;
             }
 
+            .video-container{
+                margin-top: 1.5em;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
         }
 
 
@@ -3561,7 +3603,7 @@
         /*ligthbox options in podcast */
         .light2 {
             display: flex;
-            margin-top: -2em;
+            margin-top:-2em;
         }
 
         .light1 {
@@ -3603,29 +3645,6 @@
             font-size: 20px;
             display: flex;
         }
-
-
-        /*description of album in podcast */
-        .description {
-            background-color: #FFFFFF;
-            border: none;
-            color: #000000;
-            padding: 10px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: -10px 7px;
-            cursor: pointer;
-            -webkit-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-            border-radius: 4px;
-        }
-
-        .description1 {
-            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
-        }
-
 
         /* for  iphone 5/se*/
         @media only screen and (max-width: 320px) {
@@ -3697,7 +3716,8 @@
                 margin-top: -3%;
             }
 
-            .share2 {
+            .share2
+            {
                 margin-left: 1.5em;
                 margin-top: -0.4em;
 
@@ -3719,31 +3739,24 @@
                 margin: 11px 36px 10px 36px;
             }
 
-            /* div for video player */
-            .video-card {
-                margin-bottom: 30px;
-                overflow: hidden;
-                transition: transform .2s;
-                border-radius: 4px;
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-                height: 245px;
-            }
-
             /*description box */
             .content {
                 font-size: 80%;
-                padding: 1em 1em;
+                padding: 8em 1em;
             }
 
             .content p {
                 width: 100%;
-                padding: 1em 1em;
-
+                padding: 2em 2em;
+                justify-content: center;
                 text-align: justify;
                 font-family: sans-serif;
-
             }
-
+            .video-container{
+                margin-top: 1.5em;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
 
         }
 
@@ -3778,7 +3791,6 @@
 
         .active-nav {
             color: #f16c70;
-            border-bottom: 3px solid #f16c70;
         }
 
         .search-lightbox {
@@ -3800,8 +3812,7 @@
             margin: auto;
         }
 
-        .search-overlay .closebtn {
-            position: absolute;
+        .search-overlay .closebtn {    position: absolute;
             top: 20px;
             right: 10px;
             font-size: 41px;
@@ -3848,41 +3859,19 @@
             margin-top: 1px;
         }
 
-        #cards-feed {
+        #cards-feed{
             max-width: 700px;
         }
-
-        .text-decoration-none svg {
-            width: 40px;
-            height: 30px;
-            transform: translate(0px, 9px);
-        }
-
-        .text-decoration-none svg {
-            width: 40px;
-            height: 30px;
-            transform: translate(0px, 9px);
-            fill: #094d5f;
-        }
-
-        .active-nav svg {
-            fill: #f16c70;
-        }
-
-        .text-decoration-none {
-            /* border-bottom: 3px solid #f8f8f836; */
-            position: relative;
-            bottom: -3px;
-        }
-
-
-        .feed-menu svg {
-            transform: translate(9px, 10px);
-        }
     </style>
-	<?php wp_head(); ?>
 </head>
+
 <body>
+
+    <!-- Registering Service Worker -->
+    <!-- <amp-install-serviceworker src="<?php // print content_url() . '/themes/TwimbitLite/src/sw.js'; 
+                                            ?>" layout="nodisplay" data-iframe-src="<?php // print content_url() . '/themes/TwimbitLite/src/install-sw.html'; 
+                                                                                    ?>">
+    </amp-install-serviceworker> -->
 
 
     <section>
@@ -3921,7 +3910,7 @@
                         
                     </li> -->
                     <!-- End Dropdown -->
-                    <li class="ampstart-nav-item mr4">
+                    <li class="ampstart-nav-item">
                         <form action="<?php echo site_url(); ?>">
                             <div class="search d-flex">
                                 <input type="text" placeholder="Search.." name="s" id="searchTerm">
@@ -3931,28 +3920,15 @@
                             </div>
                         </form>
                     </li>
-                    <li class="ampstart-nav-item tool" id="feed-nav">
-                        <a href="<?php echo home_url(); ?>" class="text-decoration-none block feed-menu">
-                            <svg>
-                                <path d="M 2 26.51701164245605 L 26.82351112365723 26.51701164245605 L 26.82351112365723 22.59750747680664 L 2 22.59750747680664 L 2 26.51701164245605 Z M 25.51700782775879 9.532502174377441 L 3.306500434875488 9.532502174377441 C 2.587925434112549 9.532502174377441 2 10.12042713165283 2 10.83900260925293 L 2 18.67800521850586 C 2 19.39658164978027 2.587925434112549 19.98450660705566 3.306500434875488 19.98450660705566 L 25.51700782775879 19.98450660705566 C 26.2355842590332 19.98450660705566 26.82351112365723 19.39658164978027 26.82351112365723 18.67800521850586 L 26.82351112365723 10.83900260925293 C 26.82351112365723 10.12042713165283 26.2355842590332 9.532502174377441 25.51700782775879 9.532502174377441 Z M 2 3 L 2 6.919501304626465 L 26.82351112365723 6.919501304626465 L 26.82351112365723 3 L 2 3 Z">
-                                </path>
-                            </svg>
-                            Feed</a>
+                    <li class="ampstart-nav-item tool active-nav">
+                        <a href="<?php echo home_url(); ?>" class="text-decoration-none block">Feed</a>
                     </li>
-                    <li class="ampstart-nav-item tool" id="explore-nav">
-
-                        <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">
-                            <svg>
-                                <path d="M 14.39246368408203 27.51700592041016 L 23.0528507232666 27.51700592041016 L 23.0528507232666 17.12454223632813 L 14.39246368408203 17.12454223632813 L 14.39246368408203 27.51700592041016 Z M 4 27.51700592041016 L 12.66038703918457 27.51700592041016 L 12.66038703918457 5 L 4 5 L 4 27.51700592041016 Z M 24.78492736816406 27.51700592041016 L 33.4453125 27.51700592041016 L 33.4453125 17.12454223632813 L 24.78492736816406 17.12454223632813 L 24.78492736816406 27.51700592041016 Z M 14.39246368408203 5 L 14.39246368408203 15.39246273040771 L 33.4453125 15.39246273040771 L 33.4453125 5 L 14.39246368408203 5 Z">
-                                </path>
-                            </svg>Explore</a>
+                    <li class="ampstart-nav-item tool">
+                        <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">Explore</a>
                     </li>
 
                     <li class="ampstart-nav-item">
-                        <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button text-decoration-none feed-menu block">
-                            <svg>
-                                <path id="ic_dehaze_24px" d="M2,22.479v3.4H28v-3.4Zm0-8.49v3.4H28v-3.4ZM2,5.5V8.9H28V5.5Z"></path>
-                            </svg>
+                        <a id="feed_bottom" on="tap:header-sidebar.toggle" class="nav_button">
                             Menu
                         </a>
                     </li>
@@ -3960,7 +3936,7 @@
             </nav>
             <div class="search-img lg-hide md-hide">
                 <amp-lightbox id="search-lightbox" layout="nodisplay">
-                    <div class="search-lightbox" role="button" tabindex="0">
+                    <div class="search-lightbox" role="button" tabindex="0" on="tap:search-lightbox.close">
                         <div id="myOverlay" class="search-overlay">
                             <span class="closebtn" on="tap:search-lightbox.close" title="Close Overlay">×</span>
                             <div class="overlay-content">
