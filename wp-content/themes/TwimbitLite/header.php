@@ -38,7 +38,6 @@
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
-    <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
 
 
     <!-- jQuery -->
@@ -3736,8 +3735,6 @@
                 font-family: sans-serif;
 
             }
-
-
         }
 
         .podcast-card {
@@ -3872,16 +3869,15 @@
         .feed-menu svg {
             transform: translate(9px, 10px);
         }
+
+        * {
+            outline: none;
+        }
     </style>
+    <?php wp_head(); ?>
 </head>
 
 <body>
-
-    <!-- Registering Service Worker -->
-    <!-- <amp-install-serviceworker src="<?php // print content_url() . '/themes/TwimbitLite/src/sw.js'; 
-                                            ?>" layout="nodisplay" data-iframe-src="<?php // print content_url() . '/themes/TwimbitLite/src/install-sw.html'; 
-                                                                                    ?>">
-    </amp-install-serviceworker> -->
 
 
     <section>
@@ -3930,7 +3926,7 @@
                             </div>
                         </form>
                     </li>
-                    <li class="ampstart-nav-item tool" id="header-feed">
+                    <li class="ampstart-nav-item tool" id="feed-nav">
                         <a href="<?php echo home_url(); ?>" class="text-decoration-none block feed-menu">
                             <svg>
                                 <path d="M 2 26.51701164245605 L 26.82351112365723 26.51701164245605 L 26.82351112365723 22.59750747680664 L 2 22.59750747680664 L 2 26.51701164245605 Z M 25.51700782775879 9.532502174377441 L 3.306500434875488 9.532502174377441 C 2.587925434112549 9.532502174377441 2 10.12042713165283 2 10.83900260925293 L 2 18.67800521850586 C 2 19.39658164978027 2.587925434112549 19.98450660705566 3.306500434875488 19.98450660705566 L 25.51700782775879 19.98450660705566 C 26.2355842590332 19.98450660705566 26.82351112365723 19.39658164978027 26.82351112365723 18.67800521850586 L 26.82351112365723 10.83900260925293 C 26.82351112365723 10.12042713165283 26.2355842590332 9.532502174377441 25.51700782775879 9.532502174377441 Z M 2 3 L 2 6.919501304626465 L 26.82351112365723 6.919501304626465 L 26.82351112365723 3 L 2 3 Z">
@@ -3938,7 +3934,7 @@
                             </svg>
                             Feed</a>
                     </li>
-                    <li class="ampstart-nav-item tool" id="header-explore">
+                    <li class="ampstart-nav-item tool" id="explore-nav">
 
                         <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">
                             <svg>
