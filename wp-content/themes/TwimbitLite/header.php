@@ -3879,6 +3879,9 @@
         .feed-menu svg {
             transform: translate(9px, 10px);
         }
+        *{
+            outline:none;
+        }
     </style>
 	<?php wp_head(); ?>
 </head>
