@@ -14,18 +14,25 @@
     <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <title><?php
-            global $page, $paged;
-            wp_title('|', true, 'right');
-            // Add the blog name.
-            bloginfo('name');
-            // Add the blog description for the home/front page.
-            $site_description = get_bloginfo('description', 'display');
-            if ($site_description && (is_home() || is_front_page()))
-                echo " | $site_description";
-            // Add a page number if necessary:
-            if ($paged >= 2 || $page >= 2)
-                echo ' | ' . sprintf(__('Page %s', 'oscar'), max($paged, $page));
-            ?></title>
+
+		global $page, $paged;
+
+		wp_title( '|', true, 'right' );
+
+		// Add the blog name.
+		bloginfo( 'name' );
+
+		// Add the blog description for the home/front page.
+		$site_description = get_bloginfo( 'description', 'display' );
+		if ( $site_description && ( is_home() || is_front_page() ) )
+			echo " | $site_description";
+
+		// Add a page number if necessary:
+		if ( $paged >= 2 || $page >= 2 )
+			echo ' | ' . sprintf( __( 'Page %s', 'oscar' ), max( $paged, $page ) );
+
+		?></title>
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
     <script type="application/javascript" src="<?php echo content_url() . '/themes/TwimbitLite/src/toggler.js' ?>"> </script>
     <meta charset="utf-8">
     <meta name="amp-google-client-id-api" content="googleanalytics">
@@ -37,6 +44,7 @@
     <!-- Manifest file -->
     <!-- <link rel="manifest" href="<?php //print content_url() . '/themes/TwimbitLite/src/manifest.json'; 
                                     ?>"> -->
+
 
 
 
@@ -132,8 +140,8 @@
         }
 
         .active {
-            fill: #f16c70 !important;
-            border-color: #f16c70 !important;
+            fill: #f16c70!important;
+            border-color: #f16c70!important;
 
         }
 
@@ -2526,8 +2534,8 @@
             opacity: .9;
             background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.23) 0, rgb(0, 0, 0) 100%);
         }
-
-        .audio-fade {
+        .audio-fade
+        {
             position: absolute;
             bottom: 0;
             right: 0;
@@ -2583,15 +2591,16 @@
 
 
         /* Video player css */
-        .video-container {
+       .video-container {
             margin: 1.5em;
             height: auto;
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
+       }
+
+       /* description and share option in video player */
+        .description-share-option {
+
         }
-
-        /* description and share option in video player */
-        .description-share-option {}
-
         .description-share-option ul {
             display: flex;
             list-style: none;
@@ -2599,12 +2608,10 @@
             margin-left: 1em;
             margin-top: -2em;
         }
-
         /* description and share option in video */
-        .detail-option {
+        .detail-option{
             padding: 5px;
         }
-
         /* detail and share linking */
         .detail-link {
             font-size: 12px;
@@ -2617,18 +2624,15 @@
             display: flex;
             transition-duration: 0.3s;
         }
-
-        .margin-set .content p {
+        .margin-set .content p{
             width: auto;
             height: 9em;
         }
-
         .video-description {
             margin-top: -1em;
             padding: 2em;
             /*display: flex;*/
         }
-
         .video-title {
             font-family: "Open Sans", sans-serif;
             font-weight: bold;
@@ -2637,7 +2641,6 @@
             margin-bottom: 10px;
             text-transform: capitalize;
         }
-
         .video-description span {
             text-decoration: none;
             text-transform: capitalize;
@@ -2685,8 +2688,7 @@
             align-items: center;
         }
 
-        .share-icons {
-            background-color: white;
+        .share-icons{    background-color: white;
             width: fit-content;
             /*min-width: 300px;*/
             height: fit-content;
@@ -3349,18 +3351,15 @@
             .feed-title p {
                 font-size: 13px;
             }
-
             #filter {
                 overflow-x: scroll;
             }
 
-            .video-container {
+            .video-container{
                 margin-top: 1.5em;
                 margin-left: 1em;
                 margin-right: 1em;
             }
-
-
         }
 
 
@@ -3391,13 +3390,6 @@
 
             .more-to-explore-card-container .feed-card {
                 width: 100% !important;
-            }
-
-            .twimbit-lite-logo {
-                position: absolute;
-                width: 100%;
-                display: flex;
-                justify-content: center;
             }
         }
 
@@ -3621,7 +3613,7 @@
         /*ligthbox options in podcast */
         .light2 {
             display: flex;
-            margin-top: -2em;
+            margin-top:-2em;
         }
 
         .light1 {
@@ -3734,7 +3726,8 @@
                 margin-top: -3%;
             }
 
-            .share2 {
+            .share2
+            {
                 margin-left: 1.5em;
                 margin-top: -0.4em;
 
@@ -3769,8 +3762,7 @@
                 text-align: justify;
                 font-family: sans-serif;
             }
-
-            .video-container {
+            .video-container{
                 margin-top: 1.5em;
                 margin-left: 1em;
                 margin-right: 1em;
@@ -3786,7 +3778,6 @@
             .md-hide {
                 display: none;
             }
-
         }
 
         @media (min-width: 64.06rem) {
@@ -3911,14 +3902,12 @@
         .feed-menu svg {
             transform: translate(9px, 10px);
         }
-
-        * {
-            outline: none;
+        *{
+            outline:none;
         }
     </style>
-    <?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
-
 <body>
 
 
@@ -3932,7 +3921,7 @@
                     </a>
                 </div>
             <?php } ?>
-            <a href="<?php echo home_url(); ?>" class="twimbit-lite-logo">
+            <a href="<?php echo home_url(); ?>" class="my0 mx-auto">
                 <amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" alt="Example logo image"></amp-img>
             </a>
             <!-- <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div> -->
@@ -3995,7 +3984,7 @@
                     </li>
                 </ul>
             </nav>
-            <div class="search-img lg-hide md-hide ml-auto">
+            <div class="search-img lg-hide md-hide">
                 <amp-lightbox id="search-lightbox" layout="nodisplay">
                     <div class="search-lightbox" role="button" tabindex="0">
                         <div id="myOverlay" class="search-overlay">
