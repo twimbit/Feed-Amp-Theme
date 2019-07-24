@@ -1,7 +1,18 @@
 <!DOCTYPE html>
-<html amp="1.2" <?php language_attributes(); ?>>
+<html amp="1.2.1" <?php language_attributes(); ?> amp-version="1907161745080">
 
 <head>
+    <!-- AMP Scripts -->
+    <!-- Import the `amp-lightbox` component in the header -->
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+    <script custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js" async></script>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async></script>
+    <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async></script>
+    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+    <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
+    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <title><?php
 
 		global $page, $paged;
@@ -35,17 +46,7 @@
                                     ?>"> -->
 
 
-    <!-- AMP Scripts -->
-    <!-- Import the `amp-lightbox` component in the header -->
-    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
-    <script custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js" async></script>
-    <script async src="https://cdn.ampproject.org/v0.js"></script>
-    <script custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js" async></script>
-    <script custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js" async></script>
-    <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
-    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
-    <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
-    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+
 
 
     <!-- jQuery -->
@@ -1583,7 +1584,7 @@
             min-width: 315px;
             overflow-x: hidden;
             font-smooth: always;
-            -webkit-font-smoothing: antialiased
+            -webkit-font-smoothing: antialiased;
         }
 
         main {
@@ -2533,6 +2534,16 @@
             opacity: .9;
             background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.23) 0, rgb(0, 0, 0) 100%);
         }
+        .audio-fade
+        {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+            opacity: .9;
+            background: linear-gradient(to right bottom, #000000, #00000070, #00000030, #00000054, #00000000);
+        }
 
         .feed-link {
             position: absolute;
@@ -2580,27 +2591,74 @@
 
 
         /* Video player css */
-        .video {
-            position: relative;
-            margin-top: 2em;
-            /*overflow: hidden;*/
+       .video-container {
+            margin: 1.5em;
+            height: auto;
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
+       }
+
+       /* description and share option in video player */
+        .description-share-option {
+
+        }
+        .description-share-option ul {
+            display: flex;
+            list-style: none;
+            padding: 5px;
+            margin-left: 1em;
+            margin-top: -2em;
+        }
+        /* description and share option in video */
+        .detail-option{
+            padding: 5px;
+        }
+        /* detail and share linking */
+        .detail-link {
+            font-size: 12px;
+            background: none;
+            border-width: 0 0 3px 0;
+            width: 100%;
+            height: 40px;
+            color: #094d5f;
+            border-color: #f8f8f836;
+            display: flex;
+            transition-duration: 0.3s;
+        }
+        .margin-set .content p{
+            width: auto;
+            height: 9em;
+        }
+        .video-description {
+            margin-top: -1em;
+            padding: 2em;
+            /*display: flex;*/
+        }
+        .video-title {
+            font-family: "Open Sans", sans-serif;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: black;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+        }
+        .video-description span {
+            text-decoration: none;
+            text-transform: capitalize;
         }
 
-        .video-card {
-            margin-bottom: 30px;
-            overflow: hidden;
-            transition: transform .2s;
-            border-radius: 4px;
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-            height: 245px;
-        }
+
+
+
+
 
         /*description box */
         .overlay {
             position: fixed;
             /* Sit on top of the page content */
             /*display: none; !* Hidden by default *!*/
+
             width: 100%;
+
             /* Full width (cover the whole page) */
             height: 100%;
             /* Full height (cover the whole page) */
@@ -2615,28 +2673,33 @@
             justify-content: center;
             cursor: pointer;
             /* Add a pointer on hover */
+            overflow-y: scroll;
         }
 
         .content {
             line-height: 1.5em;
+            /*width: fit-content;*/
             color: #000000;
             font-size: 1em;
             padding: 12em 12em;
+            justify-content: center;
             font-family: "Open Sans", sans-serif;
+            display: flex;
+            align-items: center;
         }
 
-        .content p {
-            background-color: white;
+        .share-icons{    background-color: white;
             width: fit-content;
-            min-width: 300px;
+            /*min-width: 300px;*/
             height: fit-content;
-            min-height: 300px;
+            /*min-height: 300px;*/
+            z-index: 10;
             padding: 3em 1em;
             /* margin-left: 17%; */
             text-align: justify;
             /* align-content: center; */
             border-radius: 4px;
-        }
+
         }
 
         .share1 .content p {
@@ -2786,17 +2849,6 @@
                 text-transform: capitalize;
                 font-style: italic;
             }
-
-            /* video template */
-            .video-card {
-                margin-bottom: 30px;
-                overflow: hidden;
-                transition: transform .2s;
-                border-radius: 4px;
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-                height: 245px;
-            }
-
         }
 
         .podcast-cover .feed-title {
@@ -3110,11 +3162,6 @@
             font-weight: 300;
         }
 
-        .post-content li {
-            /* text-align: justify; */
-            /* line-height: 2em; */
-            font-weight: 300;
-        }
 
         /*podcast right side */
         .right-side {
@@ -3183,7 +3230,8 @@
         /*cross sign in podcast lightbox */
         .cross1 {
             height: 1em;
-            transform: translate(-2em, 10px);
+            transform: translate(14em, -40px);
+            z-index: 99;
         }
 
 
@@ -3303,11 +3351,15 @@
             .feed-title p {
                 font-size: 13px;
             }
-
             #filter {
                 overflow-x: scroll;
             }
 
+            .video-container{
+                margin-top: 1.5em;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
         }
 
 
@@ -3561,7 +3613,7 @@
         /*ligthbox options in podcast */
         .light2 {
             display: flex;
-            margin-top: -2em;
+            margin-top:-2em;
         }
 
         .light1 {
@@ -3603,29 +3655,6 @@
             font-size: 20px;
             display: flex;
         }
-
-
-        /*description of album in podcast */
-        .description {
-            background-color: #FFFFFF;
-            border: none;
-            color: #000000;
-            padding: 10px 10px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: -10px 7px;
-            cursor: pointer;
-            -webkit-transition-duration: 0.4s;
-            transition-duration: 0.4s;
-            border-radius: 4px;
-        }
-
-        .description1 {
-            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
-        }
-
 
         /* for  iphone 5/se*/
         @media only screen and (max-width: 320px) {
@@ -3697,7 +3726,8 @@
                 margin-top: -3%;
             }
 
-            .share2 {
+            .share2
+            {
                 margin-left: 1.5em;
                 margin-top: -0.4em;
 
@@ -3719,31 +3749,24 @@
                 margin: 11px 36px 10px 36px;
             }
 
-            /* div for video player */
-            .video-card {
-                margin-bottom: 30px;
-                overflow: hidden;
-                transition: transform .2s;
-                border-radius: 4px;
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-                height: 245px;
-            }
-
             /*description box */
             .content {
                 font-size: 80%;
-                padding: 1em 1em;
+                padding: 8em 1em;
             }
 
             .content p {
                 width: 100%;
-                padding: 1em 1em;
-
+                padding: 2em 2em;
+                justify-content: center;
                 text-align: justify;
                 font-family: sans-serif;
-
             }
-
+            .video-container{
+                margin-top: 1.5em;
+                margin-left: 1em;
+                margin-right: 1em;
+            }
 
         }
 
@@ -3778,7 +3801,6 @@
 
         .active-nav {
             color: #f16c70;
-            border-bottom: 3px solid #f16c70;
         }
 
         .search-lightbox {
@@ -3984,7 +4006,7 @@
         </header>
 
         <!-- Start Sidebar -->
-        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3" layout="nodisplay" side="right">
+        <amp-sidebar id="header-sidebar" class="ampstart-sidebar px3" layout="nodisplay" side="right" style="box-shadow: 0 0 20px 0 rgba(0,0,0,.1);">
             <div class="flex justify-start items-center ampstart-sidebar-header">
                 <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger items-start">✕</div>
             </div>

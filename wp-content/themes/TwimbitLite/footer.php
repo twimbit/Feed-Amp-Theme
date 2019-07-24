@@ -43,7 +43,7 @@
 <script>
     $(window).on('load', function() {
         /*! Fades in page on load */
-        $("body").fadeIn("slow");
+        $("body").fadeIn(300);
         //$('body').fadeIn(1000);
     });
     $(document).ready(function() {
