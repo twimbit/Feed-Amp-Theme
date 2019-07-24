@@ -94,10 +94,6 @@ $get_post_feed = get_posts($post_args);
     </section>
 
 
-    <!-- Testing section -->
-    <section id="iframe-test">
-        <iframe src="http://172.16.1.95/wordpress/landing-page/" width="700" height="200"></iframe>
-    </section>
 
     <!-- Feeds cards -->
     <section id="cards-feed">
