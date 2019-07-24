@@ -3394,7 +3394,7 @@
             }
 
             .twimbit-lite-logo {
-                position: absolute;
+                /* position: absolute; */
                 width: 100%;
                 display: flex;
                 justify-content: center;
