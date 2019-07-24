@@ -14,18 +14,25 @@
     <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
     <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <title><?php
+
             global $page, $paged;
+
             wp_title('|', true, 'right');
+
             // Add the blog name.
             bloginfo('name');
+
             // Add the blog description for the home/front page.
             $site_description = get_bloginfo('description', 'display');
             if ($site_description && (is_home() || is_front_page()))
                 echo " | $site_description";
+
             // Add a page number if necessary:
             if ($paged >= 2 || $page >= 2)
                 echo ' | ' . sprintf(__('Page %s', 'oscar'), max($paged, $page));
+
             ?></title>
+    <meta charset="<?php bloginfo('charset'); ?>">
     <script type="application/javascript" src="<?php echo content_url() . '/themes/TwimbitLite/src/toggler.js' ?>"> </script>
     <meta charset="utf-8">
     <meta name="amp-google-client-id-api" content="googleanalytics">
@@ -37,6 +44,7 @@
     <!-- Manifest file -->
     <!-- <link rel="manifest" href="<?php //print content_url() . '/themes/TwimbitLite/src/manifest.json'; 
                                     ?>"> -->
+
 
 
 
@@ -3359,8 +3367,6 @@
                 margin-left: 1em;
                 margin-right: 1em;
             }
-
-
         }
 
 
@@ -3786,7 +3792,6 @@
             .md-hide {
                 display: none;
             }
-
         }
 
         @media (min-width: 64.06rem) {
@@ -3915,6 +3920,12 @@
         * {
             outline: none;
         }
+
+        .back-button-icon {
+            position: relative;
+            top: 5px;
+            width: 32px;
+        }
     </style>
     <?php wp_head(); ?>
 </head>
@@ -3928,7 +3939,7 @@
             <?php if (is_singular()) { ?>
                 <div class="lg-hide md-hide">
                     <a href="javascript:history.go(-1)">
-                        <img src="<?php echo content_url() . '/themes/TwimbitLite/src/back.svg'; ?>" alt="">
+                        <img class="back-button-icon" src="<?php echo content_url() . '/themes/TwimbitLite/src/back.svg'; ?>" alt="">
                     </a>
                 </div>
             <?php } ?>
