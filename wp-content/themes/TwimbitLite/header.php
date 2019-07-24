@@ -139,8 +139,8 @@
         }
 
         .active {
-            fill: #f16c70 !important;
-            border-color: #f16c70 !important;
+            fill: #f16c70!important;
+            border-color: #f16c70!important;
 
         }
 
@@ -3878,9 +3878,6 @@
 
         .feed-menu svg {
             transform: translate(9px, 10px);
-        }
-        *{
-            outline:none;
         }
     </style>
 	<?php wp_head(); ?>
