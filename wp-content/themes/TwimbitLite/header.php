@@ -3359,6 +3359,8 @@
                 margin-left: 1em;
                 margin-right: 1em;
             }
+
+
         }
 
 
@@ -3389,6 +3391,13 @@
 
             .more-to-explore-card-container .feed-card {
                 width: 100% !important;
+            }
+
+            .twimbit-lite-logo {
+                position: absolute;
+                width: 100%;
+                display: flex;
+                justify-content: center;
             }
         }
 
@@ -3777,6 +3786,7 @@
             .md-hide {
                 display: none;
             }
+
         }
 
         @media (min-width: 64.06rem) {
@@ -3921,7 +3931,7 @@
                     </a>
                 </div>
             <?php } ?>
-            <a href="<?php echo home_url(); ?>" class="my0 mx-auto">
+            <a href="<?php echo home_url(); ?>" class="twimbit-lite-logo">
                 <amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" alt="Example logo image"></amp-img>
             </a>
             <!-- <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div> -->
@@ -3984,7 +3994,7 @@
                     </li>
                 </ul>
             </nav>
-            <div class="search-img lg-hide md-hide">
+            <div class="search-img lg-hide md-hide ml-auto">
                 <amp-lightbox id="search-lightbox" layout="nodisplay">
                     <div class="search-lightbox" role="button" tabindex="0">
                         <div id="myOverlay" class="search-overlay">
