@@ -3949,7 +3949,7 @@
                     <li class="ampstart-nav-item mr4">
                         <form action="<?php echo site_url(); ?>">
                             <div class="search d-flex">
-                                <input type="text" placeholder="Search.." name="s" id="searchTerm">
+                                <input type="text" required="required" placeholder="Search.." name="s" id="searchTerm">
                                 <button type="submit" href="#" style="border:none;background:none;">
                                     <amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/search.svg' ?>" width="20" height="20" class="my0 mx-auto"></amp-img>
                                 </button>
