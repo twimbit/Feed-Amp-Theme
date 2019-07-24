@@ -85,4 +85,15 @@ function previous_page_ID($id)
 // add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
 
 
+// search filter
 
+function searchfilter($query) {
+
+	if ($query->is_search && !is_admin() ) {
+		$query->set('post_type',array('post','video','amp_story','podcast'));
+	}
+
+	return $query;
+}
+
+add_filter('pre_get_posts','searchfilter');

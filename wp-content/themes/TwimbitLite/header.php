@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html amp="1.2.1" <?php language_attributes(); ?> amp-version="1907161745080">
+7<html amp="1.2.1" <?php language_attributes(); ?> amp-version="1907161745080">
 
 <head>
     <!-- AMP Scripts -->
@@ -3810,6 +3810,7 @@
 
         .active-nav {
             color: #f16c70;
+            border-bottom: 3px solid #f16c70;
         }
 
         .search-lightbox {
