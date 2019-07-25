@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-7<html amp="1.2.1" <?php language_attributes(); ?> amp-version="1907161745080">
+<html amp="1.2.1" <?php language_attributes(); ?> amp-version="1907161745080">
 
 <head>
     <!-- AMP Scripts -->
@@ -12,7 +12,6 @@
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
-    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <title><?php
 
             global $page, $paged;
@@ -2696,16 +2695,39 @@
         .share-icons {
             background-color: white;
             width: fit-content;
-            /*min-width: 300px;*/
             height: fit-content;
-            /*min-height: 300px;*/
             z-index: 10;
-            padding: 3em 1em;
-            /* margin-left: 17%; */
+            padding: 1em 1em;
             text-align: justify;
-            /* align-content: center; */
+            flex-direction: column;
+            display: flex;
             border-radius: 4px;
+        }
 
+        .share-icons svg {
+            width: 18px;
+            text-align: right;
+            margin-bottom: 12px;
+            align-self: flex-end;
+        }
+
+        .description-icons {
+            background-color: white;
+            width: fit-content;
+            height: fit-content;
+            z-index: 10;
+            padding: 1em 1em;
+            display: flex;
+            text-align: justify;
+            flex-direction: column;
+            border-radius: 4px;
+        }
+
+        .description-icons svg {
+            width: 18px;
+            text-align: right;
+            margin-bottom: 12px;
+            align-self: flex-end;
         }
 
         .share1 .content p {
