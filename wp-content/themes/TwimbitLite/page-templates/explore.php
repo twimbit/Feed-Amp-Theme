@@ -184,7 +184,6 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         </section>
     <?php } ?>
 
-    <!-- careers section -->
     <?php if (!empty($careers_child)) { ?>
         <section id="careers_model">
             <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">

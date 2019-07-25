@@ -4049,25 +4049,29 @@
             </div>
             <nav class="ampstart-sidebar-nav ampstart-nav">
                 <ul class="list-reset m0 p0 ampstart-label">
+
+                    <li class="ampstart-nav-item"><a href="<?php echo home_url(); ?>">Feed</a></li>
+                    <li class="ampstart-nav-item"><a href="<?php echo home_url(); ?>/explore">Explore</a></li>
                     <li class="ampstart-nav-item ampstart-nav-dropdown relative">
 
 
                         <!-- Start Dropdown-inline -->
-                        <!-- <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
+                        <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
                             <section>
-                                <header>Fashion</header>
-                                <ul class="ampstart-dropdown-items list-reset m0 p0">
-                                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Styling Tips</a></li>
-                                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Designers</a></li>
+                                <header>Categories</header>
+                                <ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
+                                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Business Model</a></li>
+                                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Careers</a></li>
+                                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Companies</a></li>
+                                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Disruptive Technology</a></li>
+                                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Exclusive</a></li>
+                                    <li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Industry</a></li>
                                 </ul>
                             </section>
-                        </amp-accordion> -->
+                        </amp-accordion>
 
                         <!-- End Dropdown-inline -->
                     </li>
-                    <li class="ampstart-nav-item"><a href="<?php echo home_url(); ?>">Feed</a></li>
-                    <li class="ampstart-nav-item"><a href="<?php echo home_url(); ?>/explore">Explore</a></li>
-                    <li class="ampstart-nav-item"><a href="#">Stories</a></li>
                 </ul>
             </nav>
 

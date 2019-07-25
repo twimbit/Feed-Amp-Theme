@@ -2,7 +2,7 @@
 get_header();
 $args = array(
     'numberposts' => 0,
-    'category' => get_the_category()[0]->term_id,
+    'category' => get_queried_object()->term_id,
     'orderby' => 'date',
     'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
@@ -35,13 +35,13 @@ $get_sub_cat = get_posts($args);
         <div class="col-12">
             <div class="feed-card feed-card-archive">
                 <div class="single-thumbnail">
-                    <amp-img src="<?php echo get_field('featured_image', get_the_category()[0])['url']; ?>"></amp-img>
+                    <amp-img src="<?php echo get_field('featured_image', get_queried_object())['url']; ?>"></amp-img>
                     <div class="fade"></div>
                     <div class="feed-link">
                         <div class="feed-title" style="bottom:auto">
-                            <h3><?php echo get_the_category()[0]->name; ?></h3>
+                            <h3><?php echo single_cat_title(); ?></h3>
 
-                            <p class="feed-subtitle"><?php echo get_the_category()[0]->description; ?></p>
+                            <p class="feed-subtitle" style="line-height: 1.4;font-size:14px"><?php echo the_archive_description(); ?></p>
 
                         </div>
                     </div>
@@ -112,7 +112,7 @@ $get_sub_cat = get_posts($args);
                                 <div class="feed-title">
                                     <h3><?php echo $post_title; ?></h3>
 
-                                    <p class="feed-subtitle">#<?php echo get_the_category()[0]->cat_name; ?></p>
+                                    <p class="feed-subtitle">#<?php echo get_queried_object()->name; ?></p>
 
                                 </div>
                             </a>
