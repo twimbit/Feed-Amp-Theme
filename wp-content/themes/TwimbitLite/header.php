@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-7<html amp="1.2.1" <?php language_attributes(); ?> amp-version="1907161745080">
+<html amp="1.2.1" <?php language_attributes(); ?> amp-version="1907161745080">
 
 <head>
     <!-- AMP Scripts -->
@@ -12,27 +12,26 @@
     <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
     <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
     <script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>
-    <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
     <title><?php
 
-		global $page, $paged;
+            global $page, $paged;
 
-		wp_title( '|', true, 'right' );
+            wp_title('|', true, 'right');
 
-		// Add the blog name.
-		bloginfo( 'name' );
+            // Add the blog name.
+            bloginfo('name');
 
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) )
-			echo " | $site_description";
+            // Add the blog description for the home/front page.
+            $site_description = get_bloginfo('description', 'display');
+            if ($site_description && (is_home() || is_front_page()))
+                echo " | $site_description";
 
-		// Add a page number if necessary:
-		if ( $paged >= 2 || $page >= 2 )
-			echo ' | ' . sprintf( __( 'Page %s', 'oscar' ), max( $paged, $page ) );
+            // Add a page number if necessary:
+            if ($paged >= 2 || $page >= 2)
+                echo ' | ' . sprintf(__('Page %s', 'oscar'), max($paged, $page));
 
-		?></title>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+            ?></title>
+    <meta charset="<?php bloginfo('charset'); ?>">
     <script type="application/javascript" src="<?php echo content_url() . '/themes/TwimbitLite/src/toggler.js' ?>"> </script>
     <meta charset="utf-8">
     <meta name="amp-google-client-id-api" content="googleanalytics">
@@ -140,8 +139,8 @@
         }
 
         .active {
-            fill: #f16c70!important;
-            border-color: #f16c70!important;
+            fill: #f16c70 !important;
+            border-color: #f16c70 !important;
 
         }
 
@@ -2534,8 +2533,8 @@
             opacity: .9;
             background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.23) 0, rgb(0, 0, 0) 100%);
         }
-        .audio-fade
-        {
+
+        .audio-fade {
             position: absolute;
             bottom: 0;
             right: 0;
@@ -2591,16 +2590,15 @@
 
 
         /* Video player css */
-       .video-container {
+        .video-container {
             margin: 1.5em;
             height: auto;
             box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
-       }
-
-       /* description and share option in video player */
-        .description-share-option {
-
         }
+
+        /* description and share option in video player */
+        .description-share-option {}
+
         .description-share-option ul {
             display: flex;
             list-style: none;
@@ -2608,10 +2606,12 @@
             margin-left: 1em;
             margin-top: -2em;
         }
+
         /* description and share option in video */
-        .detail-option{
+        .detail-option {
             padding: 5px;
         }
+
         /* detail and share linking */
         .detail-link {
             font-size: 12px;
@@ -2624,15 +2624,18 @@
             display: flex;
             transition-duration: 0.3s;
         }
-        .margin-set .content p{
+
+        .margin-set .content p {
             width: auto;
             height: 9em;
         }
+
         .video-description {
             margin-top: -1em;
             padding: 2em;
             /*display: flex;*/
         }
+
         .video-title {
             font-family: "Open Sans", sans-serif;
             font-weight: bold;
@@ -2641,6 +2644,7 @@
             margin-bottom: 10px;
             text-transform: capitalize;
         }
+
         .video-description span {
             text-decoration: none;
             text-transform: capitalize;
@@ -2688,18 +2692,42 @@
             align-items: center;
         }
 
-        .share-icons{    background-color: white;
+        .share-icons {
+            background-color: white;
             width: fit-content;
-            /*min-width: 300px;*/
             height: fit-content;
-            /*min-height: 300px;*/
             z-index: 10;
-            padding: 3em 1em;
-            /* margin-left: 17%; */
+            padding: 1em 1em;
             text-align: justify;
-            /* align-content: center; */
+            flex-direction: column;
+            display: flex;
             border-radius: 4px;
+        }
 
+        .share-icons svg {
+            width: 18px;
+            text-align: right;
+            margin-bottom: 12px;
+            align-self: flex-end;
+        }
+
+        .description-icons {
+            background-color: white;
+            width: fit-content;
+            height: fit-content;
+            z-index: 10;
+            padding: 1em 1em;
+            display: flex;
+            text-align: justify;
+            flex-direction: column;
+            border-radius: 4px;
+        }
+
+        .description-icons svg {
+            width: 18px;
+            text-align: right;
+            margin-bottom: 12px;
+            align-self: flex-end;
         }
 
         .share1 .content p {
@@ -3351,11 +3379,12 @@
             .feed-title p {
                 font-size: 13px;
             }
+
             #filter {
                 overflow-x: scroll;
             }
 
-            .video-container{
+            .video-container {
                 margin-top: 1.5em;
                 margin-left: 1em;
                 margin-right: 1em;
@@ -3393,7 +3422,7 @@
             }
 
             .twimbit-lite-logo {
-                position: absolute;
+                /* position: absolute; */
                 width: 100%;
                 display: flex;
                 justify-content: center;
@@ -3620,7 +3649,7 @@
         /*ligthbox options in podcast */
         .light2 {
             display: flex;
-            margin-top:-2em;
+            margin-top: -2em;
         }
 
         .light1 {
@@ -3733,8 +3762,7 @@
                 margin-top: -3%;
             }
 
-            .share2
-            {
+            .share2 {
                 margin-left: 1.5em;
                 margin-top: -0.4em;
 
@@ -3769,7 +3797,8 @@
                 text-align: justify;
                 font-family: sans-serif;
             }
-            .video-container{
+
+            .video-container {
                 margin-top: 1.5em;
                 margin-left: 1em;
                 margin-right: 1em;
@@ -3909,12 +3938,20 @@
         .feed-menu svg {
             transform: translate(9px, 10px);
         }
-        *{
-            outline:none;
+
+        * {
+            outline: none;
+        }
+
+        .back-button-icon {
+            position: relative;
+            top: 5px;
+            width: 32px;
         }
     </style>
-	<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
+
 <body>
 
 
@@ -3924,7 +3961,7 @@
             <?php if (is_singular()) { ?>
                 <div class="lg-hide md-hide">
                     <a href="javascript:history.go(-1)">
-                        <img src="<?php echo content_url() . '/themes/TwimbitLite/src/back.svg'; ?>" alt="">
+                        <img class="back-button-icon" src="<?php echo content_url() . '/themes/TwimbitLite/src/back.svg'; ?>" alt="">
                     </a>
                 </div>
             <?php } ?>

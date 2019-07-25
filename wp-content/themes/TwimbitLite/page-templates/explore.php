@@ -72,13 +72,12 @@ $industry = get_category_by_slug('industry');
 $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_empty' => FALSE));
 
 ?>
-    <script>
-        $(document).ready(function() {
-            document.querySelector('#explore-button').className += ' active-nav';
-            document.querySelector('#explore-nav').className += ' active-nav';
-        });
-
-    </script>
+<script>
+    $(document).ready(function() {
+        document.querySelector('#explore-button').className += ' active-nav';
+        document.querySelector('#explore-nav').className += ' active-nav';
+    });
+</script>
 
 <section id="explore">
     <div class="container" style="margin-top:5rem">
