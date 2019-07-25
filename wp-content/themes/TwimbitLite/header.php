@@ -2625,10 +2625,7 @@
             transition-duration: 0.3s;
         }
 
-        .margin-set .content p {
-            width: auto;
-            height: 9em;
-        }
+
 
         .video-description {
             margin-top: -1em;
@@ -2713,8 +2710,8 @@
 
         .description-icons {
             background-color: white;
-            width: fit-content;
-            height: fit-content;
+            width: 600px;
+            height: 300px;
             z-index: 10;
             padding: 1em 1em;
             display: flex;
@@ -3253,16 +3250,6 @@
 
         .head {
             display: flex;
-        }
-
-        /*cross sign in podcast lightbox */
-        .cross1 {
-            height: 1em;
-            transform: translate(14em, -40px);
-            z-index: 99;
-        }
-
-
         }
 
         .info {

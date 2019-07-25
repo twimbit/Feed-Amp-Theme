@@ -70,11 +70,9 @@
                         <?php
                         echo  $post->post_content; //contents saved in a variable
                         ?>
-
                     </div>
                 </div>
                 <p on="tap:description-lightbox.close">
-
                 </p>
             </amp-lightbox>
 
