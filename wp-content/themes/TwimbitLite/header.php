@@ -41,7 +41,7 @@
     <!-- <script custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js" async=""></script> -->
 
     <!-- Manifest file -->
-    <!-- <link rel="manifest" href="<?php //print content_url() . '/themes/TwimbitLite/src/manifest.json'; 
+    <!-- <link rel="manifest" href="<?php //print content_url() . '/themes/TwimbitLite/src/manifest.json';
                                     ?>"> -->
 
 
@@ -3940,6 +3940,11 @@
 </head>
 
 <body>
+
+    <!-- Registering Service Worker -->
+    <!-- <amp-install-serviceworker src="<?php //echo content_url() . '/themes/TwimbitLite/src/sw.js'; 
+                                            ?>" layout="nodisplay" data-iframe-src="<?php //echo content_url() . '/themes/TwimbitLite/src/install-sw.html'; 
+                                                                                    ?>"></amp-install-serviceworker> -->
 
 
     <section>

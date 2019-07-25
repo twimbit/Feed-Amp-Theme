@@ -173,7 +173,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         <a href="<?php echo get_category_link($val->term_id); ?>">
                             <div class="sub-cat-img">
                                 <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                                <p><?php echo $val->name; ?></p>
+                                <?php echo $val->name; ?>
                             </div>
                         </a>
 
