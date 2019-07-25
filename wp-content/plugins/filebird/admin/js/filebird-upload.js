@@ -1,0 +1,1 @@
+!function(i){"use strict";i(document).ready(function(){i("body.wp-admin.upload-php").length>0&&(FileBird_Media.init(),FileBird_Media.jstree.init(),i("#njt-filebird-folderTree").mCustomScrollbar({autoHideScrollbar:!0,setHeight:i(window).height()-300}))}),i(window).bind("load",function(){i("body.wp-admin.upload-php").length>0&&FileBird_Media.toolbar.init()})}(jQuery);

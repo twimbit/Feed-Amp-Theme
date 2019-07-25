@@ -1,0 +1,1 @@
+!function(i){"use strict";var e={addMedia:function(){i("body").hasClass("media-new-php")&&setTimeout(function(){uploader&&uploader.bind("BeforeUpload",function(e,d){e.settings.multipart_params.ntWMCFolder=i(".njt-filebird-editcategory-filter").val();i("#media-item-"+d.id).find(".filename")})}.bind(this),500)}};i(document).ready(function(){window.wp;e.addMedia()})}(jQuery);
