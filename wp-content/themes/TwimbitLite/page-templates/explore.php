@@ -166,24 +166,26 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     </div>
 
                     <amp-carousel class="sub-cat" type="carousel" controls>
-                        <?php
-                        foreach ($business_child as $val) {
-                            $post_img = get_field('featured_image', $val);
-                            ?>
-                            <a href="<?php echo get_category_link($val->term_id); ?>">
-                                <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                                    <?php echo $val->name; ?>
-                                </div>
-                            </a>
-
-                        <?php } ?>
+                        <div class="sub-cat-inner-container">
+                            <?php
+                            foreach ($business_child as $val) {
+                                $post_img = get_field('featured_image', $val);
+                                ?>
+                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                    <div class="sub-cat-img">
+                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <p><?php echo $val->name; ?></p>
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        </div>
                     </amp-carousel>
                 </div>
             </div>
         </section>
     <?php } ?>
 
+    <!-- careers section -->
     <?php if (!empty($careers_child)) { ?>
         <section id="careers_model">
             <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
@@ -194,17 +196,19 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     </div>
 
                     <amp-carousel class="sub-cat" type="carousel" controls>
-                        <?php
-                        foreach ($careers_child as $val) {
-                            $post_img = get_field('featured_image', $val);
-                            ?>
-                            <a href="<?php echo get_category_link($val->term_id); ?>">
-                                <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                                    <p><?php echo $val->name; ?></p>
-                                </div>
-                            </a>
-                        <?php } ?>
+                        <div class="sub-cat-inner-container">
+                            <?php
+                            foreach ($careers_child as $val) {
+                                $post_img = get_field('featured_image', $val);
+                                ?>
+                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                    <div class="sub-cat-img">
+                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <p><?php echo $val->name; ?></p>
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        </div>
                     </amp-carousel>
                 </div>
             </div>
@@ -222,17 +226,19 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     </div>
 
                     <amp-carousel class="sub-cat" type="carousel" controls>
-                        <?php
-                        foreach ($companies_child as $val) {
-                            $post_img = get_field('featured_image', $val);
-                            ?>
-                            <a href="<?php echo get_category_link($val->term_id); ?>">
-                                <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                                    <p><?php echo $val->name; ?></p>
-                                </div>
-                            </a>
-                        <?php } ?>
+                        <div class="sub-cat-inner-container">
+                            <?php
+                            foreach ($companies_child as $val) {
+                                $post_img = get_field('featured_image', $val);
+                                ?>
+                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                    <div class="sub-cat-img">
+                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <p><?php echo $val->name; ?></p>
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        </div>
                     </amp-carousel>
                 </div>
             </div>
@@ -250,17 +256,19 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     </div>
 
                     <amp-carousel class="sub-cat" type="carousel" controls>
-                        <?php
-                        foreach ($technology_child as $val) {
-                            $post_img = get_field('featured_image', $val);
-                            ?>
-                            <a href="<?php echo get_category_link($val->term_id); ?>">
-                                <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                                    <p><?php echo $val->name; ?></p>
-                                </div>
-                            </a>
-                        <?php } ?>
+                        <div class="sub-cat-inner-container">
+                            <?php
+                            foreach ($technology_child as $val) {
+                                $post_img = get_field('featured_image', $val);
+                                ?>
+                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                    <div class="sub-cat-img">
+                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <p><?php echo $val->name; ?></p>
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        </div>
                     </amp-carousel>
                 </div>
             </div>
@@ -278,17 +286,19 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     </div>
 
                     <amp-carousel class="sub-cat" type="carousel" controls>
-                        <?php
-                        foreach ($events_child as $val) {
-                            $post_img = get_field('featured_image', $val);
-                            ?>
-                            <a href="<?php echo get_category_link($val->term_id); ?>">
-                                <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                                    <p><?php echo $val->name; ?></p>
-                                </div>
-                            </a>
-                        <?php } ?>
+                        <div class="sub-cat-inner-container">
+                            <?php
+                            foreach ($events_child as $val) {
+                                $post_img = get_field('featured_image', $val);
+                                ?>
+                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                    <div class="sub-cat-img">
+                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <p><?php echo $val->name; ?></p>
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        </div>
                     </amp-carousel>
                 </div>
             </div>
@@ -307,17 +317,19 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     </div>
 
                     <amp-carousel class="sub-cat" type="carousel" controls>
-                        <?php
-                        foreach ($exclusive_child as $val) {
-                            $post_img = get_field('featured_image', $val);
-                            ?>
-                            <a href="<?php echo get_category_link($val->term_id); ?>">
-                                <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                                    <p><?php echo $val->name; ?></p>
-                                </div>
-                            </a>
-                        <?php } ?>
+                        <div class="sub-cat-inner-container">
+                            <?php
+                            foreach ($exclusive_child as $val) {
+                                $post_img = get_field('featured_image', $val);
+                                ?>
+                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                    <div class="sub-cat-img">
+                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <p><?php echo $val->name; ?></p>
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        </div>
                     </amp-carousel>
                 </div>
             </div>
@@ -335,17 +347,19 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     </div>
 
                     <amp-carousel class="sub-cat" type="carousel" controls>
-                        <?php
-                        foreach ($geography_child as $val) {
-                            $post_img = get_field('featured_image', $val);
-                            ?>
-                            <a href="<?php echo get_category_link($val->term_id); ?>">
-                                <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                                    <p><?php echo $val->name; ?></p>
-                                </div>
-                            </a>
-                        <?php } ?>
+                        <div class="sub-cat-inner-container">
+                            <?php
+                            foreach ($geography_child as $val) {
+                                $post_img = get_field('featured_image', $val);
+                                ?>
+                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                    <div class="sub-cat-img">
+                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <p><?php echo $val->name; ?></p>
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        </div>
                     </amp-carousel>
                 </div>
             </div>
@@ -363,17 +377,19 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     </div>
 
                     <amp-carousel class="sub-cat" type="carousel" controls>
-                        <?php
-                        foreach ($industry_child as $val) {
-                            $post_img = get_field('featured_image', $val);
-                            ?>
-                            <a href="<?php echo get_category_link($val->term_id); ?>">
-                                <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
-                                    <p><?php echo $val->name; ?></p>
-                                </div>
-                            </a>
-                        <?php } ?>
+                        <div class="sub-cat-inner-container">
+                            <?php
+                            foreach ($industry_child as $val) {
+                                $post_img = get_field('featured_image', $val);
+                                ?>
+                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                    <div class="sub-cat-img">
+                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <p><?php echo $val->name; ?></p>
+                                    </div>
+                                </a>
+                            <?php } ?>
+                        </div>
                     </amp-carousel>
                 </div>
             </div>
