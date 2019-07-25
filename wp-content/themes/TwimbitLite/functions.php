@@ -120,3 +120,4 @@ function frontier_restrict_media( $query ) {
 }
 
 add_filter( 'pre_get_posts', 'frontier_restrict_media' );
+
