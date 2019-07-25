@@ -190,7 +190,8 @@ $video = get_field('video_type');
                     </div>
                 </a>
             <?php }
-            get_footer() ?>
+            ?>
         </div>
     </div>
 </div>
+<?php get_footer(); ?>
