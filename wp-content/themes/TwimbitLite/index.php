@@ -16,7 +16,7 @@ $get_post_for_story = get_posts($args);
 
 $post_args = array(
     'numberposts' => 20,
-    'category' => 0,
+    'category' => get_category_by_slug('trending')->term_id,
     'orderby' => 'date',
     'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
