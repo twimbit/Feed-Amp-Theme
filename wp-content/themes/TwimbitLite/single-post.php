@@ -154,7 +154,7 @@ $category = get_the_category();
                                 <div class="feed-title">
                                     <h3><?php echo $trending_title; ?></h3>
 
-                                    <p class="feed-subtitle">#5: Lay off the social media.</p>
+                                    <p class="feed-subtitle">#<?php echo get_the_category()[0]->cat_name; ?></p>
 
                                 </div>
                             </a>
@@ -219,7 +219,7 @@ $category = get_the_category();
                                 <div class="feed-title">
                                     <h3><?php echo get_the_title($first_post); ?></h3>
 
-                                    <p class="feed-subtitle">#5: Lay off the social media.</p>
+                                    <p class="feed-subtitle">#<?php echo get_the_category()[0]->cat_name; ?></p>
 
                                 </div>
                             </a>

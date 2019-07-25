@@ -114,7 +114,7 @@ $get_post_feed = get_posts($post_args);
                                 <div class="feed-title">
                                     <h3><?php echo $post_title; ?></h3>
 
-                                    <p class="feed-subtitle">#<?php echo $category; ?></p>
+                                    <p class="feed-subtitle">#<?php echo get_the_category($val)[0]->cat_name; ?></p>
 
                                 </div>
                             </a>

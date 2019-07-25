@@ -58,7 +58,7 @@ $get_sub_cat = get_posts($args);
 
 <div class="archive-filter-card-container container">
     <!-- Filter section -->
-    <section id="filter"  >
+    <section id="filter">
         <div class="mt4">
             <div class="col-12" style="min-width: fit-content;">
                 <div class="menu">
@@ -112,7 +112,7 @@ $get_sub_cat = get_posts($args);
                                 <div class="feed-title">
                                     <h3><?php echo $post_title; ?></h3>
 
-                                    <p class="feed-subtitle">#5: Lay off the social media.</p>
+                                    <p class="feed-subtitle">#<?php echo get_the_category()[0]->cat_name; ?></p>
 
                                 </div>
                             </a>

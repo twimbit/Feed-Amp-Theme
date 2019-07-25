@@ -101,7 +101,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                             <div class="feed-title">
                                 <h3><?php echo $trending_title; ?></h3>
 
-                                <p class="feed-subtitle">#5: Lay off the social media.</p>
+                                <p class="feed-subtitle">#<?php echo get_the_category($val)[0]->cat_name; ?></p>
 
                             </div>
                         </a>
