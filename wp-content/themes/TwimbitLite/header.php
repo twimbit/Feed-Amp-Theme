@@ -4006,7 +4006,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 			</div>
 
 			<a href="<?php echo home_url(); ?>" class="twimbit-lite-logo">
-				<amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" alt="Example logo image"></amp-img>
+				<amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/twimbit-pro-logo.png' ?>" style="width: 130px;height: 3rem;margin-top: 1rem;" layout="fixed" alt="Example logo image"></amp-img>
 			</a>
 			<!-- <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div> -->
 			<nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
@@ -4108,7 +4108,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 					<hr>
 
 					<li class="ampstart-nav-item">
-						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
+						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1" expand-single-section>
 							<section>
 								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5rem">Business Model</header>
 								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
@@ -4119,8 +4119,6 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 									<?php } ?>
 								</ul>
 							</section>
-						</amp-accordion>
-						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
 							<section>
 								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5em">Careers</header>
 								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
@@ -4131,8 +4129,6 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 									<?php } ?>
 								</ul>
 							</section>
-						</amp-accordion>
-						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
 							<section>
 								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5rem">Companies</header>
 								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
@@ -4143,8 +4139,6 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 									<?php } ?>
 								</ul>
 							</section>
-						</amp-accordion>
-						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
 							<section>
 								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5rem">Technology</header>
 								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
@@ -4155,8 +4149,6 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 									<?php } ?>
 								</ul>
 							</section>
-						</amp-accordion>
-						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
 							<section>
 								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5rem">Exclusive</header>
 								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
@@ -4167,8 +4159,6 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 									<?php } ?>
 								</ul>
 							</section>
-						</amp-accordion>
-						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
 							<section>
 								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5rem">Industry</header>
 								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
@@ -4180,6 +4170,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 								</ul>
 							</section>
 						</amp-accordion>
+					</li>
 				</ul>
 
 			</nav>
