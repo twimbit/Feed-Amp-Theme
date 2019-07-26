@@ -26,7 +26,7 @@
     $author = get_the_author();
     $category = get_the_category();
 
-    $audio = get_field('audio');
+    $audio = get_field('audioz');
 
     ?>
 
