@@ -3953,6 +3953,25 @@
 	</style>
 	<?php wp_head(); ?>
 </head>
+<?php
+$business = get_category_by_slug('business_model');
+$business_child = get_categories(array('child_of' => $business->term_id, 'hide_empty' => FALSE));
+
+$careers = get_category_by_slug('careers');
+$careers_child = get_categories(array('child_of' => $careers->term_id, 'hide_empty' => FALSE));
+
+$companies = get_category_by_slug('companies');
+$companies_child = get_categories(array('child_of' => $companies->term_id, 'hide_empty' => FALSE));
+
+$technology = get_category_by_slug('technology');
+$technology_child = get_categories(array('child_of' => $technology->term_id, 'hide_empty' => FALSE));
+
+$exclusive = get_category_by_slug('exclusive');
+$exclusive_child = get_categories(array('child_of' => $exclusive->term_id, 'hide_empty' => FALSE));
+
+$industry = get_category_by_slug('industry');
+$industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_empty' => FALSE));
+?>
 
 <body>
 
@@ -3962,7 +3981,7 @@
 																					?>"></amp-install-serviceworker> -->
 
 
-	<section>
+	<section id="nav-header">
 		<!-- Start Navbar -->
 		<header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr2">
 
@@ -4067,29 +4086,90 @@
 			<nav class="ampstart-sidebar-nav ampstart-nav">
 				<ul class="list-reset m0 p0 ampstart-label">
 
-					<li class="ampstart-nav-item"><a href="<?php echo home_url(); ?>">Feed</a></li>
-					<li class="ampstart-nav-item"><a href="<?php echo home_url(); ?>/explore">Explore</a></li>
-					<li class="ampstart-nav-item ampstart-nav-dropdown relative">
+					<li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo home_url(); ?>">Feed</a></li>
+					<li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo home_url(); ?>/explore">Explore</a></li>
+					<!-- <li class="ampstart-nav-item"><a href="<?php //echo home_url(); 
+																?>/explore">Nutshell</a></li> -->
+				</ul>
+				<ul class="ampstart-dropdown-items list-reset m0 p0">
+					<p>Category</p>
+					<hr>
 
-
-						<!-- Start Dropdown-inline -->
-						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown">
+					<li class="ampstart-nav-item">
+						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
 							<section>
-								<header>Categories</header>
+								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5rem">Business Model</header>
 								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
-									<li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Business Model</a></li>
-									<li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Careers</a></li>
-									<li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Companies</a></li>
-									<li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Disruptive Technology</a></li>
-									<li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Exclusive</a></li>
-									<li class="ampstart-dropdown-item"><a href="#" class="text-decoration-none">Industry</a></li>
+									<?php
+									foreach ($business_child as $val) {
+										?>
+										<li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+									<?php } ?>
 								</ul>
 							</section>
 						</amp-accordion>
-
-						<!-- End Dropdown-inline -->
-					</li>
+						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
+							<section>
+								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5em">Careers</header>
+								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
+									<?php
+									foreach ($careers_child as $val) {
+										?>
+										<li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+									<?php } ?>
+								</ul>
+							</section>
+						</amp-accordion>
+						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
+							<section>
+								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5rem">Companies</header>
+								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
+									<?php
+									foreach ($companies_child as $val) {
+										?>
+										<li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+									<?php } ?>
+								</ul>
+							</section>
+						</amp-accordion>
+						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
+							<section>
+								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5rem">Technology</header>
+								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
+									<?php
+									foreach ($technology_child as $val) {
+										?>
+										<li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+									<?php } ?>
+								</ul>
+							</section>
+						</amp-accordion>
+						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
+							<section>
+								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5rem">Exclusive</header>
+								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
+									<?php
+									foreach ($exclusive_child as $val) {
+										?>
+										<li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+									<?php } ?>
+								</ul>
+							</section>
+						</amp-accordion>
+						<amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown ml1">
+							<section>
+								<header class="ampstart-nav-item" style="background-color:#fff;color:#094d5f;margin-bottom:0.5rem">Industry</header>
+								<ul class="ampstart-dropdown-items list-reset m0 ml1 p0">
+									<?php
+									foreach ($industry_child as $val) {
+										?>
+										<li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+									<?php } ?>
+								</ul>
+							</section>
+						</amp-accordion>
 				</ul>
+
 			</nav>
 
 			<ul class="ampstart-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
