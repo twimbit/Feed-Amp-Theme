@@ -2,7 +2,7 @@
 
 $args = array(
     'numberposts' => 10,
-    'category' => 0,
+    'category' => get_category_by_slug('nutshell')->term_id,
     'orderby' => 'date',
     'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
@@ -16,7 +16,7 @@ $get_post_for_story = get_posts($args);
 
 $post_args = array(
     'numberposts' => 20,
-    'category' => 0,
+    'category' => get_category_by_slug('trending')->term_id,
     'orderby' => 'date',
     'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
@@ -35,7 +35,6 @@ $get_post_feed = get_posts($post_args);
         document.querySelector('#feed-button').className += ' active-nav';
         document.querySelector('#feed-nav').className += ' active-nav';
     });
-
 </script>
 <section id="stories">
     <div class="container">
@@ -59,19 +58,19 @@ $get_post_feed = get_posts($post_args);
 </section>
 <div class="archive-filter-card-container container">
     <!-- Filter section -->
-    <section id="filter"  >
+    <section id="filter">
         <div class="mt4">
             <div class="col-12" style="min-width: fit-content;">
-                    <div class="menu">
-                        <ul>
-                            <li class="menu-item">
-                                <button class="tablinks active" id="allButton" onclick="toggler(event,'All')"> ALL</button>
-                            </li>
-                            <li class="menu-item">
-                                <button class="tablinks" onclick="toggler(event,'post')"><svg xmlns="http://www.w3.org/2000/svg" width="41.817" height="37.171" viewBox="0 0 41.817 37.171">
-                                        <path class="a" d="M3,31.878H14.616V27.232H3Zm15.1,0H29.716V27.232H18.1Zm15.1,0H44.817V27.232H33.2ZM3,41.171H7.646V36.524H3Zm9.293,0h4.646V36.524H12.293Zm9.293,0h4.646V36.524H21.585Zm9.293,0h4.646V36.524H30.878Zm9.293,0h4.646V36.524H40.171ZM3,22.585H21.585V17.939H3Zm23.232,0H44.817V17.939H26.232ZM3,4v9.293H44.817V4Z" transform="translate(-3 -4)" />
-                                    </svg><br> INSIGHTS</button>
-                            </li>
+                <div class="menu">
+                    <ul>
+                        <li class="menu-item">
+                            <button class="tablinks active" id="allButton" onclick="toggler(event,'All')"> ALL</button>
+                        </li>
+                        <li class="menu-item">
+                            <button class="tablinks" onclick="toggler(event,'post')"><svg xmlns="http://www.w3.org/2000/svg" width="41.817" height="37.171" viewBox="0 0 41.817 37.171">
+                                    <path class="a" d="M3,31.878H14.616V27.232H3Zm15.1,0H29.716V27.232H18.1Zm15.1,0H44.817V27.232H33.2ZM3,41.171H7.646V36.524H3Zm9.293,0h4.646V36.524H12.293Zm9.293,0h4.646V36.524H21.585Zm9.293,0h4.646V36.524H30.878Zm9.293,0h4.646V36.524H40.171ZM3,22.585H21.585V17.939H3Zm23.232,0H44.817V17.939H26.232ZM3,4v9.293H44.817V4Z" transform="translate(-3 -4)" />
+                                </svg><br> INSIGHTS</button>
+                        </li>
                         <li class="menu-item">
                             <button class="tablinks" onclick="toggler(event,'video')"> <svg xmlns="http://www.w3.org/2000/svg" width="41.817" height="37.171" viewBox="0 0 49.131 49.131">
                                     <path class="a" d="M26.566,2A24.566,24.566,0,1,0,51.131,26.566,24.574,24.574,0,0,0,26.566,2ZM21.652,37.62V15.511L36.392,26.566Z" transform="translate(-2 -2)" />
@@ -94,7 +93,7 @@ $get_post_feed = get_posts($post_args);
         </div>
     </section>
     <!-- Feeds cards -->
-    <section id="cards-feed" class="mb4" >
+    <section id="cards-feed" class="mb4">
         <div class="container mt2" style="margin-bottom: 6rem;">
             <div>
                 <!--            Fetching all the post for Feed-->
@@ -114,7 +113,7 @@ $get_post_feed = get_posts($post_args);
                                 <div class="feed-title">
                                     <h3><?php echo $post_title; ?></h3>
 
-                                    <p class="feed-subtitle">#<?php echo $category; ?></p>
+                                    <p class="feed-subtitle">#<?php echo get_the_category($val)[0]->cat_name; ?></p>
 
                                 </div>
                             </a>

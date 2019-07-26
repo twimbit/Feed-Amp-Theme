@@ -47,6 +47,11 @@
         //$('body').fadeIn(1000);
     });
     $(document).ready(function() {
+        // window.oncontextmenu = function(event) {
+        //     event.preventDefault();
+        //     event.stopPropagation();
+        //     return false;
+        // };
         var prevScrollpos = window.pageYOffset;
         window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
