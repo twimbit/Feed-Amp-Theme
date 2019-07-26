@@ -3994,7 +3994,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 			</div>
 
 			<a href="<?php echo home_url(); ?>" class="twimbit-lite-logo">
-				<amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/twimbit-lite-logo.png' ?>" width="130" height="33" layout="fixed" alt="Example logo image"></amp-img>
+				<amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/twimbit-pro-logo.png' ?>" style="width: 130px;height: 3rem;margin-top: 1rem;" layout="fixed" alt="Example logo image"></amp-img>
 			</a>
 			<!-- <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div> -->
 			<nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
@@ -4158,6 +4158,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 								</ul>
 							</section>
 						</amp-accordion>
+					</li>
 				</ul>
 
 			</nav>
