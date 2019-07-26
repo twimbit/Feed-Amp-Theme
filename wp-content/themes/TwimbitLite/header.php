@@ -3957,8 +3957,8 @@
 <body>
 
 	<!-- Registering Service Worker -->
-	<!-- <amp-install-serviceworker src="<?php //echo content_url() . '/themes/TwimbitLite/src/sw.js'; 
-											?>" layout="nodisplay" data-iframe-src="<?php //echo content_url() . '/themes/TwimbitLite/src/install-sw.html'; 
+	<!-- <amp-install-serviceworker src="<?php //echo content_url() . '/themes/TwimbitLite/src/sw.js';
+											?>" layout="nodisplay" data-iframe-src="<?php //echo content_url() . '/themes/TwimbitLite/src/install-sw.html';
 																					?>"></amp-install-serviceworker> -->
 
 
@@ -3983,7 +3983,7 @@
 					<!-- Start Dropdown -->
 					<!-- <li class="ampstart-nav-item ampstart-nav-dropdown relative">
 
-                        
+
                         <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown absolute top-0 left-0 right-0 bottom-0" style>
                             <section>
                                 <header>Fashion</header>
@@ -3997,7 +3997,7 @@
                             </section>
                         </amp-accordion>
 
-                        
+
                     </li> -->
 					<!-- End Dropdown -->
 					<li class="ampstart-nav-item mr4">
@@ -4124,6 +4124,7 @@
 						</svg></a>
 				</li>
 			</ul>
+
 
 			<!-- <ul class="ampstart-sidebar-faq list-reset m0">
                 <li class="ampstart-faq-item">
