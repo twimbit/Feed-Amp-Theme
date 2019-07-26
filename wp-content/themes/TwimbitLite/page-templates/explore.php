@@ -43,34 +43,26 @@ $get_trending = get_posts($trending);
 $business = get_category_by_slug('business_model');
 $business_child = get_categories(array('child_of' => $business->term_id, 'hide_empty' => FALSE));
 
-
 $careers = get_category_by_slug('careers');
 $careers_child = get_categories(array('child_of' => $careers->term_id, 'hide_empty' => FALSE));
-
 
 $companies = get_category_by_slug('companies');
 $companies_child = get_categories(array('child_of' => $companies->term_id, 'hide_empty' => FALSE));
 
-
 $technology = get_category_by_slug('technology');
 $technology_child = get_categories(array('child_of' => $technology->term_id, 'hide_empty' => FALSE));
-
-
-$events = get_category_by_slug('events');
-$events_child = get_categories(array('child_of' => $events->term_id, 'hide_empty' => FALSE));
-
 
 $exclusive = get_category_by_slug('exclusive');
 $exclusive_child = get_categories(array('child_of' => $exclusive->term_id, 'hide_empty' => FALSE));
 
-
-$geography = get_category_by_slug('geographies');
-$geography_child = get_categories(array('child_of' => $geography->term_id, 'hide_empty' => FALSE));
-
-
 $industry = get_category_by_slug('industry');
 $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_empty' => FALSE));
 
+$events = get_category_by_slug('events');
+$events_child = get_categories(array('child_of' => $events->term_id, 'hide_empty' => FALSE));
+
+$geography = get_category_by_slug('geographies');
+$geography_child = get_categories(array('child_of' => $geography->term_id, 'hide_empty' => FALSE));
 ?>
 <script>
     $(document).ready(function() {
