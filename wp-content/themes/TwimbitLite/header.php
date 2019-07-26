@@ -3967,7 +3967,7 @@
 		<header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr2">
 
 			<div class="lg-hide md-hide" style="width:32px">
-				<?php if (is_singular()) { ?>
+				<?php if (!(is_home())) { ?>
 					<a href="javascript:history.go(-1)">
 						<img class="back-button-icon" src="<?php echo content_url() . '/themes/TwimbitLite/src/back.svg'; ?>" alt="">
 					</a>
