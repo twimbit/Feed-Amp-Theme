@@ -4,7 +4,7 @@ $args = array(
     'numberposts' => 10,
     'category' => get_category_by_slug('nutshell')->term_id,
     'orderby' => 'date',
-    'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
+    'order' => 'DESC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
     'exclude' => array(),
     'meta_key' => '',
@@ -15,10 +15,10 @@ $args = array(
 $get_post_for_story = get_posts($args);
 
 $post_args = array(
-    'numberposts' => 0,
+    'numberposts' => 50,
     'category' => 0, //get_category_by_slug('trending')->term_id,
     'orderby' => 'date',
-    'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
+    'order' => 'DESC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
     'exclude' => array(),
     'meta_key' => '',
@@ -165,17 +165,7 @@ $get_post_feed = get_posts($post_args);
                                 </div>
                             </div>
                         </div>
-                        <?php
 
-                        // Previous/next page navigation.
-                        the_posts_pagination(
-                            array(
-                                'prev_text'          => __('Previous page', 'twentysixteen'),
-                                'next_text'          => __('Next page', 'twentysixteen'),
-                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __('Page', 'twentysixteen') . ' </span>',
-                            )
-
-                        ); ?>
                     </div>
                 <?php } ?>
             </div>

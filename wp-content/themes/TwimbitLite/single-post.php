@@ -81,7 +81,7 @@ $category = get_the_category();
                             <h2 style="flex:1;color: #f16c70;">Up next</h2>
                             <?php $taxonomy = "post";
                             for ($i = 1; $i <= 2; $i++) {
-                                $post = get_next_post(); // this uses $post->ID
+                                $post = get_adjacent_post(); // this uses $post->ID
                                 $post_title = get_the_title();
                                 $post_permalink = get_the_permalink();
                                 if (!empty($post)) { ?>
@@ -92,7 +92,7 @@ $category = get_the_category();
                                     $first_post =  get_posts(array(
                                         'numberposts' => 1,
                                         'post_type' => array('post'),
-                                        'order' => 'ASC',
+                                        'order' => 'DESC',
                                     ))[0];
                                     ?>
                                     <a href="<?php echo get_the_permalink($first_post); ?>">
@@ -140,7 +140,7 @@ $category = get_the_category();
         <div class="more-to-explore-card-container">
             <?php
             for ($i = 1; $i <= 2; $i++) {
-                $post = get_next_post();
+                $post = get_adjacent_post();
                 $trending_img = get_the_post_thumbnail_url();
                 $trending_url = get_the_permalink();
                 $trending_title = get_the_title();
@@ -207,8 +207,9 @@ $category = get_the_category();
                     $first_post =  get_posts(array(
                         'numberposts' => 1,
                         'post_type' => array('post'),
-                        'order' => 'ASC',
+                        'order' => 'DESC',
                     ))[0];
+
                     $first_post_type = get_post_type($first_post);
                     ?>
                     <div class="feed-card" style="height: 313px;width:49%">

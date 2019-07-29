@@ -2499,7 +2499,8 @@
 			border-radius: 4px;
 			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
 			height: 245px;
-			transition: all .4s
+			transition: all .4s;
+			margin-top: 0px !important;
 		}
 
 		.feed-thumbnail {
@@ -3812,7 +3813,10 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 
 	<section id="nav-header">
 		<!-- Start Navbar -->
-		<header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr2">
+		<header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr2" style="<?php
+																														// Fix menu overlap
+																														if (is_admin_bar_showing()) echo 'margin-top:32px;';
+																														?>">
 
 			<div class="lg-hide md-hide" style="width:32px">
 				<?php if (!(is_home())) { ?>
