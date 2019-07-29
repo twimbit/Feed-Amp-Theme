@@ -30,7 +30,12 @@ $get_post_feed = get_posts($post_args);
 ?>
 <!-- Feed Tab -->
 <!-- Stories section -->
-
+<script>
+    $(document).ready(function() {
+        document.querySelector('#feed-button').className += ' active-nav';
+        document.querySelector('#feed-nav').className += ' active-nav';
+    });
+</script>
 
 <section id="stories">
     <div class="container">

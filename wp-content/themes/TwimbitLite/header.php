@@ -5,16 +5,16 @@
 	<!-- AMP Scripts -->
 	<!-- Import the `amp-lightbox` component in the header -->
 
-    <link rel="manifest" href="/manifest.json" />
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-        <script>
-            var OneSignal = window.OneSignal || [];
-            OneSignal.push(function() {
-                OneSignal.init({
-                    appId: "58fe28ad-fa76-4537-a7a0-6104e040a51c",
-                });
-            });
-        </script>
+	<link rel="manifest" href="/manifest.json" />
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+	<script>
+		var OneSignal = window.OneSignal || [];
+		OneSignal.push(function() {
+			OneSignal.init({
+				appId: "58fe28ad-fa76-4537-a7a0-6104e040a51c",
+			});
+		});
+	</script>
 
 	<script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
 	<script custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js" async></script>
@@ -63,7 +63,7 @@
 
 
 	<!-- jQuery -->
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
 	<style amp-boilerplate>
