@@ -4,6 +4,18 @@
 <head>
 	<!-- AMP Scripts -->
 	<!-- Import the `amp-lightbox` component in the header -->
+
+    <link rel="manifest" href="/manifest.json" />
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+        <script>
+            var OneSignal = window.OneSignal || [];
+            OneSignal.push(function() {
+                OneSignal.init({
+                    appId: "58fe28ad-fa76-4537-a7a0-6104e040a51c",
+                });
+            });
+        </script>
+
 	<script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
 	<script custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js" async></script>
 	<script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -3793,8 +3805,8 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 <body>
 
 	<!-- Registering Service Worker -->
-	<!-- <amp-install-serviceworker src="<?php //echo content_url() . '/themes/TwimbitLite/src/sw.js'; 
-											?>" layout="nodisplay" data-iframe-src="<?php //echo content_url() . '/themes/TwimbitLite/src/install-sw.html'; 
+	<!-- <amp-install-serviceworker src="<?php //echo content_url() . '/themes/TwimbitLite/src/sw.js';
+											?>" layout="nodisplay" data-iframe-src="<?php //echo content_url() . '/themes/TwimbitLite/src/install-sw.html';
 																					?>"></amp-install-serviceworker> -->
 
 
@@ -3819,7 +3831,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 					<!-- Start Dropdown -->
 					<!-- <li class="ampstart-nav-item ampstart-nav-dropdown relative">
 
-                        
+
                         <amp-accordion layout="container" disable-session-states="" class="ampstart-dropdown absolute top-0 left-0 right-0 bottom-0" style>
                             <section>
                                 <header>Fashion</header>
@@ -3833,7 +3845,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                             </section>
                         </amp-accordion>
 
-                        
+
                     </li> -->
 					<!-- End Dropdown -->
 					<li class="ampstart-nav-item mr4">
@@ -4021,6 +4033,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 				</li>
 
 			</ul>
+
 
 			<!-- <ul class="ampstart-sidebar-faq list-reset m0">
                 <li class="ampstart-faq-item">
