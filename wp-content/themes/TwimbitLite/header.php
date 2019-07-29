@@ -2746,6 +2746,14 @@
 		}
 
 		@media (min-width:320px) and (max-width:768px) {
+			.sub1 span {
+				font-size: 11px;
+			}
+
+			.detail1 {
+				font-size: 16px;
+			}
+
 			.content {
 				font-size: 80%;
 				padding: 15em 1em
@@ -3536,6 +3544,26 @@
 			margin: 20px;
 			font-size: 20px;
 			display: flex
+		}
+
+		@media (min-width:320px) and (max-width:835px) {
+			.sub1 span {
+				font-size: 11px;
+			}
+
+			.detail1 {
+				font-size: 16px;
+			}
+
+			.sub1 {
+				margin-top: 15px;
+			}
+		}
+
+		@media (min-width:768px) {
+			.menu {
+				box-shadow: none
+			}
 		}
 
 		@media only screen and (max-width: 320px) {
