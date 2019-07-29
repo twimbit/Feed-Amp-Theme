@@ -41,31 +41,37 @@
 
 <?php wp_footer(); ?>
 <script>
-    $(window).on('load', function() {
-        /*! Fades in page on load */
-        $("body").fadeIn(300);
-        //$('body').fadeIn(1000);
-    });
-    $(document).ready(function() {
-        // window.oncontextmenu = function(event) {
-        //     event.preventDefault();
-        //     event.stopPropagation();
-        //     return false;
-        // };
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function() {
-            var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.querySelector(".ampstart-headerbar").style.top = "0";
-                document.querySelector("#colophon").style.bottom = "0";
-            } else {
-                document.querySelector(".ampstart-headerbar").style.top = "-70px";
-                document.querySelector("#colophon").style.bottom = "-70px";
-            }
-            prevScrollpos = currentScrollPos;
-        }
+    // window.addEventListener('load', function() {
+    /*! Fades in page on load */
+    // document.querySelector("body").fadeIn(300);
+    //$('body').fadeIn(1000);
+    // });
+    // $(document).ready(function() {
+    // window.oncontextmenu = function(event) {
+    //     event.preventDefault();
+    //     event.stopPropagation();
+    //     return false;
+    // };
 
-    });
+    // $(document).ready(function() {
+    document.querySelector('#feed-button').className += ' active-nav';
+    document.querySelector('#feed-nav').className += ' active-nav';
+    // });
+
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.querySelector(".ampstart-headerbar").style.top = "0";
+            document.querySelector("#colophon").style.bottom = "0";
+        } else {
+            document.querySelector(".ampstart-headerbar").style.top = "-70px";
+            document.querySelector("#colophon").style.bottom = "-70px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
+    // });
 
     // Add active class to the current button (highlight it)
     // var header = document.querySelector(".list-reset");

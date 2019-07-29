@@ -51,7 +51,7 @@
 
 
 	<!-- jQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 
 
 	<style amp-boilerplate>
@@ -125,9 +125,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
 
 	<style amp-custom="">
-		/*! Bassplate | MIT License | http://github.com/basscss/bassplate */
-
-		/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 		html {
 			font-family: 'Montserrat', sans-serif;
 			line-height: 1.15;
@@ -136,33 +133,29 @@
 		}
 
 		body {
-			margin: 0;
-			display: none;
+			margin: 0
 		}
 
 		.active {
 			fill: #f16c70 !important;
-			border-color: #f16c70 !important;
-
+			border-color: #f16c70 !important
 		}
 
 		.active svg {
-			fill: #f16c70 !important;
+			fill: #f16c70 !important
 		}
 
 		.fade-animate {
-			animation: fadeEffect 1s;
-			/* Fading effect takes 1 second */
+			animation: fadeEffect 1s
 		}
 
-		/* Go from zero to full opacity */
 		@keyframes fadeEffect {
 			from {
-				opacity: 0;
+				opacity: 0
 			}
 
 			to {
-				opacity: 1;
+				opacity: 1
 			}
 		}
 
@@ -880,7 +873,6 @@
 			padding-left: 2.5rem
 		}
 
-
 		.py2 {
 			padding-top: 1rem;
 			padding-bottom: 1rem
@@ -1585,7 +1577,7 @@
 			min-width: 315px;
 			overflow-x: hidden;
 			font-smooth: always;
-			-webkit-font-smoothing: antialiased;
+			-webkit-font-smoothing: antialiased
 		}
 
 		main {
@@ -2172,7 +2164,7 @@
 			z-index: 999;
 			box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
 			height: 55px;
-			transition: all 0.3s ease-in-out;
+			transition: all .3s ease-in-out
 		}
 
 		.ampstart-headerbar+:not(amp-sidebar),
@@ -2193,22 +2185,22 @@
 		.ampstart-nav-item:active,
 		.ampstart-nav-item:focus,
 		.ampstart-nav-item:hover {
-			opacity: 1;
+			opacity: 1
 		}
 
 		.ampstart-nav-item {
-			color: #094d5f;
+			color: #094d5f
 		}
 
 		.ampstart-navbar-trigger:focus {
-			outline: none;
+			outline: none
 		}
 
 		.ampstart-nav a,
 		.ampstart-navbar-trigger,
 		.ampstart-sidebar-faq a {
 			cursor: pointer;
-			text-decoration: none;
+			text-decoration: none
 		}
 
 		.ampstart-nav .ampstart-label {
@@ -2226,8 +2218,8 @@
 		}
 
 		.ampstart-nav-search {
-			-ms-flex-positive: 0.5;
-			flex-grow: 0.5
+			-ms-flex-positive: .5;
+			flex-grow: .5
 		}
 
 		.ampstart-headerbar .ampstart-nav-search:active,
@@ -2380,36 +2372,33 @@
 			width: fit-content;
 			height: 36px;
 			background: #fafafa;
-			/* border: 0.5px solid #707070; */
-			box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px 0px;
-			border-radius: 20px;
+			box-shadow: rgba(0, 0, 0, 0.2) 0 3px 6px 0;
+			border-radius: 20px
 		}
 
 		#searchTerm {
 			border: none;
-			/* margin-left: 20px; */
 			background: transparent;
 			width: 78%;
 			position: relative;
-			bottom: 11px;
+			bottom: 11px
 		}
 
 		.search amp-img {
 			width: 20px;
 			position: relative;
 			height: 20px;
-			/* margin-bottom: 5px; */
 			bottom: 3px;
-			right: 5px;
+			right: 5px
 		}
 
 		.b1 {
-			border: 1px solid red;
+			border: 1px solid red
 		}
 
 		.ampstart-nav-item form {
 			position: relative;
-			top: 8px;
+			top: 8px
 		}
 
 		.container {
@@ -2458,37 +2447,37 @@
 			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
 			margin-right: -15px;
-			margin-left: -15px;
+			margin-left: -15px
 		}
 
 		#stories {
-			margin-top: 5rem;
+			margin-top: 5rem
 		}
 
 		.story-carousel {
 			height: 100px;
-			padding: 0 10px;
+			padding: 0 10px
 		}
 
 		.story-carousel amp-img {
 			height: 95px;
 			width: 95px;
-			border-radius: 8px;
+			border-radius: 8px
 		}
 
 		.story-carousel amp-img img {
 			border-radius: 6px;
-			box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, .5);
+			box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, .5)
 		}
 
 		.amp-carousel-button {
 			background-color: rgba(241, 107, 111, 0.54);
-			border-radius: 50%;
+			border-radius: 50%
 		}
 
 		.amp-carousel-slide>.i-amphtml-replaced-content {
 			-o-object-fit: contain;
-			object-fit: cover;
+			object-fit: cover
 		}
 
 		.feed-card {
@@ -2498,7 +2487,7 @@
 			border-radius: 4px;
 			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
 			height: 245px;
-			transition: all .4s;
+			transition: all .4s
 		}
 
 		.feed-thumbnail {
@@ -2507,23 +2496,23 @@
 			background: #DDD;
 			height: 100%;
 			display: flex;
-			align-items: center;
+			align-items: center
 		}
 
 		.feed-card amp-img {
 			height: 100%;
 			width: 100%;
-			transition: all .2s;
+			transition: all .2s
 		}
 
 		.feed-card amp-img img {
 			object-fit: cover;
 			transform: scale(1);
-			transition: all .2s;
+			transition: all .2s
 		}
 
 		.feed-card:hover {
-			box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
+			box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5)
 		}
 
 		.fade {
@@ -2533,7 +2522,7 @@
 			left: 0;
 			top: 0;
 			opacity: .9;
-			background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.23) 0, rgb(0, 0, 0) 100%);
+			background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.23) 0, #000 100%)
 		}
 
 		.audio-fade {
@@ -2543,7 +2532,7 @@
 			left: 0;
 			top: 0;
 			opacity: .9;
-			background: linear-gradient(to right bottom, #000000, #00000070, #00000030, #00000054, #00000000);
+			background: linear-gradient(to right bottom, #000, #00070, #00030, #00054, #00000)
 		}
 
 		.feed-link {
@@ -2551,7 +2540,7 @@
 			bottom: 0;
 			right: 0;
 			left: 0;
-			top: 0;
+			top: 0
 		}
 
 		.feed-title {
@@ -2561,7 +2550,7 @@
 			left: 10px;
 			margin: 0;
 			color: #FFF;
-			padding: 16px;
+			padding: 16px
 		}
 
 		.feed-title h3 {
@@ -2569,324 +2558,283 @@
 			font-weight: 600;
 			margin-bottom: 0;
 			text-shadow: 0 1px 2px #1a1a1a;
-			line-height: 1.4;
+			line-height: 1.4
 		}
 
 		.feed-subtitle {
-			font-size: 12px;
+			font-size: 12px
 		}
 
 		.feed-title p {
 			margin: 8px 0 0;
 			font-weight: 400;
 			font-size: 17px;
-			line-height: 0.9;
+			line-height: .9
 		}
 
-		/* audio player in podcast */
 		.audio {
 			position: relative;
 			top: 85%;
-			padding: 6px;
+			padding: 6px
 		}
 
-
-		/* Video player css */
 		.video-container {
 			margin: 1.5em;
 			height: auto;
-			box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
+			box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5)
 		}
-
-		/* description and share option in video player */
-		.description-share-option {}
 
 		.description-share-option ul {
 			display: flex;
 			list-style: none;
 			padding: 5px;
 			margin-left: 1em;
-			margin-top: -2em;
+			margin-top: -2em
 		}
 
-		/* description and share option in video */
 		.detail-option {
-			padding: 5px;
+			padding: 5px
 		}
 
-		/* detail and share linking */
 		.detail-link {
 			font-size: 12px;
 			background: none;
-			border-width: 0 0 3px 0;
+			border-width: 0 0 3px;
 			width: 100%;
 			height: 40px;
 			color: #094d5f;
 			border-color: #f8f8f836;
 			display: flex;
-			transition-duration: 0.3s;
+			transition-duration: .3s
 		}
-
-
 
 		.video-description {
 			margin-top: -1em;
-			padding: 2em;
-			/*display: flex;*/
+			padding: 2em
 		}
 
 		.video-title {
 			font-family: "Open Sans", sans-serif;
-			font-weight: bold;
+			font-weight: 700;
 			font-size: 1.5em;
-			color: black;
+			color: #000;
 			margin-bottom: 10px;
-			text-transform: capitalize;
+			text-transform: capitalize
 		}
 
 		.video-description span {
 			text-decoration: none;
-			text-transform: capitalize;
+			text-transform: capitalize
 		}
 
-
-
-
-
-
-		/*description box */
 		.overlay {
 			position: fixed;
-			/* Sit on top of the page content */
-			/*display: none; !* Hidden by default *!*/
-
 			width: 100%;
-
-			/* Full width (cover the whole page) */
 			height: 100%;
-			/* Full height (cover the whole page) */
 			top: 0;
 			left: 0;
 			right: 0;
 			bottom: 0;
 			background-color: rgba(0, 0, 0, 0.5);
-			/* Black background with opacity */
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
 			cursor: pointer;
-			/* Add a pointer on hover */
-			overflow-y: scroll;
+			overflow-y: scroll
 		}
 
 		.content {
 			line-height: 1.5em;
-			/*width: fit-content;*/
-			color: #000000;
+			color: #000;
 			font-size: 1em;
-			padding: 12em 12em;
+			padding: 12em;
 			justify-content: center;
 			font-family: "Open Sans", sans-serif;
 			display: flex;
-			align-items: center;
+			align-items: center
 		}
 
 		.share-icons {
-			background-color: white;
+			background-color: #fff;
 			width: fit-content;
 			height: fit-content;
 			z-index: 10;
-			padding: 1em 1em;
+			padding: 1em;
 			text-align: justify;
 			flex-direction: column;
 			display: flex;
-			border-radius: 4px;
+			border-radius: 4px
 		}
 
 		.share-icons svg {
 			width: 18px;
 			text-align: right;
 			margin-bottom: 12px;
-			align-self: flex-end;
+			align-self: flex-end
 		}
 
 		.description-icons {
-			background-color: white;
+			background-color: #fff;
 			width: 600px;
 			height: 300px;
 			z-index: 10;
-			padding: 1em 1em;
+			padding: 1em;
 			display: flex;
 			text-align: justify;
 			flex-direction: column;
-			border-radius: 4px;
+			border-radius: 4px
 		}
 
 		.description-icons svg {
 			width: 18px;
 			text-align: right;
 			margin-bottom: 12px;
-			align-self: flex-end;
+			align-self: flex-end
 		}
 
 		.share1 .content p {
 			width: auto;
-			height: 9em;
+			height: 9em
 		}
 
-		/*social icon in podcast */
 		.social {
 			margin-left: 40%;
 			width: 60%;
 			height: 20%;
-			display: inline-block;
+			display: inline-block
 		}
 
 		.social1 {
 			display: inline-block;
-			margin-left: 0px;
+			margin-left: 0;
 			height: 2em;
-			width: 2em;
+			width: 2em
 		}
-
-
-
 
 		.tablinks svg {
 			transform: scale(0.6);
-			fill: #094d5f;
+			fill: #094d5f
 		}
 
 		.tablinks {
 			font-size: 12px;
 			background: none;
-			border-width: 0 0 3px 0;
+			border-width: 0 0 3px;
 			width: 100%;
 			height: 40px;
 			color: #094d5f;
 			border-color: #f8f8f836;
 			display: flex;
-			transition-duration: 0.3s;
+			transition-duration: .3s
 		}
 
 		.tablinks:hover {
-			box-shadow: 0px 7px 10px 0px gainsboro;
+			box-shadow: 0 7px 10px 0 #dcdcdc
 		}
 
 		@media (min-width:320px) and (max-width:768px) {
-
-			/*description box */
 			.content {
 				font-size: 80%;
-				padding: 15em 1em;
+				padding: 15em 1em
 			}
 
 			.content p {
 				padding: 10em 1em;
 				text-align: justify;
-				font-family: sans-serif;
+				font-family: sans-serif
 			}
 
 			.menu ul {
-				flex-direction: row !important;
-
+				flex-direction: row !important
 			}
 
 			#filter {
-				overflow-x: scroll;
+				overflow-x: scroll
 			}
 		}
 
-		/*social icon in podcast */
 		.social {
 			margin-left: 40px;
 			width: 180px;
 			height: 23px;
-			display: inline-block;
+			display: inline-block
 		}
 
 		.social1 {
 			display: inline-block;
-			margin-left: 0px;
+			margin-left: 0;
 			height: 3em;
-			width: 3em;
+			width: 3em
 		}
 
-		/* for above small devices */
 		@media (min-width:40rem) and (max-width:52rem) {
 			#filter {
-				overflow-x: scroll;
+				overflow-x: scroll
 			}
 
 			.featured-image {
-				height: 500px;
+				height: 500px
 			}
 
-			/* audio player in podcast */
 			.audio {
 				padding: 7px;
-				top: 83%;
+				top: 83%
 			}
 
 			.light1 {
-				margin-left: 20px;
+				margin-left: 20px
 			}
 
 			.share1 {
-				margin-left: 240px;
+				margin-left: 240px
 			}
 
-
-
 			.right-side {
-				margin: 21px 36px 10px 36px;
+				margin: 21px 36px 10px
 			}
 		}
 
-
 		@media (min-width: 768px) {
-
 			.feed-card {
-				height: 350px;
+				height: 350px
 			}
 
 			.feed-card-search {
-				height: 250px;
+				height: 250px
 			}
 
 			.feed-title {
-				padding: 24px;
+				padding: 24px
 			}
 
 			.feed-title h3 {
-				font-size: 32px;
+				font-size: 32px
 			}
 
 			.feed-title p {
-				font-size: 14px;
+				font-size: 14px
 			}
 
 			.podcast-cover .feed-title p {
-				font-size: 28px;
+				font-size: 28px
 			}
 
 			.podcast-cover .feed-title span {
 				font-size: 16px;
 				margin-right: 10px;
 				text-transform: capitalize;
-				font-style: italic;
+				font-style: italic
 			}
 		}
 
 		.podcast-cover .feed-title {
-			bottom: auto;
+			bottom: auto
 		}
 
 		.podcast-cover .feed-title p {
 			font-weight: 600;
 			font-family: sans-serif;
-			text-transform: capitalize;
-
+			text-transform: capitalize
 		}
 
 		.feed-action {
@@ -2897,21 +2845,20 @@
 			color: #FFF;
 			position: absolute;
 			top: 8px;
-			right: 8px;
+			right: 8px
 		}
 
 		.feed-button {
-			font-size: initial;
+			font-size: initial
 		}
 
 		.feed-wrap {
 			flex-direction: row-reverse;
 			display: flex;
-			align-items: center;
+			align-items: center
 		}
 
 		.feed-button-in {
-			/* margin-left: 8px; */
 			border-radius: 30px;
 			background: #000;
 			transform: scale(.85);
@@ -2922,7 +2869,7 @@
 			border-radius: 30px;
 			background: #000;
 			height: 51px;
-			width: 51px;
+			width: 51px
 		}
 
 		.atomic-heart {
@@ -2943,11 +2890,11 @@
 			-webkit-animation-timing-function: steps(23, end);
 			-moz-animation-timing-function: steps(23, end);
 			-o-animation-timing-function: steps(23, end);
-			animation-timing-function: steps(23, end);
+			animation-timing-function: steps(23, end)
 		}
 
 		.atomic-heart svg {
-			transform: translate(0px, 7px) scale(0.7);
+			transform: translate(0px, 7px) scale(0.7)
 		}
 
 		.count {
@@ -2957,29 +2904,25 @@
 			font-weight: 600;
 			letter-spacing: 2px;
 			text-transform: uppercase;
-			line-height: 1.3;
+			line-height: 1.3
 		}
 
 		.story-section {
 			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-			padding: 10px 10px;
+			padding: 10px
 		}
 
 		.single-thumbnail {
 			position: relative;
 			height: 100%;
 			display: flex;
-			align-items: flex-end;
+			align-items: flex-end
 		}
 
 		.featured-image-text {
-			/*text-align: center;*/
-			/*width: 100%;*/
-			/* justify-self: end; */
 			position: absolute;
 			bottom: 50px;
-			padding: 0px 15px;
-
+			padding: 0 15px
 		}
 
 		.featured-image-text a {
@@ -2988,259 +2931,230 @@
 			opacity: .75;
 			color: #FFF;
 			text-decoration: none;
-			border-bottom: 1.5px solid rgba(255, 255, 255, .75);
+			border-bottom: 1.5px solid rgba(255, 255, 255, .75)
 		}
 
 		.featured-image-text-container {
 			display: flex;
 			justify-content: center;
-			width: 100%;
+			width: 100%
 		}
 
 		.featured-image-text h2 {
-			color: white;
+			color: #fff
 		}
 
 		.menu ul {
 			display: flex;
 			list-style: none;
-			padding: 5px;
+			padding: 5px
 		}
 
 		.menu {
-			box-shadow: 0px 1px 0.5px 0 rgba(0, 0, 0, 0.11);
+			box-shadow: 0 1px .5px 0 rgba(0, 0, 0, 0.11)
 		}
 
 		.menu-item {
-			padding: 5px;
+			padding: 5px
 		}
 
 		.site-footer {
 			position: fixed;
-			/* z-index: 99999999999999999; */
-			bottom: 0px;
-			background-color: white;
+			bottom: 0;
+			background-color: #fff;
 			width: 100%;
 			box-shadow: 0 0 5px 2px rgba(0, 0, 0, .1);
 			height: 42px;
-			z-index: 99;
+			z-index: 99
 		}
 
 		.site-footer a {
 			width: 50px;
-			height: 50px;
-			/* margin-top: 5px; */
+			height: 50px
 		}
 
 		.site-footer svg {
 			transform: translate(9px, 5px) scale(1);
-			fill: rgb(9, 77, 95);
-
+			fill: #094d5f
 		}
 
-		/*share icon in podcast */
-
-
-		/*pop-up icon for description in podcast */
 		.popup {
 			transform: translate(5px, 26px);
-			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5)
 		}
 
-		/*description and share icon margin*/
 		.share2 {
-			margin-left: 1.5em;
-
+			margin-left: 1.5em
 		}
-
 
 		.footer-content {
 			justify-content: space-around;
-			height: 100%;
+			height: 100%
 		}
 
 		.search-img img {
 			width: 30px;
 			height: 26px;
-			margin-top: 8px;
+			margin-top: 8px
 		}
 
 		.treanding-carousel {
 			width: 100%;
-			height: 400px;
+			height: 400px
 		}
 
 		.amp-carousel-button-prev {
-			background-size: 32px 18px;
+			background-size: 32px 18px
 		}
 
 		.amp-carousel-button {
 			height: 32px;
-			width: 32px;
+			width: 32px
 		}
 
 		.amp-carousel-button-next {
-			background-size: 32px 18px;
-		}
-
-		.cat-section {
-			/* margin: 100px 0px 30px 0px !important; */
+			background-size: 32px 18px
 		}
 
 		.sub-cat {
-			/* margin-left: 24px; */
 			height: 140px;
-			border-radius: 4px;
-			/* width: 100%; */
+			border-radius: 4px
 		}
 
 		.sub-cat amp-img {
 			width: 140px;
 			height: 140px;
-			opacity: 0.5;
+			opacity: .5
 		}
 
 		.sub-cat img {
 			object-fit: cover;
-			border-radius: 4px;
+			border-radius: 4px
 		}
 
 		.sub-cat p {
 			position: relative;
 			top: -130px;
 			left: 15px;
-			color: #ffffff;
+			color: #fff
 		}
 
 		.sub-cat-inner-container {
 			display: flex !important;
-			margin-bottom: 10px;
+			margin-bottom: 10px
 		}
 
 		.sub-cat a {
 			text-decoration: none;
-			margin-right: 20px;
+			margin-right: 20px
 		}
 
 		.sub-cat-img {
 			height: 140px;
-			/* border: 1px solid red; */
-			background-color: #000000;
+			background-color: #000;
 			border-radius: 4px;
 			white-space: normal;
 			width: 140px;
-			/* margin-left: 34px; */
-			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5)
 		}
 
 		.sub-cat-inner-container.amp-scrollable-carousel-slide:first-child {
-			margin-left: 34px;
+			margin-left: 34px
 		}
 
 		.divider {
-			margin-bottom: -19px;
+			margin-bottom: -19px
 		}
 
 		.amp-scrollable-carousel-slide {
-			margin-left: 24px;
+			margin-left: 24px
 		}
 
 		.single-content {
-			padding: 0px 15px;
+			padding: 0 15px
 		}
 
 		.featured-image {
 			background-attachment: fixed;
 			height: 400px;
-			background-size: cover;
+			background-size: cover
 		}
 
 		.post-content {
 			display: flex;
-			justify-content: center;
-
+			justify-content: center
 		}
 
 		.single-date-name {
 			display: flex;
-			justify-content: center;
+			justify-content: center
 		}
 
 		.post-content figure img {
 			width: 100%;
-			height: 100%;
+			height: 100%
 		}
 
 		#colophon {
-			transition: all 0.3s ease-in-out;
+			transition: all .3s ease-in-out
 		}
 
 		.cont p {
-			margin-bottom: 0.9rem;
-			text-align: justify;
+			margin-bottom: .9rem;
+			/* text-align: justify; */
 			line-height: 2em;
-			color: #000000;
+			color: #000;
 			font-size: 16px;
-			font-weight: 200;
+			font-weight: 200
 		}
 
 		.cont li {
-			margin-bottom: 0.9rem;
-			text-align: justify;
+			margin-bottom: .9rem;
+			/* text-align: justify; */
 			line-height: 2em;
-			color: #000000;
+			color: #000;
 			font-size: 16px;
-			font-weight: 200;
+			font-weight: 200
 		}
 
 		.post-content p {
-			margin-bottom: 0.9rem;
-			/* text-align: justify; */
-			/* line-height: 2em; */
-			color: #000000;
+			margin-bottom: .9rem;
+			color: #000;
 			font-size: 16px;
-			font-weight: 300;
+			font-weight: 300
 		}
 
-
-		/*podcast right side */
 		.right-side {
-			margin: 36px 25px 10px 0px;
+			margin: 36px 25px 10px 0
 		}
 
 		.podcast-cover .feed-card {
 			margin: 36px;
-			height: 313px;
+			height: 313px
 		}
-
-		/* up next in podcast */
 
 		.next {
-			color: #000000;
+			color: #000;
 			margin-top: 1em;
-			margin-bottom: 0px;
+			margin-bottom: 0;
 			font-size: 20px;
 			text-decoration: none;
-			text-transform: capitalize;
+			text-transform: capitalize
 		}
 
-		/* styling of amp audio player */
 		.player {
 			width: 85%;
-			height: 35px;
+			height: 35px
 		}
 
-		/*lightbox in podcast */
 		light1 {
-			margin-left: 100px;
+			margin-left: 100px
 		}
 
 		.share1 {
-			margin-left: 1em;
+			margin-left: 1em
 		}
 
-
-		/* description in podcast */
 		.desc {
 			position: relative;
 			top: -20px;
@@ -3248,99 +3162,72 @@
 			padding: 10px;
 			font-size: 13px;
 			line-height: 20px;
-			text-transform: capitalize;
+			text-transform: capitalize
 		}
 
 		.desc p {
-			color: #000000;
+			color: #000;
 			font-family: "Open Sans", sans-serif;
 			text-align: justify;
 			font-size: 13px;
-			line-height: initial;
+			line-height: initial
 		}
 
 		.desc head1 {
-			color: #000;
+			color: #000
 		}
 
 		.head {
-			display: flex;
+			display: flex
 		}
 
 		.info {
-			display: flex;
+			display: flex
 		}
 
-
-
-
-		/* for xtra small devices */
 		@media only screen and (max-width:40rem) {
 			.wp-block-embed__wrapper iframe {
 				width: 100%;
-				height: 100%;
+				height: 100%
 			}
 
 			.podcast-cover .feed-title span {
 				font-size: 12px;
 				margin-right: 10px;
-				text-transform: capitalize;
+				text-transform: capitalize
 			}
 
 			.player {
 				width: 100%;
-				height: 30px;
+				height: 30px
 			}
 
 			.desc p {
 				color: #FFF;
 				font-size: 10px;
 				text-transform: capitalize;
-				line-height: initial;
+				line-height: initial
 			}
 
 			.featured-image-text h2 {
 				font-size: 25px;
-				line-height: 2rem;
+				line-height: 2rem
 			}
 
 			.cont p {
-				line-height: 1.5em;
+				line-height: 1.5em
 			}
 
 			.cont li {
-				line-height: 1.5em;
+				line-height: 1.5em
 			}
 
 			.feed-card-container {
-				order: 2;
+				order: 2
 			}
 
 			.filter-bar-container {
-				order: 1;
-			}
-
-			[class*="col-"] .short-image {
-				/* height: 350px;
-                width: 419px;
-                margin-left: 0px;
-                margin-right: 30px;
-                margin-top: 0px; */
-			}
-
-			[class*="col-"] .short-card {
-				/* width: 96%;
-                height: 22%;
-                margin-left: 10px;
-                margin-top: 40px;
-                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5); */
-			}
-
-			.icon {
-				/* margin-left: -340px;
-                margin-top: 100px;
-                height: 146px;
-                width: 170px; */
+				order: 1
 			}
 
 			[class*="col-"] .details h3 {
@@ -3349,313 +3236,257 @@
 				width: 800px;
 				font-size: 20px;
 				align: right;
-				color: #000000;
-				text-transform: capitalize;
+				color: #000;
+				text-transform: capitalize
 			}
 
 			[class*="col-"] .sub1 {
 				font-size: 40px;
 				margin-top: 26px;
-				color: #000000;
-				/* margin-left: 20px; */
-
+				color: #000
 			}
 
 			.right-side {
-				margin: 0px 36px 10px 36px;
+				margin: 0 36px 10px
 			}
 
-
 			.podcast-cover .feed-card {
-				margin: 20px 36px 20px 36px;
+				margin: 20px 36px
 			}
 
 			.feed-card-search {
-				height: 150px;
+				height: 150px
 			}
 
 			.feed-title h3 {
-				font-size: 20px;
+				font-size: 20px
 			}
 
 			.feed-title p {
-				font-size: 13px;
+				font-size: 13px
 			}
 
 			#filter {
-				overflow-x: scroll;
+				overflow-x: scroll
 			}
 
 			.video-container {
 				margin-top: 1.5em;
 				margin-left: 1em;
-				margin-right: 1em;
+				margin-right: 1em
 			}
 		}
-
-
-
 
 		.more-to-explore-card-container {
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: space-between;
+			justify-content: space-between
 		}
 
 		.archive-filter-card-container {
-
-			flex-wrap: wrap;
+			flex-wrap: wrap
 		}
 
-
-		/* for small devices */
-		@media (min-width:40.06rem) and (max-width:52rem) {}
-
-		/* for small devices and less*/
 		@media (max-width:52rem) {
 			.more-to-explore-card-container {
 				display: block;
 				flex-wrap: wrap;
-				justify-content: space-between;
+				justify-content: space-between
 			}
 
 			.more-to-explore-card-container .feed-card {
-				width: 100% !important;
+				width: 100% !important
 			}
 
 			.twimbit-lite-logo {
-				/* position: absolute; */
 				width: 100%;
 				display: flex;
-				justify-content: center;
+				justify-content: center
 			}
 		}
 
-
-		/* for medium devices */
-		@media (min-width:52.06rem) and (max-width:64rem) {}
-
-		/* for large devices */
 		@media (min-width:64.06rem) {
 			.podcast-cover .feed-card {
 				margin: 36px;
-				height: 400px;
+				height: 400px
 			}
 		}
 
 		@media (min-width:320px) and (max-width:768px) {
-
-			/*description box */
 			.content {
 				font-size: 80%;
-				padding: 1em 1em;
+				padding: 1em
 			}
 
 			.content p {
-				padding: 1em 1em;
+				padding: 1em;
 				text-align: justify;
-				font-family: sans-serif;
+				font-family: sans-serif
 			}
 		}
 
-		/*social icon in podcast */
 		.social {
 			margin-left: 40px;
 			width: 180px;
 			height: 23px;
-			display: inline-block;
+			display: inline-block
 		}
 
 		.social1 {
 			display: inline-block;
-			margin-left: 0px;
+			margin-left: 0;
 			height: 2em;
-			width: 2em;
+			width: 2em
 		}
 
-
-		}
-
-		/* for above small devices */
 		@media (min-width:40rem) and (max-width:52rem) {
 			.featured-image {
-				height: 500px;
+				height: 500px
 			}
 
-			/* audio player in podcast */
 			.audio {
 				padding: 7px;
-				top: 83%;
+				top: 83%
 			}
 
 			.light1 {
-				margin-left: 20px;
+				margin-left: 20px
 			}
 
 			.share1 {
-				margin-left: 240px;
+				margin-left: 240px
 			}
 
 			.right-side {
-				margin: 21px 36px 10px 36px;
+				margin: 21px 36px 10px
 			}
 		}
 
-
-
-		/* description in podcast */
 		.desc {
 			font-size: 3px;
 			right: 15px;
 			line-height: 10px;
-			text-align: justify;
+			text-align: justify
 		}
-
 
 		.pre-next-dialog {
 			position: sticky;
 			top: 4%;
 			width: 100%;
-			/* height: 300px; */
 			background-color: #f4f4f4;
-			box-shadow: 5px 3px 8px -3px rgba(0, 0, 0, 0.23);
+			box-shadow: 5px 3px 8px -3px rgba(0, 0, 0, 0.23)
 		}
 
 		.pre-next-dialog-content {
-			/* width: 100%;
-            display: flex;
-            flex-direction: column; */
-			/* justify-content: center; */
-			/* align-items: center; */
 			padding: 0 10px;
+			min-width: 100%;
 		}
 
 		.pre-next-dialog-content h2 {
 			margin-bottom: 10px;
-			font-size: 22px;
+			font-size: 22px
 		}
 
 		.pre-next-dialog-content p {
 			width: 100%;
-			/* word-break: break-all; */
 			background-color: #fff;
 			padding: 10px;
 			margin-bottom: 10px;
-			box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.23);
-			transition: all 0.3s;
+			box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.23);
+			transition: all .3s
 		}
 
 		.pre-next-dialog-content p:hover {
-			box-shadow: 0 2px 14px 0px rgba(0, 0, 0, .5);
+			box-shadow: 0 2px 14px 0 rgba(0, 0, 0, .5)
 		}
 
 		.pre-next-dialog-content a {
-			text-decoration: none;
-		}
-
-		.feed-card-archive:hover {
-			/* box-shadow: none; */
+			text-decoration: none
 		}
 
 		.feed-card-container {
-			flex: 2 400px;
+			flex: 2 400px
 		}
 
 		.filter-bar-container {
 			flex: 1 150px;
-			height: 200px;
+			height: 200px
 		}
 
 		.podcast {
 			margin-top: 50px;
-			justify-content: center;
+			justify-content: center
 		}
 
 		.short-card {
 			display: flex;
-			/* width: 90%; */
 			height: 90px;
-			background-color: white;
+			background-color: #fff;
 			border-radius: 4px;
 			margin-top: 20px;
 			margin-bottom: 20px;
-			margin-left: 0px;
+			margin-left: 0;
 			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
-			transition: all .2s;
+			transition: all .2s
 		}
 
 		.short-card:hover {
-			box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
+			box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5)
 		}
 
-		/*album image in podcast */
 		.short-image {
 			height: 100%;
 			width: 110px;
-			/* margin-left: 0px; */
 			margin-right: 20px;
-			/* margin-top: 0px; */
-			border-radius: 4px;
+			border-radius: 4px
 		}
 
-		/*play icon in podcast */
 		.icon {
 			height: 50px;
 			width: 50px;
-			transform: translate(30px, -75px);
+			transform: translate(30px, -75px)
 		}
 
-
-		/*podcast next play details*/
 		.details {
-			/* margin-left: 150px;
-            margin-top: -270px;
-            width: 270px; */
 			font-size: 20px;
 			align: right;
-			color: #000000;
-			flex-grow: 1;
+			color: #000;
+			flex-grow: 1
 		}
 
 		.sub1 span {
 			font-size: 13px;
-			color: #000000;
-			text-transform: capitalize;
+			color: #000;
+			text-transform: capitalize
 		}
 
 		.sub1 {
 			margin-top: 26px;
 			display: flex;
-			flex-wrap: wrap;
+			flex-wrap: wrap
 		}
 
 		.detail1 {
 			font-size: 18px;
 			position: relative;
 			top: 10px;
-			text-transform: capitalize;
-			/* margin-top: -20px;
-            margin-left: 20px; */
+			text-transform: capitalize
 		}
 
-		/*social icon in podcast */
 		.social {
 			margin-left: 40px;
 			width: 180px;
 			height: 23px;
-			display: inline-block;
-
+			display: inline-block
 		}
 
-
-		/*ligthbox options in podcast */
 		.light2 {
 			display: flex;
-			margin-top: -2em;
+			margin-top: -2em
 		}
 
 		.light1 {
-			margin-left: 1em;
+			margin-left: 1em
 		}
 
 		.lightbox {
@@ -3666,14 +3497,14 @@
 			position: absolute;
 			display: flex;
 			align-items: center;
-			justify-content: center;
+			justify-content: center
 		}
 
 		.lightbox p {
-			color: white;
+			color: #fff;
 			margin: 20px;
 			font-size: 20px;
-			display: flex;
+			display: flex
 		}
 
 		.lightbox1 {
@@ -3684,145 +3515,138 @@
 			position: absolute;
 			display: flex;
 			align-items: center;
-			justify-content: center;
+			justify-content: center
 		}
 
 		.lightbox1 p {
-			color: white;
+			color: #fff;
 			margin: 20px;
 			font-size: 20px;
-			display: flex;
+			display: flex
 		}
 
-		/* for  iphone 5/se*/
 		@media only screen and (max-width: 320px) {
-
 			.sub1 h2 {
-				line-height: 22px;
+				line-height: 22px
 			}
 
 			.short-card {
-				height: 80px;
+				height: 80px
 			}
 
 			.short-image {
 				height: 100%;
 				width: 90px;
-				margin-right: 15px;
+				margin-right: 15px
 			}
 
 			[class*="col-"] .sub1 {
-				margin-top: 25px;
+				margin-top: 25px
 			}
 
 			.social {
 				margin-left: 40px;
 				width: 180px;
-				height: 23px;
+				height: 23px
 			}
 
 			.desc {
 				font-size: 3px;
 				right: 15px;
 				line-height: 8px;
-				text-align: justify;
+				text-align: justify
 			}
 
 			.social1 {
 				display: inline-block;
-				margin-left: 0px;
+				margin-left: 0;
 				height: 2em;
-				width: 2em;
+				width: 2em
 			}
 
 			.podcast-cover .feed-card {
-				height: 240px;
+				height: 240px
 			}
 
 			.audio .player {
-				width: 100%;
+				width: 100%
 			}
 
 			.lightbox1 {
-
 				width: 71%;
 				height: 30%;
-				margin: 4em;
+				margin: 4em
 			}
 
 			.lightbox {
-				margin-top: 0em;
+				margin-top: 0;
 				height: auto;
-				margin-left: 1.5em;
+				margin-left: 1.5em
 			}
 
 			.lightbox p {
-				font-size: 1em;
+				font-size: 1em
 			}
 
 			.audio {
-				margin-top: -3%;
+				margin-top: -3%
 			}
 
 			.share2 {
 				margin-left: 1.5em;
-				margin-top: -0.4em;
-
+				margin-top: -.4em
 			}
 
 			.next {
-				margin-top: 8px;
+				margin-top: 8px
 			}
 
 			.light1 {
-				margin-left: 1em;
+				margin-left: 1em
 			}
 
 			.share1 {
-				margin-left: 1em;
+				margin-left: 1em
 			}
 
 			.right-side {
-				margin: 11px 36px 10px 36px;
+				margin: 11px 36px 10px
 			}
 
-			/*description box */
 			.content {
 				font-size: 80%;
-				padding: 8em 1em;
+				padding: 8em 1em
 			}
 
 			.content p {
 				width: 100%;
-				padding: 2em 2em;
+				padding: 2em;
 				justify-content: center;
 				text-align: justify;
-				font-family: sans-serif;
+				font-family: sans-serif
 			}
 
 			.video-container {
 				margin-top: 1.5em;
 				margin-left: 1em;
-				margin-right: 1em;
+				margin-right: 1em
 			}
-
 		}
 
 		.podcast-card {
-			box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5);
+			box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5)
 		}
 
 		@media (max-width: 64rem) and (min-width: 52.06rem) {
 			.md-hide {
-				display: none;
+				display: none
 			}
 		}
 
 		@media (min-width: 64.06rem) {
 			.lg-hide {
-				display: none;
+				display: none
 			}
-
 		}
 
 		.amp-story-carousel a {
@@ -3830,16 +3654,17 @@
 			bottom: 0;
 			right: 0;
 			left: 0;
-			top: 0;
+			top: 0
 		}
 
 		.amp-story-carousel {
 			position: relative;
+			margin: 8px
 		}
 
 		.active-nav {
 			color: #f16c70;
-			border-bottom: 3px solid #f16c70;
+			border-bottom: 3px solid #f16c70
 		}
 
 		.search-lightbox {
@@ -3848,8 +3673,7 @@
 			height: 100%;
 			position: absolute;
 			display: flex;
-			/* align-items: center; */
-			justify-content: center;
+			justify-content: center
 		}
 
 		.overlay-content {
@@ -3857,8 +3681,7 @@
 			top: 2%;
 			width: 95%;
 			text-align: center;
-			margin-top: 30px;
-			margin: auto;
+			margin: auto
 		}
 
 		.search-overlay .closebtn {
@@ -3867,11 +3690,11 @@
 			right: 10px;
 			font-size: 41px;
 			cursor: pointer;
-			color: white;
+			color: #fff
 		}
 
 		.search-overlay .closebtn:hover {
-			color: #ccc;
+			color: #ccc
 		}
 
 		.search-overlay input[type=text] {
@@ -3880,11 +3703,11 @@
 			border: none;
 			float: left;
 			width: 80%;
-			background: white;
+			background: #fff
 		}
 
 		.search-overlay input[type=text]:hover {
-			background: #f1f1f1;
+			background: #f1f1f1
 		}
 
 		.search-overlay button {
@@ -3892,63 +3715,57 @@
 			width: 20%;
 			padding: 5px;
 			background: #ddd;
-			/* font-size: 17px; */
 			border: none;
-			cursor: pointer;
+			cursor: pointer
 		}
 
 		.search-overlay button:hover {
-			background: #bbb;
+			background: #bbb
 		}
 
 		.overlay-content form {
-			display: flex;
+			display: flex
 		}
 
 		.overlay-content img {
-			margin-top: 1px;
+			margin-top: 1px
 		}
 
 		#cards-feed {
-			max-width: 700px;
+			max-width: 700px
 		}
 
 		.text-decoration-none svg {
 			width: 40px;
 			height: 30px;
 			transform: translate(0px, 9px);
-		}
-
-		.text-decoration-none svg {
 			width: 40px;
 			height: 30px;
 			transform: translate(0px, 9px);
-			fill: #094d5f;
+			fill: #094d5f
 		}
 
 		.active-nav svg {
-			fill: #f16c70;
+			fill: #f16c70
 		}
 
 		.text-decoration-none {
-			/* border-bottom: 3px solid #f8f8f836; */
 			position: relative;
-			bottom: -3px;
+			bottom: -3px
 		}
 
-
 		.feed-menu svg {
-			transform: translate(9px, 10px);
+			transform: translate(9px, 10px)
 		}
 
 		* {
-			outline: none;
+			outline: none
 		}
 
 		.back-button-icon {
 			position: relative;
 			top: 5px;
-			width: 32px;
+			width: 32px
 		}
 	</style>
 	<?php wp_head(); ?>
@@ -4092,7 +3909,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 																?>/explore">Nutshell</a></li> -->
 				</ul>
 				<ul class="ampstart-dropdown-items list-reset m0 p0">
-					<p>Category</p>
+					<p>Categories</p>
 					<hr>
 
 					<li class="ampstart-nav-item">
@@ -4164,7 +3981,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 			</nav>
 
 			<ul class="ampstart-social-follow list-reset flex justify-around items-center flex-wrap m0 mb4">
-				<li class="mr2">
+				<!-- <li class="mr2">
 					<a href="#" class="inline-block"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="22.2" viewbox="0 0 53 49">
 							<title>Twitter</title>
 							<path d="M45 6.9c-1.6 1-3.3 1.6-5.2 2-1.5-1.6-3.6-2.6-5.9-2.6-4.5 0-8.2 3.7-8.2 8.3 0 .6.1 1.3.2 1.9-6.8-.4-12.8-3.7-16.8-8.7C8.4 9 8 10.5 8 12c0 2.8 1.4 5.4 3.6 6.9-1.3-.1-2.6-.5-3.7-1.1v.1c0 4 2.8 7.4 6.6 8.1-.7.2-1.5.3-2.2.3-.5 0-1 0-1.5-.1 1 3.3 4 5.7 7.6 5.7-2.8 2.2-6.3 3.6-10.2 3.6-.6 0-1.3-.1-1.9-.1 3.6 2.3 7.9 3.7 12.5 3.7 15.1 0 23.3-12.6 23.3-23.6 0-.3 0-.7-.1-1 1.6-1.2 3-2.7 4.1-4.3-1.4.6-3 1.1-4.7 1.3 1.7-1 3-2.7 3.6-4.6" class="ampstart-icon ampstart-icon-twitter"></path>
@@ -4193,7 +4010,16 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 							<title>email</title>
 							<path d="M10.5 6.4C9.1 6.4 8 7.5 8 8.9v21.3c0 1.3 1.1 2.5 2.5 2.5h34.9c1.4 0 2.5-1.2 2.5-2.5V8.9c0-1.4-1.1-2.5-2.5-2.5H10.5zm2.1 2.5h30.7L27.9 22.3 12.6 8.9zm-2.1 1.4l16.6 14.6c.5.4 1.2.4 1.7 0l16.6-14.6v19.9H10.5V10.3z" class="ampstart-icon ampstart-icon-email"></path>
 						</svg></a>
+				</li> -->
+				<li class="mr2">
+					<div class="social">
+						<amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+						<amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
+						<amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
+						<amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
+					</div>
 				</li>
+
 			</ul>
 
 			<!-- <ul class="ampstart-sidebar-faq list-reset m0">
