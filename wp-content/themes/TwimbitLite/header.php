@@ -2500,7 +2500,7 @@
 			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
 			height: 245px;
 			transition: all .4s;
-			margin-top: 0px !important;
+			/* margin-top: 0px !important; */
 		}
 
 		.feed-thumbnail {
