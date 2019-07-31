@@ -2500,7 +2500,7 @@
 			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
 			height: 245px;
 			transition: all .4s;
-			margin-top: 0px !important;
+			/* margin-top: 0px !important; */
 		}
 
 		.feed-thumbnail {
@@ -4028,8 +4028,8 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 						</svg></a>
 				</li> -->
 				<li class="mr2">
-					<div class="social">
-						<amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+					<div class="social" style="display: flex;justify-content: space-between;margin-left:0px;">
+						<amp-social-share class="social1" height="30px" data-param-app_id="254325784911610" width="30px" type="facebook"></amp-social-share>
 						<amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
 						<amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
 						<amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>

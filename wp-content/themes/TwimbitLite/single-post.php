@@ -110,7 +110,7 @@ $category = get_the_category();
                 </div>
                 <div class="xs-col-12 sm-col-7 md-col-6 lg-col-5 mt4 cont">
                     <div class="social lg-hide md-hide" style="margin-left:auto;">
-                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" data-param-app_id="254325784911610" width="30px" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
@@ -119,7 +119,7 @@ $category = get_the_category();
                 </div>
                 <div class="xs-col-12 sm-col-2 md-col-2 lg-col-2 mt4 ml2 sm-hide xs-hide">
                     <div class="social">
-                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" data-param-app_id="254325784911610" width="30px" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
