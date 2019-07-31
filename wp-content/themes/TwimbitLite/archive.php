@@ -30,10 +30,10 @@ $get_sub_cat = get_posts($args);
 ?>
 
 <!-- Top Category -->
-<section id="" class="mb4" style="margin-top:4.5rem">
+<section id="" class="mb1" style="margin-top:4.5rem">
     <div class="container mt2">
         <div class="col-12">
-            <div class="feed-card feed-card-archive">
+            <div class="feed-card feed-card-archive" style="margin-bottom:0px;">
                 <div class="single-thumbnail">
                     <amp-img src="<?php echo get_field('featured_image', get_queried_object())['url']; ?>"></amp-img>
                     <div class="fade"></div>
@@ -59,7 +59,7 @@ $get_sub_cat = get_posts($args);
 <div class="archive-filter-card-container container">
     <!-- Filter section -->
     <section id="filter">
-        <div class="mt4">
+        <div class="">
             <div class="col-12" style="min-width: fit-content;">
                 <div class="menu">
                     <ul>

@@ -15,7 +15,7 @@ $args = array(
 $get_post_for_story = get_posts($args);
 
 $post_args = array(
-    'numberposts' => 50,
+    'numberposts' => 10,
     'category' => 0, //get_category_by_slug('trending')->term_id,
     'orderby' => 'date',
     'order' => 'DESC', // the 1st array element will be 1st story(oldest story)
@@ -41,7 +41,7 @@ $get_post_feed = get_posts($post_args);
     <div class="container">
         <div class="story-section">
             <h4 style="margin-left:10px; font-size:16px;">Nutshell</h4>
-            <amp-carousel class="story-carousel" type="carousel" controls>
+            <amp-carousel class="story-carousel" type="carousel" controls layout="responsive">
                 <?php
                 foreach ($get_post_for_story as $val) {
                     $story_img = get_the_post_thumbnail_url($val);
@@ -49,7 +49,7 @@ $get_post_feed = get_posts($post_args);
                     $story_title = get_the_title($val);
                     ?>
                     <div class="amp-story-carousel">
-                        <amp-img src="<?php echo $story_img; ?>"></amp-img>
+                        <amp-img src="<?php echo $story_img; ?>" height="95" width="95"></amp-img>
                         <a href="<?php echo $story_url; ?>"></a>
                     </div>
                 <?php } ?>
@@ -109,7 +109,7 @@ $get_post_feed = get_posts($post_args);
                     ?>
                     <div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle' ?>">
                         <div class="single-thumbnail">
-                            <amp-img src="<?php echo $post_img; ?>"></amp-img>
+                            <amp-img src="<?php echo $post_img; ?>" layout="fill"></amp-img>
                             <div class="fade"></div>
                             <a href="<?php echo $post_url; ?>" class="feed-link ">
                                 <div class="feed-title">
@@ -172,5 +172,36 @@ $get_post_feed = get_posts($post_args);
         </div>
     </section>
 </div>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        var count = 2;
+        var total = <?php echo $wp_query->max_num_pages; ?>;
+        console.log('pages= <?php echo admin_url(); ?>');
+        $(window).scroll(function() {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                if (count > total) {
+                    return false;
+                } else {
+                    loadArticle(count);
+                }
+                count++;
+            }
+        });
 
+        function loadArticle(pageNumber) {
+            $('a#inifiniteLoader').show('fast');
+            console.log('page loading');
+            $.ajax({
+                url: "<?php echo admin_url(); ?>admin-ajax.php",
+                type: 'POST',
+                data: "what=infinite_scroll&page_no=" + pageNumber + '&loop_file=loop',
+                success: function(html) {
+                    // $('li#inifiniteLoader').hide('1000');
+                    $(".container").append(html);
+                }
+            });
+            return false;
+        }
+    });
+</script>
 <?php get_footer(); ?>

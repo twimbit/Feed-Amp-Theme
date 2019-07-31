@@ -87,7 +87,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                 ?>
                 <div class="feed-card" style="height: 313px;">
                     <div class="single-thumbnail">
-                        <amp-img src="<?php echo $trending_img; ?>"></amp-img>
+                        <amp-img src="<?php echo $trending_img; ?>" layout="responsive"></amp-img>
                         <div class="fade"></div>
                         <a href="<?php echo $trending_url; ?>" class="feed-link">
                             <div class="feed-title">
@@ -165,7 +165,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                                 ?>
                                 <a href="<?php echo get_category_link($val->term_id); ?>">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -195,7 +195,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                                 ?>
                                 <a href="<?php echo get_category_link($val->term_id); ?>">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -225,7 +225,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                                 ?>
                                 <a href="<?php echo get_category_link($val->term_id); ?>">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -255,7 +255,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                                 ?>
                                 <a href="<?php echo get_category_link($val->term_id); ?>">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -285,7 +285,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                                 ?>
                                 <a href="<?php echo get_category_link($val->term_id); ?>">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -316,7 +316,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                                 ?>
                                 <a href="<?php echo get_category_link($val->term_id); ?>">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -346,7 +346,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                                 ?>
                                 <a href="<?php echo get_category_link($val->term_id); ?>">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -376,7 +376,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                                 ?>
                                 <a href="<?php echo get_category_link($val->term_id); ?>">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>

@@ -2467,20 +2467,18 @@
 		}
 
 		.story-carousel {
-			height: 100px;
+			/* height: 100px; */
 			padding: 0 10px
 		}
 
 		.story-carousel amp-img {
-			height: 95px;
-			width: 95px;
-			border-radius: 8px
-		}
-
-		.story-carousel amp-img img {
+			/* height: 95px;
+			width: 95px; */
 			border-radius: 6px;
 			box-shadow: 3px 3px 8px 1px rgba(0, 0, 0, .5)
 		}
+
+
 
 		.amp-carousel-button {
 			background-color: rgba(241, 107, 111, 0.54);
@@ -3030,13 +3028,13 @@
 		}
 
 		.sub-cat {
-			height: 140px;
+			/* height: 140px; */
 			border-radius: 4px
 		}
 
 		.sub-cat amp-img {
-			width: 140px;
-			height: 140px;
+			/* width: 140px;
+			height: 140px; */
 			opacity: .5
 		}
 
@@ -3049,6 +3047,7 @@
 			position: relative;
 			top: -130px;
 			left: 15px;
+			width: 120px;
 			color: #fff
 		}
 
@@ -3074,6 +3073,8 @@
 		.sub-cat-inner-container.amp-scrollable-carousel-slide:first-child {
 			margin-left: 34px
 		}
+
+		
 
 		.divider {
 			margin-bottom: -19px
@@ -3675,6 +3676,8 @@
 			margin: 8px
 		}
 
+
+
 		.active-nav {
 			color: #f16c70;
 			border-bottom: 3px solid #f16c70
@@ -3801,6 +3804,7 @@ $exclusive_child = get_categories(array('child_of' => $exclusive->term_id, 'hide
 
 $industry = get_category_by_slug('industry');
 $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_empty' => FALSE));
+
 ?>
 
 <body>
@@ -4030,7 +4034,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 				<li class="mr2">
 					<div class="social" style="display: flex;justify-content: space-between;margin-left:0px;">
 						<amp-social-share class="social1" height="30px" data-param-app_id="254325784911610" width="30px" type="facebook"></amp-social-share>
-						<amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
+						<amp-social-share class="social1" height="30px" width="30px" type="linkedin"></amp-social-share>
 						<amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
 						<amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
 					</div>
