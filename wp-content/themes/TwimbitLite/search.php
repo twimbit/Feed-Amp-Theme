@@ -68,7 +68,11 @@ get_header(); ?>
 								$post_title = get_the_title();
 								$type = get_post_type();
 								?>
+<<<<<<< HEAD
 								<div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle' ?> feed-card-search">
+=======
+								<div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle'; ?> feed-card-search">
+>>>>>>> 64c0ec70d7c11271c0c8bd749ce46a2a86e6e266
 									<div class="single-thumbnail">
 										<amp-img src="<?php echo $post_img; ?>"></amp-img>
 										<div class="fade"></div>

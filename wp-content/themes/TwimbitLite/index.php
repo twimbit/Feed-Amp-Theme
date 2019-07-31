@@ -107,7 +107,11 @@ $get_post_feed = get_posts($post_args);
                     $type = get_post_type($val);
                     $category =  get_the_category_by_ID($val);
                     ?>
+<<<<<<< HEAD
                     <div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle' ?>">
+=======
+                    <div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle'; ?>">
+>>>>>>> 64c0ec70d7c11271c0c8bd749ce46a2a86e6e266
                         <div class="single-thumbnail">
                             <amp-img src="<?php echo $post_img; ?>" layout="fill"></amp-img>
                             <div class="fade"></div>
