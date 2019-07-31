@@ -43,70 +43,9 @@ $category = get_the_category();
 // $firstCategory = $category[0]->cat_name;
 ?>
 
-<?php foreach ($get_mobile_post as $val) { ?>
-
-    <section class="featured-image md-hide lg-hide" style="padding: 0px;background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
-        <?php $post_img = get_the_post_thumbnail_url($val);
-        $post_url = get_the_permalink($val);
-        $post_title = get_the_title($val);
-        $type = get_post_type($val);
-        $category =  get_the_category_by_ID($val); ?>
-        <div class="single-thumbnail">
-            <div class="fade">
-            </div>
-            <div class="featured-image-text-container">
-                <div class="featured-image-text xs-col-12 sm-col-8 md-col-7 lg-col-6">
-                    <a><?php if ($type == "post") {
-                            echo "Insight";
-                        } else if ($type == "video") {
-                            echo "Video";
-                        } else if ($type == "podcast") {
-                            echo "Podcast";
-                        } else if ($type == "amp_story") {
-                            echo "Story";
-                        }  ?></a href="#">
-                    <h2><?php echo $post_title; ?></h2>
-                    <!-- <h6 style="color: #f5f5f5" class="mt2"><?php //the_date(); 
-                                                                ?></h6> -->
-                    <h6 style="color: #f5f5f5;margin-top:6px;">by <?php the_author(); ?></h6>
-                    <h6><a href="<?php echo get_category_link($val); ?>" style="font-size:0.76rem">#<?php echo $category[0]->name; ?></a>
-                    </h6>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class=" single-content md-hide lg-hide">
-        <div class="single-content-div">
-            <section class="post-content">
-                <div class="xs-col-12 sm-col-7 md-col-6 lg-col-5 mt4 cont">
-                    <div class="social lg-hide md-hide" style="margin-left:auto;">
-                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
-                        <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
-                        <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
-                        <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
-                    </div>
-                    <?php the_content(); ?>
-                </div>
-                <div class="xs-col-12 sm-col-2 md-col-2 lg-col-2 mt4 ml2 sm-hide xs-hide">
-                    <div class="social">
-                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
-                        <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
-                        <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
-                        <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-    </section>
-
-<?php } ?>
 
 
-
-
-<section class="featured-image xs-hide sm-hide" style="padding: 0px;background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
+<section class="featured-image" style="padding: 0px;background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
     <?php while (have_posts()) {
         the_post();
         $type = get_post_type(); ?>
@@ -135,7 +74,7 @@ $category = get_the_category();
         </div>
     </section>
 
-    <section class=" single-content xs-hide md-hide">
+    <section class=" single-content">
         <div class="single-content-div">
             <section class="post-content">
                 <div class="xs-col-12 sm-col-3 md-col-3 lg-col-2 mt4 mr2  xs-hide" style="margin-right:50px;">
@@ -173,7 +112,7 @@ $category = get_the_category();
                 </div>
                 <div class="xs-col-12 sm-col-7 md-col-6 lg-col-5 mt4 cont">
                     <div class="social lg-hide md-hide" style="margin-left:auto;">
-                        <amp-social-share class="social1" height="30px" data-param-app_id="254325784911610" width="30px" type="facebook"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
@@ -182,7 +121,7 @@ $category = get_the_category();
                 </div>
                 <div class="xs-col-12 sm-col-2 md-col-2 lg-col-2 mt4 ml2 sm-hide xs-hide">
                     <div class="social">
-                        <amp-social-share class="social1" height="30px" data-param-app_id="254325784911610" width="30px" type="facebook"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
@@ -211,7 +150,7 @@ $category = get_the_category();
                 if (!empty($post)) { ?>
                     <div class="feed-card" style="height: 313px;width:49%">
                         <div class="single-thumbnail">
-                            <amp-img src="<?php echo $trending_img; ?>"></amp-img>
+                            <amp-img layout="fill" src="<?php echo $trending_img; ?>"></amp-img>
                             <div class="fade"></div>
                             <a href="<?php echo $trending_url; ?>" class="feed-link">
                                 <div class="feed-title">
@@ -277,7 +216,7 @@ $category = get_the_category();
                     ?>
                     <div class="feed-card" style="height: 313px;width:49%">
                         <div class="single-thumbnail">
-                            <amp-img src="<?php echo get_the_post_thumbnail_url($first_post); ?>"></amp-img>
+                            <amp-img layout="fill" src="<?php echo get_the_post_thumbnail_url($first_post); ?>"></amp-img>
                             <div class="fade"></div>
                             <a href="<?php echo get_the_permalink($first_post); ?>" class="feed-link">
                                 <div class="feed-title">

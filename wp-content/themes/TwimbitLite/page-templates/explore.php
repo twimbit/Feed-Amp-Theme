@@ -77,7 +77,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
             <h3 class="explore-title">Trending</h3>
             <hr class="divider">
         </div>
-        <amp-carousel class="treanding-carousel d-lg-none d-md-none" type="slides" controls>
+        <amp-carousel class="treanding-carousel d-lg-none d-md-none" type="slides" controls height="400">
             <?php
             foreach ($get_trending as $val) {
                 $trending_img = get_the_post_thumbnail_url($val);
@@ -87,7 +87,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                 ?>
                 <div class="feed-card" style="height: 313px;">
                     <div class="single-thumbnail">
-                        <amp-img src="<?php echo $trending_img; ?>" layout="responsive"></amp-img>
+                        <amp-img src="<?php echo $trending_img; ?>" layout="fill"></amp-img>
                         <div class="fade"></div>
                         <a href="<?php echo $trending_url; ?>" class="feed-link">
                             <div class="feed-title">
@@ -157,7 +157,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($business_child as $val) {
@@ -187,7 +187,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($careers_child as $val) {
@@ -217,7 +217,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($companies_child as $val) {
@@ -247,7 +247,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($technology_child as $val) {
@@ -277,7 +277,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($events_child as $val) {
@@ -308,7 +308,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($exclusive_child as $val) {
@@ -338,7 +338,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($geography_child as $val) {
@@ -368,7 +368,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($industry_child as $val) {

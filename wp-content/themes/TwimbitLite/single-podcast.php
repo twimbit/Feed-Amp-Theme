@@ -43,7 +43,7 @@
                             <p class="feed-subtitle"><?php echo $post_title; ?></p>
                             <span>By <?php echo $author; ?></span>
                             <span></span>
-                            <span style="text-decoration: none;">#
+                            <span style="text-decoration: none;">
                                 <a href="<?php echo get_category_link($category[0]->term_id); ?>" style="font-size:0.76rem">#<?php echo $category[0]->name; ?></a>
 
                             </span>

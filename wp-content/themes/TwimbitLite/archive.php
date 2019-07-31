@@ -35,7 +35,7 @@ $get_sub_cat = get_posts($args);
         <div class="col-12">
             <div class="feed-card feed-card-archive" style="margin-bottom:0px;">
                 <div class="single-thumbnail">
-                    <amp-img src="<?php echo get_field('featured_image', get_queried_object())['url']; ?>"></amp-img>
+                    <amp-img layout="fill" src="<?php echo get_field('featured_image', get_queried_object())['url']; ?>"></amp-img>
                     <div class="fade"></div>
                     <div class="feed-link">
                         <div class="feed-title" style="bottom:auto">
@@ -104,13 +104,9 @@ $get_sub_cat = get_posts($args);
                     $post_title = get_the_title($val);
                     $type = get_post_type($val);
                     ?>
-<<<<<<< HEAD
                     <div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle' ?>">
-=======
-                    <div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle'; ?>">
->>>>>>> 64c0ec70d7c11271c0c8bd749ce46a2a86e6e266
                         <div class="single-thumbnail">
-                            <amp-img src="<?php echo $post_img; ?>"></amp-img>
+                            <amp-img layout="fill" src="<?php echo $post_img; ?>"></amp-img>
                             <div class="fade"></div>
                             <a href="<?php echo $post_url; ?>" class="feed-link">
                                 <div class="feed-title">

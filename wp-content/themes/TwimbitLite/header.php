@@ -3017,10 +3017,7 @@
 			margin-top: 8px
 		}
 
-		.treanding-carousel {
-			width: 100%;
-			height: 400px
-		}
+
 
 		.amp-carousel-button-prev {
 			background-size: 32px 18px
@@ -3082,7 +3079,7 @@
 			margin-left: 34px
 		}
 
-		
+
 
 		.divider {
 			margin-bottom: -19px
@@ -3809,7 +3806,7 @@
 		.back-button-icon {
 			position: relative;
 			top: 5px;
-			width: 32px
+			width: 24px
 		}
 	</style>
 	<?php wp_head(); ?>
@@ -3845,10 +3842,13 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 
 	<section id="nav-header">
 		<!-- Start Navbar -->
-		<header class="ampstart-headerbar fixed flex justify-start items-center top-0 left-0 right-0 pl2 pr2" style="<?php
-																														// Fix menu overlap
-																														if (is_admin_bar_showing()) echo 'margin-top:32px;';
-																														?>">
+		<header class="ampstart-headerbar fixed 
+		flex justify-start items-center top-0
+		 left-0 right-0 pl2 pr2" style="<?php
+										// Fix menu overlap
+										if (is_admin_bar_showing()) echo 'margin-top:32px;';
+										?>;display: flex;
+										justify-content:space-between;">
 
 			<div class="lg-hide md-hide" style="width:32px">
 				<?php if (!(is_home())) { ?>
@@ -3858,8 +3858,8 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 				<?php } ?>
 			</div>
 
-			<a href="<?php echo home_url(); ?>" class="twimbit-lite-logo">
-				<amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/twimbit-pro-logo.png' ?>" style="width: 130px;height: 3rem;margin-top: 1rem;" layout="fixed" alt="Example logo image"></amp-img>
+			<a href="<?php echo home_url(); ?>">
+				<amp-img src="<?php echo content_url() . '/themes/TwimbitLite/src/twimbit-pro-logo.png' ?>" style="margin-top: 1.2rem;" height="52" width="130" layout="fixed" alt="Example logo image"></amp-img>
 			</a>
 			<!-- <div role="button" on="tap:header-sidebar.toggle" tabindex="0" class="ampstart-navbar-trigger md-hide lg-hide">☰</div> -->
 			<nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
@@ -3921,7 +3921,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 					</li>
 				</ul>
 			</nav>
-			<div class="search-img lg-hide md-hide ml-auto">
+			<div class="search-img lg-hide md-hide">
 				<amp-lightbox id="search-lightbox" layout="nodisplay">
 					<div class="search-lightbox" role="button" tabindex="0">
 						<div id="myOverlay" class="search-overlay">

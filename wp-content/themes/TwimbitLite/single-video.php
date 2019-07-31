@@ -84,11 +84,10 @@ $video = get_field('video_type');
                                 </g>
                             </svg>
                             <div class="share-icon-container">
-                                <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="facebook"></amp-social-share>
-                                <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="linkedin" width="60" height="44"></amp-social-share>
-                                <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="twitter"></amp-social-share>
-                                <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="whatsapp"></amp-social-share>
-                                <amp-social-share class="social1" height="auto" width="auto" style="margin-right:0.5em;" type="email"></amp-social-share>
+                                <amp-social-share class="social1" style="margin-right:0.5em;" height="30px" width="30px" type="facebook"></amp-social-share>
+                                <amp-social-share class="social1" style="margin-right:0.5em;" height="30px" width="30px" type="linkedin"></amp-social-share>
+                                <amp-social-share class="social1" style="margin-right:0.5em;" height="30px" width="30px" type="twitter"></amp-social-share>
+                                <amp-social-share class="social1" style="margin-right:0.5em;" height="30px" width="30px" type="whatsapp"></amp-social-share>
                             </div>
                         </div>
                     </div>
