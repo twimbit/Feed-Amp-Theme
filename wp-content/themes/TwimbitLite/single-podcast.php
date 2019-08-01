@@ -96,8 +96,8 @@
                 </div>
             </amp-lightbox>
 
-            <div class="light2 container">
-                <div class="share1">
+            <div class="light2">
+                <div>
                     <div class="menu">
                         <ul>
                             <li class="menu-item">
