@@ -2306,15 +2306,15 @@
                                         } ?>">
         <!-- Twitter Cards -->
         <meta property="twitter:card" content="summary">
-        <meta property="twitter:site" content="@ThomasVanhoutte">
+        <meta property="twitter:site" content="Twimbit.pro">
         <meta property="twitter:title" content="<?php single_post_title(''); ?>">
         <meta property="twitter:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>">
-        <meta property="twitter:creator" content="@ThomasVanhoutte">
+        <meta property="twitter:creator" content="Twimbit User">
         <meta property="twitter:image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
                                                     echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID));
                                                 } ?>">
         <meta property="twitter:url" content="<?php the_permalink() ?>" />
-        <meta property="twitter:domain" content="Thomas' website">
+        <meta property="twitter:domain" content="Twimbit Pro">
 
     <?php } ?>
 
