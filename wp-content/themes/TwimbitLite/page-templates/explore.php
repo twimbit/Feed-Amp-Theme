@@ -27,7 +27,7 @@ $get_post = get_posts($post_args);
 
 $trending = array(
     'numberposts' => 0,
-    'category' => 0,
+    'category' => get_category_by_slug('trending')->term_id,
     'orderby' => 'date',
     'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
@@ -43,29 +43,37 @@ $get_trending = get_posts($trending);
 $business = get_category_by_slug('business_model');
 $business_child = get_categories(array('child_of' => $business->term_id, 'hide_empty' => FALSE));
 
+
 $careers = get_category_by_slug('careers');
 $careers_child = get_categories(array('child_of' => $careers->term_id, 'hide_empty' => FALSE));
+
 
 $companies = get_category_by_slug('companies');
 $companies_child = get_categories(array('child_of' => $companies->term_id, 'hide_empty' => FALSE));
 
+
 $technology = get_category_by_slug('technology');
 $technology_child = get_categories(array('child_of' => $technology->term_id, 'hide_empty' => FALSE));
 
-$exclusive = get_category_by_slug('exclusive');
-$exclusive_child = get_categories(array('child_of' => $exclusive->term_id, 'hide_empty' => FALSE));
-
-$industry = get_category_by_slug('industry');
-$industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_empty' => FALSE));
 
 $events = get_category_by_slug('events');
 $events_child = get_categories(array('child_of' => $events->term_id, 'hide_empty' => FALSE));
 
+
+$exclusive = get_category_by_slug('exclusive');
+$exclusive_child = get_categories(array('child_of' => $exclusive->term_id, 'hide_empty' => FALSE));
+
+
 $geography = get_category_by_slug('geographies');
 $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide_empty' => FALSE));
+
+
+$industry = get_category_by_slug('industry');
+$industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_empty' => FALSE));
+
 ?>
 <script>
-    $(document).ready(function() {
+    document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('#explore-button').className += ' active-nav';
         document.querySelector('#explore-nav').className += ' active-nav';
     });
@@ -77,7 +85,7 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
             <h3 class="explore-title">Trending</h3>
             <hr class="divider">
         </div>
-        <amp-carousel class="treanding-carousel d-lg-none d-md-none" type="slides" controls>
+        <amp-carousel class="treanding-carousel d-lg-none d-md-none" type="slides" controls height="400">
             <?php
             foreach ($get_trending as $val) {
                 $trending_img = get_the_post_thumbnail_url($val);
@@ -87,9 +95,9 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
                 ?>
                 <div class="feed-card" style="height: 313px;">
                     <div class="single-thumbnail">
-                        <amp-img src="<?php echo $trending_img; ?>"></amp-img>
+                        <amp-img src="<?php echo $trending_img; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
                         <div class="fade"></div>
-                        <a href="<?php echo $trending_url; ?>" class="feed-link">
+                        <a href="<?php echo $trending_url; ?>" class="feed-link" aria-label="<?php echo $trending_title; ?>">
                             <div class="feed-title">
                                 <h3><?php echo $trending_title; ?></h3>
 
@@ -150,22 +158,22 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
     <!-- Business model -->
     <?php if (!empty($business_child)) { ?>
         <section id="business_model">
-            <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="container cat-section" style="margin-bottom: 2rem;padding-right:0px;padding-left:0px;">
                 <div class="section-heading" style="margin:0px 0px 30px 0px">
                     <div style="padding-left:15px;">
                         <h3 class="explore-title"><?php echo get_cat_name($business->term_id); ?></h3>
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($business_child as $val) {
                                 $post_img = get_field('featured_image', $val);
                                 ?>
-                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Bussiness Model">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -180,22 +188,22 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
     <!-- careers section -->
     <?php if (!empty($careers_child)) { ?>
         <section id="careers_model">
-            <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="container cat-section" style="margin-bottom: 2rem;padding-right:0px;padding-left:0px;">
                 <div class="section-heading" style="margin:0px 0px 30px 0px">
                     <div style="padding-left:15px;">
                         <h3 class="explore-title"><?php echo get_cat_name($careers->term_id); ?></h3>
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($careers_child as $val) {
                                 $post_img = get_field('featured_image', $val);
                                 ?>
-                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Careers Section">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -210,22 +218,22 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
     <!-- companies section -->
     <?php if (!empty($companies_child)) { ?>
         <section id="companies_model">
-            <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="container cat-section" style="margin-bottom: 2rem;padding-right:0px;padding-left:0px;">
                 <div class="section-heading" style="margin:0px 0px 30px 0px">
                     <div style="padding-left:15px;">
                         <h3 class="explore-title"><?php echo get_cat_name($companies->term_id); ?></h3>
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($companies_child as $val) {
                                 $post_img = get_field('featured_image', $val);
                                 ?>
-                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Companies Section">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -240,22 +248,22 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
     <!-- technology section -->
     <?php if (!empty($technology_child)) { ?>
         <section id="technology_model">
-            <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="container cat-section" style="margin-bottom: 2rem;padding-right:0px;padding-left:0px;">
                 <div class="section-heading" style="margin:0px 0px 30px 0px">
                     <div style="padding-left:15px;">
                         <h3 class="explore-title"><?php echo get_cat_name($technology->term_id); ?></h3>
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($technology_child as $val) {
                                 $post_img = get_field('featured_image', $val);
                                 ?>
-                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Technology Section">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -270,22 +278,22 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
     <!-- events section -->
     <?php if (!empty($events_child)) { ?>
         <section id="events_model">
-            <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="container cat-section" style="margin-bottom: 2rem;padding-right:0px;padding-left:0px;">
                 <div class="section-heading" style="margin:0px 0px 30px 0px">
                     <div style="padding-left:15px;">
                         <h3 class="explore-title"><?php echo get_cat_name($events->term_id); ?></h3>
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($events_child as $val) {
                                 $post_img = get_field('featured_image', $val);
                                 ?>
-                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Events Section">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -301,22 +309,22 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
     <!-- exclusive section -->
     <?php if (!empty($exclusive_child)) { ?>
         <section id="exclusive_model">
-            <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="container cat-section" style="margin-bottom: 2rem;padding-right:0px;padding-left:0px;">
                 <div class="section-heading" style="margin:0px 0px 30px 0px">
                     <div style="padding-left:15px;">
                         <h3 class="explore-title"><?php echo get_cat_name($exclusive->term_id); ?></h3>
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($exclusive_child as $val) {
                                 $post_img = get_field('featured_image', $val);
                                 ?>
-                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Exclusive Section">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -331,22 +339,22 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
     <!-- geography section -->
     <?php if (!empty($geography_child)) { ?>
         <section id="geography_model">
-            <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="container cat-section" style="margin-bottom: 2rem;padding-right:0px;padding-left:0px;">
                 <div class="section-heading" style="margin:0px 0px 30px 0px">
                     <div style="padding-left:15px;">
                         <h3 class="explore-title"><?php echo get_cat_name($geography->term_id); ?></h3>
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($geography_child as $val) {
                                 $post_img = get_field('featured_image', $val);
                                 ?>
-                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Geography Section">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>
@@ -361,22 +369,22 @@ $geography_child = get_categories(array('child_of' => $geography->term_id, 'hide
     <!-- industry section -->
     <?php if (!empty($industry_child)) { ?>
         <section id="industry_model">
-            <div class="container cat-section" style="margin-bottom: 4rem;padding-right:0px;padding-left:0px;">
+            <div class="container cat-section" style="margin-bottom: 2rem;padding-right:0px;padding-left:0px;">
                 <div class="section-heading" style="margin:0px 0px 30px 0px">
                     <div style="padding-left:15px;">
                         <h3 class="explore-title"><?php echo get_cat_name($industry->term_id); ?></h3>
                         <hr>
                     </div>
 
-                    <amp-carousel class="sub-cat" type="carousel" controls>
+                    <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                             foreach ($industry_child as $val) {
                                 $post_img = get_field('featured_image', $val);
                                 ?>
-                                <a href="<?php echo get_category_link($val->term_id); ?>">
+                                <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Industry Section">
                                     <div class="sub-cat-img">
-                                        <amp-img src="<?php echo $post_img['url']; ?>"></amp-img>
+                                        <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                         <p><?php echo $val->name; ?></p>
                                     </div>
                                 </a>

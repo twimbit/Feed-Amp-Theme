@@ -141,14 +141,14 @@ $category = get_the_category();
             <?php
             for ($i = 1; $i <= 2; $i++) {
                 $post = get_adjacent_post();
-                $trending_img = get_the_post_thumbnail_url();
+                $trending_img = get_the_post_thumbnail_url($val, 'medium_large');
                 $trending_url = get_the_permalink();
                 $trending_title = get_the_title();
                 $type = get_post_type();
                 if (!empty($post)) { ?>
                     <div class="feed-card" style="height: 313px;width:49%">
                         <div class="single-thumbnail">
-                            <amp-img src="<?php echo $trending_img; ?>"></amp-img>
+                            <amp-img layout="fill" src="<?php echo $trending_img; ?>"></amp-img>
                             <div class="fade"></div>
                             <a href="<?php echo $trending_url; ?>" class="feed-link">
                                 <div class="feed-title">
@@ -209,12 +209,11 @@ $category = get_the_category();
                         'post_type' => array('post'),
                         'order' => 'DESC',
                     ))[0];
-
                     $first_post_type = get_post_type($first_post);
                     ?>
                     <div class="feed-card" style="height: 313px;width:49%">
                         <div class="single-thumbnail">
-                            <amp-img src="<?php echo get_the_post_thumbnail_url($first_post); ?>"></amp-img>
+                            <amp-img layout="fill" src="<?php echo get_the_post_thumbnail_url($first_post, 'medium_large'); ?>"></amp-img>
                             <div class="fade"></div>
                             <a href="<?php echo get_the_permalink($first_post); ?>" class="feed-link">
                                 <div class="feed-title">
