@@ -24,7 +24,7 @@ $current_post = $post; // remember the current post
 // $get_post = get_posts($post_args);
 
 
-$mobile_post = array(
+$trending = array(
     'numberposts' => 0,
     'category' => 0,
     'orderby' => 'date',
@@ -33,17 +33,15 @@ $mobile_post = array(
     'exclude' => array(get_the_ID()),
     'meta_key' => '',
     'meta_value' => '',
-    'post_type' => array('post'),
+    'post_type' => array('video', 'post', 'podcast', 'explore'),
     'suppress_filters' => true,
 );
-$get_mobile_post = get_posts($mobile_post);
+$get_trending = get_posts($trending);
 $category = get_the_category();
 
 // $category = get_the_category();
 // $firstCategory = $category[0]->cat_name;
 ?>
-
-
 
 <section class="featured-image" style="padding: 0px;background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
     <?php while (have_posts()) {
@@ -143,7 +141,7 @@ $category = get_the_category();
             <?php
             for ($i = 1; $i <= 2; $i++) {
                 $post = get_adjacent_post();
-                $trending_img = get_the_post_thumbnail_url();
+                $trending_img = get_the_post_thumbnail_url($val, 'medium_large');
                 $trending_url = get_the_permalink();
                 $trending_title = get_the_title();
                 $type = get_post_type();
@@ -211,12 +209,11 @@ $category = get_the_category();
                         'post_type' => array('post'),
                         'order' => 'DESC',
                     ))[0];
-
                     $first_post_type = get_post_type($first_post);
                     ?>
                     <div class="feed-card" style="height: 313px;width:49%">
                         <div class="single-thumbnail">
-                            <amp-img layout="fill" src="<?php echo get_the_post_thumbnail_url($first_post); ?>"></amp-img>
+                            <amp-img layout="fill" src="<?php echo get_the_post_thumbnail_url($first_post, 'medium_large'); ?>"></amp-img>
                             <div class="fade"></div>
                             <a href="<?php echo get_the_permalink($first_post); ?>" class="feed-link">
                                 <div class="feed-title">

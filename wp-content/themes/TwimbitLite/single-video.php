@@ -20,7 +20,7 @@ $post_args = array(
 );
 
 the_post();
-$video_img   = get_the_post_thumbnail_url();
+$video_img   = get_the_post_thumbnail_url($val, 'medium_large');
 $video_url   = get_permalink();
 $video_title = get_the_title();
 $author = get_the_author();
@@ -127,7 +127,7 @@ $video = get_field('video_type');
             $get_post = get_posts($post_args);
 
             foreach (array_slice($get_post, 0,) as $val) {
-                $video_img = get_the_post_thumbnail_url($val);
+                $video_img = get_the_post_thumbnail_url($val, 'thumbnail');
                 $video_url = get_permalink($val);
                 $video_title = get_the_title($val);
                 $artist = get_the_author($val);

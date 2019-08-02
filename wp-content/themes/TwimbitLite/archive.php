@@ -4,7 +4,7 @@ $args = array(
     'numberposts' => 0,
     'category' => get_queried_object()->term_id,
     'orderby' => 'date',
-    'order' => 'DESC', // the 1st array element will be 1st story(oldest story)
+    'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
     'exclude' => array(),
     'meta_key' => '',
@@ -99,12 +99,12 @@ $get_sub_cat = get_posts($args);
             <div class="feed-card-container">
                 <?php
                 foreach (array_slice($get_sub_cat, 0) as $val) {
-                    $post_img = get_the_post_thumbnail_url($val);
+                    $post_img = get_the_post_thumbnail_url($val, 'medium_large');
                     $post_url = get_the_permalink($val);
                     $post_title = get_the_title($val);
                     $type = get_post_type($val);
                     ?>
-                    <div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle' ?>">
+                    <div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle'; ?>">
                         <div class="single-thumbnail">
                             <amp-img layout="fill" src="<?php echo $post_img; ?>"></amp-img>
                             <div class="fade"></div>

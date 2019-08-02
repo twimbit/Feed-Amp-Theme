@@ -63,12 +63,12 @@ get_header(); ?>
 							<?php
 							while (have_posts()) {
 								the_post();
-								$post_img = get_the_post_thumbnail_url();
+								$post_img = get_the_post_thumbnail_url($val, 'medium_large');
 								$post_url = get_the_permalink();
 								$post_title = get_the_title();
 								$type = get_post_type();
 								?>
-								<div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle' ?> feed-card-search">
+								<div class="feed-card feed-toggle fade-animate <?php echo $type . '-toggle'; ?> feed-card-search">
 									<div class="single-thumbnail">
 										<amp-img layout="fill" src="<?php echo $post_img; ?>"></amp-img>
 										<div class="fade"></div>
