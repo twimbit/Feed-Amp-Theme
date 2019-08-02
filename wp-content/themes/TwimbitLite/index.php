@@ -56,7 +56,7 @@ $get_post_feed = get_posts($post_args);
         </div>
     </div>
 </section>
-<div class="archive-filter-card-container container">
+<div class="archive-filter-card-container container" style="padding-left:0px;padding-right:0px">
     <!-- Filter section -->
     <section id="filter">
         <div class="mt4">
