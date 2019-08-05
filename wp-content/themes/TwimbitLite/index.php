@@ -46,19 +46,19 @@ $get_post_feed = get_posts($post_args);
                         $timezone = date("e");
                         /* If the time is less than 1200 hours, show good morning */
                         if ($time < "12") {
-                            echo "http://172.16.1.95/wordpress/wp-content/uploads/2019/08/morning.jpeg";
+                            echo content_url() . '/themes/TwimbitLite/src/morning.jpeg';
                         } else
                             /* If the time is grater than or equal to 1200 hours, but less than 1700 hours, so good afternoon */
                             if ($time >= "12" && $time < "17") {
-                                echo "http://172.16.1.95/wordpress/wp-content/uploads/2019/08/afternoon.jpeg";
+                                echo content_url() . '/themes/TwimbitLite/src/evening.jpeg';
                             } else
                                 /* Should the time be between or equal to 1700 and 1900 hours, show good evening */
                                 if ($time >= "17" && $time < "19") {
-                                    echo "http://172.16.1.95/wordpress/wp-content/uploads/2019/08/evening.jpeg";
+                                    echo content_url() . '/themes/TwimbitLite/src/afternoon.jpeg';
                                 } else
                                     /* Finally, show good night if the time is greater than or equal to 1900 hours */
                                     if ($time >= "19") {
-                                        echo "http://172.16.1.95/wordpress/wp-content/uploads/2019/08/night.jpeg";
+                                        echo content_url() . '/themes/TwimbitLite/src/night.jpeg';
                                     }
                         ?>);
         margin-top: 55px;
@@ -87,6 +87,7 @@ $get_post_feed = get_posts($post_args);
     .nutshell-inner {
         display: flex;
         height: 100%;
+        flex-wrap: wrap;
     }
 
     .nutshell-inner-first {
@@ -160,20 +161,65 @@ $get_post_feed = get_posts($post_args);
             transform: scale(0.6);
         }
     }
+
+    @media (max-width:40.06rem) {}
+
+        .nutshell-inner-second {
+            display: flex;
+            justify-content: center;
+            /* height: 100%; */
+            align-items: center;
+            color: #FFFF;
+        }
+
+        .nutshell-inner-first .date {
+            border: 2px solid #FFFF;
+            padding: 2rem 1rem;
+            font-size: 3rem;
+            margin-right: 1.5rem;
+            border-radius: 20px;
+        }
+
+        .nutshell-inner-first .month {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .nutshell-inner-first .day {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        .nutshell-svg {
+            transform: translate(30px, 6px) scale(0.6);
+        }
+
+        .nutshell-today-text {
+            font-size: 2.5rem;
+            line-height: 3rem;
+            text-align: center;
+            margin-right: 5rem;
+            color: black;
+            font-weight: 300;
+            width: min-content;
+            z-index: 4;
+        }
+
+    }
 </style>
 <!-- New Nutshell Section -->
 <section id="new-nutshell" class="nutshell-top">
     <div class="nutshell-container-image">
     </div>
     <div class="nutshell-inner">
-        <div class="col-6 nutshell-inner-first">
+        <div class="col-6 xs-col-12 lg-col-6 nutshell-inner-first">
             <div class="date"><?php echo date('d'); ?></div>
             <div class="month-day">
                 <div class="month"><?php echo date('M'); ?></div>
                 <div class="day"><?php echo date('l'); ?></div>
             </div>
         </div>
-        <div class="col-6 nutshell-inner-second">
+        <div class=" col-6 xs-col-12 lg-col-6 nutshell-inner-second">
             <div class="nutshell-svg floating">
                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="241.929" height="156.918" viewBox="0 0 241.929 156.918">
                     <defs>
