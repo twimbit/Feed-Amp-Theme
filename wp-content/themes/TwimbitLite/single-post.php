@@ -42,7 +42,7 @@ $category = get_the_category();
 // $category = get_the_category();
 // $firstCategory = $category[0]->cat_name;
 ?>
-
+<div id="post_area">
 <section class="featured-image" style="padding: 0px;background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
     <?php while (have_posts()) {
         the_post();
@@ -274,6 +274,7 @@ $category = get_the_category();
         </div>
     </div>
 </section>
+</div>
 <?php get_footer(); ?>
 <!-- <script>
     $(document).ready(function() {
