@@ -2283,29 +2283,6 @@
             top: 5px;
             width: 24px
         }
-
-        /* width */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-
-        /* Track */
-        ::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 5px white;
-            border-radius: 8px;
-        }
-
-        /* Handle */
-        ::-webkit-scrollbar-thumb {
-            background: #f16c70;
-            border-radius: 8px;
-        }
-
-        /* Handle on hover */
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f16c70;
-        }
     </style>
     <!-- iphone meta tags	 -->
     <?php if (have_posts()) : while (have_posts()) : the_post();

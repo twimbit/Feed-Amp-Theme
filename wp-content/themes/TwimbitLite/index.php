@@ -36,7 +36,219 @@ $get_post_feed = get_posts($post_args);
         document.querySelector('#feed-nav').className += ' active-nav';
     });
 </script>
-<section id="stories">
+<style>
+    .nutshell-top {
+        height: 264px;
+        margin-top: 55px;
+    }
+
+    .nutshell-container-image {
+        height: 264px;
+        width: 100%;
+
+        background-image: url("http://172.16.1.95/wordpress/wp-content/uploads/2019/08/afternoon.jpeg");
+        position: absolute;
+
+        /* Add the blur effect */
+        filter: blur(3px);
+        -webkit-filter: blur(3px);
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: -1;
+    }
+
+    .nutshell-inner {
+        display: flex;
+        height: 100%;
+    }
+
+    .nutshell-inner-first {
+        display: flex;
+        justify-content: center;
+        /* height: 100%; */
+        align-items: center;
+        color: #FFFF;
+    }
+
+    .nutshell-inner-second {
+        display: flex;
+        justify-content: center;
+        /* height: 100%; */
+        align-items: center;
+        color: #FFFF;
+    }
+
+    .nutshell-inner-first .date {
+        border: 2px solid #FFFF;
+        padding: 2.5rem 2rem;
+        font-size: 4rem;
+        margin-right: 1.5rem;
+        border-radius: 20px;
+    }
+
+    .nutshell-inner-first .month {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .nutshell-inner-first .day {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .nutshell-svg {
+        transform: translate(30px, 6px) scale(0.6);
+    }
+
+    .nutshell-today-text {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        text-align: center;
+        margin-right: 5rem;
+        color: black;
+        font-weight: 300;
+        width: min-content;
+    }
+</style>
+<section id="new-nutshell" class="nutshell-top">
+    <div class="nutshell-container-image">
+    </div>
+    <div class="nutshell-inner">
+        <div class="col-6 nutshell-inner-first">
+            <div class="date">2</div>
+            <div class="month-day">
+                <div class="month">August</div>
+                <div class="day">Friday</div>
+            </div>
+        </div>
+        <div class="col-6 nutshell-inner-second">
+            <div class="nutshell-svg">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="241.929" height="156.918" viewBox="0 0 241.929 156.918">
+                    <defs>
+                        <style>
+                            .a {
+                                opacity: 0.88;
+                            }
+
+                            .b,
+                            .c,
+                            .d {
+                                fill: #00485a;
+                            }
+
+                            .b {
+                                opacity: 0.12;
+                            }
+
+                            .c {
+                                opacity: 0.51;
+                            }
+
+                            .e {
+                                fill: #f16b6f;
+                            }
+
+                            .f {
+                                filter: url(#k);
+                            }
+
+                            .g {
+                                filter: url(#i);
+                            }
+
+                            .h {
+                                filter: url(#g);
+                            }
+
+                            .i {
+                                filter: url(#e);
+                            }
+
+                            .j {
+                                filter: url(#c);
+                            }
+
+                            .k {
+                                filter: url(#a);
+                            }
+                        </style>
+                        <filter id="a" x="118.185" y="16.587" width="123.744" height="123.744" filterUnits="userSpaceOnUse">
+                            <feOffset dy="3" input="SourceAlpha" />
+                            <feGaussianBlur stdDeviation="3" result="b" />
+                            <feFlood flood-opacity="0.361" />
+                            <feComposite operator="in" in2="b" />
+                            <feComposite in="SourceGraphic" />
+                        </filter>
+                        <filter id="c" x="0" y="16.587" width="123.744" height="123.744" filterUnits="userSpaceOnUse">
+                            <feOffset dy="3" input="SourceAlpha" />
+                            <feGaussianBlur stdDeviation="3" result="d" />
+                            <feFlood flood-opacity="0.361" />
+                            <feComposite operator="in" in2="d" />
+                            <feComposite in="SourceGraphic" />
+                        </filter>
+                        <filter id="e" x="80.863" y="8.294" width="140.331" height="140.331" filterUnits="userSpaceOnUse">
+                            <feOffset dy="3" input="SourceAlpha" />
+                            <feGaussianBlur stdDeviation="3" result="f" />
+                            <feFlood flood-opacity="0.361" />
+                            <feComposite operator="in" in2="f" />
+                            <feComposite in="SourceGraphic" />
+                        </filter>
+                        <filter id="g" x="20.734" y="8.294" width="140.331" height="140.331" filterUnits="userSpaceOnUse">
+                            <feOffset dy="3" input="SourceAlpha" />
+                            <feGaussianBlur stdDeviation="3" result="h" />
+                            <feFlood flood-opacity="0.361" />
+                            <feComposite operator="in" in2="h" />
+                            <feComposite in="SourceGraphic" />
+                        </filter>
+                        <filter id="i" x="43.542" y="0" width="156.918" height="156.918" filterUnits="userSpaceOnUse">
+                            <feOffset dy="3" input="SourceAlpha" />
+                            <feGaussianBlur stdDeviation="3" result="j" />
+                            <feFlood flood-opacity="0.361" />
+                            <feComposite operator="in" in2="j" />
+                            <feComposite in="SourceGraphic" />
+                        </filter>
+                        <filter id="k" x="96.414" y="38.358" width="71.908" height="82.276" filterUnits="userSpaceOnUse">
+                            <feOffset dy="3" input="SourceAlpha" />
+                            <feGaussianBlur stdDeviation="3" result="l" />
+                            <feFlood flood-opacity="0.161" />
+                            <feComposite operator="in" in2="l" />
+                            <feComposite in="SourceGraphic" />
+                        </filter>
+                    </defs>
+                    <g class="a" transform="translate(-235 -181)">
+                        <g class="k" transform="matrix(1, 0, 0, 1, 235, 181)">
+                            <path class="b" d="M52.872,0a52.872,52.872,0,0,1,52.872,52.872,53.689,53.689,0,0,1-2.8,17.026A52.878,52.878,0,1,1,52.872,0Z" transform="translate(127.18 22.59)" />
+                        </g>
+                        <g class="j" transform="matrix(1, 0, 0, 1, 235, 181)">
+                            <path class="b" d="M52.872,0a52.872,52.872,0,0,1,52.872,52.872,53.689,53.689,0,0,1-2.8,17.026A52.878,52.878,0,1,1,52.872,0Z" transform="translate(9 22.59)" />
+                        </g>
+                        <g class="i" transform="matrix(1, 0, 0, 1, 235, 181)">
+                            <circle class="c" cx="61.166" cy="61.166" r="61.166" transform="translate(89.86 14.29)" />
+                        </g>
+                        <g class="h" transform="matrix(1, 0, 0, 1, 235, 181)">
+                            <circle class="c" cx="61.166" cy="61.166" r="61.166" transform="translate(29.73 14.29)" />
+                        </g>
+                        <g class="g" transform="matrix(1, 0, 0, 1, 235, 181)">
+                            <circle class="d" cx="69.459" cy="69.459" r="69.459" transform="translate(52.54 6)" />
+                        </g>
+                        <g class="f" transform="matrix(1, 0, 0, 1, 235, 181)">
+                            <path class="e" d="M31.279,1.441a1,1,0,0,1,1.718,0L63.374,52.4a1,1,0,0,1-.859,1.512H1.76A1,1,0,0,1,.9,52.4Z" transform="translate(159.32 44.36) rotate(90)" />
+                        </g>
+                    </g>
+                </svg></div>
+            <div class="nutshell-today-text">
+                Today's Nutshell
+            </div>
+        </div>
+    </div>
+
+
+</section>
+
+<section id="stories" class="hide">
     <div class="container">
         <div class="story-section">
             <h4 style="margin-left:10px; font-size:16px;">Nutshell</h4>
@@ -56,6 +268,10 @@ $get_post_feed = get_posts($post_args);
         </div>
     </div>
 </section>
+
+
+
+
 <div class="archive-filter-card-container container" style="padding-left:0px;padding-right:0px">
     <!-- Filter section -->
     <section id="filter">
