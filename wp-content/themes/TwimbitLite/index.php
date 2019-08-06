@@ -34,98 +34,81 @@ $get_post_feed = get_posts($post_args);
     document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('#feed-button').className += ' active-nav';
         document.querySelector('#feed-nav').className += ' active-nav';
+        let time = new Date();
+        let h = time.getHours();
+        if (h <= 12) {
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitLite/src/morning.jpeg'; ?>)"
+        } else if (h >= 12 && h <= 17) {
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitLite/src/afternoon.jpeg'; ?>)"
+        } else if (h >= 17 && h <= 19) {
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitLite/src/evening.jpeg'; ?>)"
+        } else {
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitLite/src/night.jpeg'; ?>)"
+        }
+
     });
 </script>
-<style>
+<style scoped>
     .nutshell-top {
         height: 183px;
-        background: url(<?php
-                        /* This sets the $time variable to the current hour in the 24 hour clock format */
-                        $time = date("H");
-                        /* Set the $timezone variable to become the current timezone */
-                        $timezone = date("e");
-                        /* If the time is less than 1200 hours, show good morning */
-                        if ($time < "12") {
-                            echo content_url() . '/themes/TwimbitLite/src/morning.jpeg';
-                        } else
-                            /* If the time is grater than or equal to 1200 hours, but less than 1700 hours, so good afternoon */
-                            if ($time >= "12" && $time < "17") {
-                                echo content_url() . '/themes/TwimbitLite/src/evening.jpeg';
-                            } else
-                                /* Should the time be between or equal to 1700 and 1900 hours, show good evening */
-                                if ($time >= "17" && $time < "19") {
-                                    echo content_url() . '/themes/TwimbitLite/src/afternoon.jpeg';
-                                } else
-                                    /* Finally, show good night if the time is greater than or equal to 1900 hours */
-                                    if ($time >= "19") {
-                                        echo content_url() . '/themes/TwimbitLite/src/night.jpeg';
-                                    }
-                        ?>);
         margin-top: 55px;
-        background-size: cover;
-        /* background-position: center; */
-        background-repeat: no-repeat;
-        /* background-position: 0 -108%; */
-        /* box-shadow: 0 0 20px 6px rgba(0, 0, 0, .1); */
-        /* background-position: 0 -53%; */
-        z-index: 1;
+        position: relative;
+        background-size: cover
     }
 
     .nutshell-container-image {
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
         height: 183px;
         width: 100%;
-        /* background-image: url(http://172.16.1.95/wordpress/wp-content/uploads/2019/08/afternoon.jpeg); */
-        position: absolute;
-        /* filter: blur(3px); */
-        /* -webkit-filter: blur(3px); */
-
-        z-index: 0;
         box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.16);
-        background: linear-gradient(90deg, #ffffff00, white 50%);
+        background: linear-gradient(90deg, #ffffff00, white 50%)
     }
 
     .nutshell-inner {
         display: flex;
         height: 100%;
-        flex-wrap: wrap;
+        flex-wrap: wrap
     }
 
     .nutshell-inner-first {
         display: flex;
         justify-content: center;
-        /* height: 100%; */
+        position: relative;
         align-items: center;
-        color: #FFFF;
+        color: #FFFF
     }
 
     .nutshell-inner-second {
         display: flex;
         justify-content: center;
-        /* height: 100%; */
         align-items: center;
-        color: #FFFF;
+        color: #FFFF
     }
 
     .nutshell-inner-first .date {
         border: 2px solid #FFFF;
-        padding: 2.5rem 1.8rem;
+        padding: 2.5rem 1rem;
         font-size: 4rem;
         margin-right: 1.5rem;
         border-radius: 20px;
+        font-weight: 500
     }
 
     .nutshell-inner-first .month {
         font-size: 1.5rem;
         margin-bottom: 1rem;
+        font-weight: 500
     }
 
     .nutshell-inner-first .day {
         font-size: 2rem;
-        font-weight: 600;
+        font-weight: 600
     }
 
     .nutshell-svg {
-        transform: translate(30px, 6px) scale(0.6);
+        transform: translate(30px, 6px) scale(0.6)
     }
 
     .nutshell-today-text {
@@ -133,10 +116,10 @@ $get_post_feed = get_posts($post_args);
         line-height: 3rem;
         text-align: center;
         margin-right: 5rem;
-        color: black;
+        color: #000;
         font-weight: 300;
         width: min-content;
-        z-index: 4;
+        z-index: 4
     }
 
     .floating {
@@ -144,203 +127,276 @@ $get_post_feed = get_posts($post_args);
         animation-duration: 2s;
         animation-iteration-count: infinite;
         animation-timing-function: cubic-bezier(0.79, 0.01, 0.49, 0.98) margin-left: 30px;
-        margin-top: 5px;
+        margin-top: 5px
     }
 
     @keyframes floating {
         0% {
-
-            transform: scale(0.6);
+            transform: scale(0.6)
         }
 
         65% {
-            transform: scale(0.7);
+            transform: scale(0.7)
         }
 
         100% {
-            transform: scale(0.6);
+            transform: scale(0.6)
         }
     }
 
-    @media (max-width:40.06rem) {}
-
+    @media (max-width:768px) {
         .nutshell-inner-second {
             display: flex;
             justify-content: center;
-            /* height: 100%; */
             align-items: center;
-            color: #FFFF;
+            color: #FFFF
         }
 
         .nutshell-inner-first .date {
             border: 2px solid #FFFF;
-            padding: 2rem 1rem;
+            padding: 1.8rem .8rem;
             font-size: 3rem;
             margin-right: 1.5rem;
-            border-radius: 20px;
+            border-radius: 20px
         }
 
         .nutshell-inner-first .month {
-            font-size: 1rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: .5rem
         }
 
         .nutshell-inner-first .day {
             font-size: 2rem;
-            font-weight: 600;
+            font-weight: 600
         }
 
-        .nutshell-svg {
-            transform: translate(30px, 6px) scale(0.6);
+        .nutshell-svg svg {
+            transform: translate(75px, 6px)
         }
 
         .nutshell-today-text {
-            font-size: 2.5rem;
-            line-height: 3rem;
+            font-size: 2rem;
+            line-height: 2.5rem;
             text-align: center;
-            margin-right: 5rem;
-            color: black;
+            margin-right: 8rem;
+            color: #000;
             font-weight: 300;
-            width: min-content;
-            z-index: 4;
+            width: min-content
+        }
+    }
+
+    @keyframes floating {
+        0% {
+            transform: scale(0.4)
         }
 
+        65% {
+            transform: scale(0.5)
+        }
+
+        100% {
+            transform: scale(0.4)
+        }
+    }
+
+    @media (max-width:40.06rem) {
+        .nutshell-inner-first {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            color: #FFFF
+        }
+
+        .floating {
+            order: 1
+        }
+
+        .nutshell-inner-second {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            color: #FFFF;
+            height: 100%
+        }
+
+        .month-day {
+            text-align: center
+        }
+
+        .nutshell-inner-first .date {
+            border: 2px solid #FFFF;
+            padding: 1.2rem .5rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            margin-right: 0;
+            border-radius: 20px
+        }
+
+        .nutshell-inner-first .month {
+            font-size: 1.5rem;
+            margin-bottom: .5rem
+        }
+
+        .nutshell-inner-first .day {
+            font-size: 1.5rem;
+            font-weight: 600
+        }
+
+        .nutshell-svg svg {
+            transform: translate(0px, -44px)
+        }
+
+        .nutshell-today-text {
+            font-size: 1.8rem;
+            line-height: 2.2rem;
+            text-align: center;
+            order: 0;
+            margin-right: 0;
+            position: relative;
+            top: 1.4rem;
+            color: #000;
+            font-weight: 300;
+            width: min-content
+        }
     }
 </style>
 <!-- New Nutshell Section -->
 <section id="new-nutshell" class="nutshell-top">
+    <div class="fade"></div>
     <div class="nutshell-container-image">
-    </div>
-    <div class="nutshell-inner">
-        <div class="col-6 xs-col-12 lg-col-6 nutshell-inner-first">
-            <div class="date"><?php echo date('d'); ?></div>
+        <div class="col-6  nutshell-inner-first">
+            <div class="date"><?php echo current_time('d');  ?></div>
             <div class="month-day">
-                <div class="month"><?php echo date('M'); ?></div>
-                <div class="day"><?php echo date('l'); ?></div>
+                <div class="month"><?php echo current_time('M');  ?></div>
+                <div class="day"><?php echo current_time('l');  ?></div>
             </div>
         </div>
-        <div class=" col-6 xs-col-12 lg-col-6 nutshell-inner-second">
+        <div class=" col-6  nutshell-inner-second">
+
             <div class="nutshell-svg floating">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="241.929" height="156.918" viewBox="0 0 241.929 156.918">
-                    <defs>
-                        <style>
-                            .a {
-                                opacity: 0.88;
-                            }
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="241.929" height="156.918" viewBox="0 0 241.929 156.918">
+                        <defs>
+                            <style>
+                                .a {
+                                    opacity: 0.88;
+                                }
 
-                            .b,
-                            .c,
-                            .d {
-                                fill: #00485a;
-                            }
+                                .b,
+                                .c,
+                                .d {
+                                    fill: #00485a;
+                                }
 
-                            .b {
-                                opacity: 0.12;
-                            }
+                                .b {
+                                    opacity: 0.12;
+                                }
 
-                            .c {
-                                opacity: 0.51;
-                            }
+                                .c {
+                                    opacity: 0.51;
+                                }
 
-                            .e {
-                                fill: #f16b6f;
-                            }
+                                .e {
+                                    fill: #f16b6f;
+                                }
 
-                            .f {
-                                filter: url(#k);
-                            }
+                                .f {
+                                    filter: url(#k);
+                                }
 
-                            .g {
-                                filter: url(#i);
-                            }
+                                .g {
+                                    filter: url(#i);
+                                }
 
-                            .h {
-                                filter: url(#g);
-                            }
+                                .h {
+                                    filter: url(#g);
+                                }
 
-                            .i {
-                                filter: url(#e);
-                            }
+                                .i {
+                                    filter: url(#e);
+                                }
 
-                            .j {
-                                filter: url(#c);
-                            }
+                                .j {
+                                    filter: url(#c);
+                                }
 
-                            .k {
-                                filter: url(#a);
-                            }
-                        </style>
-                        <filter id="a" x="118.185" y="16.587" width="123.744" height="123.744" filterUnits="userSpaceOnUse">
-                            <feOffset dy="3" input="SourceAlpha" />
-                            <feGaussianBlur stdDeviation="3" result="b" />
-                            <feFlood flood-opacity="0.361" />
-                            <feComposite operator="in" in2="b" />
-                            <feComposite in="SourceGraphic" />
-                        </filter>
-                        <filter id="c" x="0" y="16.587" width="123.744" height="123.744" filterUnits="userSpaceOnUse">
-                            <feOffset dy="3" input="SourceAlpha" />
-                            <feGaussianBlur stdDeviation="3" result="d" />
-                            <feFlood flood-opacity="0.361" />
-                            <feComposite operator="in" in2="d" />
-                            <feComposite in="SourceGraphic" />
-                        </filter>
-                        <filter id="e" x="80.863" y="8.294" width="140.331" height="140.331" filterUnits="userSpaceOnUse">
-                            <feOffset dy="3" input="SourceAlpha" />
-                            <feGaussianBlur stdDeviation="3" result="f" />
-                            <feFlood flood-opacity="0.361" />
-                            <feComposite operator="in" in2="f" />
-                            <feComposite in="SourceGraphic" />
-                        </filter>
-                        <filter id="g" x="20.734" y="8.294" width="140.331" height="140.331" filterUnits="userSpaceOnUse">
-                            <feOffset dy="3" input="SourceAlpha" />
-                            <feGaussianBlur stdDeviation="3" result="h" />
-                            <feFlood flood-opacity="0.361" />
-                            <feComposite operator="in" in2="h" />
-                            <feComposite in="SourceGraphic" />
-                        </filter>
-                        <filter id="i" x="43.542" y="0" width="156.918" height="156.918" filterUnits="userSpaceOnUse">
-                            <feOffset dy="3" input="SourceAlpha" />
-                            <feGaussianBlur stdDeviation="3" result="j" />
-                            <feFlood flood-opacity="0.361" />
-                            <feComposite operator="in" in2="j" />
-                            <feComposite in="SourceGraphic" />
-                        </filter>
-                        <filter id="k" x="96.414" y="38.358" width="71.908" height="82.276" filterUnits="userSpaceOnUse">
-                            <feOffset dy="3" input="SourceAlpha" />
-                            <feGaussianBlur stdDeviation="3" result="l" />
-                            <feFlood flood-opacity="0.161" />
-                            <feComposite operator="in" in2="l" />
-                            <feComposite in="SourceGraphic" />
-                        </filter>
-                    </defs>
-                    <g class="a" transform="translate(-235 -181)">
-                        <g class="k" transform="matrix(1, 0, 0, 1, 235, 181)">
-                            <path class="b" d="M52.872,0a52.872,52.872,0,0,1,52.872,52.872,53.689,53.689,0,0,1-2.8,17.026A52.878,52.878,0,1,1,52.872,0Z" transform="translate(127.18 22.59)" />
+                                .k {
+                                    filter: url(#a);
+                                }
+                            </style>
+                            <filter id="a" x="118.185" y="16.587" width="123.744" height="123.744" filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha" />
+                                <feGaussianBlur stdDeviation="3" result="b" />
+                                <feFlood flood-opacity="0.361" />
+                                <feComposite operator="in" in2="b" />
+                                <feComposite in="SourceGraphic" />
+                            </filter>
+                            <filter id="c" x="0" y="16.587" width="123.744" height="123.744" filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha" />
+                                <feGaussianBlur stdDeviation="3" result="d" />
+                                <feFlood flood-opacity="0.361" />
+                                <feComposite operator="in" in2="d" />
+                                <feComposite in="SourceGraphic" />
+                            </filter>
+                            <filter id="e" x="80.863" y="8.294" width="140.331" height="140.331" filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha" />
+                                <feGaussianBlur stdDeviation="3" result="f" />
+                                <feFlood flood-opacity="0.361" />
+                                <feComposite operator="in" in2="f" />
+                                <feComposite in="SourceGraphic" />
+                            </filter>
+                            <filter id="g" x="20.734" y="8.294" width="140.331" height="140.331" filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha" />
+                                <feGaussianBlur stdDeviation="3" result="h" />
+                                <feFlood flood-opacity="0.361" />
+                                <feComposite operator="in" in2="h" />
+                                <feComposite in="SourceGraphic" />
+                            </filter>
+                            <filter id="i" x="43.542" y="0" width="156.918" height="156.918" filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha" />
+                                <feGaussianBlur stdDeviation="3" result="j" />
+                                <feFlood flood-opacity="0.361" />
+                                <feComposite operator="in" in2="j" />
+                                <feComposite in="SourceGraphic" />
+                            </filter>
+                            <filter id="k" x="96.414" y="38.358" width="71.908" height="82.276" filterUnits="userSpaceOnUse">
+                                <feOffset dy="3" input="SourceAlpha" />
+                                <feGaussianBlur stdDeviation="3" result="l" />
+                                <feFlood flood-opacity="0.161" />
+                                <feComposite operator="in" in2="l" />
+                                <feComposite in="SourceGraphic" />
+                            </filter>
+                        </defs>
+                        <g class="a" transform="translate(-235 -181)">
+                            <g class="k" transform="matrix(1, 0, 0, 1, 235, 181)">
+                                <path class="b" d="M52.872,0a52.872,52.872,0,0,1,52.872,52.872,53.689,53.689,0,0,1-2.8,17.026A52.878,52.878,0,1,1,52.872,0Z" transform="translate(127.18 22.59)" />
+                            </g>
+                            <g class="j" transform="matrix(1, 0, 0, 1, 235, 181)">
+                                <path class="b" d="M52.872,0a52.872,52.872,0,0,1,52.872,52.872,53.689,53.689,0,0,1-2.8,17.026A52.878,52.878,0,1,1,52.872,0Z" transform="translate(9 22.59)" />
+                            </g>
+                            <g class="i" transform="matrix(1, 0, 0, 1, 235, 181)">
+                                <circle class="c" cx="61.166" cy="61.166" r="61.166" transform="translate(89.86 14.29)" />
+                            </g>
+                            <g class="h" transform="matrix(1, 0, 0, 1, 235, 181)">
+                                <circle class="c" cx="61.166" cy="61.166" r="61.166" transform="translate(29.73 14.29)" />
+                            </g>
+                            <g class="g" transform="matrix(1, 0, 0, 1, 235, 181)">
+                                <circle class="d" cx="69.459" cy="69.459" r="69.459" transform="translate(52.54 6)" />
+                            </g>
+                            <g class="f" transform="matrix(1, 0, 0, 1, 235, 181)">
+                                <path class="e" d="M31.279,1.441a1,1,0,0,1,1.718,0L63.374,52.4a1,1,0,0,1-.859,1.512H1.76A1,1,0,0,1,.9,52.4Z" transform="translate(159.32 44.36) rotate(90)" />
+                            </g>
                         </g>
-                        <g class="j" transform="matrix(1, 0, 0, 1, 235, 181)">
-                            <path class="b" d="M52.872,0a52.872,52.872,0,0,1,52.872,52.872,53.689,53.689,0,0,1-2.8,17.026A52.878,52.878,0,1,1,52.872,0Z" transform="translate(9 22.59)" />
-                        </g>
-                        <g class="i" transform="matrix(1, 0, 0, 1, 235, 181)">
-                            <circle class="c" cx="61.166" cy="61.166" r="61.166" transform="translate(89.86 14.29)" />
-                        </g>
-                        <g class="h" transform="matrix(1, 0, 0, 1, 235, 181)">
-                            <circle class="c" cx="61.166" cy="61.166" r="61.166" transform="translate(29.73 14.29)" />
-                        </g>
-                        <g class="g" transform="matrix(1, 0, 0, 1, 235, 181)">
-                            <circle class="d" cx="69.459" cy="69.459" r="69.459" transform="translate(52.54 6)" />
-                        </g>
-                        <g class="f" transform="matrix(1, 0, 0, 1, 235, 181)">
-                            <path class="e" d="M31.279,1.441a1,1,0,0,1,1.718,0L63.374,52.4a1,1,0,0,1-.859,1.512H1.76A1,1,0,0,1,.9,52.4Z" transform="translate(159.32 44.36) rotate(90)" />
-                        </g>
-                    </g>
-                </svg></div>
+                    </svg></a></div>
+
             <div class="nutshell-today-text">
                 Today's Nutshell
             </div>
         </div>
     </div>
 </section>
-
 <section id="stories" class="hide">
     <div class="container">
         <div class="story-section">
