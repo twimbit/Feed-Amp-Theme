@@ -42,7 +42,7 @@ $category = get_the_category();
 // $category = get_the_category();
 // $firstCategory = $category[0]->cat_name;
 ?>
-
+<div id="post_area">
 <section class="featured-image" style="padding: 0px;background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
     <?php while (have_posts()) {
         the_post();
@@ -81,7 +81,7 @@ $category = get_the_category();
                             <h2 style="flex:1;color: #f16c70;">Up next</h2>
                             <?php $taxonomy = "post";
                             for ($i = 1; $i <= 2; $i++) {
-                                $post = get_next_post(); // this uses $post->ID
+                                $post = get_adjacent_post(); // this uses $post->ID
                                 $post_title = get_the_title();
                                 $post_permalink = get_the_permalink();
                                 if (!empty($post)) { ?>
@@ -92,7 +92,7 @@ $category = get_the_category();
                                     $first_post =  get_posts(array(
                                         'numberposts' => 1,
                                         'post_type' => array('post'),
-                                        'order' => 'ASC',
+                                        'order' => 'DESC',
                                     ))[0];
                                     ?>
                                     <a href="<?php echo get_the_permalink($first_post); ?>">
@@ -110,7 +110,7 @@ $category = get_the_category();
                 </div>
                 <div class="xs-col-12 sm-col-7 md-col-6 lg-col-5 mt4 cont">
                     <div class="social lg-hide md-hide" style="margin-left:auto;">
-                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" data-param-href="hello" width="30px" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
@@ -119,7 +119,7 @@ $category = get_the_category();
                 </div>
                 <div class="xs-col-12 sm-col-2 md-col-2 lg-col-2 mt4 ml2 sm-hide xs-hide">
                     <div class="social">
-                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" width="30px" href="hello" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
@@ -140,15 +140,15 @@ $category = get_the_category();
         <div class="more-to-explore-card-container">
             <?php
             for ($i = 1; $i <= 2; $i++) {
-                $post = get_next_post();
-                $trending_img = get_the_post_thumbnail_url();
+                $post = get_adjacent_post();
+                $trending_img = get_the_post_thumbnail_url($val, 'medium_large');
                 $trending_url = get_the_permalink();
                 $trending_title = get_the_title();
                 $type = get_post_type();
                 if (!empty($post)) { ?>
                     <div class="feed-card" style="height: 313px;width:49%">
                         <div class="single-thumbnail">
-                            <amp-img src="<?php echo $trending_img; ?>"></amp-img>
+                            <amp-img layout="fill" src="<?php echo $trending_img; ?>"></amp-img>
                             <div class="fade"></div>
                             <a href="<?php echo $trending_url; ?>" class="feed-link">
                                 <div class="feed-title">
@@ -207,13 +207,13 @@ $category = get_the_category();
                     $first_post =  get_posts(array(
                         'numberposts' => 1,
                         'post_type' => array('post'),
-                        'order' => 'ASC',
+                        'order' => 'DESC',
                     ))[0];
                     $first_post_type = get_post_type($first_post);
                     ?>
                     <div class="feed-card" style="height: 313px;width:49%">
                         <div class="single-thumbnail">
-                            <amp-img src="<?php echo get_the_post_thumbnail_url($first_post); ?>"></amp-img>
+                            <amp-img layout="fill" src="<?php echo get_the_post_thumbnail_url($first_post, 'medium_large'); ?>"></amp-img>
                             <div class="fade"></div>
                             <a href="<?php echo get_the_permalink($first_post); ?>" class="feed-link">
                                 <div class="feed-title">
@@ -274,6 +274,7 @@ $category = get_the_category();
         </div>
     </div>
 </section>
+</div>
 <?php get_footer(); ?>
 <!-- <script>
     $(document).ready(function() {
