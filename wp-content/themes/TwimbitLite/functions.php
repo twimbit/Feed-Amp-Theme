@@ -87,37 +87,65 @@ function previous_page_ID($id)
 
 // search filter
 
-function searchfilter($query) {
+function searchfilter($query)
+{
 
-	if ($query->is_search && !is_admin() ) {
-		$query->set('post_type',array('post','video','amp_story','podcast'));
+	if ($query->is_search && !is_admin()) {
+		$query->set('post_type', array('post', 'video', 'amp_story', 'podcast'));
 	}
 
 	return $query;
 }
 
-add_filter('pre_get_posts','searchfilter');
+add_filter('pre_get_posts', 'searchfilter');
 
 //user media restriction
 
 
-define( 'FRONTIER_RESTRICT_MEDIA_VERSION', "1.1.3" );
-define( 'FRONTIER_RESTRICT_MEDIA_DIR', dirname( __FILE__ ) ); //an absolute path to this directory
+define('FRONTIER_RESTRICT_MEDIA_VERSION', "1.1.3");
+define('FRONTIER_RESTRICT_MEDIA_DIR', dirname(__FILE__)); //an absolute path to this directory
 
 //Restrict users who dont have capability edit_others_posts, to only see media they have uploaded themselves
-function frontier_restrict_media( $query ) {
+function frontier_restrict_media($query)
+{
 	//Check if it is an admin query
-	if ( $query->is_admin && ! current_user_can( 'edit_others_posts' ) ) {
+	if ($query->is_admin && !current_user_can('edit_others_posts')) {
 		//Check if it is an attachment query
-		if ( $query->query['post_type'] === 'attachment' ) {
+		if ($query->query['post_type'] === 'attachment') {
 			// Get current user, and author=current user to query
 			$current_user = wp_get_current_user();
-			$query->set( 'author', $current_user->ID );
+			$query->set('author', $current_user->ID);
 		}
 	}
 
 	return $query;
 }
 
-add_filter( 'pre_get_posts', 'frontier_restrict_media' );
+add_filter('pre_get_posts', 'frontier_restrict_media');
 
+
+//Infinite Scroll
+function wp_infinitepaginate()
+{
+	$loopFile = $_POST['loop_file'];
+	$paged = $_POST['page_no'];
+	$action = $_POST['what'];
+	$value = $_POST['value'];
+
+	if ($action == 'author_name') {
+		$arg = array('author_name' => $value, 'paged' => $paged, 'post_status' => 'publish');
+	} elseif ($action == 'category_name') {
+		$arg = array('category_name' => $value, 'paged' => $paged, 'post_status' => 'publish');
+	} elseif ($action == 'search') {
+		$arg = array('s' => $value, 'paged' => $paged, 'post_status' => 'publish');
+	} else {
+		$arg = array('paged' => $paged, 'post_status' => 'publish');
+	}
+	# Load the posts
+	query_posts($arg);
+	get_template_part($loopFile);
+
+	exit;
+}
+add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate'); // for logged in user
+add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate'); // if user not logged in
