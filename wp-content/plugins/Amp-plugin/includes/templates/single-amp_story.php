@@ -4,12 +4,14 @@
  *
  * @package AMP
  */
-if (!$_COOKIE['user_date_story']) {
+
+the_post();
+//CHECKING STATUS OF NUSTHELL OPENING
+if (!$_COOKIE['user_date_story'] && ($_GET['story'] == 'nutshell')) {
 	$user_date_story = 'user_date_story';
-	$user_value_story = "set";
+	$user_value_story =  $post->post_date;
 	setcookie($user_date_story, $user_value_story, time() + (86400 * 30), "/");
 }
-the_post();
 ?>
 <!DOCTYPE html>
 <html amp <?php language_attributes(); ?>>

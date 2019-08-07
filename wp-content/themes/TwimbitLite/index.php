@@ -13,12 +13,6 @@ $args = array(
     'suppress_filters' => true,
 );
 $get_post_for_story = get_posts($args);
-$user_date_story = "not set";
-if ($_COOKIE['user_date_story']) {
-    $user_date_story = 'user_date_story';
-    $user_value_story = $get_post_for_story[0]->post_date;;
-    setcookie($user_date_story, $user_value_story, time() + (86400 * 30), "/");
-}
 get_header();
 
 $post_args = array(
@@ -313,7 +307,7 @@ function check($get_post_for_story, $user_date_story)
         </div>
         <div class=" col-6  nutshell-inner-second">
             <div class="nutshell-svg floating <?php check($get_post_for_story[0], $_COOKIE['user_date_story']); ?>">
-                <a href="<?php echo get_the_permalink($get_post_for_story[0]); ?>">
+                <a href="<?php echo get_the_permalink($get_post_for_story[0]); ?>?story=nutshell">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="241.929" height="156.918" viewBox="0 0 241.929 156.918">
                         <defs>
                             <style>
