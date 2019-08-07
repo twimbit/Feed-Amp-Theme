@@ -4,7 +4,11 @@
  *
  * @package AMP
  */
-
+if (!$_COOKIE['user_date_story']) {
+	$user_date_story = 'user_date_story';
+	$user_value_story = "set";
+	setcookie($user_date_story, $user_value_story, time() + (86400 * 30), "/");
+}
 the_post();
 ?>
 <!DOCTYPE html>
