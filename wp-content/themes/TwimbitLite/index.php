@@ -1,8 +1,8 @@
-<?php get_header();
+<?php
 
 $args = array(
-    'numberposts' => 10,
-    'category' => get_category_by_slug('nutshell')->term_id,
+    'numberposts' => 1,
+    'category' => 0, //get_category_by_slug('nutshell')->term_id,
     'orderby' => 'date',
     'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
@@ -13,6 +13,13 @@ $args = array(
     'suppress_filters' => true,
 );
 $get_post_for_story = get_posts($args);
+$user_date_story = "not set";
+if ($_COOKIE['user_date_story']) {
+    $user_date_story = 'user_date_story';
+    $user_value_story = $get_post_for_story[0]->post_date;;
+    setcookie($user_date_story, $user_value_story, time() + (86400 * 30), "/");
+}
+get_header();
 
 $post_args = array(
     'numberposts' => 50,
@@ -27,6 +34,16 @@ $post_args = array(
     'suppress_filters' => true,
 );
 $get_post_feed = get_posts($post_args);
+
+
+
+function check($get_post_for_story, $user_date_story)
+{
+    $get_story_published_date = $get_post_for_story->post_date;
+    if ($user_date_story == $get_story_published_date && $_COOKIE['user_date_story']) {
+        echo "user-visited";
+    }
+}
 ?>
 <!-- Feed Tab -->
 <!-- Stories section -->
@@ -128,6 +145,27 @@ $get_post_feed = get_posts($post_args);
         animation-iteration-count: infinite;
         animation-timing-function: cubic-bezier(0.79, 0.01, 0.49, 0.98) margin-left: 30px;
         margin-top: 5px
+    }
+
+    .user-visited.b {
+        fill: #a1a1a1;
+    }
+
+    .user-visited {
+        animation-duration: 0s !important;
+        transform: scale(0.4);
+    }
+
+    .user-visited .c {
+        fill: #a1a1a1;
+    }
+
+    .user-visited .d {
+        fill: #a1a1a1;
+    }
+
+    .user-visited .e {
+        fill: #d3d6d8;
     }
 
     @keyframes floating {
@@ -274,9 +312,8 @@ $get_post_feed = get_posts($post_args);
             </div>
         </div>
         <div class=" col-6  nutshell-inner-second">
-
-            <div class="nutshell-svg floating">
-                <a href="#">
+            <div class="nutshell-svg floating <?php check($get_post_for_story[0], $_COOKIE['user_date_story']); ?>">
+                <a href="<?php echo get_the_permalink($get_post_for_story[0]); ?>">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="241.929" height="156.918" viewBox="0 0 241.929 156.918">
                         <defs>
                             <style>
@@ -397,6 +434,8 @@ $get_post_feed = get_posts($post_args);
         </div>
     </div>
 </section>
+<?php //check($get_post_for_story[0], $_COOKIE['user_date_story']);
+?>
 <section id="stories" class="hide">
     <div class="container">
         <div class="story-section">
