@@ -47,7 +47,7 @@ function check($get_post_for_story, $user_date_story)
         document.querySelector('#feed-nav').className += ' active-nav';
         let time = new Date();
         let h = time.getHours();
-        console.log(h);
+        // console.log(h);
         if (h < 12) {
             document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitPro/src/morning.jpeg'; ?>)"
         } else if (h >= 12 && h < 17) {

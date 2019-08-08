@@ -53,23 +53,22 @@
         //             return false;
         //         };
         var prevScrollpos = window.pageYOffset;
-        console.log(prevScrollpos);
+        // console.log(prevScrollpos);
+        // console.log(window.screenTop + window.innerHeight);
+        // console.log(document.body.scrollHeight);
         window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                // show header and footer
-                document.querySelector(".ampstart-headerbar").style.top = "0";
-                document.querySelector("#colophon").style.bottom = "0";
-            } else {
+            if (window.pageYOffset > 50 && prevScrollpos < currentScrollPos) {
                 /* Hide header and footer */
                 document.querySelector(".ampstart-headerbar").style.top = "-70px";
                 document.querySelector("#colophon").style.bottom = "-70px";
+            } else if (prevScrollpos > currentScrollPos) {
+                // show header and footer
+                document.querySelector(".ampstart-headerbar").style.top = "0";
+                document.querySelector("#colophon").style.bottom = "0";
             }
             prevScrollpos = currentScrollPos;
-
         }
-
-
     });
 
     // Add active class to the current button (highlight it)
