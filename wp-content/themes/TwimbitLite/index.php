@@ -48,7 +48,7 @@ function check($get_post_for_story, $user_date_story)
         let time = new Date();
         let h = time.getHours();
         if (h <= 12) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitLite/src/morning.jpeg'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitLite/src/night.jpeg'; ?>)"
         } else if (h >= 12 && h <= 17) {
             document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitLite/src/afternoon.jpeg'; ?>)"
         } else if (h >= 17 && h <= 19) {
@@ -64,7 +64,7 @@ function check($get_post_for_story, $user_date_story)
         height: 183px;
         margin-top: 55px;
         position: relative;
-        background-size: cover
+        background-size: 100% 100%;
     }
 
     .nutshell-container-image {
@@ -239,7 +239,9 @@ function check($get_post_for_story, $user_date_story)
             align-items: center;
             color: #FFFF
         }
-
+        .nutshell-top {
+        background-size: 235% 100%;
+    }
         .floating {
             order: 1
         }
