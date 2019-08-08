@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial;
+            color: white;
+            scrolling:"no";
+
+        }
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -15px;
+            margin-left: -15px
+        }
+        .meeting {
+            margin-top: 50px;
+            justify-content: center
+        }
+        @media (min-width:64.06rem)
+        {
+            .lg-col-6 { width: 50%;}
+        }
+        @media (min-width:52.06rem)
+        {
+            .md-col-6 { width: 50%; }
+        }
+        @media (min-width:40.06rem)
+        {
+            .sm-col-6 { width: 50%; }
+        }
+
+
+
+        .zoom
+        {
+            height:100%;
+        }
+        h2,h3
+        {
+            color: cadetblue;
+            margin:0.5em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="row meeting">
+    <!--Main div   -->
+    <div class="lg-col-6 md-col-6 sm-col-6 xs-col-12" style="display: inline-table;">
+        <!-- 1st div divided into 50%size of the page-->
+        <div class="top-left-head">
+            <h2>Shalini Bose</h2>
+            <h3>Topic : Zoom meeting and slide testing</h3>
+
+        </div>
+        <div class="zoom">
+            <div class="iframe-container" style="overflow: hidden; padding-top: 98%; position: relative; ">
+                <iframe allow="microphone; camera"
+                        style="border: 0;
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;"
+                        src="https://zoom.us/j/351924979"
+                        frameborder="0">
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="lg-col-6 md-col-6 sm-col-6 xs-col-12" style="margin-top: -1em;">
+        <!-- main div divded into 50% of the page -->
+        <div class="top-right-head">
+            <h2>Mail id</h2>
+            <h3>shalinibose25@gmail.com</h3>
+
+        </div>
+        <div class="slide">
+            <iframe src="//slides.com/shalinibose/slide-testing/embed"
+                    width="100%"
+                    height="750"
+                    scrolling="no"
+                    frameborder="0"
+                    webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+            </iframe>
+        </div>
+    </div>
+</div>
+</body>
+</html>

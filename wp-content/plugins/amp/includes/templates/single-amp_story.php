@@ -12,11 +12,6 @@ if (!$_COOKIE['user_date_story'] && ($_GET['story'] == 'nutshell')) {
     $user_value_story =  $post->post_date;
     setcookie($user_date_story, $user_value_story, time() + (86400 * 30), "/");
 }
-Collapse
-
-
-
-
 ?>
 <!DOCTYPE html>
 <html amp <?php language_attributes(); ?>>
