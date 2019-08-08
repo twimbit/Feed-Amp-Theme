@@ -20,7 +20,7 @@
         body {
             background: #fff;
             color: #4a4a4a;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;
+            /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif; */
             min-width: 315px;
             overflow-x: hidden;
             font-smooth: always;
@@ -2441,10 +2441,11 @@
         </style>
     </noscript>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet"> -->
 
 
-    <?php wp_head(); ?>
+    <?php wp_head();
+    ?>
 </head>
 <?php
 $business = get_category_by_slug('business_model');
