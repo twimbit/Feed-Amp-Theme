@@ -30,7 +30,7 @@ $post_args = array(
 $get_post_feed = get_posts($post_args);
 
 
-
+/* Function checks for nutshell is updated */
 function check($get_post_for_story, $user_date_story)
 {
     $get_story_published_date = $get_post_for_story->post_date;
@@ -48,7 +48,7 @@ function check($get_post_for_story, $user_date_story)
         let time = new Date();
         let h = time.getHours();
         if (h <= 12) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitLite/src/night.jpeg'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitLite/src/morning.jpg'; ?>)"
         } else if (h >= 12 && h <= 17) {
             document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitLite/src/afternoon.jpeg'; ?>)"
         } else if (h >= 17 && h <= 19) {
