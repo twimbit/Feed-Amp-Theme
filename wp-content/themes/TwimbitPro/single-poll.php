@@ -8,9 +8,14 @@
 get_header();
 
 
+
+;
+$poll_title = get_the_title();
+$poll = get_field('poll_type');
+
 ?>
 
-<style>
+<style scoped>
 	.meeting {
 		margin-top: 70px;
 		margin-left:5px;
@@ -42,7 +47,9 @@ get_header();
 		<!-- 1st div divided into 50%size of the page-->
 		<div class="top-left-head">
 			<h2>Shalini Bose</h2>
-			<h3>Topic : Zoom meeting and slide testing</h3>
+
+
+			<h3>Topic : <?php echo $poll_title; ?></h3>
 
 		</div>
 		<div class="zoom">
@@ -57,7 +64,6 @@ get_header();
 					    src="https://zoom.us/j"
                         scrolling="auto"
 					    frameborder="0"
-
 					    webkitallowfullscreen mozallowfullscreen allowfullscreen>
 				</iframe>
 			</div>
@@ -78,8 +84,8 @@ get_header();
 			</iframe>
 		</div>
         <div class="bottom-right">
-
             <h2>Attachments</h2>
+            <a href="<?php echo $poll['url']?>" download> download</a>
 
         </div>
 	</div>
