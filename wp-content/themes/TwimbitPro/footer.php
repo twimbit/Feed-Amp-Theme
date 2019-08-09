@@ -40,7 +40,7 @@
 </div><!-- .site -->
 
 <?php wp_footer(); ?>
-<script>
+<script async>
     //     $(window).on('load', function() {
     //         /*! Fades in page on load */
     //         $("body").fadeIn(300);
@@ -71,19 +71,19 @@
         }
 
         // Load google fonts asynchronously.
-        WebFontConfig = {
-            google: {
-                families: ['Montserrat:200,300,400,400i,500,500i,600,600i,700']
-            }
-        };
-        (function() {
-            var wf = document.createElement('script');
-            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-            wf.type = 'text/javascript';
-            wf.async = 'true';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(wf, s);
-        })();
+        // WebFontConfig = {
+        //     google: {
+        //         families: ['Montserrat:200,300,400,400i,500,500i,600,600i,700']
+        //     }
+        // };
+        // (function() {
+        //     var wf = document.createElement('script');
+        //     wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        //     wf.type = 'text/javascript';
+        //     wf.async = 'true';
+        //     var s = document.getElementsByTagName('script')[0];
+        //     s.parentNode.insertBefore(wf, s);
+        // })();
     });
 
     // Add active class to the current button (highlight it)
