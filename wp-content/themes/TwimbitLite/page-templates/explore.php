@@ -10,7 +10,7 @@ get_header();
  * @package Twimbit Lite
  */
 
-$post_args = array(
+$post_args_exlore = array(
     'numberposts' => 0,
     'category' => 0,
     'orderby' => 'date',
@@ -22,7 +22,7 @@ $post_args = array(
     'post_type' => array('post'),
     'suppress_filters' => true,
 );
-$get_post = get_posts($post_args);
+$get_post_explore = get_posts($post_args_exlore);
 
 
 $trending = array(
