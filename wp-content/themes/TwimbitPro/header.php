@@ -2496,16 +2496,20 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         </div>
                     </form>
                 </li>
-                <li class="ampstart-nav-item tool" id="feed-nav">
-                    <a href="<?php echo home_url(); ?>" class="text-decoration-none block feed-menu">
+
+                <li on="tap:explore-tab-section.hide(),feed-tab-section.show()" class="ampstart-nav-item tool feed-selector-class" id="feed-nav" style="padding: 0 0;">
+                    <a style="padding: 0 1rem;" class="text-decoration-none block feed-menu" <?php if (!(is_home())) {
+                                                                                                    ?> href="<?php echo home_url(); ?>" <?php } ?>>
                         <svg>
-                            <path d="M 2 26.51701164245605 L 26.82351112365723 26.51701164245605 L 26.82351112365723 22.59750747680664 L 2 22.59750747680664 L 2 26.51701164245605 Z M 25.51700782775879 9.532502174377441 L 3.306500434875488 9.532502174377441 C 2.587925434112549 9.532502174377441 2 10.12042713165283 2 10.83900260925293 L 2 18.67800521850586 C 2 19.39658164978027 2.587925434112549 19.98450660705566 3.306500434875488 19.98450660705566 L 25.51700782775879 19.98450660705566 C 26.2355842590332 19.98450660705566 26.82351112365723 19.39658164978027 26.82351112365723 18.67800521850586 L 26.82351112365723 10.83900260925293 C 26.82351112365723 10.12042713165283 26.2355842590332 9.532502174377441 25.51700782775879 9.532502174377441 Z M 2 3 L 2 6.919501304626465 L 26.82351112365723 6.919501304626465 L 26.82351112365723 3 L 2 3 Z">
+                            <path d=" M 2 26.51701164245605 L 26.82351112365723 26.51701164245605 L 26.82351112365723 22.59750747680664 L 2 22.59750747680664 L 2 26.51701164245605 Z M 25.51700782775879 9.532502174377441 L 3.306500434875488 9.532502174377441 C 2.587925434112549 9.532502174377441 2 10.12042713165283 2 10.83900260925293 L 2 18.67800521850586 C 2 19.39658164978027 2.587925434112549 19.98450660705566 3.306500434875488 19.98450660705566 L 25.51700782775879 19.98450660705566 C 26.2355842590332 19.98450660705566 26.82351112365723 19.39658164978027 26.82351112365723 18.67800521850586 L 26.82351112365723 10.83900260925293 C 26.82351112365723 10.12042713165283 26.2355842590332 9.532502174377441 25.51700782775879 9.532502174377441 Z M 2 3 L 2 6.919501304626465 L 26.82351112365723 6.919501304626465 L 26.82351112365723 3 L 2 3 Z">
                             </path>
                         </svg>
                         Feed</a>
                 </li>
-                <li class="ampstart-nav-item tool" id="explore-nav">
-                    <a href="<?php echo home_url(); ?>/explore" class="text-decoration-none block">
+
+                <li on="tap:explore-tab-section.show(),feed-tab-section.hide()" class="ampstart-nav-item tool explore-selector-class" id="explore-nav" style="padding: 0 0;">
+                    <a style="padding: 0 1rem;" class="text-decoration-none block" <?php if (!(is_home())) {
+                                                                                        ?> href="<?php echo home_url(); ?>/explore" <?php } ?>>
                         <svg>
                             <path d="M 14.39246368408203 27.51700592041016 L 23.0528507232666 27.51700592041016 L 23.0528507232666 17.12454223632813 L 14.39246368408203 17.12454223632813 L 14.39246368408203 27.51700592041016 Z M 4 27.51700592041016 L 12.66038703918457 27.51700592041016 L 12.66038703918457 5 L 4 5 L 4 27.51700592041016 Z M 24.78492736816406 27.51700592041016 L 33.4453125 27.51700592041016 L 33.4453125 17.12454223632813 L 24.78492736816406 17.12454223632813 L 24.78492736816406 27.51700592041016 Z M 14.39246368408203 5 L 14.39246368408203 15.39246273040771 L 33.4453125 15.39246273040771 L 33.4453125 5 L 14.39246368408203 5 Z">
                             </path>
@@ -2548,8 +2552,8 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         </div>
         <nav class="ampstart-sidebar-nav ampstart-nav">
             <ul class="list-reset m0 p0 ampstart-label">
-                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo home_url(); ?>">Feed</a></li>
-                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo home_url(); ?>/explore">Explore</a></li>
+                <li class="ampstart-nav-item feed-selector-class" style="margin-bottom:1rem"><a on="tap:explore-tab-section.hide(),feed-tab-section.show(),header-sidebar.toggle">Feed</a></li>
+                <li class="ampstart-nav-item explore-selector-class" style="margin-bottom:1rem"><a on="tap:explore-tab-section.show(),feed-tab-section.hide(),header-sidebar.toggle">Explore</a></li>
             </ul>
             <ul class="ampstart-dropdown-items list-reset m0 p0">
                 <p>Categories</p>
