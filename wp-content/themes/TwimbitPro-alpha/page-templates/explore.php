@@ -10,21 +10,6 @@ get_header();
  * @package Twimbit Lite
  */
 
-$post_args_exlore = array(
-    'numberposts' => 0,
-    'category' => 0,
-    'orderby' => 'date',
-    'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
-    'include' => array(),
-    'exclude' => array(),
-    'meta_key' => '',
-    'meta_value' => '',
-    'post_type' => array('post'),
-    'suppress_filters' => true,
-);
-$get_post_explore = get_posts($post_args_exlore);
-
-
 $trending = array(
     'numberposts' => 0,
     'category' => get_category_by_slug('trending')->term_id,
@@ -395,9 +380,5 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
             </div>
         </section>
     <?php } ?>
-
-
-
-
 </section>
 <?php get_footer(); ?>
