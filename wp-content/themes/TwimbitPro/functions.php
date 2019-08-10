@@ -8,70 +8,6 @@ function mytheme_post_thumbnails()
 add_action('after_setup_theme', 'mytheme_post_thumbnails');
 
 
-/* =============================================================
-    NEXT PAGE ID
-    A function to get the next page's ID.
-    $id = ID of the page you want to find the next page for.
- * ============================================================= */
-function next_page_ID($id)
-{
-	// Get all pages under this section
-	$post = get_post($id);
-	$post_parent = $post->post_parent;
-	$get_pages_query = 'child_of=' . $post_parent . '&parent=' . $post_parent . '&sort_column=menu_order&sort_order=asc';
-	$get_pages = get_pages($get_pages_query);
-	$next_page_id = '';
-	// Count results
-	$page_count = count($get_pages);
-
-	for ($p = 0; $p < $page_count; $p++) {
-		// Get the array key for our entry
-		if ($id == $get_pages[$p]->ID) break;
-	}
-
-	// Assign our next key
-	$next_key = $p + 1;
-
-	// If there isn't a value assigned for the previous key, go all the way to the end
-	if (isset($get_pages[$next_key])) {
-		$next_page_id = $get_pages[$next_key]->ID;
-	}
-	return $next_page_id;
-}
-/* =============================================================
-    PREVIOUS PAGE ID
-    A function to get the previous page's ID.
-    $id = ID of the page you want to find the previous page for.
- * ============================================================= */
-function previous_page_ID($id)
-{
-	// Get all pages under this section
-	$post = get_post($id);
-	$post_parent = $post->post_parent;
-	$get_pages_query = 'child_of=' . $post_parent . '&parent=' . $post_parent . '&sort_column=menu_order&sort_order=asc';
-	$get_pages = get_pages($get_pages_query);
-	$prev_page_id = '';
-	// Count results
-	$page_count = count($get_pages);
-
-	for ($p = 0; $p < $page_count; $p++) {
-		// get the array key for our entry
-		if ($id == $get_pages[$p]->ID) break;
-	}
-
-	// assign our next & previous keys
-	$prev_key = $p - 1;
-	$last_key = $page_count - 1;
-
-	// if there isn't a value assigned for the previous key, go all the way to the end
-	if (isset($get_pages[$prev_key])) {
-		$prev_page_id = $get_pages[$prev_key]->ID;
-	}
-	return $prev_page_id;
-}
-
-
-
 // /**
 //  * Filter the except length to 20 words.
 //  *
@@ -123,29 +59,14 @@ function frontier_restrict_media($query)
 
 add_filter('pre_get_posts', 'frontier_restrict_media');
 
+// Attach you style and scripts from here
+// function my_assets()
+// {
+// 	// wp_enqueue_style('theme-style', get_stylesheet_uri(), array('reset'));
+// 	// wp_enqueue_style('reset', get_stylesheet_directory_uri() . '/reset.css');
 
-//Infinite Scroll
-function wp_infinitepaginate()
-{
-	$loopFile = $_POST['loop_file'];
-	$paged = $_POST['page_no'];
-	$action = $_POST['what'];
-	$value = $_POST['value'];
+// 	wp_enqueue_script('Toggler-js', content_url() . '/themes/TwimbitPro/src/toggler.js', array(), '1.0');
+// 	wp_enqueue_script('Twimbit-js', content_url() . '/themes/TwimbitPro/src/twimbit.js', array(), '1.0', true);
+// }
 
-	if ($action == 'author_name') {
-		$arg = array('author_name' => $value, 'paged' => $paged, 'post_status' => 'publish');
-	} elseif ($action == 'category_name') {
-		$arg = array('category_name' => $value, 'paged' => $paged, 'post_status' => 'publish');
-	} elseif ($action == 'search') {
-		$arg = array('s' => $value, 'paged' => $paged, 'post_status' => 'publish');
-	} else {
-		$arg = array('paged' => $paged, 'post_status' => 'publish');
-	}
-	# Load the posts
-	query_posts($arg);
-	get_template_part($loopFile);
-
-	exit;
-}
-add_action('wp_ajax_infinite_scroll', 'wp_infinitepaginate'); // for logged in user
-add_action('wp_ajax_nopriv_infinite_scroll', 'wp_infinitepaginate'); // if user not logged in
+// add_action('wp_enqueue_scripts', 'my_assets');

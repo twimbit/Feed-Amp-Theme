@@ -40,7 +40,7 @@
 </div><!-- .site -->
 
 <?php wp_footer(); ?>
-<script>
+<script async>
     //     $(window).on('load', function() {
     //         /*! Fades in page on load */
     //         $("body").fadeIn(300);
@@ -53,23 +53,37 @@
         //             return false;
         //         };
         var prevScrollpos = window.pageYOffset;
-        console.log(prevScrollpos);
+        // console.log(prevScrollpos);
+        // console.log(window.screenTop + window.innerHeight);
+        // console.log(document.body.scrollHeight);
         window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                // show header and footer
-                document.querySelector(".ampstart-headerbar").style.top = "0";
-                document.querySelector("#colophon").style.bottom = "0";
-            } else {
+            if (window.pageYOffset > 50 && prevScrollpos < currentScrollPos) {
                 /* Hide header and footer */
                 document.querySelector(".ampstart-headerbar").style.top = "-70px";
                 document.querySelector("#colophon").style.bottom = "-70px";
+            } else if (prevScrollpos > currentScrollPos) {
+                // show header and footer
+                document.querySelector(".ampstart-headerbar").style.top = "0";
+                document.querySelector("#colophon").style.bottom = "0";
             }
             prevScrollpos = currentScrollPos;
-
         }
 
-
+        // Load google fonts asynchronously.
+        // WebFontConfig = {
+        //     google: {
+        //         families: ['Montserrat:200,300,400,400i,500,500i,600,600i,700']
+        //     }
+        // };
+        // (function() {
+        //     var wf = document.createElement('script');
+        //     wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        //     wf.type = 'text/javascript';
+        //     wf.async = 'true';
+        //     var s = document.getElementsByTagName('script')[0];
+        //     s.parentNode.insertBefore(wf, s);
+        // })();
     });
 
     // Add active class to the current button (highlight it)

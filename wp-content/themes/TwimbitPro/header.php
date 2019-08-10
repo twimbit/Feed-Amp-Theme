@@ -2,25 +2,26 @@
 <html amp="1.2.1" <?php language_attributes(); ?>>
 
 <head>
+
+    <!-- Montserrat fonts load -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&display=swap" rel="stylesheet">
     <!-- Style css	 -->
     <style amp-custom="">
         html {
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.15;
+            font-family: sans-serif;
             -ms-text-size-adjust: 100%;
             -webkit-text-size-adjust: 100%;
-            overflow: -moz-scrollbars-vertical;
-            overflow-y: scroll;
         }
 
         * {
-            box-sizing: border-box
+            box-sizing: border-box;
         }
 
         body {
+            font-family: 'Montserrat', sans-serif;
             background: #fff;
             color: #4a4a4a;
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif;
+            /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif; */
             min-width: 315px;
             overflow-x: hidden;
             font-smooth: always;
@@ -2441,10 +2442,8 @@
         </style>
     </noscript>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,400i,500,500i,600,600i,700&display=swap" rel="stylesheet">
-
-
-    <?php wp_head(); ?>
+    <?php wp_head();
+    ?>
 </head>
 <?php
 $business = get_category_by_slug('business_model');

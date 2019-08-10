@@ -16,7 +16,7 @@ $get_post_for_story = get_posts($args);
 
 
 $post_args = array(
-    'numberposts' => 50,
+    'numberposts' => 10,
     'category' => get_category_by_slug('trending')->term_id,
     'orderby' => 'date',
     'order' => 'DESC', // the 1st array element will be 1st story(oldest story)
@@ -47,7 +47,7 @@ function check($get_post_for_story, $user_date_story)
         document.querySelector('#feed-nav').className += ' active-nav';
         let time = new Date();
         let h = time.getHours();
-        console.log(h);
+        // console.log(h);
         if (h < 12) {
             document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitPro/src/morning.jpeg'; ?>)"
         } else if (h >= 12 && h < 17) {
@@ -434,6 +434,7 @@ function check($get_post_for_story, $user_date_story)
     </div>
 </section>
 <?php //check($get_post_for_story[0], $_COOKIE['user_date_story']);
+//echo get_template_directory_uri();
 ?>
 <section id="stories" class="hide">
     <div class="container">
