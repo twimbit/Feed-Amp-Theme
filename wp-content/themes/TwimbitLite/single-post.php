@@ -42,7 +42,7 @@ $category = get_the_category();
 // $category = get_the_category();
 // $firstCategory = $category[0]->cat_name;
 ?>
-
+<div id="post_area">
 <section class="featured-image" style="padding: 0px;background-image:url('<?php echo the_post_thumbnail_url(); ?>');">
     <?php while (have_posts()) {
         the_post();
@@ -110,7 +110,7 @@ $category = get_the_category();
                 </div>
                 <div class="xs-col-12 sm-col-7 md-col-6 lg-col-5 mt4 cont">
                     <div class="social lg-hide md-hide" style="margin-left:auto;">
-                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" data-param-href="hello" width="30px" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
@@ -119,7 +119,7 @@ $category = get_the_category();
                 </div>
                 <div class="xs-col-12 sm-col-2 md-col-2 lg-col-2 mt4 ml2 sm-hide xs-hide">
                     <div class="social">
-                        <amp-social-share class="social1" height="30px" width="30px" type="facebook"></amp-social-share>
+                        <amp-social-share class="social1" height="30px" width="30px" href="hello" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="whatsapp"></amp-social-share>
@@ -274,6 +274,7 @@ $category = get_the_category();
         </div>
     </div>
 </section>
+</div>
 <?php get_footer(); ?>
 <!-- <script>
     $(document).ready(function() {

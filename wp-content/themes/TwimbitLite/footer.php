@@ -53,17 +53,24 @@
         //             return false;
         //         };
         var prevScrollpos = window.pageYOffset;
+        console.log(prevScrollpos);
         window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
             if (prevScrollpos > currentScrollPos) {
+                // show header and footer
                 document.querySelector(".ampstart-headerbar").style.top = "0";
                 document.querySelector("#colophon").style.bottom = "0";
             } else {
+                /* Hide header and footer */
                 document.querySelector(".ampstart-headerbar").style.top = "-70px";
                 document.querySelector("#colophon").style.bottom = "-70px";
             }
             prevScrollpos = currentScrollPos;
+            if (window.pageYOffset != 0) {
+                document.querySelector(".ampstart-headerbar").style.top = "-70px";
+            }
         }
+
 
     });
 
