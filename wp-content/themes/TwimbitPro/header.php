@@ -1078,7 +1078,7 @@
         .video-container {
             margin: 1.5em;
             height: auto;
-            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5)
+            box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, .5);
         }
 
         .description-share-option ul {
@@ -1295,7 +1295,7 @@
             }
 
             .right-side {
-                margin: 21px 36px 10px
+                margin: 21px 36px 10px 10px;
             }
         }
 
@@ -1621,7 +1621,7 @@
         }
 
         .right-side {
-            margin: 36px 25px 10px 0
+            margin: 36px 65px 10px 22px;
         }
 
         .podcast-cover .feed-card {
@@ -1927,7 +1927,7 @@
         }
 
         .short-card:hover {
-            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5)
+            box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, .5);
         }
 
         .short-image {
@@ -1957,7 +1957,7 @@
         }
 
         .sub1 {
-            margin-top: 26px;
+            margin-top: 25px;
             display: flex;
             flex-wrap: wrap
         }
@@ -2058,7 +2058,7 @@
             }
 
             [class*="col-"] .sub1 {
-                margin-top: 25px
+                margin-top: 10px
             }
 
             .social {
@@ -2481,8 +2481,8 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                 </a>
             <?php } ?>
         </div>
-        <a href="<?php echo home_url(); ?>">
-            <img src="<?php echo content_url() . '/themes/TwimbitPro/src/twimbit-pro-logo.png' ?>" style="margin-top: 1.2rem;" height="52" width="130" layout="fixed" alt="Twimbit logo">
+        <a href="<?php echo home_url(); ?>" style="height: 100%;padding-top: 0.6rem;">
+            <img src="<?php echo content_url() . '/themes/TwimbitPro/src/twimbit-pro-logo.png' ?>" height="52" width="130" layout="fixed" alt="Twimbit logo">
         </a>
         <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
             <ul class="list-reset center m0 p0 flex justify-end nowrap">

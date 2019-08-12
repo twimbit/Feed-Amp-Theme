@@ -40,8 +40,9 @@
 </div><!-- .site -->
 
 <?php wp_footer(); ?>
-<script async>
+<!-- <script async>
     document.addEventListener("DOMContentLoaded", function() {
+        /* hide header and footer */
         var prevScrollpos = window.pageYOffset;
         window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
@@ -81,10 +82,8 @@
                 document.querySelector('#feed-button').classList.remove("active-nav");
             }, false);
         }
-
-
     });
-</script>
+</script> -->
 </body>
 
 </html>
