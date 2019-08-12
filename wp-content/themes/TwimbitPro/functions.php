@@ -65,8 +65,10 @@ function my_assets()
 	// wp_enqueue_script('jquery');
 	// wp_enqueue_style('theme-style', get_stylesheet_uri(), array('reset'));
 	// wp_enqueue_style('reset', get_stylesheet_directory_uri() . '/reset.css');
+	// wp_enqueue_style('nprogress-css', 'https://unpkg.com/nprogress@0.2.0/nprogress.css');
 
 	// wp_enqueue_script('Toggler-js', content_url() . '/themes/TwimbitPro/src/toggler.js', array(), '1.0');
+	wp_enqueue_script('nprogress-js', content_url() . '/themes/TwimbitPro/src/nprogress.js', array(), '1.0', true);
 	wp_enqueue_script('Twimbit-js', content_url() . '/themes/TwimbitPro/src/twimbit.js', array(), '1.0', true);
 
 	// jQuery mobile

@@ -2284,6 +2284,39 @@
             top: 5px;
             width: 24px
         }
+
+        /* Header top line css */
+        /* Make clicks pass-through */
+        #nprogress {
+            pointer-events: none;
+        }
+
+        #nprogress .bar {
+            background: #f16c70;
+
+            position: fixed;
+            z-index: 999999;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 3px;
+        }
+
+        /* Fancy blur effect */
+        #nprogress .peg {
+            display: block;
+            position: absolute;
+            right: 0px;
+            width: 100px;
+            height: 100%;
+            box-shadow: 0 0 10px #f16c70, 0 0 5px #f16c70;
+            opacity: 1.0;
+
+            -webkit-transform: rotate(3deg) translate(0px, -4px);
+            -ms-transform: rotate(3deg) translate(0px, -4px);
+            transform: rotate(3deg) translate(0px, -4px);
+        }
     </style>
     <!-- iphone meta tags	 -->
     <?php if (have_posts()) : while (have_posts()) : the_post();
