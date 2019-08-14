@@ -102,13 +102,13 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         let h = time.getHours();
         // console.log(h);
         if (h < 12) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitPro/src/morning.jpeg'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri(). '/src/morning.jpeg'; ?>)"
         } else if (h >= 12 && h < 17) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitPro/src/afternoon.jpg'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri(). '/src/afternoon.jpg'; ?>)"
         } else if (h >= 17 && h < 19) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitPro/src/evening.jpeg'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri(). '/src/evening.jpeg'; ?>)"
         } else {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo content_url() . '/themes/TwimbitPro/src/night.jpeg'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri(). '/src/night.jpeg'; ?>)"
         }
 
     });
