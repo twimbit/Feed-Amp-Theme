@@ -641,13 +641,13 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         </section>
         <!-- Feeds cards -->
         <section id="cards-feed" class="mb4">
-            <div class="container mt2" style="margin-bottom: 1rem;">
+            <div class="container mt2" style="margin-bottom: 2rem;">
                 <!--            Fetching all the post for Feed-->
 
             </div>
-            <div class="infinite" style="display:none">
+            <div class="infinite">
                 <div class="pace pace-active">
-                    <div class="pace-activity"></div>
+                    <div class="pace-activity" style="display:none"></div>
                 </div>
             </div>
         </section>
@@ -987,13 +987,13 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         });
 
         function loadArticle(page) {
-            $('.infinite').show('fast');
+            $('.pace-activity').show('fast');
             $.ajax({
                 url: "<?php echo admin_url(); ?>admin-ajax.php",
                 type: 'POST',
                 data: "action=infinite_scroll&page=" + page,
                 success: function(html) {
-                    $('.infiniteLoader').hide('1000');
+                    $('.pace-activity').hide('1000');
                     $("#cards-feed .container").append(html);
                 }
             });
