@@ -979,8 +979,9 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
     jQuery(document).ready(function($) {
         page = 1;
         loadArticle(page);
+        reachedBotom = false;
         $(window).scroll(function() {
-            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+            if (($(window).scrollTop() == $(document).height() - $(window).height()) && !reachedBotom) {
                 page += 1;
                 loadArticle(page);
             }
@@ -992,9 +993,15 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                 url: "<?php echo admin_url(); ?>admin-ajax.php",
                 type: 'POST',
                 data: "action=infinite_scroll&page=" + page,
-                success: function(html) {
-                    $('.pace-activity').hide('1000');
-                    $("#cards-feed .container").append(html);
+                success: function(data) {
+                    if (!$.trim(data)) {
+                        $('.pace-activity').hide();
+                        reachedBotom = true;
+                    } else {
+                        $('.pace-activity').hide('1000');
+                        $("#cards-feed .container").append(data);
+                    }
+
                 }
             });
             return false;
