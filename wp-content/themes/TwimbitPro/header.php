@@ -874,35 +874,41 @@
 
         .search {
             width: fit-content;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
             height: 36px;
             background: #fafafa;
             box-shadow: rgba(0, 0, 0, 0.2) 0 3px 6px 0;
-            border-radius: 20px
+            border-radius: 20px;
         }
 
         #searchTerm {
             border: none;
             background: transparent;
-            width: 78%;
+            width: 80%;
             position: relative;
-            bottom: 11px
+            /* bottom: 9px; */
+            left: 10px;
         }
 
-        .search amp-img {
-            width: 20px;
+        .search button {
+            border: none;
+            background: none;
+            display: flex;
             position: relative;
-            height: 20px;
-            bottom: 3px;
-            right: 5px
+            right: 5px;
+            height: 100%;
+            align-items: center;
         }
 
         .b1 {
             border: 1px solid red
         }
 
-        .ampstart-nav-item form {
-            position: relative;
-            top: 8px
+        .ampstart-nav-item-form {
+            display: flex;
+            align-items: center;
         }
 
         .container {
@@ -1446,7 +1452,8 @@
         }
 
         .featured-image-text h2 {
-            color: #fff
+            color: #fff;
+            margin-top: 10px;
         }
 
         .menu ul {
@@ -2403,7 +2410,7 @@
 
 
     <!-- jQuery -->
-    <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
     <style amp-boilerplate>
@@ -2519,7 +2526,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         </a>
         <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
             <ul class="list-reset center m0 p0 flex justify-end nowrap">
-                <li class="ampstart-nav-item mr4">
+                <li class="ampstart-nav-item ampstart-nav-item-form mr4">
                     <form action="<?php echo site_url(); ?>">
                         <div class="search d-flex">
                             <input type="text" required="required" placeholder="Search.." name="s" id="searchTerm">
