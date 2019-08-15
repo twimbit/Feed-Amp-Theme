@@ -1002,6 +1002,9 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         $("#cards-feed .container").append(data);
                     }
 
+                },
+                error: function(er) {
+                    console.log('error came ' + er);
                 }
             });
             return false;
