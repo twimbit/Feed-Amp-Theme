@@ -78,7 +78,7 @@ $schedule_poll   = get_field('schedule_poll');
     }
     @media (max-width:768px)  {
         .presenter-poll h4{
-            font-size: 18px;
+            font-size: 15px;
         }
         .heading-poll h3
         {
@@ -162,7 +162,7 @@ $schedule_poll   = get_field('schedule_poll');
 
 <script type='text/javascript'>
     var _options = {
-        '_license_key':'423-032-129',
+        '_license_key':'812-683-414',
         '_role_token':'',
         '_registration_token':'',
         '_widget_containerID':'embedWidget',
