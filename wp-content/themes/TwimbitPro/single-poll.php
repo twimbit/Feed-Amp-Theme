@@ -8,85 +8,63 @@
 get_header();
 
 
-
 ;
-$poll_title = get_the_title();
+$webinar_title = get_the_title();
 $poll = get_field('poll_type');
+$attachment=get_field('webinar_attachment');
+$attachment1=get_field('webinar_attachment1');
+$zoom=get_field('zoom_webinar');
+$slide=get_field('slide');
+$webinar_img   = get_the_post_thumbnail_url($val);
 
 ?>
 
 <style scoped>
-	.meeting {
-		margin-top: 70px;
-		margin-left:5px;
-        margin-right: 5px;
-		justify-content: center;
-		overflow:hidden
-	}
-	.zoom
-	{
-		/*height:100%*/
-	}
-	h2,h3
-	{
-		color: #00485a;;
-		margin:0.5em
-	}
-    .top-left-head{
-        box-shadow: 1px 9px 15px -6px rgba(0, 0, 0, 0.5);
+    body{
+        background-color: #fff;
     }
-    .bottom-right{
-        margin-top:-1em;
-        margin-left: 1em;
+    .webinar-image
+    {
+        height: 15em;
+        width: 100%;
+        margin-bottom:0px;
     }
+
+
 </style>
 
-<div class="row meeting">
-	<!--Main div   -->
-	<div class="lg-col-6 md-col-6 sm-col-6 xs-col-12" style="display: inline-table;">
-		<!-- 1st div divided into 50%size of the page-->
-		<div class="top-left-head">
-			<h2>Shalini Bose</h2>
+<!--<div class="webinar-head">-->
+<!--    <img class="webinar-image" src="--><?php //echo $webinar_img ?><!--">-->
+<!--</div>-->
 
 
-			<h3>Topic : <?php echo $poll_title; ?></h3>
+<div id="embedWidget"></div>
 
-		</div>
-		<div class="zoom">
-			<div class="iframe-container" style="overflow: hidden; padding-top: 98%; position: relative; ">
-				<iframe allow="microphone; camera"
-				        style="border: 0;
-	                    height: 100%;
-	                    left: 0;
-	                    position: absolute;
-	                    top: 0;
-	                    width: 100%;"
-					    src="https://zoom.us/j"
-                        scrolling="auto"
-					    frameborder="0"
-					    webkitallowfullscreen mozallowfullscreen allowfullscreen>
-				</iframe>
-			</div>
-		</div>
-	</div>
-
-	<div class="lg-col-6 md-col-6 sm-col-6 xs-col-12" style="margin-top: -1em;">
-		<!-- main div divded into 50% of the page -->
-
-		<div class="slide" style="margin-top: -9em; overflow: hidden;">
-			<iframe src="https://slides.com/amansharma-4/title-textonetwothree/live#/"
-			        width="100%"
-			        height="750"
-			        frameborder="0"
-                    scrolling="auto"
-			        webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
-			</iframe>
-		</div>
-        <div class="bottom-right">
-            <h2>Attachments</h2>
-            <a href="<?php echo $poll['url']?>" download> download</a>
-
-        </div>
-	</div>
-</div>
+<script type='text/javascript'>
+    var _options = {
+        '_license_key':'423-032-129',
+        '_role_token':'',
+        '_registration_token':'',
+        '_widget_containerID':'embedWidget',
+        '_widget_width':'100%',
+        '_widget_height':'100vh',
+    };
+    (function() {
+        !function(i){
+            i.Widget=function(c){
+                'function'==typeof c&&i.Widget.__cbs.push(c),
+                i.Widget.initialized&&(i.Widget.__cbs.forEach(function(i){i()}),
+                    i.Widget.__cbs=[])
+            },
+                i.Widget.__cbs=[]
+        }(window);
+        var ab = document.createElement('script');
+        ab.type = 'text/javascript';
+        ab.async = true;
+        ab.src = 'https://embed.archiebot.com/em?t='+_options['_license_key']+'&'+Object.keys(_options).reduce(function(a,k){
+            a.push(k+'='+encodeURIComponent(_options[k]));
+            return a
+        },[]).join('&');
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ab, s);
+    })();
+</script>
