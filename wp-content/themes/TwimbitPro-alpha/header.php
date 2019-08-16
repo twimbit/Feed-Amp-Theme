@@ -874,41 +874,35 @@
 
         .search {
             width: fit-content;
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
             height: 36px;
             background: #fafafa;
             box-shadow: rgba(0, 0, 0, 0.2) 0 3px 6px 0;
-            border-radius: 20px;
+            border-radius: 20px
         }
 
         #searchTerm {
             border: none;
             background: transparent;
-            width: 80%;
+            width: 78%;
             position: relative;
-            /* bottom: 9px; */
-            left: 10px;
+            bottom: 11px
         }
 
-        .search button {
-            border: none;
-            background: none;
-            display: flex;
+        .search amp-img {
+            width: 20px;
             position: relative;
-            right: 5px;
-            height: 100%;
-            align-items: center;
+            height: 20px;
+            bottom: 3px;
+            right: 5px
         }
 
         .b1 {
             border: 1px solid red
         }
 
-        .ampstart-nav-item-form {
-            display: flex;
-            align-items: center;
+        .ampstart-nav-item form {
+            position: relative;
+            top: 8px
         }
 
         .container {
@@ -1084,7 +1078,7 @@
         .video-container {
             margin: 1.5em;
             height: auto;
-            box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, .5);
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5)
         }
 
         .description-share-option ul {
@@ -1301,7 +1295,7 @@
             }
 
             .right-side {
-                margin: 21px 36px 10px 10px;
+                margin: 21px 36px 10px
             }
         }
 
@@ -1452,8 +1446,7 @@
         }
 
         .featured-image-text h2 {
-            color: #fff;
-            margin-top: 10px;
+            color: #fff
         }
 
         .menu ul {
@@ -1628,7 +1621,7 @@
         }
 
         .right-side {
-            margin: 36px 65px 10px 22px;
+            margin: 36px 25px 10px 0
         }
 
         .podcast-cover .feed-card {
@@ -1934,7 +1927,7 @@
         }
 
         .short-card:hover {
-            box-shadow: 3px 3px 6px 0px rgba(0, 0, 0, .5);
+            box-shadow: 8px 9px 12px 2px rgba(0, 0, 0, .5)
         }
 
         .short-image {
@@ -1964,7 +1957,7 @@
         }
 
         .sub1 {
-            margin-top: 25px;
+            margin-top: 26px;
             display: flex;
             flex-wrap: wrap
         }
@@ -2065,7 +2058,7 @@
             }
 
             [class*="col-"] .sub1 {
-                margin-top: 10px
+                margin-top: 25px
             }
 
             .social {
@@ -2291,39 +2284,6 @@
             top: 5px;
             width: 24px
         }
-
-        /* Header top line css */
-        /* Make clicks pass-through */
-        #nprogress {
-            pointer-events: none;
-        }
-
-        #nprogress .bar {
-            background: #f16c70;
-
-            position: fixed;
-            z-index: 999999;
-            top: 0;
-            left: 0;
-
-            width: 100%;
-            height: 3px;
-        }
-
-        /* Fancy blur effect */
-        #nprogress .peg {
-            display: block;
-            position: absolute;
-            right: 0px;
-            width: 100px;
-            height: 100%;
-            box-shadow: 0 0 10px #f16c70, 0 0 5px #f16c70;
-            opacity: 1.0;
-
-            -webkit-transform: rotate(3deg) translate(0px, -4px);
-            -ms-transform: rotate(3deg) translate(0px, -4px);
-            transform: rotate(3deg) translate(0px, -4px);
-        }
     </style>
     <!-- iphone meta tags	 -->
     <?php if (have_posts()) : while (have_posts()) : the_post();
@@ -2333,31 +2293,31 @@
     <meta property="fb:admins" content="1626522259" />
 
     <?php if (is_single()) { ?>
-    <!-- Open Graph -->
-    <meta property="og:url" content="<?php the_permalink() ?>" />
-    <meta property="og:title" content="<?php single_post_title(''); ?>" />
-    <meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
+        <!-- Open Graph -->
+        <meta property="og:url" content="<?php the_permalink() ?>" />
+        <meta property="og:title" content="<?php single_post_title(''); ?>" />
+        <meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
                                                 echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID));
                                             } ?>" />
-    <!-- Schema.org -->
-    <meta itemprop="name" content="<?php single_post_title(''); ?>">
-    <meta itemprop="description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>">
-    <meta itemprop="image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
+        <!-- Schema.org -->
+        <meta itemprop="name" content="<?php single_post_title(''); ?>">
+        <meta itemprop="description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>">
+        <meta itemprop="image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
                                             echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID));
                                         } ?>">
-    <!-- Twitter Cards -->
-    <meta property="twitter:card" content="summary">
-    <meta property="twitter:site" content="Twimbit.pro">
-    <meta property="twitter:title" content="<?php single_post_title(''); ?>">
-    <meta property="twitter:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>">
-    <meta property="twitter:creator" content="Twimbit User">
-    <meta property="twitter:image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
+        <!-- Twitter Cards -->
+        <meta property="twitter:card" content="summary">
+        <meta property="twitter:site" content="Twimbit.pro">
+        <meta property="twitter:title" content="<?php single_post_title(''); ?>">
+        <meta property="twitter:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>">
+        <meta property="twitter:creator" content="Twimbit User">
+        <meta property="twitter:image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
                                                     echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID));
                                                 } ?>">
-    <meta property="twitter:url" content="<?php the_permalink() ?>" />
-    <meta property="twitter:domain" content="Twimbit Pro">
+        <meta property="twitter:url" content="<?php the_permalink() ?>" />
+        <meta property="twitter:domain" content="Twimbit Pro">
 
     <?php } ?>
 
@@ -2393,7 +2353,7 @@
 
             ?></title>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <script type="application/javascript" src="<?php echo get_template_directory_uri() . '/src/toggler.js' ?>"> </script>
+    <script type="application/javascript" src="<?php echo content_url() . '/themes/TwimbitPro-alpha/src/toggler.js' ?>"> </script>
     <meta name="amp-google-client-id-api" content="googleanalytics">
     <!--     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -2402,7 +2362,7 @@
     <!-- <script custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js" async=""></script> -->
 
     <!-- Manifest file -->
-    <!-- <link rel="manifest" href="<?php //print get_template_directory_uri(). '/src/manifest.json';
+    <!-- <link rel="manifest" href="<?php //print content_url() . '/themes/TwimbitPro-alpha/src/manifest.json';
                                     ?>"> -->
 
 
@@ -2410,7 +2370,7 @@
 
 
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 
 
     <style amp-boilerplate>
@@ -2507,8 +2467,8 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 
 <body>
     <!-- Registering Service Worker -->
-    <!-- <amp-install-serviceworker src="<?php //echo get_template_directory_uri(). '/src/sw.js'; 
-                                            ?>" layout="nodisplay" data-iframe-src="<?php //echo get_template_directory_uri(). '/src/install-sw.html'; 
+    <!-- <amp-install-serviceworker src="<?php //echo content_url() . '/themes/TwimbitPro-alpha/src/sw.js'; 
+                                            ?>" layout="nodisplay" data-iframe-src="<?php //echo content_url() . '/themes/TwimbitPro-alpha/src/install-sw.html'; 
                                                                                     ?>"></amp-install-serviceworker> -->
 
     <!-- Start Navbar -->
@@ -2516,22 +2476,22 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 										justify-content:space-between;">
         <div class="lg-hide md-hide" style="width:32px">
             <?php if (!(is_home())) { ?>
-            <a href="javascript:history.go(-1)">
-                <img class="back-button-icon" src="<?php echo get_template_directory_uri() . '/src/back.svg'; ?>" alt="header-back-button">
-            </a>
+                <a href="javascript:history.go(-1)">
+                    <img class="back-button-icon" src="<?php echo content_url() . '/themes/TwimbitPro-alpha/src/back.svg'; ?>" alt="header-back-button">
+                </a>
             <?php } ?>
         </div>
-        <a href="<?php echo home_url(); ?>" style="height: 100%;padding-top: 0.6rem;">
-            <img src="<?php echo get_template_directory_uri() . '/src/twimbit-pro-logo.png' ?>" height="52" width="130" layout="fixed" alt="Twimbit logo">
+        <a href="<?php echo home_url(); ?>">
+            <img src="<?php echo content_url() . '/themes/TwimbitPro-alpha/src/twimbit-pro-logo.png' ?>" style="margin-top: 1.2rem;" height="52" width="130" layout="fixed" alt="Twimbit logo">
         </a>
         <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
             <ul class="list-reset center m0 p0 flex justify-end nowrap">
-                <li class="ampstart-nav-item ampstart-nav-item-form mr4">
+                <li class="ampstart-nav-item mr4">
                     <form action="<?php echo site_url(); ?>">
                         <div class="search d-flex">
                             <input type="text" required="required" placeholder="Search.." name="s" id="searchTerm">
                             <button type="submit" href="#" style="border:none;background:none;" name="search-submit">
-                                <amp-img src="<?php echo get_template_directory_uri() . '/src/search.svg' ?>" width="20" height="20" class="my0 mx-auto"></amp-img>
+                                <amp-img src="<?php echo content_url() . '/themes/TwimbitPro-alpha/src/search.svg' ?>" width="20" height="20" class="my0 mx-auto"></amp-img>
                             </button>
                         </div>
                     </form>
@@ -2574,14 +2534,14 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                             <form action="<?php echo site_url(); ?>">
                                 <input type="text" placeholder="Search.." name="s">
                                 <button type="submit" href="#" name="light-box-search">
-                                    <amp-img src="<?php echo get_template_directory_uri() . '/src/search.svg' ?>" width="20" height="20" class="my0 mx-auto"></amp-img>
+                                    <amp-img src="<?php echo content_url() . '/themes/TwimbitPro-alpha/src/search.svg' ?>" width="20" height="20" class="my0 mx-auto"></amp-img>
                                 </button>
                             </form>
                         </div>
                     </div>
                 </div>
             </amp-lightbox>
-            <img on="tap:search-lightbox" src="<?php echo get_template_directory_uri() . '/src/search.svg'; ?>" alt="lightbox-search-image">
+            <img on="tap:search-lightbox" src="<?php echo content_url() . '/themes/TwimbitPro-alpha/src/search.svg'; ?>" alt="lightbox-search-image">
         </div>
     </header>
 
@@ -2594,7 +2554,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
             <ul class="list-reset m0 p0 ampstart-label">
                 <li class="ampstart-nav-item feed-selector-class" style="margin-bottom:1rem"><a on="tap:explore-tab-section.hide(),feed-tab-section.show(),header-sidebar.toggle" <?php if (!(is_home())) {
                                                                                                                                                                                         ?> href="<?php echo home_url(); ?>" <?php } ?>>Feed</a></li>
-                <li class=" ampstart-nav-item explore-selector-class" style="margin-bottom:1rem"><a on="tap:explore-tab-section.show(),feed-tab-section.hide(),header-sidebar.toggle" <?php if (!(is_home())) {
+                <li class="ampstart-nav-item explore-selector-class" style="margin-bottom:1rem"><a on="tap:explore-tab-section.show(),feed-tab-section.hide(),header-sidebar.toggle" <?php if (!(is_home())) {
                                                                                                                                                                                             ?> href="<?php echo home_url(); ?>/explore" <?php } ?>>Explore</a></li>
             </ul>
             <ul class="ampstart-dropdown-items list-reset m0 p0">
@@ -2608,7 +2568,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($business_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
@@ -2618,7 +2578,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($careers_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
@@ -2628,7 +2588,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($companies_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
@@ -2638,7 +2598,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($technology_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
@@ -2648,7 +2608,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($exclusive_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
@@ -2658,7 +2618,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($industry_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
