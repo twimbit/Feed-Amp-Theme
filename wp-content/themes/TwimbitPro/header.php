@@ -2050,7 +2050,7 @@
             }
         }
 
-        @media only screen and (max-width: 320px) {
+        @media only screen and (max-width: 375px) {
             .sub1 h2 {
                 line-height: 22px
             }
