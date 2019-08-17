@@ -1,98 +1,202 @@
 NProgress.inc();
 document.onreadystatechange = function() {
-    let state = document.readyState;
-    if (state == "complete") {
-        NProgress.done();
-    }
-}
+  let state = document.readyState;
+  if (state == "complete") {
+    NProgress.done();
+  }
+};
 
 /* Swiper left and right  gestures*/
 function swipedetect(el, callback) {
+  var touchsurface = el,
+    swipedir,
+    startX,
+    startY,
+    distX,
+    distY,
+    threshold = 150, //required min distance traveled to be considered swipe
+    restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+    allowedTime = 300, // maximum time allowed to travel that distance
+    elapsedTime,
+    startTime,
+    handleswipe = callback || function(swipedir) {};
 
-    var touchsurface = el,
-        swipedir,
-        startX,
-        startY,
-        distX,
-        distY,
-        threshold = 150, //required min distance traveled to be considered swipe
-        restraint = 100, // maximum distance allowed at the same time in perpendicular direction
-        allowedTime = 300, // maximum time allowed to travel that distance
-        elapsedTime,
-        startTime,
-        handleswipe = callback || function(swipedir) {}
+  touchsurface.addEventListener(
+    "touchstart",
+    function(e) {
+      var touchobj = e.changedTouches[0];
+      swipedir = "none";
+      dist = 0;
+      startX = touchobj.pageX;
+      startY = touchobj.pageY;
+      startTime = new Date().getTime(); // record time when finger first makes contact with surface
+      // e.preventDefault()
+    },
+    false
+  );
 
-    touchsurface.addEventListener('touchstart', function(e) {
-        var touchobj = e.changedTouches[0]
-        swipedir = 'none'
-        dist = 0
-        startX = touchobj.pageX
-        startY = touchobj.pageY
-        startTime = new Date().getTime() // record time when finger first makes contact with surface
-            // e.preventDefault()
-    }, false)
+  // touchsurface.addEventListener('touchmove', function(e) {
+  //     e.preventDefault() // prevent scrolling when inside DIV
+  // }, false)
 
-    // touchsurface.addEventListener('touchmove', function(e) {
-    //     e.preventDefault() // prevent scrolling when inside DIV
-    // }, false)
-
-    touchsurface.addEventListener('touchend', function(e) {
-        var touchobj = e.changedTouches[0]
-        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
-        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
-        elapsedTime = new Date().getTime() - startTime // get time elapsed
-        if (elapsedTime <= allowedTime) { // first condition for awipe met
-            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) { // 2nd condition for horizontal swipe met
-                swipedir = (distX < 0) ? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
-            } else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) { // 2nd condition for vertical swipe met
-                swipedir = (distY < 0) ? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
-            }
+  touchsurface.addEventListener(
+    "touchend",
+    function(e) {
+      var touchobj = e.changedTouches[0];
+      distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
+      distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
+      elapsedTime = new Date().getTime() - startTime; // get time elapsed
+      if (elapsedTime <= allowedTime) {
+        // first condition for awipe met
+        if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+          // 2nd condition for horizontal swipe met
+          swipedir = distX < 0 ? "left" : "right"; // if dist traveled is negative, it indicates left swipe
+        } else if (
+          Math.abs(distY) >= threshold &&
+          Math.abs(distX) <= restraint
+        ) {
+          // 2nd condition for vertical swipe met
+          swipedir = distY < 0 ? "up" : "down"; // if dist traveled is negative, it indicates up swipe
         }
-        handleswipe(swipedir)
-            // e.preventDefault()
-    }, false)
+      }
+      handleswipe(swipedir);
+      // e.preventDefault()
+    },
+    false
+  );
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    /* hide header and footer */
-    var prevScrollpos = window.pageYOffset;
-    window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
-        if (window.pageYOffset > 50 && prevScrollpos < currentScrollPos) {
-            /* Hide header and footer */
-            document.querySelector(".ampstart-headerbar").style.top = "-70px";
-            document.querySelector("#colophon").style.bottom = "-70px";
-        } else if (prevScrollpos > currentScrollPos) {
-            // show header and footer
-            document.querySelector(".ampstart-headerbar").style.top = "0";
-            document.querySelector("#colophon").style.bottom = "0";
-        }
-        prevScrollpos = currentScrollPos;
+  /* hide header and footer */
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (window.pageYOffset > 50 && prevScrollpos < currentScrollPos) {
+      /* Hide header and footer */
+      document.querySelector(".ampstart-headerbar").style.top = "-70px";
+      document.querySelector("#colophon").style.bottom = "-70px";
+    } else if (prevScrollpos > currentScrollPos) {
+      // show header and footer
+      document.querySelector(".ampstart-headerbar").style.top = "0";
+      document.querySelector("#colophon").style.bottom = "0";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
+  /* Explore and feed switching */
+  // feed button
+  header_nav = document.querySelectorAll(".feed-selector-class");
+  for (var i = 0; i < header_nav.length; i++) {
+    header_nav[i].addEventListener(
+      "click",
+      function() {
+        document.querySelector("#explore-nav").classList.remove("active-nav");
+        document.querySelector("#feed-nav").className += " active-nav";
+
+        document.querySelector("#feed-button").className += " active-nav";
+        document
+          .querySelector("#explore-button")
+          .classList.remove("active-nav");
+      },
+      false
+    );
+  }
+
+  // explore button
+  header_explore = document.querySelectorAll(".explore-selector-class");
+  for (var i = 0; i < header_explore.length; i++) {
+    header_explore[i].addEventListener(
+      "click",
+      function() {
+        document.querySelector("#explore-nav").className += " active-nav";
+        document.querySelector("#feed-nav").classList.remove("active-nav");
+
+        document.querySelector("#explore-button").className += " active-nav";
+        document.querySelector("#feed-button").classList.remove("active-nav");
+      },
+      false
+    );
+  }
+});
+
+page = 1;
+filter = "All";
+reachedBotom = false;
+
+function loadArticle(page, postType) {
+  $(".pace-activity").show("fast");
+  filter = postType;
+  $.ajax({
+    url: "wp-admin/admin-ajax.php",
+    type: "POST",
+    data: "action=infinite_scroll&page=" + page + "&type=" + postType,
+    success: function(data) {
+      if (!$.trim(data)) {
+        $(".pace-activity").hide();
+        reachedBotom = true;
+        console.log("no data");
+      } else {
+        $(".pace-activity").hide("1000");
+        $("#cards-feed .container").append(data);
+      }
+    },
+    error: function(er) {
+      console.log("error came " + er);
+    }
+  });
+  return false;
+}
+
+function toggler(evt, postType) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+  if (postType === "All") {
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
     }
 
-    /* Explore and feed switching */
-    // feed button
-    header_nav = document.querySelectorAll('.feed-selector-class');
-    for (var i = 0; i < header_nav.length; i++) {
-        header_nav[i].addEventListener('click', function() {
-            document.querySelector('#explore-nav').classList.remove("active-nav");
-            document.querySelector('#feed-nav').className += ' active-nav';
-
-            document.querySelector('#feed-button').className += ' active-nav';
-            document.querySelector('#explore-button').classList.remove("active-nav");
-        }, false);
+    let x = document.getElementsByClassName("feed-toggle");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "block";
+    }
+    document.getElementById("allButton").classList.add("active");
+    if (reachedBotom) {
+      reachedBotom = false;
+    }
+    page = 1;
+    loadArticle(page, postType);
+  } else {
+    tabcontent = document.getElementsByClassName("feed-toggle");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
     }
 
-    // explore button
-    header_explore = document.querySelectorAll('.explore-selector-class');
-    for (var i = 0; i < header_explore.length; i++) {
-        header_explore[i].addEventListener('click', function() {
-            document.querySelector('#explore-nav').className += ' active-nav';
-            document.querySelector('#feed-nav').classList.remove("active-nav");
-
-            document.querySelector('#explore-button').className += ' active-nav';
-            document.querySelector('#feed-button').classList.remove("active-nav");
-        }, false);
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove("active");
     }
+    let x = document.getElementsByClassName(postType);
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "block";
+    }
+    evt.currentTarget.classList.add("active");
+    if (reachedBotom) {
+      reachedBotom = false;
+    }
+    page = 1;
+    loadArticle(page, postType);
+  }
+}
 
+loadArticle(page, filter);
+$(window).scroll(function() {
+  if (
+    $(window).scrollTop() + $(window).height() >= $(document).height() - 200 &&
+    !reachedBotom
+  ) {
+    page += 1;
+    loadArticle(page, filter);
+    console.log(filter);
+  }
 });
