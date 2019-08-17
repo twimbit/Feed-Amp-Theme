@@ -176,7 +176,7 @@ $meeting_id =get_field('webinar_meeting_id');
         '_registration_token':'',
         '_widget_containerID':'embedWidget',
         '_widget_width':'100%',
-        '_widget_height':'80vh',
+        '_widget_height':'90vh',
     };
 
 
