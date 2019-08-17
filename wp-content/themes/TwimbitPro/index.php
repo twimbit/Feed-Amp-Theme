@@ -606,7 +606,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
     <div class="archive-filter-card-container container" style="padding-left:0px;padding-right:0px">
         <!-- Filter section -->
         <section id="filter">
-            <div class="mt4">
+            <div class="mt4 container">
                 <div class="col-12" style="min-width: fit-content;">
                     <div class="menu">
                         <ul>
@@ -975,40 +975,5 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
     </section>
 </div>
 
-<script type="text/javascript">
-    jQuery(document).ready(function($) {
-        page = 1;
-        loadArticle(page);
-        reachedBotom = false;
-        $(window).scroll(function() {
-            if (($(window).scrollTop() == $(document).height() - $(window).height()) && !reachedBotom) {
-                page += 1;
-                loadArticle(page);
-            }
-        });
 
-        function loadArticle(page) {
-            $('.pace-activity').show('fast');
-            $.ajax({
-                url: "<?php echo admin_url(); ?>admin-ajax.php",
-                type: 'POST',
-                data: "action=infinite_scroll&page=" + page,
-                success: function(data) {
-                    if (!$.trim(data)) {
-                        $('.pace-activity').hide();
-                        reachedBotom = true;
-                    } else {
-                        $('.pace-activity').hide('1000');
-                        $("#cards-feed .container").append(data);
-                    }
-
-                },
-                error: function(er) {
-                    console.log('error came ' + er);
-                }
-            });
-            return false;
-        }
-    });
-</script>
 <?php get_footer(); ?>

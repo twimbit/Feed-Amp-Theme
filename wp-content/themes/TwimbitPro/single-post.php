@@ -284,7 +284,7 @@ function nextPost()
 </div>
 <?php get_footer(); ?>
 <script>
-    var el = document.getElementById('post_area');
+    let el = document.getElementById('post_area');
     swipedetect(el, function(swipedir) {
         // swipedir contains either "none", "left", "right", "top", or "down"
         if (swipedir == 'left') {

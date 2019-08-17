@@ -82,15 +82,35 @@ function wp_infinitepaginate()
 {
 	// $num_post = $_POST['num_post'];
 	$paged = $_POST['page'];
+	$type = $_POST['type'];
+	$query_type = array();
+	switch ($type) {
+		case 'All':
+			$query_type = array('video', 'post', 'podcast', 'amp_story');
+			break;
+		case 'post-toggle':
+			$query_type = array('post');
+			break;
+		case 'video-toggle':
+			$query_type = array('video');
+			break;
+		case 'podcast-toggle':
+			$query_type = array('podcast');
+			break;
+		case 'amp_story-toggle':
+			$query_type = array('amp_story');
+			break;
+	}
+	// print_r($query_type);
 	$post_args = array(
 		'posts_per_page' => 5,
-		'category' => get_category_by_slug('trending')->term_id,
+		'category' => 0, //get_category_by_slug('trending')->term_id,
 		'orderby' => 'date',
 		'order' => 'DESC', // the 1st array element will be 1st story(oldest story)
 		'include' => array(),
 		'exclude' => array(),
 		'post_status' => array('publish'),
-		'post_type' => array('video', 'post', 'podcast', 'amp_story'),
+		'post_type' => $query_type,
 		'paged' => $paged,
 	);
 	$get_post_feed = get_posts($post_args);

@@ -1874,7 +1874,7 @@
 
         .pre-next-dialog {
             position: sticky;
-            top: 4%;
+            top: 10%;
             width: 100%;
             background-color: #f4f4f4;
             box-shadow: 5px 3px 8px -3px rgba(0, 0, 0, 0.23)
@@ -1894,6 +1894,7 @@
             width: 100%;
             background-color: #fff;
             padding: 10px;
+            word-break: break-word;
             margin-bottom: 10px;
             box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.23);
             transition: all .3s
@@ -1964,7 +1965,7 @@
         }
 
         .sub1 {
-            margin-top: 25px;
+            margin-top: 15px;
             display: flex;
             flex-wrap: wrap
         }
@@ -2049,7 +2050,7 @@
             }
         }
 
-        @media only screen and (max-width: 320px) {
+        @media only screen and (max-width: 375px) {
             .sub1 h2 {
                 line-height: 22px
             }
@@ -2170,6 +2171,12 @@
         @media (min-width: 64.06rem) {
             .lg-hide {
                 display: none
+            }
+        }
+
+        @media (min-width:768px) and (max-width:1200px) {
+            .feed-title h3 {
+                font-size: 25px;
             }
         }
 
