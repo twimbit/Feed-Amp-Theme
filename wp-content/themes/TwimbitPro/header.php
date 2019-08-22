@@ -874,35 +874,41 @@
 
         .search {
             width: fit-content;
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
             height: 36px;
             background: #fafafa;
             box-shadow: rgba(0, 0, 0, 0.2) 0 3px 6px 0;
-            border-radius: 20px
+            border-radius: 20px;
         }
 
         #searchTerm {
             border: none;
             background: transparent;
-            width: 78%;
+            width: 80%;
             position: relative;
-            bottom: 11px
+            /* bottom: 9px; */
+            left: 10px;
         }
 
-        .search amp-img {
-            width: 20px;
+        .search button {
+            border: none;
+            background: none;
+            display: flex;
             position: relative;
-            height: 20px;
-            bottom: 3px;
-            right: 5px
+            right: 5px;
+            height: 100%;
+            align-items: center;
         }
 
         .b1 {
             border: 1px solid red
         }
 
-        .ampstart-nav-item form {
-            position: relative;
-            top: 8px
+        .ampstart-nav-item {
+            display: flex;
+            align-items: center;
         }
 
         .container {
@@ -1693,6 +1699,7 @@
                 text-transform: capitalize
             }
 
+
             .player {
                 width: 100%;
                 height: 30px
@@ -2317,6 +2324,28 @@
             -ms-transform: rotate(3deg) translate(0px, -4px);
             transform: rotate(3deg) translate(0px, -4px);
         }
+
+        .nav-links {
+            display: flex;
+            color: #FFF;
+        }
+
+        .nav-links .next {
+            margin-top: 0px;
+        }
+
+        .nav-links .page-numbers {
+            padding: 9px;
+            /* border: 1px solid; */
+            margin: 4px;
+            border-radius: 4px;
+            text-decoration: none;
+            background-color: #f16c70;
+        }
+
+        .nav-links .current {
+            background-color: #f3454a;
+        }
     </style>
     <!-- iphone meta tags	 -->
     <?php if (have_posts()) : while (have_posts()) : the_post();
@@ -2386,7 +2415,7 @@
 
             ?></title>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <script type="application/javascript" src="<?php echo get_template_directory_uri() . '/src/toggler.js' ?>"> </script>
+    <!-- <script type="application/javascript" src="<?php echo get_template_directory_uri() . '/src/toggler.js' ?>"> </script> -->
     <meta name="amp-google-client-id-api" content="googleanalytics">
     <!--     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">

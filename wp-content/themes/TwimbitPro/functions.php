@@ -68,8 +68,8 @@ function my_assets()
 	// wp_enqueue_style('nprogress-css', 'https://unpkg.com/nprogress@0.2.0/nprogress.css');
 
 	// wp_enqueue_script('Toggler-js', get_template_directory_uri(). '/src/toggler.js', array(), '1.0');
-	wp_enqueue_script('nprogress-js', get_template_directory_uri(). '/src/nprogress.js', array(), '1.0', true);
-	wp_enqueue_script('Twimbit-js', get_template_directory_uri(). '/src/twimbit.js', array(), '1.0', true);
+	wp_enqueue_script('nprogress-js', get_template_directory_uri() . '/src/nprogress.js', array(), '1.0', true);
+	wp_enqueue_script('Twimbit-js', get_template_directory_uri() . '/src/twimbit.js', array(), '1.0', true);
 
 	// jQuery mobile
 	// wp_enqueue_script('Jquery Mobile', 'http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js', '1.4.5', true);
