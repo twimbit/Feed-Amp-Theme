@@ -906,7 +906,7 @@
             border: 1px solid red
         }
 
-        .ampstart-nav-item-form {
+        .ampstart-nav-item {
             display: flex;
             align-items: center;
         }
@@ -1452,8 +1452,7 @@
         }
 
         .featured-image-text h2 {
-            color: #fff;
-            margin-top: 10px;
+            color: #fff
         }
 
         .menu ul {
@@ -1700,6 +1699,7 @@
                 text-transform: capitalize
             }
 
+
             .player {
                 width: 100%;
                 height: 30px
@@ -1874,7 +1874,7 @@
 
         .pre-next-dialog {
             position: sticky;
-            top: 10%;
+            top: 4%;
             width: 100%;
             background-color: #f4f4f4;
             box-shadow: 5px 3px 8px -3px rgba(0, 0, 0, 0.23)
@@ -1894,7 +1894,6 @@
             width: 100%;
             background-color: #fff;
             padding: 10px;
-            word-break: break-word;
             margin-bottom: 10px;
             box-shadow: 0 0 6px 1px rgba(0, 0, 0, 0.23);
             transition: all .3s
@@ -1965,7 +1964,7 @@
         }
 
         .sub1 {
-            margin-top: 15px;
+            margin-top: 25px;
             display: flex;
             flex-wrap: wrap
         }
@@ -2050,7 +2049,7 @@
             }
         }
 
-        @media only screen and (max-width: 375px) {
+        @media only screen and (max-width: 320px) {
             .sub1 h2 {
                 line-height: 22px
             }
@@ -2171,12 +2170,6 @@
         @media (min-width: 64.06rem) {
             .lg-hide {
                 display: none
-            }
-        }
-
-        @media (min-width:768px) and (max-width:1200px) {
-            .feed-title h3 {
-                font-size: 25px;
             }
         }
 
@@ -2331,6 +2324,28 @@
             -ms-transform: rotate(3deg) translate(0px, -4px);
             transform: rotate(3deg) translate(0px, -4px);
         }
+
+        .nav-links {
+            display: flex;
+            color: #FFF;
+        }
+
+        .nav-links .next {
+            margin-top: 0px;
+        }
+
+        .nav-links .page-numbers {
+            padding: 9px;
+            /* border: 1px solid; */
+            margin: 4px;
+            border-radius: 4px;
+            text-decoration: none;
+            background-color: #f16c70;
+        }
+
+        .nav-links .current {
+            background-color: #f3454a;
+        }
     </style>
     <!-- iphone meta tags	 -->
     <?php if (have_posts()) : while (have_posts()) : the_post();
@@ -2400,7 +2415,8 @@
 
             ?></title>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <script type="application/javascript" src="<?php echo get_template_directory_uri() . '/src/toggler.js' ?>"> </script>
+<!--     <script type="application/javascript" src="--><?php //echo get_template_directory_uri() . '/src/twimbit.js' ?><!--"> </script>-->
+<!--    <script type="application/javascript" src="--><?php //echo get_template_directory_uri() . '/src/nprogress.js' ?><!--"> </script>-->
     <meta name="amp-google-client-id-api" content="googleanalytics">
     <!--     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -2417,7 +2433,7 @@
 
 
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 
 
     <style amp-boilerplate>
@@ -2533,7 +2549,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         </a>
         <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
             <ul class="list-reset center m0 p0 flex justify-end nowrap">
-                <li class="ampstart-nav-item ampstart-nav-item-form mr4">
+                <li class="ampstart-nav-item mr4">
                     <form action="<?php echo site_url(); ?>">
                         <div class="search d-flex">
                             <input type="text" required="required" placeholder="Search.." name="s" id="searchTerm">

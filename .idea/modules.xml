@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/twimbit-lite-theme.iml" filepath="$PROJECT_DIR$/.idea/twimbit-lite-theme.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/wordpress1.iml" filepath="$PROJECT_DIR$/.idea/wordpress1.iml" />
     </modules>
   </component>
 </project>

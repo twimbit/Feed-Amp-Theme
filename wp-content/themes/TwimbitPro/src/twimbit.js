@@ -1,4 +1,5 @@
 NProgress.inc();
+
 document.onreadystatechange = function() {
   let state = document.readyState;
   if (state == "complete") {
@@ -30,14 +31,9 @@ function swipedetect(el, callback) {
       startX = touchobj.pageX;
       startY = touchobj.pageY;
       startTime = new Date().getTime(); // record time when finger first makes contact with surface
-      // e.preventDefault()
     },
     false
   );
-
-  // touchsurface.addEventListener('touchmove', function(e) {
-  //     e.preventDefault() // prevent scrolling when inside DIV
-  // }, false)
 
   touchsurface.addEventListener(
     "touchend",
@@ -60,7 +56,6 @@ function swipedetect(el, callback) {
         }
       }
       handleswipe(swipedir);
-      // e.preventDefault()
     },
     false
   );
@@ -119,84 +114,18 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 
-page = 1;
-filter = "All";
-reachedBotom = false;
-
-function loadArticle(page, postType) {
-  $(".pace-activity").show("fast");
-  filter = postType;
-  $.ajax({
-    url: "wp-admin/admin-ajax.php",
-    type: "POST",
-    data: "action=infinite_scroll&page=" + page + "&type=" + postType,
-    success: function(data) {
-      if (!$.trim(data)) {
-        $(".pace-activity").hide();
-        reachedBotom = true;
-        console.log("no data");
-      } else {
-        $(".pace-activity").hide("1000");
-        $("#cards-feed .container").append(data);
-      }
-    },
-    error: function(er) {
-      console.log("error came " + er);
-    }
-  });
-  return false;
-}
-
+/* Active class for filter */
 function toggler(evt, postType) {
   // Declare all variables
-  var i, tabcontent, tablinks;
-  if (postType === "All") {
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].classList.remove("active");
-    }
+  var i, tablinks;
 
-    let x = document.getElementsByClassName("feed-toggle");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "block";
-    }
-    document.getElementById("allButton").classList.add("active");
-    if (reachedBotom) {
-      reachedBotom = false;
-    }
-    page = 1;
-    loadArticle(page, postType);
-  } else {
-    tabcontent = document.getElementsByClassName("feed-toggle");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].classList.remove("active");
-    }
-    let x = document.getElementsByClassName(postType);
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "block";
-    }
-    evt.currentTarget.classList.add("active");
-    if (reachedBotom) {
-      reachedBotom = false;
-    }
-    page = 1;
-    loadArticle(page, postType);
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(postType).style.display = "block";
+  evt.currentTarget.className += " active";
 }
-
-loadArticle(page, filter);
-$(window).scroll(function() {
-  if (
-    $(window).scrollTop() + $(window).height() >= $(document).height() - 200 &&
-    !reachedBotom
-  ) {
-    page += 1;
-    loadArticle(page, filter);
-    console.log(filter);
-  }
-});
