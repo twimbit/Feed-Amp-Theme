@@ -29,6 +29,127 @@ $category = get_the_category();
 $audio = get_field('audio');
 
 ?>
+<style>
+    .podcast-cover .feed-title p {
+        line-height: 1.2;
+    }
+
+    .short-image {
+        margin-right: 10px;
+    }
+
+    .detail1 {
+        word-spacing: -1px;
+        line-height: 1.4;
+        width: 25em;
+        font-size: 12px;
+        word-break: break-word;
+    }
+
+    /*.sub1*/
+    /*{*/
+    /*    margin-top: 16px;*/
+    /*}*/
+    /*.sub1 span {*/
+    /*    font-size: 11px;*/
+    /*}*/
+    .icon {
+        transform: translate(27px, -75px);
+    }
+
+
+    @media only screen and (max-width: 320px) {
+        .icon {
+            transform: translate(20px, -70px);
+        }
+    }
+
+    @media (min-width:300px) and (max-width:375px) {
+        .detail1 {
+            line-height: 1.2;
+            width: 17em;
+            font-size: 10px
+        }
+
+        /*.sub1 span {*/
+        /*    font-size: 9px*/
+        /*}*/
+        /*[class*="col-"] .sub1*/
+        /*{*/
+        /*    margin-top: 10px;*/
+        /*}*/
+    }
+
+    @media (min-width:375px) and (max-width:425px) {
+        .detail1 {
+            font-size: 11px;
+            width: 19em;
+        }
+
+        .icon {
+            transform: translate(30px, -76px);
+        }
+    }
+
+    @media (min-width: 425px) and (max-width: 520px) {
+        .detail1 {
+            width: 20em;
+            font-size: 11px
+        }
+
+        /*[class*="col-"].sub1*/
+        /*{*/
+        /*    margin-top:10px;*/
+        /*}*/
+
+    }
+
+    @media (min-width: 520px) and (max-width: 640px) {
+        .detail1 {
+            width: 30em;
+            font-size: 11px;
+        }
+
+        /*[class*="col-"].sub1*/
+        /*{*/
+        /*    margin-top:10px;*/
+        /*}*/
+
+    }
+
+    @media (min-width: 640px) and (max-width:726px) {
+        .detail1 {
+            width: 11em;
+            font-size: 10px
+        }
+
+        /*[class*="col-"].sub1*/
+        /*{*/
+        /*    margin-top:10px;*/
+        /*}*/
+    }
+
+    @media (min-width: 726px) and (max-width:767px) {
+        .detail1 {
+            width: 14em;
+            font-size: 10px
+        }
+    }
+
+    @media (min-width: 768px) and (max-width:1024px) {
+        .detail1 {
+            width: 14em;
+            font-size: 10px
+        }
+    }
+
+    @media (min-width: 1024px) and (max-width:1440px) {
+        .detail1 {
+            width: 20em;
+            font-size: 12px
+        }
+    }
+</style>
 
 <div class="row podcast">
     <!--Main div    -->
@@ -49,7 +170,7 @@ $audio = get_field('audio');
                         </span>
                     </div>
                     <div class="audio" oncontextmenu="return false;">
-                        <amp-audio controls src="<?php echo $audio['url']; ?>" height="auto" width="auto" autoplay="true" class="player" artwork="<?php echo $post_img; ?>" controls controlsList="nodownload">
+                        <amp-audio controls src="<?php echo $audio['url']; ?>" height="auto" width="auto" class="player" artwork="<?php echo $post_img; ?>" controlsList="nodownload" autoplay>
                             <!-- podcast playlist-->
                         </amp-audio>
                     </div>
@@ -62,14 +183,16 @@ $audio = get_field('audio');
         <amp-lightbox id="description-lightbox" layout="nodisplay">
             <div class="overlay content" on="tap:description-lightbox.close" role="button" tabindex="0">
                 <div class="description-icons">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982; position: absolute;" xml:space="preserve">
                         <g id="Close">
                             <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" />
                         </g>
                     </svg>
-                    <?php
-                    echo  $post->post_content; //contents saved in a variable
-                    ?>
+                    <div style="margin-top:20px; overflow:auto; word-break: break-word;">
+                        <?php
+                        echo  $post->post_content; //contents saved in a variable
+                        ?>
+                    </div>
                 </div>
             </div>
             <p on="tap:description-lightbox.close">
@@ -144,56 +267,59 @@ $audio = get_field('audio');
                 $category_post = get_the_category($val);
                 ?>
 
-            <a href="<?php echo $post_url; ?>" style="text-decoration:none;">
-                <div class="short-card">
-                    <!-- podcast option -->
-                    <div class="short-image">
-                        <!-- podcast image-->
-                        <img class="short-image" src="<?php print $post_img; ?>">
-                        <!--svg play icon-->
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85.658" height="85.658" viewBox="0 0 85.658 85.658" class="icon" <defs>
-                            <style>
-                                .a {
-                                    fill: rgba(0, 0, 0, 0.55);
-                                }
-
-                                .b {
-                                    fill: #fafafa;
-
-                                    .c {
-                                        filter: url(#a);
+                <a href="<?php echo $post_url; ?>" style="text-decoration:none;">
+                    <div class="short-card">
+                        <!-- podcast option -->
+                        <div class="short-image">
+                            <!-- podcast image-->
+                            <img class="short-image" src="<?php print $post_img; ?>">
+                            <!--svg play icon-->
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85.658" height="85.658" viewBox="0 0 85.658 85.658" class="icon" <defs>
+                                <style>
+                                    .a {
+                                        fill: rgba(0, 0, 0, 0.55);
                                     }
-                            </style>
-                            <filter id="a" x="0" y="0" width="85.658" height="85.658" filterUnits="userSpaceOnUse">
-                                <feOffset dy="3" input="SourceAlpha" />
-                                <feGaussianBlur stdDeviation="3" result="b" />
-                                <feFlood flood-opacity="0.161" />
-                                <feComposite operator="in" in2="b" />
-                                <feComposite in="SourceGraphic" />
-                            </filter>
-                            </defs>
-                            <g transform="translate(-44.057 -33.003)">
-                                <g class="c" transform="matrix(1, 0, 0, 1, 44.06, 33)">
-                                    <ellipse class="a" cx="33.829" cy="33.829" rx="33.829" ry="33.829" transform="translate(9 6)" />
-                                </g>
-                                <path class="b" d="M30.863,22.324l-7.989-6V39.9l7.989-6,7.727-5.789Zm0,0-7.989-6V39.9l7.989-6,7.727-5.789Zm0,0-7.989-6V39.9l7.989-6,7.727-5.789ZM25.493,7.341V2.05A26.059,26.059,0,0,0,11.558,7.839l3.719,3.746A20.8,20.8,0,0,1,25.493,7.341ZM11.584,15.278,7.839,11.558A26.059,26.059,0,0,0,2.05,25.493H7.341A20.8,20.8,0,0,1,11.584,15.278ZM7.341,30.732H2.05A26.059,26.059,0,0,0,7.839,44.667l3.746-3.746A20.609,20.609,0,0,1,7.341,30.732Zm4.217,17.654a26.145,26.145,0,0,0,13.935,5.789V48.884A20.8,20.8,0,0,1,15.278,44.64l-3.719,3.746ZM54.306,28.112A26.233,26.233,0,0,1,30.863,54.175V48.884a20.952,20.952,0,0,0,0-41.543V2.05A26.233,26.233,0,0,1,54.306,28.112Z" transform="translate(58.967 44.912)" />
-                            </g>
-                        </svg>
-                    </div>
-                    <div class="details">
-                        <!--podcast details -->
-                        <p class="detail1 ">
-                            <?php echo $post_title; ?>
-                        </p> <!-- podcast title -->
-                        <div class="sub1">
-                            <span style="margin-right: 10px;">By <?php echo $author; ?></span>
-                            <span></span>
-                            <span># <?php echo esc_html($category_post[0]->name); ?></span>
-                        </div>
-                    </div>
 
-                </div>
-            </a>
+                                    .b {
+                                        fill: #fafafa;
+
+                                        .c {
+                                            filter: url(#a);
+                                        }
+                                </style>
+                                <filter id="a" x="0" y="0" width="85.658" height="85.658" filterUnits="userSpaceOnUse">
+                                    <feOffset dy="3" input="SourceAlpha" />
+                                    <feGaussianBlur stdDeviation="3" result="b" />
+                                    <feFlood flood-opacity="0.161" />
+                                    <feComposite operator="in" in2="b" />
+                                    <feComposite in="SourceGraphic" />
+                                </filter>
+                                </defs>
+                                <g transform="translate(-44.057 -33.003)">
+                                    <g class="c" transform="matrix(1, 0, 0, 1, 44.06, 33)">
+                                        <ellipse class="a" cx="33.829" cy="33.829" rx="33.829" ry="33.829" transform="translate(9 6)" />
+                                    </g>
+                                    <path class="b" d="M30.863,22.324l-7.989-6V39.9l7.989-6,7.727-5.789Zm0,0-7.989-6V39.9l7.989-6,7.727-5.789Zm0,0-7.989-6V39.9l7.989-6,7.727-5.789ZM25.493,7.341V2.05A26.059,26.059,0,0,0,11.558,7.839l3.719,3.746A20.8,20.8,0,0,1,25.493,7.341ZM11.584,15.278,7.839,11.558A26.059,26.059,0,0,0,2.05,25.493H7.341A20.8,20.8,0,0,1,11.584,15.278ZM7.341,30.732H2.05A26.059,26.059,0,0,0,7.839,44.667l3.746-3.746A20.609,20.609,0,0,1,7.341,30.732Zm4.217,17.654a26.145,26.145,0,0,0,13.935,5.789V48.884A20.8,20.8,0,0,1,15.278,44.64l-3.719,3.746ZM54.306,28.112A26.233,26.233,0,0,1,30.863,54.175V48.884a20.952,20.952,0,0,0,0-41.543V2.05A26.233,26.233,0,0,1,54.306,28.112Z" transform="translate(58.967 44.912)" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="details">
+                            <!--podcast details -->
+                            <p class="detail1 ">
+                                <!-- trim heading -->
+                                <?php
+                                    echo mb_strimwidth($post_title, 0, 85, "...");
+                                    ?>
+                            </p>
+                            <div class="sub1">
+                                <span>By <?php echo $author; ?></span>
+                                <span></span>
+                                <span># <?php echo esc_html($category_post[0]->name); ?></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
             <?php } ?>
         </div>
     </div>

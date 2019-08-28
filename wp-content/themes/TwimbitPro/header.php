@@ -1035,7 +1035,7 @@
             left: 0;
             top: 0;
             opacity: .9;
-            background: linear-gradient(to right bottom, #000, #00070, #00030, #00054, #00000)
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.12) 0, #00000078 100%)
         }
 
         .feed-link {
@@ -1745,7 +1745,7 @@
 
             [class*="col-"] .sub1 {
                 font-size: 40px;
-                margin-top: 26px;
+                /*margin-top: 26px;*/
                 color: #000
             }
 
@@ -1861,7 +1861,7 @@
             }
 
             .right-side {
-                margin: 21px 36px 10px
+                margin: 21px 36px 10px 0px
             }
         }
 
@@ -1954,7 +1954,10 @@
             font-size: 20px;
             align: right;
             color: #000;
-            flex-grow: 1
+            flex-grow: 1;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: column;
         }
 
         .sub1 span {
@@ -1964,13 +1967,13 @@
         }
 
         .sub1 {
-            margin-top: 25px;
-            display: flex;
-            flex-wrap: wrap
+            /*margin-top: 25px;*/
+            /*display: flex;*/
+            /*flex-wrap: wrap*/
         }
 
         .detail1 {
-            font-size: 18px;
+            font-size: 16px;
             position: relative;
             top: 10px;
             text-transform: capitalize
@@ -2038,9 +2041,9 @@
                 font-size: 16px
             }
 
-            .sub1 {
-                margin-top: 15px
-            }
+            /*.sub1 {*/
+            /*    margin-top: 15px*/
+            /*}*/
         }
 
         @media (min-width:768px) {
