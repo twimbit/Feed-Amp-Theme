@@ -1955,7 +1955,6 @@
             align: right;
             color: #000;
             flex-grow: 1;
-
             justify-content: space-between;
             display: flex;
             flex-direction: column;

@@ -298,7 +298,7 @@ $audio = get_field('audio');
                     <div class="details">
                         <!--podcast details -->
                         <p class="detail1 ">
-
+                            <!-- trim heading -->
                             <?php
                             echo mb_strimwidth($post_title, 0, 85, "...");
                             //Hello W...
