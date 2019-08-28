@@ -103,6 +103,9 @@ document.addEventListener("DOMContentLoaded", function() {
     header_explore[i].addEventListener(
       "click",
       function() {
+        if (!(window.location.pathname == "localhost/wordpress")) {
+          // window.location.href = "/wordpress";
+        }
         document.querySelector("#explore-nav").className += " active-nav";
         document.querySelector("#feed-nav").classList.remove("active-nav");
 

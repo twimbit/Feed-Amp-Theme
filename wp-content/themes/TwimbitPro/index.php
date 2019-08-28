@@ -972,16 +972,15 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         <h3 class="explore-title"><?php echo get_cat_name($business->term_id); ?></h3>
                         <hr>
                     </div>
-
                     <amp-carousel class="sub-cat" type="carousel" controls height="150">
                         <div class="sub-cat-inner-container">
                             <?php
                                 foreach ($business_child as $val) {
-                                    $post_img = get_field('featured_image', $val);
+                                    $post_img = get_field('featured_image', $val)['sizes'];
                                     ?>
                             <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Bussiness Model">
                                 <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img['thumbnail']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <p><?php echo $val->name; ?></p>
                                 </div>
                             </a>
@@ -1007,11 +1006,11 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         <div class="sub-cat-inner-container">
                             <?php
                                 foreach ($careers_child as $val) {
-                                    $post_img = get_field('featured_image', $val);
+                                    $post_img = get_field('featured_image', $val)['sizes'];
                                     ?>
                             <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Careers Section">
                                 <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img['thumbnail']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <p><?php echo $val->name; ?></p>
                                 </div>
                             </a>
@@ -1037,11 +1036,11 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         <div class="sub-cat-inner-container">
                             <?php
                                 foreach ($companies_child as $val) {
-                                    $post_img = get_field('featured_image', $val);
+                                    $post_img = get_field('featured_image', $val)['sizes'];
                                     ?>
                             <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Companies Section">
                                 <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img['thumbnail']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <p><?php echo $val->name; ?></p>
                                 </div>
                             </a>
@@ -1067,11 +1066,11 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         <div class="sub-cat-inner-container">
                             <?php
                                 foreach ($technology_child as $val) {
-                                    $post_img = get_field('featured_image', $val);
+                                    $post_img = get_field('featured_image', $val)['sizes'];
                                     ?>
                             <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Technology Section">
                                 <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img['thumbnail']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <p><?php echo $val->name; ?></p>
                                 </div>
                             </a>
@@ -1097,11 +1096,11 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         <div class="sub-cat-inner-container">
                             <?php
                                 foreach ($events_child as $val) {
-                                    $post_img = get_field('featured_image', $val);
+                                    $post_img = get_field('featured_image', $val)['sizes'];
                                     ?>
                             <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Events Section">
                                 <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img['thumbnail']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <p><?php echo $val->name; ?></p>
                                 </div>
                             </a>
@@ -1128,11 +1127,11 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         <div class="sub-cat-inner-container">
                             <?php
                                 foreach ($exclusive_child as $val) {
-                                    $post_img = get_field('featured_image', $val);
+                                    $post_img = get_field('featured_image', $val)['sizes'];
                                     ?>
                             <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Exclusive Section">
                                 <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img['thumbnail']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <p><?php echo $val->name; ?></p>
                                 </div>
                             </a>
@@ -1158,11 +1157,11 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         <div class="sub-cat-inner-container">
                             <?php
                                 foreach ($geography_child as $val) {
-                                    $post_img = get_field('featured_image', $val);
+                                    $post_img = get_field('featured_image', $val)['sizes'];
                                     ?>
                             <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Geography Section">
                                 <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img['thumbnail']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <p><?php echo $val->name; ?></p>
                                 </div>
                             </a>
@@ -1188,11 +1187,11 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                         <div class="sub-cat-inner-container">
                             <?php
                                 foreach ($industry_child as $val) {
-                                    $post_img = get_field('featured_image', $val);
+                                    $post_img = get_field('featured_image', $val)['sizes'];
                                     ?>
                             <a href="<?php echo get_category_link($val->term_id); ?>" aria-label="Industry Section">
                                 <div class="sub-cat-img">
-                                    <amp-img src="<?php echo $post_img['url']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img['thumbnail']; ?>" width="140" height="140" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <p><?php echo $val->name; ?></p>
                                 </div>
                             </a>

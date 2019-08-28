@@ -93,7 +93,7 @@ get_header(); ?>
         border-bottom: 2px solid #ccc;
     }
 
-    /* mobile test * /
+    /* mobile test */
 	@media (max-width: 647px) {
 	  .moon {
 		padding-top: -500px;
