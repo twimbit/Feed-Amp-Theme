@@ -1035,7 +1035,7 @@
             left: 0;
             top: 0;
             opacity: .9;
-            background: linear-gradient(to right bottom, #000, #00070, #00030, #00054, #00000)
+            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.12) 0, #00000078 100%)
         }
 
         .feed-link {
@@ -1970,7 +1970,7 @@
         }
 
         .detail1 {
-            font-size: 18px;
+            font-size: 16px;
             position: relative;
             top: 10px;
             text-transform: capitalize

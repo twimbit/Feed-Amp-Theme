@@ -26,9 +26,118 @@ $video_title = get_the_title();
 $author = get_the_author();
 $video_category = get_the_category();
 
-$video = get_field('video_type');
+$video = get_field('video_type')  ;
 
 ?>
+<style>
+    .short-image
+    {
+        margin-right: 10px;
+    }
+    .detail1
+    {
+        word-spacing: -1px;
+        line-height:1.4;
+        width: 25em;
+        font-size: 12px;
+        word-break: break-word;
+    }
+    .sub1
+    {
+        margin-top: 16px;
+    }
+    .sub1 span {
+        font-size: 11px;
+    }
+    .icon {
+        transform: translate(27px, -75px);
+    }
+
+
+    @media only screen and (max-width: 320px) {
+        .icon {
+            transform: translate(20px, -70px);
+        }
+    }
+    @media (min-width:300px) and (max-width:375px) {
+        .detail1 {
+            line-height:1.2;
+            width: 17em;
+            font-size: 10px
+        }
+        .sub1 span {
+            font-size: 9px
+        }
+        [class*="col-"] .sub1
+        {
+            margin-top: 10px;
+        }
+    }
+    @media (min-width:375px) and (max-width:425px) {
+        .detail1 {
+            font-size: 11px;
+            width: 19em;
+        }
+        .icon {
+            transform: translate(30px, -76px);
+        }
+    }
+    @media (min-width: 425px) and (max-width: 520px) {
+        .detail1 {
+            width: 20em;
+            font-size: 11px
+        }
+        [class*="col-"].sub1
+        {
+            margin-top:10px;
+        }
+
+    }
+    @media (min-width: 520px) and (max-width: 640px) {
+        .detail1 {
+            width: 30em;
+            font-size: 11px;
+        }
+        [class*="col-"].sub1
+        {
+            margin-top:10px;
+        }
+
+    }
+    @media (min-width: 640px) and (max-width:726px)
+    {
+        .detail1 {
+            width: 11em;
+            font-size: 10px
+        }
+        [class*="col-"].sub1
+        {
+            margin-top:10px;
+        }
+    }
+    @media (min-width: 726px) and (max-width:767px)
+    {
+        .detail1 {
+            width: 14em;
+            font-size: 10px
+        }
+    }
+    @media (min-width: 768px) and (max-width:1024px)
+    {
+        .detail1 {
+            width: 14em;
+            font-size: 10px
+        }
+    }
+    @media (min-width: 1024px) and (max-width:1440px)
+    {
+        .detail1 {
+            width: 20em;
+            font-size: 12px
+        }
+    }
+
+</style>
 
 
 <div class="row podcast">
@@ -66,9 +175,11 @@ $video = get_field('video_type');
                                     <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" />
                                 </g>
                             </svg>
-                            <?php
-                            echo  $post->post_content; //contents saved in a variable
-                            ?>
+                            <div style="margin-top:20px; overflow:auto; word-break: break-word;">
+                                <?php
+                                echo  $post->post_content; //contents saved in a variable
+                                ?>
+                            </div>
                         </div>
                     </div>
                     <p on="tap:description-lightbox.close">
