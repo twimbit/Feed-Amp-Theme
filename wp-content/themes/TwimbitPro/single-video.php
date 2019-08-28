@@ -34,6 +34,7 @@ $video = get_field('video_type')  ;
     {
         margin-right: 10px;
     }
+
     .detail1
     {
         word-spacing: -1px;
@@ -42,13 +43,13 @@ $video = get_field('video_type')  ;
         font-size: 12px;
         word-break: break-word;
     }
-    .sub1
-    {
-        margin-top: 16px;
-    }
-    .sub1 span {
-        font-size: 11px;
-    }
+    /*.sub1*/
+    /*{*/
+    /*    margin-top: 16px;*/
+    /*}*/
+    /*.sub1 span {*/
+    /*    font-size: 11px;*/
+    /*}*/
     .icon {
         transform: translate(27px, -75px);
     }
@@ -65,13 +66,13 @@ $video = get_field('video_type')  ;
             width: 17em;
             font-size: 10px
         }
-        .sub1 span {
-            font-size: 9px
-        }
-        [class*="col-"] .sub1
-        {
-            margin-top: 10px;
-        }
+        /*.sub1 span {*/
+        /*    font-size: 9px*/
+        /*}*/
+        /*[class*="col-"] .sub1*/
+        /*{*/
+        /*    margin-top: 10px;*/
+        /*}*/
     }
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
@@ -87,10 +88,10 @@ $video = get_field('video_type')  ;
             width: 20em;
             font-size: 11px
         }
-        [class*="col-"].sub1
-        {
-            margin-top:10px;
-        }
+        /*[class*="col-"].sub1*/
+        /*{*/
+        /*    margin-top:10px;*/
+        /*}*/
 
     }
     @media (min-width: 520px) and (max-width: 640px) {
@@ -98,10 +99,10 @@ $video = get_field('video_type')  ;
             width: 30em;
             font-size: 11px;
         }
-        [class*="col-"].sub1
-        {
-            margin-top:10px;
-        }
+        /*[class*="col-"].sub1*/
+        /*{*/
+        /*    margin-top:10px;*/
+        /*}*/
 
     }
     @media (min-width: 640px) and (max-width:726px)
@@ -110,10 +111,10 @@ $video = get_field('video_type')  ;
             width: 11em;
             font-size: 10px
         }
-        [class*="col-"].sub1
-        {
-            margin-top:10px;
-        }
+        /*[class*="col-"].sub1*/
+        /*{*/
+        /*    margin-top:10px;*/
+        /*}*/
     }
     @media (min-width: 726px) and (max-width:767px)
     {
@@ -145,7 +146,7 @@ $video = get_field('video_type')  ;
     <div class="lg-col-7 md-col-7 sm-col-7 xs-col-12" style="display: inline-table;">
         <!-- 1st div divided into 66%size of the page-->
         <div class="video-container" oncontextmenu="return false;">
-            <amp-video controls src="<?php echo $video['url'] ?>" layout="responsive" media="(min-width: 320px)" width="800px" height="450px" display="fit-content" controlsList="nodownload">
+            <amp-video controls src="<?php echo $video['url'] ?>" layout="responsive" media="(min-width: 320px)" width="800px" height="450px" display="fit-content" controlsList="nodownload" autoplay>
             </amp-video>
         </div>
 

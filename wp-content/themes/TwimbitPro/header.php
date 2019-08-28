@@ -1745,7 +1745,7 @@
 
             [class*="col-"] .sub1 {
                 font-size: 40px;
-                margin-top: 26px;
+                /*margin-top: 26px;*/
                 color: #000
             }
 
@@ -1861,7 +1861,7 @@
             }
 
             .right-side {
-                margin: 21px 36px 10px
+                margin: 21px 36px 10px 0px
             }
         }
 
@@ -1954,7 +1954,11 @@
             font-size: 20px;
             align: right;
             color: #000;
-            flex-grow: 1
+            flex-grow: 1;
+
+            justify-content: space-between;
+            display: flex;
+            flex-direction: column;
         }
 
         .sub1 span {
@@ -1964,9 +1968,9 @@
         }
 
         .sub1 {
-            margin-top: 25px;
-            display: flex;
-            flex-wrap: wrap
+            /*margin-top: 25px;*/
+            /*display: flex;*/
+            /*flex-wrap: wrap*/
         }
 
         .detail1 {
@@ -2038,9 +2042,9 @@
                 font-size: 16px
             }
 
-            .sub1 {
-                margin-top: 15px
-            }
+            /*.sub1 {*/
+            /*    margin-top: 15px*/
+            /*}*/
         }
 
         @media (min-width:768px) {

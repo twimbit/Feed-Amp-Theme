@@ -38,6 +38,7 @@ $audio = get_field('audio');
     {
         margin-right: 10px;
     }
+
     .detail1
     {
         word-spacing: -1px;
@@ -46,13 +47,13 @@ $audio = get_field('audio');
         font-size: 12px;
         word-break: break-word;
     }
-    .sub1
-    {
-        margin-top: 16px;
-    }
-    .sub1 span {
-        font-size: 11px;
-    }
+    /*.sub1*/
+    /*{*/
+    /*    margin-top: 16px;*/
+    /*}*/
+    /*.sub1 span {*/
+    /*    font-size: 11px;*/
+    /*}*/
     .icon {
         transform: translate(27px, -75px);
     }
@@ -69,13 +70,13 @@ $audio = get_field('audio');
             width: 17em;
             font-size: 10px
         }
-        .sub1 span {
-            font-size: 9px
-        }
-        [class*="col-"] .sub1
-        {
-            margin-top: 10px;
-        }
+        /*.sub1 span {*/
+        /*    font-size: 9px*/
+        /*}*/
+        /*[class*="col-"] .sub1*/
+        /*{*/
+        /*    margin-top: 10px;*/
+        /*}*/
     }
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
@@ -91,10 +92,10 @@ $audio = get_field('audio');
             width: 20em;
             font-size: 11px
         }
-        [class*="col-"].sub1
-        {
-            margin-top:10px;
-        }
+        /*[class*="col-"].sub1*/
+        /*{*/
+        /*    margin-top:10px;*/
+        /*}*/
 
     }
     @media (min-width: 520px) and (max-width: 640px) {
@@ -102,10 +103,10 @@ $audio = get_field('audio');
             width: 30em;
             font-size: 11px;
         }
-        [class*="col-"].sub1
-        {
-            margin-top:10px;
-        }
+        /*[class*="col-"].sub1*/
+        /*{*/
+        /*    margin-top:10px;*/
+        /*}*/
 
     }
     @media (min-width: 640px) and (max-width:726px)
@@ -114,10 +115,10 @@ $audio = get_field('audio');
             width: 11em;
             font-size: 10px
         }
-        [class*="col-"].sub1
-        {
-            margin-top:10px;
-        }
+        /*[class*="col-"].sub1*/
+        /*{*/
+        /*    margin-top:10px;*/
+        /*}*/
     }
     @media (min-width: 726px) and (max-width:767px)
     {
@@ -161,7 +162,7 @@ $audio = get_field('audio');
                         </span>
                     </div>
                     <div class="audio" oncontextmenu="return false;">
-                        <amp-audio controls src="<?php echo $audio['url']; ?>" height="auto" width="auto" autoplay="true" class="player" artwork="<?php echo $post_img; ?>" controls controlsList="nodownload">
+                        <amp-audio controls src="<?php echo $audio['url']; ?>" height="auto" width="auto"  class="player" artwork="<?php echo $post_img; ?>" controlsList="nodownload" autoplay >
                             <!-- podcast playlist-->
                         </amp-audio>
                     </div>
@@ -297,10 +298,15 @@ $audio = get_field('audio');
                     <div class="details">
                         <!--podcast details -->
                         <p class="detail1 ">
-                            <?php echo $post_title; ?>
+
+                            <?php
+                            echo mb_strimwidth($post_title, 0, 85, "...");
+                            //Hello W...
+                            ?>
+<!--                            --><?php //echo $post_title; ?>
                         </p> <!-- podcast title -->
                         <div class="sub1">
-                            <span style="margin-right: 10px;">By <?php echo $author; ?></span>
+                            <span>By <?php echo $author; ?></span>
                             <span></span>
                             <span># <?php echo esc_html($category_post[0]->name); ?></span>
                         </div>
