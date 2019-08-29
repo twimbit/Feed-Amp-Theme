@@ -1035,7 +1035,7 @@
             left: 0;
             top: 0;
             opacity: .9;
-            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.12) 0, #00000078 100%)
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.90) 43%, #00000000 100%);
         }
 
         .feed-link {
