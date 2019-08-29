@@ -30,6 +30,7 @@ $video = get_field('video_type')  ;
 
 ?>
 <style>
+
     .short-image {
         margin-right: 10px;
     }
@@ -39,10 +40,10 @@ $video = get_field('video_type')  ;
         width: 20em;
         font-size: 14px;
         font-weight: bold;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
+        overflow: hidden; !important;
+        display: -webkit-box; !important;
+        -webkit-line-clamp: 2; !important;
+        -webkit-box-orient: vertical; !important;
     }
     .sub1 span {
         font-size: 12px;
@@ -58,44 +59,45 @@ $video = get_field('video_type')  ;
     }
     @media (min-width:300px) and (max-width:375px) {
         .detail1 {
-            line-height: 1.2;
-            width: 17em;
-            font-size: 10px
+            /*line-height: 1.2;*/
+            width: 14em;
+            font-size: 12px
         }
     }
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
-            font-size: 11px;
-            width: 19em
-        }
-        .icon {
-            transform: translate(30px, -76px);
+            font-size: 13px;
+            width: 16em
         }
     }
     @media (min-width: 425px) and (max-width: 520px) {
         .detail1 {
             width: 20em;
-            font-size: 11px
+            font-size: 14px
         }
     }
+
     @media (min-width: 520px) and (max-width: 640px) {
         .detail1 {
-            width: 30em;
+            width: 25em;
+            font-size: 15px
+        }
+    }
+
+    @media (min-width: 640px) and (max-width:726px) {
+        .detail1 {
+            width: 13em;
             font-size: 11px
         }
     }
-    @media (min-width: 640px) and (max-width:726px) {
-        .detail1 {
-            width: 11em;
-            font-size: 10px
-        }
-    }
+
     @media (min-width: 726px) and (max-width:767px) {
         .detail1 {
-            width: 12em;
+            width: 14em;
             font-size: 10px
         }
     }
+
     @media (min-width: 768px) and (max-width:1024px) {
         .detail1 {
             width: 14em;

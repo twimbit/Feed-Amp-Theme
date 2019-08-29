@@ -73,10 +73,10 @@ $audio = get_field('audio');
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
             font-size: 13px;
-            width: 19em
+            width: 16em
         }
         .icon {
-            transform: translate(30px, -76px);
+            transform: translate(20px, -75px);
         }
     }
     @media (min-width: 425px) and (max-width: 520px) {
