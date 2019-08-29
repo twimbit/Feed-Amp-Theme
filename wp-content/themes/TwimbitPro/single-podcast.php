@@ -33,100 +33,71 @@ $audio = get_field('audio');
     .podcast-cover .feed-title p {
         line-height: 1.2;
     }
+    .podcast-cover .feed-title span {
+        font-weight: 600;
+    }
 
     .short-image {
         margin-right: 10px;
     }
-
     .detail1 {
         word-spacing: -1px;
         line-height: 1.4;
-        width: 25em;
-        font-size: 12px;
-        word-break: break-word;
+        width: 20em;
+        font-size: 14px;
+        font-weight: bold;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
-
-    /*.sub1*/
-    /*{*/
-    /*    margin-top: 16px;*/
-    /*}*/
-    /*.sub1 span {*/
-    /*    font-size: 11px;*/
-    /*}*/
+    .sub1 span {
+        font-size: 12px;
+        font-weight: 400;
+    }
     .icon {
         transform: translate(27px, -75px);
     }
-
-
     @media only screen and (max-width: 320px) {
         .icon {
             transform: translate(20px, -70px);
         }
     }
-
     @media (min-width:300px) and (max-width:375px) {
         .detail1 {
-            line-height: 1.2;
-            width: 17em;
-            font-size: 10px
+            /*line-height: 1.2;*/
+            width: 14em;
+            font-size: 12px
         }
-
-        /*.sub1 span {*/
-        /*    font-size: 9px*/
-        /*}*/
-        /*[class*="col-"] .sub1*/
-        /*{*/
-        /*    margin-top: 10px;*/
-        /*}*/
     }
-
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
-            font-size: 11px;
-            width: 19em;
+            font-size: 13px;
+            width: 19em
         }
-
         .icon {
             transform: translate(30px, -76px);
         }
     }
-
     @media (min-width: 425px) and (max-width: 520px) {
         .detail1 {
             width: 20em;
-            font-size: 11px
+            font-size: 14px
         }
-
-        /*[class*="col-"].sub1*/
-        /*{*/
-        /*    margin-top:10px;*/
-        /*}*/
-
     }
 
     @media (min-width: 520px) and (max-width: 640px) {
         .detail1 {
-            width: 30em;
-            font-size: 11px;
+            width: 25em;
+            font-size: 15px
         }
-
-        /*[class*="col-"].sub1*/
-        /*{*/
-        /*    margin-top:10px;*/
-        /*}*/
-
     }
 
     @media (min-width: 640px) and (max-width:726px) {
         .detail1 {
-            width: 11em;
-            font-size: 10px
+            width: 13em;
+            font-size: 11px
         }
-
-        /*[class*="col-"].sub1*/
-        /*{*/
-        /*    margin-top:10px;*/
-        /*}*/
     }
 
     @media (min-width: 726px) and (max-width:767px) {
@@ -140,13 +111,6 @@ $audio = get_field('audio');
         .detail1 {
             width: 14em;
             font-size: 10px
-        }
-    }
-
-    @media (min-width: 1024px) and (max-width:1440px) {
-        .detail1 {
-            width: 20em;
-            font-size: 12px
         }
     }
 </style>
@@ -165,12 +129,19 @@ $audio = get_field('audio');
                         <span>By <?php echo $author; ?></span>
                         <span></span>
                         <span style="text-decoration: none;">
-                            <a href="<?php echo get_category_link($category[0]->term_id); ?>" style="font-size:0.76rem">#<?php echo $category[0]->name; ?></a>
-
+                            <a href="<?php echo get_category_link($category[0]->term_id); ?>"
+                               style="font-size:0.76rem">#<?php echo $category[0]->name;?>
+                            </a>
                         </span>
                     </div>
                     <div class="audio" oncontextmenu="return false;">
-                        <amp-audio controls src="<?php echo $audio['url']; ?>" height="auto" width="auto" class="player" artwork="<?php echo $post_img; ?>" controlsList="nodownload" autoplay>
+                        <amp-audio controls height="auto"
+                                   width="auto"
+                                   class="player"
+                                   artwork="<?php echo $post_img; ?>"
+                                   controlsList="nodownload"
+                                   autoplay>
+                            <source src="<?php echo $audio['url']; ?>">
                             <!-- podcast playlist-->
                         </amp-audio>
                     </div>
@@ -305,16 +276,13 @@ $audio = get_field('audio');
                         </div>
                         <div class="details">
                             <!--podcast details -->
-                            <p class="detail1 ">
-                                <!-- trim heading -->
-                                <?php
-                                    echo mb_strimwidth($post_title, 0, 85, "...");
-                                    ?>
+                            <p class="detail1">
+                                <?php echo $post_title ?>
                             </p>
                             <div class="sub1">
                                 <span>By <?php echo $author; ?></span>
                                 <span></span>
-                                <span># <?php echo esc_html($category_post[0]->name); ?></span>
+                                <span>#<?php echo esc_html($category_post[0]->name); ?></span>
                             </div>
                         </div>
 

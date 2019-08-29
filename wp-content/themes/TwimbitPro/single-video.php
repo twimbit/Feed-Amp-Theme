@@ -30,31 +30,27 @@ $video = get_field('video_type')  ;
 
 ?>
 <style>
-    .short-image
-    {
+    .short-image {
         margin-right: 10px;
     }
-
-    .detail1
-    {
+    .detail1 {
         word-spacing: -1px;
-        line-height:1.4;
-        width: 25em;
-        font-size: 12px;
-        word-break: break-word;
+        line-height: 1.4;
+        width: 20em;
+        font-size: 14px;
+        font-weight: bold;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
-    /*.sub1*/
-    /*{*/
-    /*    margin-top: 16px;*/
-    /*}*/
-    /*.sub1 span {*/
-    /*    font-size: 11px;*/
-    /*}*/
+    .sub1 span {
+        font-size: 12px;
+        font-weight: 400;
+    }
     .icon {
         transform: translate(27px, -75px);
     }
-
-
     @media only screen and (max-width: 320px) {
         .icon {
             transform: translate(20px, -70px);
@@ -62,22 +58,15 @@ $video = get_field('video_type')  ;
     }
     @media (min-width:300px) and (max-width:375px) {
         .detail1 {
-            line-height:1.2;
+            line-height: 1.2;
             width: 17em;
             font-size: 10px
         }
-        /*.sub1 span {*/
-        /*    font-size: 9px*/
-        /*}*/
-        /*[class*="col-"] .sub1*/
-        /*{*/
-        /*    margin-top: 10px;*/
-        /*}*/
     }
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
             font-size: 11px;
-            width: 19em;
+            width: 19em
         }
         .icon {
             transform: translate(30px, -76px);
@@ -88,68 +77,46 @@ $video = get_field('video_type')  ;
             width: 20em;
             font-size: 11px
         }
-        /*[class*="col-"].sub1*/
-        /*{*/
-        /*    margin-top:10px;*/
-        /*}*/
-
     }
     @media (min-width: 520px) and (max-width: 640px) {
         .detail1 {
             width: 30em;
-            font-size: 11px;
+            font-size: 11px
         }
-        /*[class*="col-"].sub1*/
-        /*{*/
-        /*    margin-top:10px;*/
-        /*}*/
-
     }
-    @media (min-width: 640px) and (max-width:726px)
-    {
+    @media (min-width: 640px) and (max-width:726px) {
         .detail1 {
             width: 11em;
             font-size: 10px
         }
-        /*[class*="col-"].sub1*/
-        /*{*/
-        /*    margin-top:10px;*/
-        /*}*/
     }
-    @media (min-width: 726px) and (max-width:767px)
-    {
+    @media (min-width: 726px) and (max-width:767px) {
+        .detail1 {
+            width: 12em;
+            font-size: 10px
+        }
+    }
+    @media (min-width: 768px) and (max-width:1024px) {
         .detail1 {
             width: 14em;
             font-size: 10px
         }
     }
-    @media (min-width: 768px) and (max-width:1024px)
-    {
-        .detail1 {
-            width: 14em;
-            font-size: 10px
-        }
-    }
-    @media (min-width: 1024px) and (max-width:1440px)
-    {
-        .detail1 {
-            width: 20em;
-            font-size: 12px
-        }
-    }
-
 </style>
-
-
 <div class="row podcast">
     <!--Main div   -->
     <div class="lg-col-7 md-col-7 sm-col-7 xs-col-12" style="display: inline-table;">
         <!-- 1st div divided into 66%size of the page-->
         <div class="video-container" oncontextmenu="return false;">
-            <amp-video controls src="<?php echo $video['url'] ?>" layout="responsive" media="(min-width: 320px)" width="800px" height="450px" display="fit-content" controlsList="nodownload" autoplay>
+            <amp-video controls autoplay
+                       width="640"
+                       height="360"
+                       layout="responsive"
+                       controlsList="nodownload">
+                <source src="<?php echo $video['url'] ?>"
+                        type="video/mp4">
             </amp-video>
         </div>
-
 
         <!-- description div for video title, author and category -->
         <div class="video-description" style="text-decoration: none;">
@@ -176,7 +143,7 @@ $video = get_field('video_type')  ;
                                     <path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312   c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312   l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937   c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z" />
                                 </g>
                             </svg>
-                            <div style="margin-top:20px; overflow:auto; word-break: break-word;">
+                            <div style="margin-top:0px; overflow:auto; word-break: break-word;">
                                 <?php
                                 echo  $post->post_content; //contents saved in a variable
                                 ?>
@@ -287,11 +254,12 @@ $video = get_field('video_type')  ;
                             <!--video details container -->
                             <p class="detail1 ">
                                 <!-- video heading -->
-                                <?php echo $video_title; ?>
+                                <?php
+                                echo $video_title;
+                                ?>
                             </p>
                             <div class="sub1">
                                 <!-- video artist and category name -->
-
                                 <span style="margin-right: 10px;">By <?php echo $artist; ?></span>
                                 <span></span>
                                 <span># <?php echo esc_html($video_category[0]->name); ?></span>
