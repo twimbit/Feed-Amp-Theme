@@ -46,10 +46,10 @@ $audio = get_field('audio');
         width: 20em;
         font-size: 14px;
         font-weight: bold;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
+        overflow: hidden; !important;
+        display: -webkit-box; !important;
+        -webkit-line-clamp: 2; !important;
+        -webkit-box-orient: vertical; !important;
     }
     .sub1 span {
         font-size: 12px;
