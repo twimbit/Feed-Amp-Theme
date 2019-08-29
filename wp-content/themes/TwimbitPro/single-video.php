@@ -26,37 +26,45 @@ $video_title = get_the_title();
 $author = get_the_author();
 $video_category = get_the_category();
 
-$video = get_field('video_type')  ;
+$video = get_field('video_type');
 
 ?>
 <style>
-
     .short-image {
         margin-right: 10px;
     }
+
     .detail1 {
         word-spacing: -1px;
         line-height: 1.4;
-        width: 20em;
+        /* width: 20em; */
         font-size: 14px;
         font-weight: bold;
-        overflow: hidden; !important;
-        display: -webkit-box; !important;
-        -webkit-line-clamp: 2; !important;
-        -webkit-box-orient: vertical; !important;
+        overflow: hidden;
+         !important;
+        display: -webkit-box;
+         !important;
+        -webkit-line-clamp: 2;
+         !important;
+        -webkit-box-orient: vertical;
+         !important;
     }
+
     .sub1 span {
         font-size: 12px;
         font-weight: 400;
     }
+
     .icon {
         transform: translate(27px, -75px);
     }
+
     @media only screen and (max-width: 320px) {
         .icon {
             transform: translate(20px, -70px);
         }
     }
+
     @media (min-width:300px) and (max-width:375px) {
         .detail1 {
             /*line-height: 1.2;*/
@@ -64,12 +72,14 @@ $video = get_field('video_type')  ;
             font-size: 12px
         }
     }
+
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
             font-size: 13px;
             width: 16em
         }
     }
+
     @media (min-width: 425px) and (max-width: 520px) {
         .detail1 {
             width: 20em;
@@ -110,13 +120,8 @@ $video = get_field('video_type')  ;
     <div class="lg-col-7 md-col-7 sm-col-7 xs-col-12" style="display: inline-table;">
         <!-- 1st div divided into 66%size of the page-->
         <div class="video-container" oncontextmenu="return false;">
-            <amp-video controls autoplay
-                       width="640"
-                       height="360"
-                       layout="responsive"
-                       controlsList="nodownload">
-                <source src="<?php echo $video['url'] ?>"
-                        type="video/mp4">
+            <amp-video controls autoplay width="640" height="360" layout="responsive" controlsList="nodownload">
+                <source src="<?php echo $video['url'] ?>" type="video/mp4">
             </amp-video>
         </div>
 
@@ -229,7 +234,7 @@ $video = get_field('video_type')  ;
                                         }
 
                                         .b {
-                                            ill: #fafafa;
+                                            fill: #fafafa;
                                         }
 
                                         .c {
@@ -257,8 +262,8 @@ $video = get_field('video_type')  ;
                             <p class="detail1 ">
                                 <!-- video heading -->
                                 <?php
-                                echo $video_title;
-                                ?>
+                                    echo $video_title;
+                                    ?>
                             </p>
                             <div class="sub1">
                                 <!-- video artist and category name -->
