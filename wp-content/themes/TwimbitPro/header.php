@@ -945,8 +945,7 @@
 
         .container-fluid {
             width: 100%;
-            padding-right: 15px;
-            padding-left: 15px;
+            max-width: 1920px;
             margin-right: auto;
             margin-left: auto
         }
