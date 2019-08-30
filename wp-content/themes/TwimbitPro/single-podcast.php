@@ -48,14 +48,6 @@ $audio = get_field('audio');
         /* width: 20em; */
         font-size: 14px;
         font-weight: bold;
-        overflow: hidden;
-         !important;
-        display: -webkit-box;
-         !important;
-        -webkit-line-clamp: 2;
-         !important;
-        -webkit-box-orient: vertical;
-         !important;
     }
 
     .sub1 span {
@@ -86,7 +78,6 @@ $audio = get_field('audio');
             font-size: 13px;
             width: 16em
         }
-
         .icon {
             transform: translate(28px, -75px);
         }
@@ -94,7 +85,7 @@ $audio = get_field('audio');
 
     @media (min-width: 425px) and (max-width: 520px) {
         .detail1 {
-            width: 20em;
+            width: 18em;
             font-size: 14px
         }
     }
