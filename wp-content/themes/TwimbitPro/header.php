@@ -1977,6 +1977,10 @@
             font-size: 16px;
             position: relative;
             top: 10px;
+            overflow: hidden !important;
+            display: -webkit-box !important;
+            -webkit-line-clamp: 2 !important;
+            -webkit-box-orient: vertical !important;
             text-transform: capitalize
         }
 
