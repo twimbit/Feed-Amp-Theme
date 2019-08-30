@@ -30,12 +30,6 @@ $audio = get_field('audio');
 
 ?>
 <style>
-    @media only screen and (max-width: 320px) {
-        .icon {
-            transform: translate(18px, -70px);
-        }
-    }
-
     @media (min-width:300px) and (max-width:375px) {
         .detail1 {
             /*line-height: 1.2;*/
@@ -48,10 +42,6 @@ $audio = get_field('audio');
         .detail1 {
             font-size: 13px;
             width: 16em
-        }
-
-        .icon {
-            transform: translate(28px, -75px);
         }
     }
 
@@ -211,7 +201,7 @@ $audio = get_field('audio');
                     <a href="<?php echo $post_url; ?>" style="text-decoration:none;">
                         <div class="short-card">
                             <!-- podcast option -->
-                            <div class="short-image">
+                            <div class="short-image" style="position:relative">
                                 <!-- podcast image-->
                                 <img class="short-image" src="<?php print $post_img; ?>">
                                 <!--svg play icon-->
@@ -228,15 +218,8 @@ $audio = get_field('audio');
                                                 filter: url(#a);
                                             }
                                     </style>
-                                    <filter id="a" x="0" y="0" width="85.658" height="85.658" filterUnits="userSpaceOnUse">
-                                        <feOffset dy="3" input="SourceAlpha" />
-                                        <feGaussianBlur stdDeviation="3" result="b" />
-                                        <feFlood flood-opacity="0.161" />
-                                        <feComposite operator="in" in2="b" />
-                                        <feComposite in="SourceGraphic" />
-                                    </filter>
                                     </defs>
-                                    <g transform="translate(-44.057 -33.003)">
+                                    <g>
                                         <g class="c" transform="matrix(1, 0, 0, 1, 44.06, 33)">
                                             <ellipse class="a" cx="33.829" cy="33.829" rx="33.829" ry="33.829" transform="translate(9 6)" />
                                         </g>

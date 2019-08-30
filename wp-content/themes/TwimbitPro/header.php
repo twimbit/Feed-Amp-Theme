@@ -1948,9 +1948,14 @@
         }
 
         .icon {
-            height: 50px;
-            width: 50px;
-            transform: translate(27px, -75px);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .icon>g {
+            transform: translate(-18px, -8px) scale(.7);
         }
 
         .details {

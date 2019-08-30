@@ -531,9 +531,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
             </div>
         </div>
     </section>
-    <?php //check($get_post_for_story[0], $_COOKIE['user_date_story']);
-    //echo get_template_directory_uri();
-    ?>
+
     <section id="stories" class="hide">
         <div class="container">
             <div class="story-section">
@@ -610,7 +608,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                         <div class="feed-title">
                                             <h3><?php echo $post_title; ?></h3>
 
-                                            <p class="feed-subtitle">#<?php echo get_the_category($val)[0]->cat_name; ?></p>
+                                            <p class="feed-subtitle">#<?php echo get_the_category($val)[0]->name; ?></p>
 
                                         </div>
                                     </a>
@@ -887,7 +885,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 
 </div>
 
-<!-- This is explore section -->
+<!-- explore section -->
 <div id="explore-tab-section" hidden>
     <section id="explore">
         <div class="container" style="margin-top:5rem">
