@@ -1035,7 +1035,7 @@
             left: 0;
             top: 0;
             opacity: .9;
-            background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.12) 0, #00000078 100%)
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.90) 43%, #00000000 100%);
         }
 
         .feed-link {
@@ -1958,6 +1958,7 @@
             justify-content: space-between;
             display: flex;
             flex-direction: column;
+            width: 70%
         }
 
         .sub1 span {
@@ -2358,31 +2359,31 @@
     <meta property="fb:admins" content="1626522259" />
 
     <?php if (is_single()) { ?>
-    <!-- Open Graph -->
-    <meta property="og:url" content="<?php the_permalink() ?>" />
-    <meta property="og:title" content="<?php single_post_title(''); ?>" />
-    <meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
-                                                echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID));
-                                            } ?>" />
-    <!-- Schema.org -->
-    <meta itemprop="name" content="<?php single_post_title(''); ?>">
-    <meta itemprop="description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>">
-    <meta itemprop="image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
-                                            echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID));
-                                        } ?>">
-    <!-- Twitter Cards -->
-    <meta property="twitter:card" content="summary">
-    <meta property="twitter:site" content="Twimbit.pro">
-    <meta property="twitter:title" content="<?php single_post_title(''); ?>">
-    <meta property="twitter:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>">
-    <meta property="twitter:creator" content="Twimbit User">
-    <meta property="twitter:image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
+        <!-- Open Graph -->
+        <meta property="og:url" content="<?php the_permalink() ?>" />
+        <meta property="og:title" content="<?php single_post_title(''); ?>" />
+        <meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
                                                     echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID));
-                                                } ?>">
-    <meta property="twitter:url" content="<?php the_permalink() ?>" />
-    <meta property="twitter:domain" content="Twimbit Pro">
+                                                } ?>" />
+        <!-- Schema.org -->
+        <meta itemprop="name" content="<?php single_post_title(''); ?>">
+        <meta itemprop="description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>">
+        <meta itemprop="image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
+                                                echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID));
+                                            } ?>">
+        <!-- Twitter Cards -->
+        <meta property="twitter:card" content="summary">
+        <meta property="twitter:site" content="Twimbit.pro">
+        <meta property="twitter:title" content="<?php single_post_title(''); ?>">
+        <meta property="twitter:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>">
+        <meta property="twitter:creator" content="Twimbit User">
+        <meta property="twitter:image" content="<?php if (function_exists('wp_get_attachment_thumb_url')) {
+                                                        echo wp_get_attachment_thumb_url(get_post_thumbnail_id($post->ID));
+                                                    } ?>">
+        <meta property="twitter:url" content="<?php the_permalink() ?>" />
+        <meta property="twitter:domain" content="Twimbit Pro">
 
     <?php } ?>
 
@@ -2541,9 +2542,9 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 										justify-content:space-between;">
         <div class="lg-hide md-hide" style="width:32px">
             <?php if (!(is_home())) { ?>
-            <a href="javascript:history.go(-1)">
-                <img class="back-button-icon" src="<?php echo get_template_directory_uri() . '/src/back.svg'; ?>" alt="header-back-button">
-            </a>
+                <a href="javascript:history.go(-1)">
+                    <img class="back-button-icon" src="<?php echo get_template_directory_uri() . '/src/back.svg'; ?>" alt="header-back-button">
+                </a>
             <?php } ?>
         </div>
         <a href="<?php echo home_url(); ?>" style="height: 100%;padding-top: 0.6rem;">
@@ -2632,7 +2633,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($business_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
@@ -2642,7 +2643,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($careers_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
@@ -2652,7 +2653,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($companies_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
@@ -2662,7 +2663,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($technology_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
@@ -2672,7 +2673,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($exclusive_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>
@@ -2682,7 +2683,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                                 <?php
                                 foreach ($industry_child as $val) {
                                     ?>
-                                <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
+                                    <li class="ampstart-nav-item" style="margin-bottom:1rem"><a href="<?php echo get_category_link($val->term_id); ?>" class="text-decoration-none"><?php echo $val->name; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </section>

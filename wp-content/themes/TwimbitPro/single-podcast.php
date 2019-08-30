@@ -33,6 +33,7 @@ $audio = get_field('audio');
     .podcast-cover .feed-title p {
         line-height: 1.2;
     }
+
     .podcast-cover .feed-title span {
         font-weight: 600;
     }
@@ -40,29 +41,34 @@ $audio = get_field('audio');
     .short-image {
         margin-right: 10px;
     }
+
     .detail1 {
         word-spacing: -1px;
         line-height: 1.4;
-        width: 20em;
+        /* width: 20em; */
         font-size: 14px;
         font-weight: bold;
-        overflow: hidden; !important;
-        display: -webkit-box; !important;
-        -webkit-line-clamp: 2; !important;
-        -webkit-box-orient: vertical; !important;
+        overflow: hidden !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
     }
+
     .sub1 span {
         font-size: 12px;
         font-weight: 400;
     }
+
     .icon {
         transform: translate(27px, -75px);
     }
+
     @media only screen and (max-width: 320px) {
         .icon {
             transform: translate(20px, -70px);
         }
     }
+
     @media (min-width:300px) and (max-width:375px) {
         .detail1 {
             /*line-height: 1.2;*/
@@ -70,18 +76,20 @@ $audio = get_field('audio');
             font-size: 12px
         }
     }
+
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
             font-size: 13px;
             width: 16em
         }
         .icon {
-            transform: translate(20px, -75px);
+            transform: translate(28px, -75px);
         }
     }
+
     @media (min-width: 425px) and (max-width: 520px) {
         .detail1 {
-            width: 20em;
+            width: 18em;
             font-size: 14px
         }
     }
@@ -129,18 +137,12 @@ $audio = get_field('audio');
                         <span>By <?php echo $author; ?></span>
                         <span></span>
                         <span style="text-decoration: none;">
-                            <a href="<?php echo get_category_link($category[0]->term_id); ?>"
-                               style="font-size:0.76rem">#<?php echo $category[0]->name;?>
+                            <a href="<?php echo get_category_link($category[0]->term_id); ?>" style="font-size:0.76rem">#<?php echo $category[0]->name; ?>
                             </a>
                         </span>
                     </div>
                     <div class="audio" oncontextmenu="return false;">
-                        <amp-audio controls height="auto"
-                                   width="auto"
-                                   class="player"
-                                   artwork="<?php echo $post_img; ?>"
-                                   controlsList="nodownload"
-                                   autoplay>
+                        <amp-audio controls height="auto" width="auto" class="player" artwork="<?php echo $post_img; ?>" controlsList="nodownload" autoplay>
                             <source src="<?php echo $audio['url']; ?>">
                             <!-- podcast playlist-->
                         </amp-audio>

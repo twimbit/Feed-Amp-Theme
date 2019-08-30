@@ -4,7 +4,7 @@ get_header();
 /* ==========Feed tab php start==============*/
 $args = array(
     'numberposts' => 1,
-    'category' => 0, //get_category_by_slug('nutshell')->term_id,
+    'category' => get_category_by_slug('nutshell')->term_id,
     'orderby' => 'date',
     'order' => 'ASC', // the 1st array element will be 1st story(oldest story)
     'include' => array(),
