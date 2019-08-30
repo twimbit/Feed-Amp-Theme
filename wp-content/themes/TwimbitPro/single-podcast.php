@@ -65,7 +65,7 @@ $audio = get_field('audio');
 
     @media only screen and (max-width: 320px) {
         .icon {
-            transform: translate(20px, -70px);
+            transform: translate(18px, -70px);
         }
     }
 
