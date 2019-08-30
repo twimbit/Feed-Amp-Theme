@@ -32,7 +32,7 @@ function gutenberg_render_block_core_rss( $attributes ) {
 	foreach ( $rss_items as $item ) {
 		$title = esc_html( trim( strip_tags( $item->get_title() ) ) );
 		if ( empty( $title ) ) {
-			$title = __( '(no title)' );
+			$title = __( '(Untitled)' );
 		}
 		$link = $item->get_link();
 		$link = esc_url( $link );

@@ -227,6 +227,11 @@ self.addEventListener('fetch', function(e) {
 		);
 		return;
 	}
+
+	// Disallowing mp4 and mp3 files from service worker
+	if ( e.request.url.match(/\.(mp4|mp3)$/) ) {
+  		return;
+	}
 	
 	// Revving strategy
 	if ( e.request.mode === 'navigate' && navigator.onLine ) {
