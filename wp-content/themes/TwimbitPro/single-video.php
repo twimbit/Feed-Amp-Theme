@@ -30,33 +30,11 @@ $video = get_field('video_type');
 
 ?>
 <style>
-    .short-image {
-        margin-right: 10px;
-    }
-
-    .detail1 {
-        word-spacing: -1px;
-        line-height: 1.4;
-        /* width: 20em; */
-        font-size: 14px;
-        font-weight: bold;
-    }
-
-    .sub1 span {
-        font-size: 12px;
-        font-weight: 400;
-    }
-
-    .icon {
-        transform: translate(27px, -75px);
-    }
-
     @media only screen and (max-width: 320px) {
         .icon {
             transform: translate(20px, -70px);
         }
     }
-
     @media (min-width:300px) and (max-width:375px) {
         .detail1 {
             /*line-height: 1.2;*/
@@ -64,42 +42,36 @@ $video = get_field('video_type');
             font-size: 12px
         }
     }
-
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
             font-size: 13px;
             width: 16em
         }
     }
-
     @media (min-width: 425px) and (max-width: 520px) {
         .detail1 {
             width: 20em;
             font-size: 14px
         }
     }
-
     @media (min-width: 520px) and (max-width: 640px) {
         .detail1 {
             width: 25em;
             font-size: 15px
         }
     }
-
     @media (min-width: 640px) and (max-width:726px) {
         .detail1 {
             width: 13em;
             font-size: 11px
         }
     }
-
     @media (min-width: 726px) and (max-width:767px) {
         .detail1 {
             width: 14em;
             font-size: 10px
         }
     }
-
     @media (min-width: 768px) and (max-width:1024px) {
         .detail1 {
             width: 14em;

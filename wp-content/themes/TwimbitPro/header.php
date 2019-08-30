@@ -1234,6 +1234,13 @@
             box-shadow: 0 7px 10px 0 #dcdcdc
         }
 
+
+        /* added in podcast */
+        .podcast-cover .feed-title span {
+            font-weight: 600;
+        }
+
+
         @media (min-width:320px) and (max-width:768px) {
             .sub1 span {
                 font-size: 11px
@@ -1343,6 +1350,7 @@
 
         .podcast-cover .feed-title p {
             font-weight: 600;
+            line-height: 1.2;
             font-family: sans-serif;
             text-transform: capitalize
         }
@@ -1939,14 +1947,14 @@
         .short-image {
             height: 100%;
             width: 110px;
-            margin-right: 20px;
+            margin-right: 10px;
             border-radius: 4px
         }
 
         .icon {
             height: 50px;
             width: 50px;
-            transform: translate(30px, -75px)
+            transform: translate(27px, -75px);
         }
 
         .details {
@@ -1961,7 +1969,8 @@
         }
 
         .sub1 span {
-            font-size: 13px;
+            font-size: 12px;
+            font-weight: 400;
             color: #000;
             text-transform: capitalize
         }
@@ -1973,9 +1982,14 @@
         }
 
         .detail1 {
-            font-size: 16px;
+            /*font-size: 16px;*/
             position: relative;
             top: 10px;
+            word-spacing: -1px;
+            line-height: 1.4;
+            /* width: 20em; */
+            font-size: 14px;
+            font-weight: bold;
             overflow: hidden !important;
             display: -webkit-box !important;
             -webkit-line-clamp: 2 !important;
