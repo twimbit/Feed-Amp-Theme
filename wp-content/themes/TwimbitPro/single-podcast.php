@@ -35,6 +35,7 @@ $audio = get_field('audio');
             transform: translate(18px, -70px);
         }
     }
+
     @media (min-width:300px) and (max-width:375px) {
         .detail1 {
             /*line-height: 1.2;*/
@@ -42,39 +43,46 @@ $audio = get_field('audio');
             font-size: 12px
         }
     }
+
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
             font-size: 13px;
             width: 16em
         }
+
         .icon {
             transform: translate(28px, -75px);
         }
     }
+
     @media (min-width: 425px) and (max-width: 520px) {
         .detail1 {
             width: 18em;
             font-size: 14px
         }
     }
+
     @media (min-width: 520px) and (max-width: 640px) {
         .detail1 {
             width: 25em;
             font-size: 15px
         }
     }
+
     @media (min-width: 640px) and (max-width:726px) {
         .detail1 {
             width: 13em;
             font-size: 11px
         }
     }
+
     @media (min-width: 726px) and (max-width:767px) {
         .detail1 {
             width: 14em;
             font-size: 10px
         }
     }
+
     @media (min-width: 768px) and (max-width:1024px) {
         .detail1 {
             width: 14em;
@@ -113,7 +121,7 @@ $audio = get_field('audio');
 
             <!-- lightbox container for description and share icon -->
 
-            <amp-lightbox id="description-lightbox" layout="nodisplay">
+            <amp-lightbox id="description-lightbox" layout="nodisplay" scrollable>
                 <div class="overlay content" on="tap:description-lightbox.close" role="button" tabindex="0">
                     <div class="description-icons">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982; position: absolute;" xml:space="preserve">

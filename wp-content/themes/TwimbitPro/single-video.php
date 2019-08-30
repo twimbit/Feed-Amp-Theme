@@ -35,6 +35,7 @@ $video = get_field('video_type');
             transform: translate(20px, -70px);
         }
     }
+
     @media (min-width:300px) and (max-width:375px) {
         .detail1 {
             /*line-height: 1.2;*/
@@ -42,36 +43,42 @@ $video = get_field('video_type');
             font-size: 12px
         }
     }
+
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
             font-size: 13px;
             width: 16em
         }
     }
+
     @media (min-width: 425px) and (max-width: 520px) {
         .detail1 {
             width: 20em;
             font-size: 14px
         }
     }
+
     @media (min-width: 520px) and (max-width: 640px) {
         .detail1 {
             width: 25em;
             font-size: 15px
         }
     }
+
     @media (min-width: 640px) and (max-width:726px) {
         .detail1 {
             width: 13em;
             font-size: 11px
         }
     }
+
     @media (min-width: 726px) and (max-width:767px) {
         .detail1 {
             width: 14em;
             font-size: 10px
         }
     }
+
     @media (min-width: 768px) and (max-width:1024px) {
         .detail1 {
             width: 14em;
@@ -126,7 +133,7 @@ $video = get_field('video_type');
                         </p>
                     </amp-lightbox>
 
-                    <amp-lightbox id="share-lightbox" layout="nodisplay">
+                    <amp-lightbox id="share-lightbox" layout="nodisplay" scrollable>
                         <div class="overlay content" on="tap:share-lightbox.close" role="button" tabindex="0">
                             <div class="share-icons">
                                 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve">

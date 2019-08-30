@@ -1329,11 +1329,7 @@
             }
 
             .feed-title p {
-                font-size: 14px
-            }
-
-            .podcast-cover .feed-title p {
-                font-size: 28px
+                font-size: 20px
             }
 
             .podcast-cover .feed-title span {
