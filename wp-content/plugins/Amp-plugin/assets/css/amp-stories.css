@@ -25,16 +25,6 @@ amp-story-grid-layer[template="fill"] .wp-block-image {
 	display: block;
 }
 
-.wp-block-amp-amp-story-cta.aligncenter {
-	text-align: center;
-}
-
-.wp-block-amp-amp-story-cta.alignright {
-
-	/*rtl:ignore*/
-	text-align: right;
-}
-
 .amp-block-story-cta__link {
 	border: none;
 	box-shadow: none;
@@ -43,6 +33,7 @@ amp-story-grid-layer[template="fill"] .wp-block-image {
 	display: inline-block;
 	font-size: 18px;
 	margin: 0;
+	max-height: calc(100% - 24px);
 	padding: 12px 24px;
 	text-align: center;
 	text-decoration: none;
@@ -87,14 +78,6 @@ table.wp-block-table {
 
 .is-style-white.wp-block-quote {
 	background-image: url("../images/quote-white.svg");
-}
-
-/**
- * See https://github.com/ampproject/amp-wp/issues/2283
- */
-.edit-post-layout[data-block-name="core/video"] .edit-post-settings-sidebar__panel-block .block-editor-block-inspector__card + div > .components-panel__body:first-child .components-toggle-control:nth-child(2),
-.edit-post-layout[data-block-name="core/video"] .edit-post-settings-sidebar__panel-block .block-editor-block-inspector__card + div > .components-panel__body:first-child .components-toggle-control:nth-child(6) {
-	display: none;
 }
 
 /* Block Warnings */
