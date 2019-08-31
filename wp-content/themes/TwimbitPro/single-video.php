@@ -192,21 +192,19 @@ $video = get_field('video_type');
                                 <!-- next video short play -->
                                 <img class="short-image" src="<?php echo $video_img ?>">
                                 <!--svg play icon-->
-                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85.658" height="85.658" viewBox="0 0 85.658 85.658" class="icon">
-                                    <defs>
-                                        <style>
-                                            .a {
-                                                fill: rgba(0, 0, 0, 0.55);
-                                            }
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85.658" height="85.658" viewBox="0 0 85.658 85.658" class="icon" <defs>
+                                    <style>
+                                        .a {
+                                            fill: rgba(0, 0, 0, 0.55);
+                                        }
 
-                                            .b {
-                                                fill: #fafafa;
-                                            }
+                                        .b {
+                                            fill: #fafafa;
 
                                             .c {
                                                 filter: url(#a);
                                             }
-                                        </style>
+                                    </style>
                                     </defs>
                                     <g>
                                         <g class="c" transform="matrix(1, 0, 0, 1, 44.06, 33)">

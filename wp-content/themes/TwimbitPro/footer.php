@@ -1,5 +1,3 @@
-
-
 <!--bottom navigation bar-->
 <!-- .site-footer -->
 <footer id="colophon" class="site-footer footer_amp tabs_bottom md-hide lg-hide" role="contentinfo">
@@ -11,8 +9,7 @@
                 </path>
             </svg>
         </a>
-        <a id="explore-button" class="nav_button explore-selector-class" on="tap:explore-tab-section.show(),feed-tab-section.hide()" aria-label="explore button" <?php if (!(is_home())) {
-                                                                                                                                                                        ?> href="<?php echo home_url(); ?>/explore" <?php } ?>>
+        <a id="explore-button" class="nav_button explore-selector-class" on="tap:explore-tab-section.show(),feed-tab-section.hide()" aria-label="explore button">
             <svg>
                 <path d="M 14.39246368408203 27.51700592041016 L 23.0528507232666 27.51700592041016 L 23.0528507232666 17.12454223632813 L 14.39246368408203 17.12454223632813 L 14.39246368408203 27.51700592041016 Z M 4 27.51700592041016 L 12.66038703918457 27.51700592041016 L 12.66038703918457 5 L 4 5 L 4 27.51700592041016 Z M 24.78492736816406 27.51700592041016 L 33.4453125 27.51700592041016 L 33.4453125 17.12454223632813 L 24.78492736816406 17.12454223632813 L 24.78492736816406 27.51700592041016 Z M 14.39246368408203 5 L 14.39246368408203 15.39246273040771 L 33.4453125 15.39246273040771 L 33.4453125 5 L 14.39246368408203 5 Z">
                 </path>
