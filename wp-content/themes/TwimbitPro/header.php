@@ -1227,7 +1227,8 @@
             color: #094d5f;
             border-color: #f8f8f836;
             display: flex;
-            transition-duration: .3s
+            transition-duration: .3s;
+            align-items: center;
         }
 
         .tablinks:hover {
