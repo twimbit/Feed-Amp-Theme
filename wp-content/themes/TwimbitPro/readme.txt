@@ -1,5 +1,5 @@
 === Twenty Sixteen ===
-Contributors: wordpressdotorg
+Contributors: Twimbit
 Requires at least: WordPress 4.4
 Tested up to: WordPress 5.0
 Requires PHP: 5.2.4
