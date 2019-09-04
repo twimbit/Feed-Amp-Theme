@@ -1227,7 +1227,8 @@
             color: #094d5f;
             border-color: #f8f8f836;
             display: flex;
-            transition-duration: .3s
+            transition-duration: .3s;
+            align-items: center;
         }
 
         .tablinks:hover {
@@ -1488,8 +1489,14 @@
         }
 
         .site-footer svg {
-            transform: translate(9px, 5px) scale(1);
-            fill: #094d5f
+            fill: #094d5f;
+            width: 50px;
+            height: 50px;
+
+        }
+
+        .site-footer svg path {
+            transform: translate(9px, 5px);
         }
 
         .popup {
@@ -1955,7 +1962,7 @@
         }
 
         .icon>g {
-            transform: translate(-18px, -8px) scale(.7);
+            transform: translate(-9px, -1px) scale(.6);
         }
 
         .details {
@@ -1991,10 +1998,10 @@
             /* width: 20em; */
             font-size: 14px;
             font-weight: bold;
-            overflow: hidden !important;
-            display: -webkit-box !important;
-            -webkit-line-clamp: 2 !important;
-            -webkit-box-orient: vertical !important;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
             text-transform: capitalize
         }
 
@@ -2637,8 +2644,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
             <ul class="list-reset m0 p0 ampstart-label">
                 <li class="ampstart-nav-item feed-selector-class" style="margin-bottom:1rem"><a on="tap:explore-tab-section.hide(),feed-tab-section.show(),header-sidebar.toggle" <?php if (!(is_home())) {
                                                                                                                                                                                         ?> href="<?php echo home_url(); ?>" <?php } ?>>Feed</a></li>
-                <li class=" ampstart-nav-item explore-selector-class" style="margin-bottom:1rem"><a on="tap:explore-tab-section.show(),feed-tab-section.hide(),header-sidebar.toggle" <?php if (!(is_home())) {
-                                                                                                                                                                                            ?> href="<?php echo home_url(); ?>/explore" <?php } ?>>Explore</a></li>
+                <li class=" ampstart-nav-item explore-selector-class" style="margin-bottom:1rem"><a on="tap:explore-tab-section.show(),feed-tab-section.hide(),header-sidebar.toggle">Explore</a></li>
             </ul>
             <ul class="ampstart-dropdown-items list-reset m0 p0">
                 <p>Categories</p>

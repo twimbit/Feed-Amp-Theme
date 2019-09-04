@@ -40,6 +40,7 @@ $audio = get_field('audio');
 
     @media (min-width:375px) and (max-width:425px) {
         .detail1 {
+            -webkit-line-clamp: 2;
             font-size: 13px;
             width: 16em
         }
