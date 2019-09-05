@@ -34,7 +34,12 @@ $video = get_field('video_type');
         .detail1 {
             /*line-height: 1.2;*/
             width: 14em;
-            font-size: 12px
+            font-size: 12px;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            text-transform: capitalize;
         }
     }
 

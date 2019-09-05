@@ -1456,7 +1456,8 @@
         }
 
         .featured-image-text h2 {
-            color: #fff
+            color: #fff;
+            margin-top: 12px;
         }
 
         .menu ul {
@@ -1884,7 +1885,7 @@
 
         .pre-next-dialog {
             position: sticky;
-            top: 4%;
+            top: 12%;
             width: 100%;
             background-color: #f4f4f4;
             box-shadow: 5px 3px 8px -3px rgba(0, 0, 0, 0.23)
@@ -1962,7 +1963,7 @@
         }
 
         .icon>g {
-            transform: translate(-9px, -1px) scale(.6);
+            transform: translate(-9px, 0px) scale(.6);
         }
 
         .details {
@@ -1998,11 +1999,6 @@
             /* width: 20em; */
             font-size: 14px;
             font-weight: bold;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            text-transform: capitalize
         }
 
         .social {
