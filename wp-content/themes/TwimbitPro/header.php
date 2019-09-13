@@ -19,8 +19,8 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background: #fff;
-            color: #4a4a4a;
+            background: #f2f2f240;
+            color: #111;
             /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Arial, sans-serif; */
             min-width: 315px;
             overflow-x: hidden;
@@ -1605,36 +1605,8 @@
             justify-content: center
         }
 
-        .post-content figure img {
-            width: 100%;
-            height: 100%
-        }
-
         #colophon {
             transition: all .3s ease-in-out
-        }
-
-        .cont p {
-            margin-bottom: .9rem;
-            line-height: 2em;
-            color: #000;
-            font-size: 16px;
-            font-weight: 200
-        }
-
-        .cont li {
-            margin-bottom: .9rem;
-            line-height: 2em;
-            color: #000;
-            font-size: 16px;
-            font-weight: 200
-        }
-
-        .post-content p {
-            margin-bottom: .9rem;
-            color: #000;
-            font-size: 16px;
-            font-weight: 300
         }
 
         .right-side {
@@ -1660,7 +1632,7 @@
             height: 35px
         }
 
-        light1 {
+        .light1 {
             margin-left: 100px
         }
 
@@ -1686,7 +1658,7 @@
             line-height: initial
         }
 
-        .desc head1 {
+        .desc .head1 {
             color: #000
         }
 
@@ -1809,7 +1781,8 @@
             }
 
             .more-to-explore-card-container .feed-card {
-                width: 100% !important
+                width: 100% !important;
+                height: 240px !important;
             }
 
             .twimbit-lite-logo {
@@ -1898,11 +1871,12 @@
 
         .pre-next-dialog-content h2 {
             margin-bottom: 10px;
-            font-size: 22px
+            font-size: 18px
         }
 
         .pre-next-dialog-content p {
             width: 100%;
+            font-size: 16px !important;
             background-color: #fff;
             padding: 10px;
             margin-bottom: 10px;
