@@ -144,13 +144,13 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
         let h = time.getHours();
         // console.log(h);
         if (h < 12) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri() . '/src/morning.jpeg'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri() . '/src/morning.jpeg.webp'; ?>)"
         } else if (h >= 12 && h < 17) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri() . '/src/afternoon.jpg'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri() . '/src/afternoon.jpg.webp'; ?>)"
         } else if (h >= 17 && h < 19) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri() . '/src/evening.jpeg'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri() . '/src/evening.jpeg.webp'; ?>)"
         } else {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri() . '/src/night.jpeg'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo get_template_directory_uri() . '/src/night.jpeg.webp'; ?>)"
         }
 
     });
@@ -602,7 +602,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                             ?>
                             <div class="feed-card feed-toggle fade-animate">
                                 <div class="single-thumbnail">
-                                    <amp-img src="<?php echo $post_img; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img . '.webp'; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <div class="fade"></div>
                                     <a href="<?php echo $post_url; ?>" class="feed-link ">
                                         <div class="feed-title">
@@ -674,7 +674,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                             ?>
                             <div class="feed-card feed-toggle fade-animate">
                                 <div class="single-thumbnail">
-                                    <amp-img src="<?php echo $post_img; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img . '.webp'; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <div class="fade"></div>
                                     <a href="<?php echo $post_url; ?>" class="feed-link ">
                                         <div class="feed-title">
@@ -746,7 +746,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                             ?>
                             <div class="feed-card feed-toggle fade-animate">
                                 <div class="single-thumbnail">
-                                    <amp-img src="<?php echo $post_img; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img . '.webp'; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <div class="fade"></div>
                                     <a href="<?php echo $post_url; ?>" class="feed-link ">
                                         <div class="feed-title">
@@ -818,7 +818,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                             ?>
                             <div class="feed-card feed-toggle fade-animate">
                                 <div class="single-thumbnail">
-                                    <amp-img src="<?php echo $post_img; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
+                                    <amp-img src="<?php echo $post_img . '.webp'; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
                                     <div class="fade"></div>
                                     <a href="<?php echo $post_url; ?>" class="feed-link ">
                                         <div class="feed-title">
@@ -903,7 +903,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
                     ?>
                     <div class="feed-card" style="height: 313px;">
                         <div class="single-thumbnail">
-                            <amp-img src="<?php echo $trending_img; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
+                            <amp-img src="<?php echo $trending_img . '.webp'; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
                             <div class="fade"></div>
                             <a href="<?php echo $trending_url; ?>" class="feed-link" aria-label="<?php echo $trending_title; ?>">
                                 <div class="feed-title">

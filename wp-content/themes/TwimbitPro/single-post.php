@@ -198,10 +198,24 @@ function nextPost()
 
 
 
-    @media only screen and (max-width: 40rem) {
+    @media only screen and (max-width: 768px) {
         .featured-image-text h2 {
             font-size: 25px;
             line-height: 2rem;
+        }
+
+        .featured-image-text {
+            bottom: 150px;
+        }
+
+        .featured-image {
+            height: 100vh;
+        }
+
+        .wp-block-image figure {
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 
@@ -231,7 +245,7 @@ function nextPost()
                         <h2><?php the_title(); ?></h2>
                         <!-- <h6 style="color: #f5f5f5" class="mt2"><?php //the_date(); 
                                                                         ?></h6> -->
-                        <h6 style="color: #f5f5f5;margin-top:6px;font-size: 15px;margin-top: 6px;margin-bottom: 0;font-weight: 600;">by <?php the_author(); ?></h6>
+                        <h6 style="color: #f5f5f5;margin-top:6px;font-size: 15px;margin-top: 6px;margin-bottom: 5px;font-weight: 600;">by <?php the_author(); ?></h6>
                         <h6 style="margin-top:0"><a href="<?php echo get_category_link($category[0]->term_id); ?>" style="font-size:0.76rem">#<?php echo $category[0]->name; ?></a>
                         </h6>
                     </div>

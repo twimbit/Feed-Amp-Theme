@@ -29,10 +29,7 @@
             -webkit-font-smoothing: antialiased
         }
 
-        p {
-            padding: 0;
-            margin: 0;
-        }
+      
 
         .active {
             fill: #f16c70 !important;
@@ -663,17 +660,6 @@
             text-transform: uppercase
         }
 
-        .h3,
-        h3 {
-            font-size: 1.5rem;
-            line-height: 2rem
-        }
-
-        .h4,
-        h4 {
-            font-size: 1.125rem;
-            line-height: 1.5rem
-        }
 
         h1,
         h2,
@@ -2543,7 +2529,7 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
             <?php } ?>
         </div>
         <a href="<?php echo home_url(); ?>" style="height: 100%;padding-top: 0.6rem;">
-            <img src="<?php echo get_template_directory_uri() . '/src/twimbit-pro-logo.png' ?>" height="52" width="130" layout="fixed" alt="Twimbit logo">
+            <img src="<?php echo get_template_directory_uri() . '/src/twimbit-pro-logo.png.webp' ?>" height="52" width="130" layout="fixed" alt="Twimbit logo">
         </a>
         <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
             <ul class="list-reset center m0 p0 flex justify-end nowrap">
