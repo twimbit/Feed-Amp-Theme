@@ -50,7 +50,7 @@ function nextPost()
 ?>
 <style scoped>
     @import url('https://fonts.googleapis.com/css?family=Merriweather:300,700&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
     .post-content * {
         font-family: Merriweather, serif;
@@ -64,16 +64,27 @@ function nextPost()
         font-size: 16px;
     }
 
+    .post-content a {
+        word-break: break-all;
+    }
+
     .featured-image-text h2 {
         color: #fff;
+        font-weight: 700;
         margin-top: 12px;
         font-size: 30px;
         line-height: 1.3;
-        font-family: 'Open Sans', Helvetica;
+
     }
 
     .wp-block-image figure {
         width: 100%;
+    }
+
+    .cont li {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 1.9;
     }
 
     @media (min-width:768px) {
@@ -99,12 +110,44 @@ function nextPost()
     h4,
     h5,
     h6 {
-        /* margin: 0; */
-        /* font-weight: 400; */
-        font-weight: 700;
-        font-family: 'Merriweather', serif;
+        font-weight: 600;
+        font-family: 'Open sans', serif !important;
         line-height: 1.5;
-        margin: 10px;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 35px
+    }
+
+    h2 {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    h3 {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 27px;
+        margin-top: 16px
+    }
+
+
+    h4 {
+        font-size: 18px;
+        line-height: 25px
+    }
+
+    h5,
+    h6 {
+        font-size: 13px
+    }
+
+    .feed-title h3 {
+        margin: 0;
     }
 
     .post-content figure img {
@@ -120,11 +163,6 @@ function nextPost()
         }
     }
 
-    .cont li {
-        font-weight: 300;
-        font-size: 16px;
-        line-height: 1.9;
-    }
 
     hr {
         /* height: 0; */
@@ -134,11 +172,6 @@ function nextPost()
         box-shadow: 0 0 38px 2px #00000059;
     }
 
-    h1 {}
-
-    h1 {
-        font-size: 32px;
-    }
 
     blockquote {
         border-left: 5px solid #ea7979;
@@ -151,15 +184,7 @@ function nextPost()
         font-size: 20px;
     }
 
-    h6 {
-        font-size: 18px;
-        text-decoration: none;
-    }
-
-    h4 {
-        font-size: 20px;
-    }
-
+  
     ol {
         font-family: Montserrat;
         font-size: 21px;
@@ -194,15 +219,15 @@ function nextPost()
                 </div>
                 <div class="featured-image-text-container">
                     <div class="featured-image-text xs-col-12 sm-col-8 md-col-7 lg-col-6">
-                        <a style="margin-left: 10px;"><?php if ($type == "post") {
-                                                                echo "Insight";
-                                                            } else if ($type == "video") {
-                                                                echo "Video";
-                                                            } else if ($type == "podcast") {
-                                                                echo "Podcast";
-                                                            } else if ($type == "amp_story") {
-                                                                echo "Story";
-                                                            }  ?></a href="#">
+                        <a><?php if ($type == "post") {
+                                    echo "Insight";
+                                } else if ($type == "video") {
+                                    echo "Video";
+                                } else if ($type == "podcast") {
+                                    echo "Podcast";
+                                } else if ($type == "amp_story") {
+                                    echo "Story";
+                                }  ?></a href="#">
                         <h2><?php the_title(); ?></h2>
                         <!-- <h6 style="color: #f5f5f5" class="mt2"><?php //the_date(); 
                                                                         ?></h6> -->
