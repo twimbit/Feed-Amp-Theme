@@ -31,7 +31,7 @@
 
         p {
             padding: 0;
-            margin: 0
+            margin: 0;
         }
 
         .active {

@@ -53,11 +53,11 @@ function nextPost()
     @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
     .post-content * {
-        font-family: Merriweather, serif;
+        font-family: Merriweather, sans-serif;
     }
 
     .post-content p {
-        font-family: Merriweather, serif;
+        font-family: Merriweather, sans-serif;
         font-weight: 300;
         line-height: 1.95;
         margin: 8px 0 16px;
@@ -111,7 +111,7 @@ function nextPost()
     h5,
     h6 {
         font-weight: 600;
-        font-family: 'Open sans', serif !important;
+        font-family: 'Open sans', sans-serif !important;
         line-height: 1.5;
         margin: 10px 0;
     }
@@ -184,7 +184,7 @@ function nextPost()
         font-size: 20px;
     }
 
-  
+
     ol {
         font-family: Montserrat;
         font-size: 21px;
