@@ -86,4 +86,5 @@ foreach ($get_post_feed as $val) {
 
 <?php  } }
 
-function getAllVideo
+function getAllVideo(){}
+?>
