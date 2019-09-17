@@ -297,7 +297,7 @@ include "page-templates/pf.php";
     <section id="new-nutshell" class="nutshell-top">
         <div class="fade"></div>
      <?php
-     echo getNutshell();
+    // echo getNutshell();
      ?>
     </section>
 
@@ -361,27 +361,27 @@ include "page-templates/pf.php";
                 <div>
                     <!--            Fetching all post-->
                     <div id="insight" class="tabcontent">
-                        <?php echo getAllPosts(); ?>
+                        <?php echo getAllData("post"); ?>
                     </div>
 
                     <!--            Fetching all video-->
                     <div id="video" class="tabcontent" hidden>
                         <?php
-
+echo getAllData("video")
                             ?>
                     </div>
 
                     <!--            Fetching all podcast-->
                     <div id="podcast" class="tabcontent" hidden>
                         <?php
-                        echo getAllPodcasts();
+                        echo getAllData("podcast");
                         ?>
                     </div>
 
                     <!--            Fetching all story-->
                     <div id="story" class="tabcontent" hidden>
                         <?php
-                        echo getAllStoriess();
+                        echo getAllData("amp_story");
                         ?>
 
                     </div>
