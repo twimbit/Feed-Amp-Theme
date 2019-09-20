@@ -77,4 +77,21 @@ function my_assets()
 
 add_action('wp_enqueue_scripts', 'my_assets');
 
-//hello bellor
+function check_file_exist($post, $url)
+{
+	$file_data = array();
+	if (has_post_thumbnail($post)) {
+		if (strpos(get_headers($url . ".webp")[0], "200")) {
+			$file_data['src'] = $url . ".webp";
+		} else if (!strpos(get_headers($url)[0], "200")) {
+			$file_data['src'] = $url;
+		} else {
+			$file_data['src'] = "wp-content/themes/TwimbitPro/src/download.png.webp";
+			$file_data['style'] = "height:100px;width:100px;margin:auto";
+		}
+	} else {
+		$file_data['src'] = "wp-content/themes/TwimbitPro/src/download.png.webp";
+		$file_data['style'] = "height:100px;width:100px;margin:auto";
+	}
+	return $file_data;
+}
