@@ -214,9 +214,9 @@ function nextPost()
     <section class="single-content">
         <div class="single-content-div">
             <section class="post-content">
-                <div class="xs-col-12 sm-col-3 md-col-3 lg-col-2 mt4 mr2 xs-hide" style="margin-right:50px">
+                <div class="xs-col-12 sm-col-3 md-col-3 lg-col-2 mt4 mr2 xs-hide sm-hide" style="margin-right:50px">
                 </div>
-                <div class="xs-col-12 sm-col-7 md-col-6 lg-col-5-5 mt4 cont">
+                <div class="xs-col-12 sm-col-11 md-col-6 lg-col-5-5 mt4 cont">
                     <div class="social lg-hide md-hide" style="margin-left:auto">
                         <amp-social-share class="social1" height="30px" data-param-href="hello" width="30px" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
