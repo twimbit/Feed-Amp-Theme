@@ -40,9 +40,19 @@
 <script async custom-element=amp-social-share src=https://cdn.ampproject.org/v0/amp-social-share-0.1.js></script>
 <script async custom-element=amp-video src=https://cdn.ampproject.org/v0/amp-video-0.1.js></script>
 <script async custom-element=amp-audio src=https://cdn.ampproject.org/v0/amp-audio-0.1.js></script>
-<title><?php global $page, $paged; wp_title('|', true, 'right'); // Add the blog name. bloginfo('name'); // Add the blog description for the home/front page. $site_description=get_bloginfo('description', 'display'); if ($site_description && (is_home() || is_front_page())) echo " | $site_description"; // Add a page number if necessary: if ($paged>= 2 || $page >= 2)
-echo ' | ' . sprintf(__('Page %s', 'oscar'), max($paged, $page));
-?></title>
+<title><?php
+            global $page, $paged;
+            wp_title('|', true, 'right');
+            // Add the blog name.
+            bloginfo('name');
+            // Add the blog description for the home/front page.
+            $site_description = get_bloginfo('description', 'display');
+            if ($site_description && (is_home() || is_front_page()))
+                echo " | $site_description";
+            // Add a page number if necessary:
+            if ($paged >= 2 || $page >= 2)
+                echo ' | ' . sprintf(__('Page %s', 'oscar'), max($paged, $page));
+            ?></title>
 <meta charset="<?php bloginfo('charset'); ?>">
 <meta name=amp-google-client-id-api content=googleanalytics>
 <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
