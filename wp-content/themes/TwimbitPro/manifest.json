@@ -1,0 +1,22 @@
+{
+    "name": "twimbit.Pro",
+    "short_name": "twimbit Pro",
+    "description": "Just another WordPress site",
+    "icons": [{
+            "src": "./src/download.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./src/download.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "background_color": "#094d5f",
+    "theme_color": "#094d5f",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": ".",
+    "scope": "."
+}
