@@ -2,6 +2,9 @@
 global $post;
 $current_post = $post; /* Getting Category */
 $category = get_the_category(); /* Swipe next post url */
+
+
+// echo $back_img;
 function nextPost()
 {
     get_adjacent_post();
@@ -193,7 +196,14 @@ function nextPost()
     /*]]>*/
 </style>
 <div id="post_area">
-    <section class="featured-image" style="padding:0;background-image:url('<?php echo the_post_thumbnail_url() . '.webp'; ?>')">
+    <section class="featured-image" style="padding:0;background-image:url('<?php if (has_post_thumbnail($current_post)) {
+                                                                                echo the_post_thumbnail_url() . '.webp';
+                                                                            } else {
+                                                                                echo check_url_exist($current_post, the_post_thumbnail_url() . '.webp')['src'];
+                                                                            } ?>');<?php if (!has_post_thumbnail($current_post)) {
+                                                                                        echo check_url_exist($current_post, the_post_thumbnail_url() . '.webp')['back_style'];
+                                                                                    }
+                                                                                    ?>">
         <?php while (have_posts()) {
             the_post();
             $type = get_post_type(); ?>

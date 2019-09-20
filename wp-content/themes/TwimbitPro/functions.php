@@ -77,7 +77,7 @@ function my_assets()
 
 add_action('wp_enqueue_scripts', 'my_assets');
 
-function check_file_exist($post, $url)
+function check_url_exist($post, $url)
 {
 	$file_data = array();
 	if (has_post_thumbnail($post)) {
@@ -86,12 +86,16 @@ function check_file_exist($post, $url)
 		} else if (!strpos(get_headers($url)[0], "200")) {
 			$file_data['src'] = $url;
 		} else {
-			$file_data['src'] = "wp-content/themes/TwimbitPro/src/download.png.webp";
+			$file_data['src'] = home_url() . "/wp-content/themes/TwimbitPro/src/download.png.webp";
 			$file_data['style'] = "height:100px;width:100px;margin:auto";
+			$file_data['back_style'] = "background-position: center 30%;
+			background-repeat: no-repeat;background-size: 100px;";
 		}
 	} else {
-		$file_data['src'] = "wp-content/themes/TwimbitPro/src/download.png.webp";
+		$file_data['src'] = home_url() .  "/wp-content/themes/TwimbitPro/src/download.png.webp";
 		$file_data['style'] = "height:100px;width:100px;margin:auto";
+		$file_data['back_style'] = "background-position: center 30%;
+			background-repeat: no-repeat;background-size: 100px;";
 	}
 	return $file_data;
 }

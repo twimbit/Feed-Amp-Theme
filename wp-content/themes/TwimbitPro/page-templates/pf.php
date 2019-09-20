@@ -22,7 +22,7 @@
         ?>
         <div class="feed-card feed-toggle fade-animate">
             <div class="single-thumbnail">
-                <amp-img src="<?php echo check_file_exist($val, $post_img)['src']; ?>" layout="fill" alt="<?php echo $val->ID; ?>" style="<?php echo check_file_exist($val, $post_img)['style']; ?>"></amp-img>
+                <amp-img src="<?php echo check_url_exist($val, $post_img)['src']; ?>" layout="fill" alt="<?php echo $val->ID; ?>" style="<?php echo check_url_exist($val, $post_img)['style']; ?>"></amp-img>
                 <div class="fade"></div>
                 <a href="<?php echo $post_url; ?>" class="feed-link">
                     <div class="feed-title">
