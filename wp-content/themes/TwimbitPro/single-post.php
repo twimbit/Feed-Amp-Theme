@@ -196,14 +196,7 @@ function nextPost()
     /*]]>*/
 </style>
 <div id="post_area">
-    <section class="featured-image" style="padding:0;background-image:url('<?php if (has_post_thumbnail($current_post)) {
-                                                                                echo the_post_thumbnail_url() . '.webp';
-                                                                            } else {
-                                                                                echo check_url_exist($current_post, the_post_thumbnail_url() . '.webp')['src'];
-                                                                            } ?>');<?php if (!has_post_thumbnail($current_post)) {
-                                                                                        echo check_url_exist($current_post, the_post_thumbnail_url() . '.webp')['back_style'];
-                                                                                    }
-                                                                                    ?>">
+    <section class="featured-image" style="padding:0;background-image:url('<?php echo the_post_thumbnail_url(); ?>">
         <?php while (have_posts()) {
             the_post();
             $type = get_post_type(); ?>
@@ -263,7 +256,7 @@ function nextPost()
                     if (!empty($post)) { ?>
                         <div class="feed-card" style="height:313px;width:49%">
                             <div class="single-thumbnail">
-                                <amp-img layout="fill" src="<?php if (check_url_exist($val, $post_img)['check_webp']) {
+                                <amp-img layout="fill" src="<?php if (check_webp_support($exploreMore_img)) {
                                                                         echo $exploreMore_img . ".webp";
                                                                     } else {
                                                                         echo $exploreMore_img;

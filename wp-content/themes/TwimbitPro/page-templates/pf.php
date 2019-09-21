@@ -19,16 +19,14 @@
         $post_url = get_the_permalink($val);
         $post_title = get_the_title($val);
         $type = get_post_type($val);
-        $category = get_the_category_by_ID($val);
         ?>
         <div class="feed-card feed-toggle fade-animate">
             <div class="single-thumbnail">
-                <amp-img src="<?php if (check_url_exist($val, $post_img)['check_webp']) {
-                                            echo check_url_exist($val, $post_img)['src'];
+                <amp-img src="<?php if (check_webp_support($post_img)) {
+                                            echo $post_img . ".webp";
                                         } else {
                                             echo $post_img;
-                                        }
-                                        ?>" layout="fill" alt="<?php echo $val->ID; ?>" style="<?php echo check_url_exist($val, $post_img)['style']; ?>"></amp-img>
+                                        } ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
                 <div class="fade"></div>
                 <a href="<?php echo $post_url; ?>" class="feed-link">
                     <div class="feed-title">
@@ -117,13 +115,17 @@
         </div>
         <amp-carousel class="treanding-carousel d-lg-none d-md-none" type="slides" controls height="400">
             <?php foreach ($get_trending as $val) {
-                    $trending_img = get_the_post_thumbnail_url($val);
+                    $trending_img = get_the_post_thumbnail_url($val, 'medium_large');
                     $trending_url = get_the_permalink($val);
                     $trending_title = get_the_title($val);
                     $type = get_post_type($val); ?>
                 <div class="feed-card" style="height:313px">
                     <div class="single-thumbnail">
-                        <amp-img src="<?php echo $trending_img; ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
+                        <amp-img src="<?php if (check_webp_support($trending_img)) {
+                                                    echo $trending_img . ".webp";
+                                                } else {
+                                                    echo $trending_img;
+                                                } ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
                         <div class="fade"></div>
                         <a href="<?php echo $trending_url; ?>" class="feed-link" aria-label="<?php echo $trending_title; ?>">
                             <div class="feed-title">

@@ -1,14 +1,5 @@
 <?php
 
-/**
- * Template Name: offline
- *
- * The template for the page builder full-width.
- *
- * It contains header, footer and 100% content width.
- *
- * @package Twimbit Lite
- */
 ?>
 
 <html lang="en">
