@@ -77,25 +77,33 @@ function my_assets()
 
 add_action('wp_enqueue_scripts', 'my_assets');
 
-function check_url_exist($post, $url)
+function check_url_exist($post = null, $url = null)
 {
 	$file_data = array();
-	if (has_post_thumbnail($post)) {
-		if (strpos(get_headers($url . ".webp")[0], "200")) {
-			$file_data['src'] = $url . ".webp";
-		} else if (!strpos(get_headers($url)[0], "200")) {
-			$file_data['src'] = $url;
+	$file_data['check_webp'] = true;
+	if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false) {
+		if (has_post_thumbnail($post) && $post !== null) {
+
+			if (strpos(get_headers($url . ".webp")[0], "200")) {
+				$file_data['src'] = $url . ".webp";
+			} else if (!strpos(get_headers($url)[0], "200")) {
+				$file_data['src'] = $url;
+			} else {
+				$file_data['src'] = home_url() . "/wp-content/themes/TwimbitPro/src/download.png.webp";
+				$file_data['style'] = "height:100px;width:100px;margin:auto";
+				$file_data['back_style'] = "background-position: center 30%;
+				background-repeat: no-repeat;background-size: 100px;";
+			}
 		} else {
-			$file_data['src'] = home_url() . "/wp-content/themes/TwimbitPro/src/download.png.webp";
+			$file_data['src'] = home_url() .  "/wp-content/themes/TwimbitPro/src/download.png.webp";
 			$file_data['style'] = "height:100px;width:100px;margin:auto";
 			$file_data['back_style'] = "background-position: center 30%;
 			background-repeat: no-repeat;background-size: 100px;";
 		}
 	} else {
-		$file_data['src'] = home_url() .  "/wp-content/themes/TwimbitPro/src/download.png.webp";
-		$file_data['style'] = "height:100px;width:100px;margin:auto";
-		$file_data['back_style'] = "background-position: center 30%;
-			background-repeat: no-repeat;background-size: 100px;";
+		$file_data['check_webp'] = false;
 	}
 	return $file_data;
 }
+
+

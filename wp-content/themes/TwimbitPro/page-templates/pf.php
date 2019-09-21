@@ -1,12 +1,13 @@
-<?php function getAllData($post_type, $number = 5)
+<?php function getAllData($post_type, $number = 5, $cat = 0)
 {
     $args = array(
         'numberposts' => $number,
-        'category' => get_category_by_slug('trending')->term_id,
+        'cat' => $cat,
         'orderby' => 'date',
         'order' => 'DESC', // the 1st array element will be 1st story(oldest story)
         'include' => array(),
         'exclude' => array(),
+        'category__not_in' => array(get_category_by_slug('nutshell')->term_id),
         'meta_key' => '',
         'meta_value' => '',
         'post_type' => array($post_type),
@@ -22,7 +23,12 @@
         ?>
         <div class="feed-card feed-toggle fade-animate">
             <div class="single-thumbnail">
-                <amp-img src="<?php echo check_url_exist($val, $post_img)['src']; ?>" layout="fill" alt="<?php echo $val->ID; ?>" style="<?php echo check_url_exist($val, $post_img)['style']; ?>"></amp-img>
+                <amp-img src="<?php if (check_url_exist($val, $post_img)['check_webp']) {
+                                            echo check_url_exist($val, $post_img)['src'];
+                                        } else {
+                                            echo $post_img;
+                                        }
+                                        ?>" layout="fill" alt="<?php echo $val->ID; ?>" style="<?php echo check_url_exist($val, $post_img)['style']; ?>"></amp-img>
                 <div class="fade"></div>
                 <a href="<?php echo $post_url; ?>" class="feed-link">
                     <div class="feed-title">

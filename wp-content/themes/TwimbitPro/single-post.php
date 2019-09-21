@@ -263,7 +263,11 @@ function nextPost()
                     if (!empty($post)) { ?>
                         <div class="feed-card" style="height:313px;width:49%">
                             <div class="single-thumbnail">
-                                <amp-img layout="fill" src="<?php echo $exploreMore_img . ".webp"; ?>"></amp-img>
+                                <amp-img layout="fill" src="<?php if (check_url_exist($val, $post_img)['check_webp']) {
+                                                                        echo $exploreMore_img . ".webp";
+                                                                    } else {
+                                                                        echo $exploreMore_img;
+                                                                    } ?>"></amp-img>
                                 <div class="fade"></div>
                                 <a href="<?php echo $exploreMore_url; ?>" class="feed-link">
                                     <div class="feed-title">
@@ -299,7 +303,7 @@ function nextPost()
                             ?>
                         <div class="feed-card" style="height:313px;width:49%">
                             <div class="single-thumbnail">
-                                <amp-img layout="fill" src="<?php echo get_the_post_thumbnail_url($first_post, 'medium_large') . ".webp"; ?>"></amp-img>
+                                <amp-img layout="fill" src="<?php echo get_the_post_thumbnail_url($first_post, 'medium_large'); ?>"></amp-img>
                                 <div class="fade"></div>
                                 <a href="<?php echo get_the_permalink($first_post); ?>" class="feed-link">
                                     <div class="feed-title">

@@ -86,7 +86,11 @@ $industry_child = get_categories(array('child_of' => $industry->term_id, 'hide_e
 <?php } ?>
 </div>
 <a href="<?php echo home_url(); ?>" style=height:100%;padding-top:.6rem>
-<img src="<?php echo get_template_directory_uri() . '/src/twimbit-pro-logo.png.webp' ?>" height=52 width=130 layout=fixed alt="Twimbit logo">
+<img src="<?php if (check_url_exist()['check_webp']) {
+                                            echo get_template_directory_uri() . '/src/twimbit-pro-logo.png.webp';
+                                        } else {
+                                            echo get_template_directory_uri() . '/src/twimbit-pro-logo.png';
+                                        } ?>" height=52 width=130 layout=fixed alt="Twimbit logo">
 </a>
 <nav class="ampstart-headerbar-nav ampstart-nav xs-hide sm-hide">
 <ul class="list-reset center m0 p0 flex justify-end nowrap">
