@@ -32,6 +32,17 @@ function nextPost()
         word-break: break-all
     }
 
+    .cont {
+        max-width: 768px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .social-o {
+        position: absolute;
+        right: 17px;
+    }
+
     .featured-image-text h2 {
         color: #fff;
         font-weight: 700;
@@ -193,6 +204,26 @@ function nextPost()
         }
     }
 
+    @media (max-width:1195px) {
+        .social-o {
+            display: none;
+        }
+
+        .social-c {
+            display: inline-block;
+        }
+    }
+
+    @media (min-width:1195px) {
+        .social-c {
+            display: none;
+        }
+
+        .social-o {
+            display: inline-block;
+        }
+    }
+
     /*]]>*/
 </style>
 <div id="post_area">
@@ -217,10 +248,8 @@ function nextPost()
     <section class="single-content">
         <div class="single-content-div">
             <section class="post-content">
-                <div class="xs-col-12 sm-col-3 md-col-3 lg-col-2 mt4 mr2 xs-hide sm-hide" style="margin-right:50px">
-                </div>
-                <div class="xs-col-12 sm-col-11 md-col-6 lg-col-5-5 mt4 cont">
-                    <div class="social lg-hide md-hide" style="margin-left:auto">
+                <div class="mt4 cont">
+                    <div class="social social-c" style="margin-left:auto">
                         <amp-social-share class="social1" height="30px" data-param-href="hello" width="30px" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
                         <amp-social-share class="social1" height="30px" width="30px" type="twitter"></amp-social-share>
@@ -228,7 +257,7 @@ function nextPost()
                     </div>
                     <?php the_content(); ?>
                 </div>
-                <div class="xs-col-12 sm-col-2 md-col-2 lg-col-2 mt4 ml2 sm-hide xs-hide">
+                <div class="social-o mt4 ml2">
                     <div class="social">
                         <amp-social-share class="social1" height="30px" width="30px" href="hello" type="facebook"></amp-social-share>
                         <amp-social-share class=social1" height="30px" width="30px" type="linkedin"></amp-social-share>
@@ -256,11 +285,9 @@ function nextPost()
                     if (!empty($post)) { ?>
                         <div class="feed-card" style="height:313px;width:49%">
                             <div class="single-thumbnail">
-                                <amp-img layout="fill" src="<?php if (check_webp_support($exploreMore_img)) {
-                                                                        echo $exploreMore_img . ".webp";
-                                                                    } else {
-                                                                        echo $exploreMore_img;
-                                                                    } ?>"></amp-img>
+                                <amp-img layout="fill" src="<?php echo $exploreMore_img . ".webp"; ?>" style="z-index:0">
+                                    <amp-img alt="" layout="fill" fallback src="<?php echo $exploreMore_img; ?>"></amp-img>
+                                </amp-img>
                                 <div class="fade"></div>
                                 <a href="<?php echo $exploreMore_url; ?>" class="feed-link">
                                     <div class="feed-title">
@@ -296,7 +323,9 @@ function nextPost()
                             ?>
                         <div class="feed-card" style="height:313px;width:49%">
                             <div class="single-thumbnail">
-                                <amp-img layout="fill" src="<?php echo get_the_post_thumbnail_url($first_post, 'medium_large'); ?>"></amp-img>
+                                <amp-img layout="fill" src="<?php echo get_the_post_thumbnail_url($first_post, 'medium_large') . ".webp"; ?>" style="z-index:0">
+                                    <amp-img alt="" fallback layout="fill" src="<?php echo get_the_post_thumbnail_url($first_post, 'medium_large'); ?>"></amp-img>
+                                </amp-img>
                                 <div class="fade"></div>
                                 <a href="<?php echo get_the_permalink($first_post); ?>" class="feed-link">
                                     <div class="feed-title">

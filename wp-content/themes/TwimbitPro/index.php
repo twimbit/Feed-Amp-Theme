@@ -40,13 +40,33 @@ $template_directory = get_template_directory_uri();
         let time = new Date();
         let h = time.getHours();
         if (h < 12) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo $template_directory . '/src/morning.jpeg.webp'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php
+                                                                                    if (check_webp_support()) {
+                                                                                        echo $template_directory . '/src/morning.jpeg.webp';
+                                                                                    } else {
+                                                                                        echo $template_directory . '/src/morning.jpeg';
+                                                                                    }
+                                                                                    ?>)"
         } else if (h >= 12 && h < 17) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo $template_directory . '/src/afternoon.jpg.webp'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php if (check_webp_support()) {
+                                                                                        echo $template_directory . '/src/afternoon.jpg.webp';
+                                                                                    } else {
+                                                                                        echo $template_directory . '/src/afternoon.jpg';
+                                                                                    } ?>)"
         } else if (h >= 17 && h < 19) {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo $template_directory . '/src/evening.jpeg.webp'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php if (check_webp_support()) {
+                                                                                        echo $template_directory . '/src/evening.jpeg.webp';
+                                                                                    } else {
+                                                                                        echo $template_directory . '/src/evening.jpeg';
+                                                                                    }
+                                                                                    ?>)"
         } else {
-            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php echo $template_directory . '/src/night.jpeg.webp'; ?>)"
+            document.querySelector('.nutshell-top').style.backgroundImage = "url(<?php if (check_webp_support()) {
+                                                                                        echo $template_directory . '/src/night.jpeg.webp';
+                                                                                    } else {
+                                                                                        echo $template_directory . '/src/night.jpeg';
+                                                                                    }
+                                                                                    ?>)"
         }
 
     });
@@ -305,7 +325,7 @@ $template_directory = get_template_directory_uri();
             </div>
             <div class="col-6 nutshell-inner-second">
                 <div class="nutshell-svg floating <?php check($get_post_for_story[0], $_COOKIE['user_date_story']); ?>">
-                    <a href="<?php echo get_the_permalink($get_post_for_story[0]); ?>?story=nutshell">
+                    <a href="<?php echo get_the_permalink($get_post_for_story[0]); ?>?story=nutshell" aria-label="Twimbit">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="241.929" height="156.918" viewBox="0 0 241.929 156.918">
                             <defs>
                                 <style>

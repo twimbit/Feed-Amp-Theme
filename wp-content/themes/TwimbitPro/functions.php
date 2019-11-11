@@ -1,11 +1,11 @@
 <?php
 
 // Featured image functionality.
-function mytheme_post_thumbnails()
+function twimbitPro_post_thumbnails()
 {
 	add_theme_support('post-thumbnails');
 }
-add_action('after_setup_theme', 'mytheme_post_thumbnails');
+add_action('after_setup_theme', 'twimbitPro_post_thumbnails');
 
 
 // /**
@@ -77,9 +77,62 @@ function my_assets()
 
 // add_action('wp_enqueue_scripts', 'my_assets');
 
-function check_webp_support($url = null)
+function check_webp_support()
 {
-	if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false && strpos(get_headers($url . ".webp")[0], "200")) {
+	if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false)
 		return true;
-	}
 }
+
+function check_url_valid($url)
+{
+	if (strpos(get_headers($url . ".webp")[0], "200"))
+		return true;
+}
+
+//add_filter('rest_endpoints', 'remove_default_endpoints_smarter');
+
+// function remove_default_endpoints_smarter($endpoints)
+// {
+// 	$prefix = 'v1';
+
+// 	foreach ($endpoints as $endpoint => $details) {
+// 		if (!fnmatch('/' . $prefix . '/*', $endpoint, FNM_CASEFOLD)) {
+// 			unset($endpoints[$endpoint]);
+// 		}
+// 	}
+
+// 	return $endpoints;
+// }
+add_filter('rest_url_prefix', 'rest_url_prefix');
+
+
+/* Changing default wp-json to twimcast */
+function rest_url_prefix()
+{
+	return 'twimcast';
+}
+
+
+/* end point returning data */
+function customRest($data)
+{
+	$controller = new WP_REST_Posts_Controller('post');
+	$postsRest = [];
+
+	$postsRest[] = array(
+		'name' => 'widget',
+		'type' => 'carousel',
+		'title' => 'This is testing widget',
+		'data' => array('data' => 'data will come here')
+	);
+	return new WP_REST_Response($postsRest, 200);
+}
+
+
+/* Registering end point */
+add_action('rest_api_init', function () {
+	register_rest_route('/v1', '/widget/(?P<id>\d+)', array(
+		'methods' => 'GET',
+		'callback' => 'customRest',
+	));
+});

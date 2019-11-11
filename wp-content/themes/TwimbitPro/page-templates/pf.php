@@ -22,11 +22,9 @@
         ?>
         <div class="feed-card feed-toggle fade-animate">
             <div class="single-thumbnail">
-                <amp-img src="<?php if (check_webp_support($post_img)) {
-                                            echo $post_img . ".webp";
-                                        } else {
-                                            echo $post_img;
-                                        } ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
+                <amp-img src="<?php echo $post_img . ".webp"; ?>" style="z-index:0" layout="fill" alt="<?php echo $val->ID; ?>">
+                    <amp-img alt="" style="z-index:0" fallback layout="fill" src="<?php echo $post_img; ?>"></amp-img>
+                </amp-img>
                 <div class="fade"></div>
                 <a href="<?php echo $post_url; ?>" class="feed-link">
                     <div class="feed-title">
@@ -121,11 +119,9 @@
                     $type = get_post_type($val); ?>
                 <div class="feed-card" style="height:313px">
                     <div class="single-thumbnail">
-                        <amp-img src="<?php if (check_webp_support($trending_img)) {
-                                                    echo $trending_img . ".webp";
-                                                } else {
-                                                    echo $trending_img;
-                                                } ?>" layout="fill" alt="<?php echo $val->ID; ?>"></amp-img>
+                        <amp-img src="<?php echo $trending_img . ".webp"; ?>" layout="fill" alt="<?php echo $val->ID; ?>" style="z-index:0">
+                            <amp-img alt="" layout="fill" fallback src="<?php echo $trending_img; ?>" style="z-index:0"></amp-img>
+                        </amp-img>
                         <div class="fade"></div>
                         <a href="<?php echo $trending_url; ?>" class="feed-link" aria-label="<?php echo $trending_title; ?>">
                             <div class="feed-title">
