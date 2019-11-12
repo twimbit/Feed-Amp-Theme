@@ -1,11 +1,30 @@
 <?php
 
 // Featured image functionality.
-function mytheme_post_thumbnails()
+function twimbitPro_post_thumbnails()
 {
 	add_theme_support('post-thumbnails');
 }
-add_action('after_setup_theme', 'mytheme_post_thumbnails');
+add_action('after_setup_theme', 'twimbitPro_post_thumbnails');
+
+
+function twimcast_widgets_init()
+{
+
+	register_sidebar(
+		array(
+			'name'          => __('Home', 'twimcast'),
+			'id'            => 'sidebar-1',
+			'description'   => __('Add widgets here to appear in your footer.', 'twimcast'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+add_action('widgets_init', 'twimcast_widgets_init');
+
 
 
 // /**
@@ -68,13 +87,71 @@ function my_assets()
 	// wp_enqueue_style('nprogress-css', 'https://unpkg.com/nprogress@0.2.0/nprogress.css');
 
 	// wp_enqueue_script('Toggler-js', get_template_directory_uri(). '/src/toggler.js', array(), '1.0');
-	wp_enqueue_script('nprogress-js', get_template_directory_uri() . '/src/nprogress.js', array(), '1.0', true);
+	// wp_enqueue_script('nprogress-js', get_template_directory_uri() . '/src/nprogress.js', array(), '1.0', true);
 	wp_enqueue_script('Twimbit-js', get_template_directory_uri() . '/src/twimbit.js', array(), '1.0', true);
 
 	// jQuery mobile
 	// wp_enqueue_script('Jquery Mobile', 'http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js', '1.4.5', true);
 }
 
-add_action('wp_enqueue_scripts', 'my_assets');
+// add_action('wp_enqueue_scripts', 'my_assets');
 
-//hello bellor
+function check_webp_support()
+{
+	if (strpos($_SERVER['HTTP_ACCEPT'], 'image/webp') !== false)
+		return true;
+}
+
+function check_url_valid($url)
+{
+	if (strpos(get_headers($url . ".webp")[0], "200"))
+		return true;
+}
+
+//add_filter('rest_endpoints', 'remove_default_endpoints_smarter');
+
+// function remove_default_endpoints_smarter($endpoints)
+// {
+// 	$prefix = 'v1';
+
+// 	foreach ($endpoints as $endpoint => $details) {
+// 		if (!fnmatch('/' . $prefix . '/*', $endpoint, FNM_CASEFOLD)) {
+// 			unset($endpoints[$endpoint]);
+// 		}
+// 	}
+
+// 	return $endpoints;
+// }
+add_filter('rest_url_prefix', 'rest_url_prefix');
+
+
+/* Changing default wp-json to twimcast */
+function rest_url_prefix()
+{
+	return 'twimcast';
+}
+
+
+/* end point returning data */
+function customRest($data)
+{
+	$controller = new WP_REST_Posts_Controller('post');
+	$postsRest = [];
+
+	$postsRest[] = array(
+		'name' => 'widget',
+		'type' => 'carousel',
+		'title' => 'This is testing widget',
+		'data' => array('data' => 'data will come here')
+	);
+	return new WP_REST_Response($postsRest, 200);
+}
+
+
+/* Registering end point */
+add_action('rest_api_init', function () {
+	register_rest_route('/v1', '/widget/(?P<id>\d+)', array(
+		'methods' => 'GET',
+		'callback' => 'customRest',
+	));
+});

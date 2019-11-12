@@ -1,11 +1,11 @@
-NProgress.inc();
+// NProgress.inc();
 
-document.onreadystatechange = function() {
-  let state = document.readyState;
-  if (state == "complete") {
-    NProgress.done();
-  }
-};
+// document.onreadystatechange = function() {
+//   let state = document.readyState;
+//   if (state == "complete") {
+//     NProgress.done();
+//   }
+// };
 
 /* Swiper left and right  gestures*/
 function swipedetect(el, callback) {
