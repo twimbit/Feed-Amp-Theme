@@ -8,6 +8,25 @@ function twimbitPro_post_thumbnails()
 add_action('after_setup_theme', 'twimbitPro_post_thumbnails');
 
 
+function twimcast_widgets_init()
+{
+
+	register_sidebar(
+		array(
+			'name'          => __('Home', 'twimcast'),
+			'id'            => 'sidebar-1',
+			'description'   => __('Add widgets here to appear in your footer.', 'twimcast'),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+add_action('widgets_init', 'twimcast_widgets_init');
+
+
+
 // /**
 //  * Filter the except length to 20 words.
 //  *
