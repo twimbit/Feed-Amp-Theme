@@ -125,6 +125,9 @@ class Twimcast_Api
 		require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-twimcast-api-public.php';
 
 
+		/* Wordpress rest endpoints */
+		require_once plugin_dir_path(dirname(__FILE__)) . 'includes/twimcast-rest.php';
+
 		$this->loader = new Twimcast_Api_Loader();
 	}
 

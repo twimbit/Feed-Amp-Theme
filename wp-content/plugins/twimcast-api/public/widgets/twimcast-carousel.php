@@ -34,7 +34,7 @@ class twimcast_carousel_widget extends WP_Widget
         echo $args['before_widget'];
         if (!empty($title))
             echo $title;
-        
+        print_r(wp_get_sidebars_widgets());
     }
 
     // Widget Backend 
