@@ -32,7 +32,10 @@ class twimcast_carousel_widget extends WP_Widget
         // before and after widget arguments are defined by themes
         echo $args['before_widget'];
         if (!empty($title))
-            echo $title;
+            $posts = get_posts(array('post_type' => 'post'));
+        foreach ($posts as $val) {
+            echo $val->post_content;
+        }
     }
 
     // Widget Backend 

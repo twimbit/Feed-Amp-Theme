@@ -156,3 +156,16 @@ function updateWidgetMeta($name, $value)
 		update_option($widget['name'], $option_to_update, true);
 	}
 }
+
+
+/* get widget data */
+function getWidgetData()
+{
+	$widget_meta =  createWidgetMeta();
+	$widget_data = [];
+	foreach ($widget_meta as $key => $widget) {
+		$option_to_update = get_option($widget['name']);
+		$widget_data[$key] = $option_to_update[$widget['id']];
+	}
+	return $widget_data;
+}
