@@ -9,21 +9,22 @@ function rest_url_prefix()
 }
 
 
-
-
 /* end point returning data */
 function customRest($data)
 {
-    $controller = new WP_REST_Posts_Controller('post');
+    $sidebar_widgets = createWidgetMeta();
+    print_r(get_option('widget_twimcast_carousel'));
     $postsRest = [];
+    foreach ($sidebar_widgets as $widget) {
+        $postsRest[] = array(
+            'name' => 'widget',
+            'type' => $widget,
+            'title' => 'this is widget title',
+            'data' => array('data' => 'data will come here')
+        );
+    }
 
-    $postsRest[] = array(
-        'name' => 'widget',
-        'type' => 'carousel',
-        'title' => 'This is testing widget',
-        'data' => array('data' => 'data will come here')
-    );
-    return new WP_REST_Response($postsRest, 200);
+    return $postsRest;
 }
 
 

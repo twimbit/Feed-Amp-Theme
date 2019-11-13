@@ -29,12 +29,10 @@ class twimcast_carousel_widget extends WP_Widget
     public function widget($args, $instance)
     {
         $title = apply_filters('widget_title', $instance['title']);
-
         // before and after widget arguments are defined by themes
         echo $args['before_widget'];
         if (!empty($title))
             echo $title;
-        print_r(wp_get_sidebars_widgets());
     }
 
     // Widget Backend 

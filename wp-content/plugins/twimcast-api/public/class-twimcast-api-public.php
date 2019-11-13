@@ -130,3 +130,29 @@ class Twimcast_Api_Public
 
 /* Registering crousel widget */
 require_once plugin_dir_path(dirname(__FILE__)) . 'public/widgets/twimcast-carousel.php';
+
+
+/* Create widget meta and returning widget meta array*/
+function createWidgetMeta()
+{
+	$sidebar_widgets = wp_get_sidebars_widgets()['sidebar-1'];
+	$widget_meta = array();
+	foreach ($sidebar_widgets as $widget) {
+		$widget_param = explode('-', $widget, 2);
+		$widget_meta[$widget]['name'] = "widget_" . $widget_param[0];
+		$widget_meta[$widget]['id'] = $widget_param[1];
+	}
+	return $widget_meta;
+}
+
+
+/* Update widget data */
+function updateWidgetMeta($name, $value)
+{
+	$widget_meta =  createWidgetMeta();
+	foreach ($widget_meta as $widget) {
+		$option_to_update = get_option($widget['name']);
+		$option_to_update[$widget['id']][$name] = $value;
+		update_option($widget['name'], $option_to_update, true);
+	}
+}
