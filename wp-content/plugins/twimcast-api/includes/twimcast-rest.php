@@ -13,7 +13,8 @@ function rest_url_prefix()
 function customRest($data)
 {
     // updateWidgetMeta('data', array('img' => 'url', 'img-1' => 'url'));
-    return getWidgetData()[$data['type']];
+    //return getWidgetData()[$data['type']];
+    widgetDataCreate();
 }
 
 

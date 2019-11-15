@@ -125,6 +125,34 @@ class Twimcast_Api_Public
 		// unregister_widget('WP_Widget_Custom_HTML');
 		// unregister_widget('WP_Widget_Media_Gallery');
 	}
+
+	/* Register graphql custom types */
+	public function register_graphql_widget_type()
+	{
+		register_graphql_object_type('Widgets', [
+			'description' => __('Widgets', 'twimcast'),
+			'fields' => [
+				'name' => [
+					'type' => 'String',
+					'description' => __('Name of widget', 'twimcast'),
+				]
+			]
+		]);
+	}
+
+	/* Registering graphql widget field */
+	public function register_graphql_widget_field()
+	{
+		register_graphql_field('RootQuery', 'getWidget', [
+			'description' => __('Get widget data', 'twimcast'),
+			'type' => 'Widgets',
+			'resolve' => function () {
+				return [
+					'name' => 'Slides widget'
+				];
+			}
+		]);
+	}
 }
 
 
@@ -168,4 +196,37 @@ function getWidgetData()
 		$widget_data[$key] = $option_to_update[$widget['id']];
 	}
 	return $widget_data;
+}
+
+/* widget data create */
+function widgetDataCreate()
+{
+	$args = array(
+		'numberposts' => -1,
+		'post_type' => 'post'
+	);
+	$widgets =  createWidgetMeta();
+	$posts = get_posts($args);
+	$main_array = array();
+	$rest_array = [];
+	$data_array = array();
+	foreach ($widgets as $widget) {
+		foreach ($posts as $val) {
+			$title = get_option($widget['name'])[$widget['id']]['title'];
+			$type = $val->post_type;
+			$data_array['featured_image'] = get_the_post_thumbnail_url($val);
+			$data_array['title'] = $val->post_title;
+			$data_array['excerpt'] = get_the_excerpt($val);
+			$data_array['time'] = $val->post_modified;
+			// $data_array['content'] = $val->post_content;
+
+
+			$main_array['title'] = $title;
+			$main_array['type'] = $type;
+			array_push($main_array, $data_array);
+			$data_array = array();
+		}
+		$rest_array[] = array($main_array);
+	}
+	print_r($rest_array);
 }
