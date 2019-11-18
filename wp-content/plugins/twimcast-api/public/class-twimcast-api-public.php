@@ -99,6 +99,8 @@ class Twimcast_Api_Public
 		 */
 
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/twimcast-api-public.js', array('jquery'), $this->version, false);
+
+		
 	}
 
 	/* Unregistering default wordpress widgets */
@@ -124,34 +126,6 @@ class Twimcast_Api_Public
 		// unregister_widget('WP_Widget_Media_Video');
 		// unregister_widget('WP_Widget_Custom_HTML');
 		// unregister_widget('WP_Widget_Media_Gallery');
-	}
-
-	/* Register graphql custom types */
-	public function register_graphql_widget_type()
-	{
-		register_graphql_object_type('Widgets', [
-			'description' => __('Widgets', 'twimcast'),
-			'fields' => [
-				'name' => [
-					'type' => 'String',
-					'description' => __('Name of widget', 'twimcast'),
-				]
-			]
-		]);
-	}
-
-	/* Registering graphql widget field */
-	public function register_graphql_widget_field()
-	{
-		register_graphql_field('RootQuery', 'getWidget', [
-			'description' => __('Get widget data', 'twimcast'),
-			'type' => 'Widgets',
-			'resolve' => function () {
-				return [
-					'name' => 'Slides widget'
-				];
-			}
-		]);
 	}
 }
 
@@ -190,12 +164,12 @@ function updateWidgetMeta($name, $value)
 function getWidgetData()
 {
 	$widget_meta =  createWidgetMeta();
-	$widget_data = [];
+	$widget_data = array();
 	foreach ($widget_meta as $key => $widget) {
 		$option_to_update = get_option($widget['name']);
 		$widget_data[$key] = $option_to_update[$widget['id']];
 	}
-	return $widget_data;
+	return $widget_data['twimcast_carousel-5'];
 }
 
 /* widget data create */
@@ -229,4 +203,78 @@ function widgetDataCreate()
 		$rest_array[] = array($main_array);
 	}
 	print_r($rest_array);
+}
+
+
+/* register graphql widget object type */
+add_action('graphql_register_types', 'register_graphql_widget_type');
+
+/* registering graphql widget field */
+add_action('graphql_register_types', 'register_graphql_widget_field');
+
+
+/* widget array */
+function getData()
+{
+	register_graphql_object_type(
+		'Widget',
+		[
+			'description' => __('widget data', 'twimcast'),
+			'fields' => [
+				'name' => [
+					'type' => 'String',
+					'description' => __('widget name', 'twimcast'),
+				]
+			]
+		]
+	);
+}
+
+/* Register graphql custom types */
+function register_graphql_widget_type()
+{
+	register_graphql_object_type('Widgets', [
+		'description' => __('Widgets', 'twimcast'),
+		'fields' => [
+			'name' => [
+				'type' => 'String',
+			],
+			'title' => [
+				'type' => 'String'
+			],
+			'sizes'  => [
+				'type'        => [
+					'list_of' => 'MediaSize',
+				],
+				'description' => __('The available sizes of the mediaItem', 'wp-graphql'),
+				'resolve'     => function ($media_details, $args, $context, $info) {
+					if (!empty($media_details['sizes'])) {
+						foreach ($media_details['sizes'] as $size_name => $size) {
+							$size['ID']   = $media_details['ID'];
+							$size['name'] = $size_name;
+							$sizes[]      = $size;
+						}
+					}
+
+					return !empty($sizes) ? $sizes : null;
+				},
+			],
+		]
+	]);
+}
+
+/* Registering graphql widget field */
+function register_graphql_widget_field()
+{
+	register_graphql_field('RootQuery', 'getWidget', [
+		'description' => __('Get widget data', 'twimcast'),
+		'type' => 'Widgets',
+		'resolve' => function () {
+			return [
+				'name' => 'carousel',
+				'title' => 'Twimcast news',
+				'data' => 'asdad'
+			];
+		}
+	]);
 }

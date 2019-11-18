@@ -46,12 +46,39 @@ class twimcast_carousel_widget extends WP_Widget
         } else {
             $title = __('New title', 'twimcast_carousel_widget_domain');
         }
+
+        if (isset($instance['posts'])) {
+            $title = $instance['name'];
+        } else {
+            $title = __('Enter name', 'twimcast_carousel_widget_domain');
+        }
         // Widget admin form
+        $args = array('post_type' => 'post');
+        $posts = get_posts($args);
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
         </p>
+
+        <p>
+            <label>Select posts</label>
+
+            <Select data-placeholder="select posts for carousel.." name='posts' id="form_id" multiple class="chosen-select">
+                <option value=""></option>
+                <?php foreach ($posts as $val) {
+                            ?>
+                    <option value="<?php echo $val->ID ?>"><?php echo $val->post_title ?></option>
+                <?php
+                        } ?>
+            </Select>
+            <script type="text/javascript">
+                $(".chosen-select").chosen({
+                    no_results_text: "Oops, nothing found!"
+                })
+            </script>
+        </p>
+
 <?php
     }
 

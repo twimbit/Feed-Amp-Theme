@@ -183,11 +183,11 @@ class Twimcast_Api
 		/* unregistering default widgets */
 		$this->loader->add_action('widgets_init', $plugin_public, 'unregister_default_widgets');
 
-		/* register graphql widget object type */
-		$this->loader->add_action('graphql_register_types', $plugin_public, 'register_graphql_widget_type');
+		// /* register graphql widget object type */
+		// $this->loader->add_action('graphql_register_types', $plugin_public, 'register_graphql_widget_type');
 
-		/* registering graphql widget field */
-		$this->loader->add_action('graphql_register_types', $plugin_public, 'register_graphql_widget_field');
+		// /* registering graphql widget field */
+		// $this->loader->add_action('graphql_register_types', $plugin_public, 'register_graphql_widget_field');
 	}
 
 	/**

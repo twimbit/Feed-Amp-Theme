@@ -76,7 +76,11 @@ class Twimcast_Api_Admin
 		 */
 
 		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/twimcast-api-admin.css', array(), $this->version, 'all');
+
+		/* jquery multiple select css */
+		wp_enqueue_style('choosen min css', plugin_dir_url(__FILE__) . 'css/choosen.min.css', array(), $this->version, 'all');
 	}
+
 
 	/**
 	 * Register the JavaScript for the admin area.
@@ -97,6 +101,8 @@ class Twimcast_Api_Admin
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		/* jquery multiple select js */
+		wp_enqueue_script('Choosen jquery min js', plugin_dir_url(__FILE__) . 'js/chosen.jquery.min.js', $this->version, false);
 
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/twimcast-api-admin.js', array('jquery'), $this->version, false);
 	}
