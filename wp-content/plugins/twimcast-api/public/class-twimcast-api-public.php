@@ -99,8 +99,6 @@ class Twimcast_Api_Public
 		 */
 
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/twimcast-api-public.js', array('jquery'), $this->version, false);
-
-		
 	}
 
 	/* Unregistering default wordpress widgets */
@@ -169,7 +167,7 @@ function getWidgetData()
 		$option_to_update = get_option($widget['name']);
 		$widget_data[$key] = $option_to_update[$widget['id']];
 	}
-	return $widget_data['twimcast_carousel-5'];
+	return $widget_data;
 }
 
 /* widget data create */
@@ -202,9 +200,8 @@ function widgetDataCreate()
 		}
 		$rest_array[] = array($main_array);
 	}
-	print_r($rest_array);
+	return $rest_array;
 }
-
 
 /* register graphql widget object type */
 add_action('graphql_register_types', 'register_graphql_widget_type');
