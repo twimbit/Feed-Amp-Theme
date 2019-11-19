@@ -10,6 +10,8 @@
  * @subpackage Twimcast_Api/public
  */
 
+use function PHPSTORM_META\type;
+
 /**
  * The public-facing functionality of the plugin.
  *
@@ -166,6 +168,7 @@ function getWidgetData()
 	foreach ($widget_meta as $key => $widget) {
 		$option_to_update = get_option($widget['name']);
 		$widget_data[$key] = $option_to_update[$widget['id']];
+		$widget_data[$key]['type'] = $widget['name'];
 	}
 	return $widget_data;
 }
@@ -202,6 +205,9 @@ function widgetDataCreate()
 	}
 	return $rest_array;
 }
+
+/* register graphql widget object type */
+add_action('graphql_register_types', 'register_graphql_widget_main');
 
 /* register graphql widget object type */
 add_action('graphql_register_types', 'register_graphql_widget_type');
@@ -241,7 +247,7 @@ function register_graphql_widget_type()
 	register_graphql_object_type('Widgets', [
 		'description' => __('Widgets', 'twimcast'),
 		'fields' => [
-			'name' => [
+			'type' => [
 				'type' => 'String',
 			],
 			'title' => [
@@ -257,37 +263,53 @@ function register_graphql_widget_type()
 	]);
 }
 
+/* register_graphql_widget_main function resolve */
+function register_graphql_widget_main()
+{
+	register_graphql_object_type('MainWidget', [
+		'description' => __('MainWidget', 'twimcast'),
+		'fields' => [
+			'main' => [
+				'type' => [
+					'list_of' => 'Widgets'
+				]
+			]
+		]
+	]);
+}
+
 /* Registering graphql widget field */
 function register_graphql_widget_field()
 {
 	register_graphql_field('RootQuery', 'getWidgets', [
 		'description' => __('Get widget data', 'twimcast'),
-		'type' => 'Widgets',
+		'type' => 'MainWidget',
 		'resolve' => function () {
 
 			$posts = getWidgetData();
-			$data = array();
+			$main_data = [];
 			foreach ($posts as $val) {
-				if ($val['title'] == 'carousel') {
-					foreach ($val['selected_posts'] as $post_id) {
-						$array = array();
-						$s_post = get_post($post_id);
-						$s_thumbnail_url = get_the_post_thumbnail_url($s_post, 'thumbnail');
-						$s_image_url = get_the_post_thumbnail_url($s_post);
-						$s_permalink = get_the_permalink($s_post);
-						$s_content = $s_post->post_content;
-						$array['id'] = $post_id;
-						$array['thumbnail_url'] = $s_thumbnail_url;
-						$array['image_url'] = $s_image_url;
-						$array['content'] = $s_content;
-						array_push($data, $array);
-					}
+				$data = array();
+				foreach ((array) $val['selected_posts'] as $post_id) {
+					$array = array();
+					$s_post = get_post($post_id);
+					$s_thumbnail_url = get_the_post_thumbnail_url($s_post, 'thumbnail');
+					$s_image_url = get_the_post_thumbnail_url($s_post);
+					$s_content = $s_post->post_content;
+					$array['id'] = $post_id;
+					$array['thumbnail_url'] = $s_thumbnail_url;
+					$array['image_url'] = $s_image_url;
+					//$array['content'] = $s_content;
+					array_push($data, $array);
 				}
+				$main_data[] = array(
+					'type' => $val['type'],
+					'title' => $val['title'],
+					'data' => $data
+				);
 			}
 			return [
-				'name' => 'carousel',
-				'title' => 'Twimcast news',
-				'data' => $data
+				'main' => $main_data
 			];
 		}
 	]);
