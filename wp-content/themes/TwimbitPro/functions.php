@@ -109,6 +109,7 @@ function check_url_valid($url)
 }
 
 //add_filter('rest_endpoints', 'remove_default_endpoints_smarter');
+<<<<<<< HEAD
 
 // function remove_default_endpoints_smarter($endpoints)
 // {
@@ -155,3 +156,40 @@ add_action('rest_api_init', function () {
 		'callback' => 'customRest',
 	));
 });
+=======
+
+// function remove_default_endpoints_smarter($endpoints)
+// {
+// 	$prefix = 'v1';
+
+// 	foreach ($endpoints as $endpoint => $details) {
+// 		if (!fnmatch('/' . $prefix . '/*', $endpoint, FNM_CASEFOLD)) {
+// 			unset($endpoints[$endpoint]);
+// 		}
+// 	}
+
+// 	return $endpoints;
+// }
+
+/* Updateting post on calculate botton press */
+//add_action('post_updated', 'calculatePost', 10, 3);
+
+
+/* Calculating word counts given on id */
+function calculatePostWords($post_id)
+{
+	$content = get_post_field('post_content', $post_id);
+	$word_count = str_word_count(strip_tags($content));
+	return $word_count;
+}
+
+
+/* getting audio length which is attached to a post $post_id integer value */
+function getAudioLength($post_id)
+{
+	require_once(ABSPATH . 'wp-admin/includes/media.php');
+	$audio_file_path = get_attached_file((array_keys(get_attached_media('audio/mpeg', get_post($post_id)))[0]));
+	$length = wp_read_audio_metadata($audio_file_path)['length_formatted'];
+	return $length;
+}
+>>>>>>> origin/saving
