@@ -127,7 +127,7 @@ function check_url_valid($url)
 //add_action('post_updated', 'calculatePost', 10, 3);
 
 
-/* Calculating word counts given on id */
+/* getting reading time of post given on post id */
 function get_reading_time($post_id)
 {
 	$reading_time = do_shortcode('[get_reading_time label=”Reading Time:” postfix=”minutes” post_id=' . $post_id . ']');
@@ -139,7 +139,21 @@ function get_reading_time($post_id)
 function getAudioLength($post_id)
 {
 	require_once(ABSPATH . 'wp-admin/includes/media.php');
-	$audio_file_path = get_attached_file((array_keys(get_attached_media('audio/mpeg', get_post($post_id)))[0]));
+	$audio_file_path = get_attached_file(get_fields(get_post($post_id))['audio_upload']['ID']);
 	$length = wp_read_audio_metadata($audio_file_path)['length_formatted'];
 	return $length;
+}
+
+add_action('save_post', 'cal_post_time');
+
+function cal_post_time($post_id)
+{
+	$fields_array = get_fields(get_post($post_id));
+	if ($fields_array['content_type'] == 'podcast') {
+		$podcast_length =  getAudioLength($post_id);
+		update_field('length', $podcast_length, $post_id);
+	} else if ($fields_array['content_type'] == 'read') {
+		$getReadingTime = get_reading_time($post_id);
+		update_field('length', $getReadingTime, $post_id);
+	}
 }
