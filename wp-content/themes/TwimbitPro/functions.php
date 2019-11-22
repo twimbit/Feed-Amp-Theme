@@ -109,54 +109,6 @@ function check_url_valid($url)
 }
 
 //add_filter('rest_endpoints', 'remove_default_endpoints_smarter');
-<<<<<<< HEAD
-
-// function remove_default_endpoints_smarter($endpoints)
-// {
-// 	$prefix = 'v1';
-
-// 	foreach ($endpoints as $endpoint => $details) {
-// 		if (!fnmatch('/' . $prefix . '/*', $endpoint, FNM_CASEFOLD)) {
-// 			unset($endpoints[$endpoint]);
-// 		}
-// 	}
-
-// 	return $endpoints;
-// }
-add_filter('rest_url_prefix', 'rest_url_prefix');
-
-
-/* Changing default wp-json to twimcast */
-function rest_url_prefix()
-{
-	return 'twimcast';
-}
-
-
-/* end point returning data */
-function customRest($data)
-{
-	$controller = new WP_REST_Posts_Controller('post');
-	$postsRest = [];
-
-	$postsRest[] = array(
-		'name' => 'widget',
-		'type' => 'carousel',
-		'title' => 'This is testing widget',
-		'data' => array('data' => 'data will come here')
-	);
-	return new WP_REST_Response($postsRest, 200);
-}
-
-
-/* Registering end point */
-add_action('rest_api_init', function () {
-	register_rest_route('/v1', '/widget/(?P<id>\d+)', array(
-		'methods' => 'GET',
-		'callback' => 'customRest',
-	));
-});
-=======
 
 // function remove_default_endpoints_smarter($endpoints)
 // {
@@ -176,11 +128,10 @@ add_action('rest_api_init', function () {
 
 
 /* Calculating word counts given on id */
-function calculatePostWords($post_id)
+function get_reading_time($post_id)
 {
-	$content = get_post_field('post_content', $post_id);
-	$word_count = str_word_count(strip_tags($content));
-	return $word_count;
+	$reading_time = do_shortcode('[get_reading_time label=”Reading Time:” postfix=”minutes” post_id=' . $post_id . ']');
+	return $reading_time;
 }
 
 
@@ -192,4 +143,3 @@ function getAudioLength($post_id)
 	$length = wp_read_audio_metadata($audio_file_path)['length_formatted'];
 	return $length;
 }
->>>>>>> origin/saving
