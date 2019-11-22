@@ -1,1 +1,0 @@
-<h3 style="margin-top:4rem;">No results found for...<?php echo get_search_query(); ?></h3>
