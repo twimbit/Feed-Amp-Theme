@@ -26,9 +26,4 @@
 
 </head>
 
-<body <?php body_class(); ?>>
-
-	<?php
-	wp_body_open();
-	// Output the menu modal.
-	get_template_part('template-parts/modal-menu');
+<body>

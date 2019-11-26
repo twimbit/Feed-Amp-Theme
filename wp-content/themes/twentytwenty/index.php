@@ -20,23 +20,11 @@ get_header();
 
 <main id="site-content" role="main">
 
-	<section id="main-widget-area">
+	<section id="main-widget-area" class="widget-area-section">
 		<?php
-		if (is_active_sidebar('sidebar-1')) : ?>
-
-			<aside class="widget-area" role="complementary" aria-label="<?php esc_attr_e('Home', 'twimcast'); ?>">
-				<?php
-					if (is_active_sidebar('sidebar-1')) {
-						?>
-					<div class="widget-column footer-widget-1">
-						<?php dynamic_sidebar('sidebar-1'); ?>
-					</div>
-				<?php
-					}
-					?>
-			</aside><!-- .widget-area -->
-
-		<?php endif; ?>
+		$widgets = get_field('add_widgets', 'options');
+		get_template_part('widgets/widget', 'custom');
+		?>
 	</section>
 </main><!-- #site-content -->
 
