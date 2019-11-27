@@ -101,6 +101,15 @@ td {
 	text-align: inherit;
 }
 
+.custom-carousel p {
+    /* margin-top: 13px; */
+    margin-bottom: 26px;
+    margin-left: 8px;
+    position: relative;
+    /* height: 31px; */
+    top: 14px;
+}
+
 blockquote::before,
 blockquote::after {
 	content: "";
@@ -161,5 +170,98 @@ path {
 }
 
 .widget-area-section{
-	height:100vh;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	/* top: 0; */
+	/* bottom: 0; */
+	/* left: 0; */
+	/* right: 0; */
+	padding: 0 10px;
+}
+
+.custom-carousel{
+	position: relative;
+	/* top: 30px; */
+	min-width: 300px;
+	max-width: 400px;
+	/* height: 329px; */
+	background-color: #FFFFFFB3;
+	border-radius: 10px;
+	padding-right: 5px;
+	padding-left: 5px;
+	margin: 45px auto;
+}
+.amp-carousel-style amp-carousel{
+	/* height: 244px; */
+	/* position: absolute; */
+	border-radius: 10px;
+	box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.16);
+	/* margin: 0 10px; */
+}
+.amp-carousel-style amp-img{
+	border-radius:10px;
+}
+
+.featured-widget{
+	/* position: relative; */
+	/* top: 30px; */
+	min-width: 300px;
+	max-width: 400px;
+	height: fit-content;
+	/* background-color: #FFFFFFB3; */
+	border-radius: 10px;
+	/* padding-right: 5px; */
+	/* padding-left: 5px; */
+	margin: 45px auto;
+	/* display: flex; */
+	/* flex-direction: column; */
+}
+
+.featured-widget p {
+    /* margin-top: 13px; */
+    margin-bottom: 36px;
+    margin-left: 8px;
+    position: relative;
+    font-size: 22px;
+    /* height: 31px; */
+    top: 14px;
+}
+.featured-widget h4 {
+    /* margin-top: 13px; */
+    margin-bottom: 36px;
+    margin-left: 8px;
+    position: relative;
+    font-size: 15px;
+    font-weight: bold;
+    /* height: 31px; */
+    top: 14px;
+    text-align: end;
+    color: #9D9283;
+    right: 10px;
+}
+.featured-widget span {
+    /* margin-top: 13px; */
+    margin-bottom: 36px;
+    margin-left: 8px;
+    position: relative;
+    /* font-size: 19px; */
+    font-weight: 400;
+    /* height: 31px; */
+    /* top: 14px; */
+    text-align: end;
+    /* right: 10px; */
+}
+.featured-widget hr {
+    /* margin-top: 13px; */
+    margin-bottom: 36px;
+    /* margin-left: 8px; */
+    position: relative;
+    /* font-size: 19px; */
+    font-weight: 400;
+    /* height: 31px; */
+    /* top: 14px; */
+    text-align: end;
+    /* right: 10px; */
+    /* width: 90%; */
 }

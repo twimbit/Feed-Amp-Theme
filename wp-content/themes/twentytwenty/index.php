@@ -22,9 +22,14 @@ get_header();
 
 	<section id="main-widget-area" class="widget-area-section">
 		<?php
-		$widgets = get_field('add_widgets', 'options');
-		get_template_part('widgets/widget', 'custom');
-		?>
+		$widgets = get_field('add_widgets', 'options'); ?>
+		<div class="custom-carousel amp-carousel-style">
+			<?php get_template_part('widgets/widget', 'custom'); ?>
+		</div>
+
+		<div class="featured-widget amp-carousel-style">
+			<?php get_template_part('widgets/widget', 'featured'); ?>
+		</div>
 	</section>
 </main><!-- #site-content -->
 
