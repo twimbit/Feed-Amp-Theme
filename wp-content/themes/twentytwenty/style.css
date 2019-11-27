@@ -143,6 +143,28 @@ body {
   word-wrap: break-word;
 }
 
+.twimcast-text {
+    margin: 100px 0;
+    text-align: center;
+    font-size: 29px;
+}
+.twimcast-text h2{font-weight: 400;color: #494949;}
+
+.featured-img {
+    width: 200px;
+    height: 140px;
+}
+
+.featrued-card-container {
+    width: 211px;
+    background: linear-gradient(#fff0 0%, #ffffff78 50.9%);
+    padding: 5px;
+}
+
+.suggested-widget {
+    margin-bottom: 50px;
+}
+
 .trending-type {
   margin-left: 6px;
 }
@@ -366,4 +388,8 @@ path {
 .sub-cat img {
     object-fit: cover;
     border-radius: 4px;
+}
+
+.featured-carousel a {
+    text-decoration: none;
 }

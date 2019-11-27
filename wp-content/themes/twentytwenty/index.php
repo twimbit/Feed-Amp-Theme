@@ -50,6 +50,14 @@ get_header();
 		<div class="suggested-widget explore-all">
 			<?php get_template_part('widgets/widget', 'suggested'); ?>
 		</div>
+
+		<div class="suggested-widget explore-all">
+			<?php get_template_part('widgets/widget', 'report'); ?>
+		</div>
+
+		<div class="twimcast-text">
+			<h2>TwimCast</h2>
+		</div>
 	</section>
 </main><!-- #site-content -->
 
