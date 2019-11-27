@@ -1,4 +1,3 @@
-<?php wp_footer(); ?>
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-home footer-icon">
@@ -15,6 +14,7 @@
         </div>
     </div>
 </footer>
+<?php wp_footer(); ?>
 </body>
 
 </html>
