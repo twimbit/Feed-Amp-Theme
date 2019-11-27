@@ -140,12 +140,12 @@ footer.main-footer {
 }
 
 .featured-img {
-  width: 200px;
-  height: 140px;
+  width: 100%;
+  height: 160px;
 }
 
 .featrued-card-container {
-  width: 211px;
+  width: 260px;
   background: linear-gradient(#fff0 0%, #ffffff78 50.9%);
   padding: 5px;
 }
@@ -369,10 +369,10 @@ path {
 }
 .sub-cat p {
   position: relative;
-  top: -90px;
-  left: 15px;
+  top: -103px;
+  left: 11px;
   width: 120px;
-  font-size: 17px;
+  font-size: 19px;
   color: #fff;
 }
 .sub-cat img {

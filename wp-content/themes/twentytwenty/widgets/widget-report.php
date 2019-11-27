@@ -1,9 +1,9 @@
 <p>Featured Reports</p>
-<amp-carousel class="featured-carousel" type="carousel" controls height="260">
+<amp-carousel class="featured-carousel" type="carousel" controls height="280">
     <div class="featrued-card-container">
         <a href="#" aria-label="Bussiness Model">
             <div class="featured-img">
-                <amp-img width="200" height="140" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
+                <amp-img width="251" height="160" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
             </div>
             <div class="rending-title">Title of the read</div>
             <div class="trending-excerpt">content excerpt</div>
@@ -35,7 +35,7 @@
     <div class="featrued-card-container">
         <a href="#" aria-label="Bussiness Model">
             <div class="featured-img">
-                <amp-img width="200" height="140" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
+                <amp-img width="251" height="160" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
             </div>
             <div class="rending-title">Title of the read</div>
             <div class="trending-excerpt">content excerpt</div>
@@ -67,7 +67,7 @@
     <div class="featrued-card-container">
         <a href="#" aria-label="Bussiness Model">
             <div class="featured-img">
-                <amp-img width="200" height="140" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
+                <amp-img width="251" height="160" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
             </div>
             <div class="rending-title">Title of the read</div>
             <div class="trending-excerpt">content excerpt</div>
@@ -99,7 +99,7 @@
     <div class="featrued-card-container">
         <a href="#" aria-label="Bussiness Model">
             <div class="featured-img">
-                <amp-img width="200" height="140" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
+                <amp-img width="251" height="160" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
             </div>
             <div class="rending-title">Title of the read</div>
             <div class="trending-excerpt">content excerpt</div>
@@ -131,7 +131,7 @@
     <div class="featrued-card-container">
         <a href="#" aria-label="Bussiness Model">
             <div class="featured-img">
-                <amp-img width="200" height="140" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
+                <amp-img width="251" height="160" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
             </div>
             <div class="rending-title">Title of the read</div>
             <div class="trending-excerpt">content excerpt</div>
@@ -163,7 +163,7 @@
     <div class="featrued-card-container">
         <a href="#" aria-label="Bussiness Model">
             <div class="featured-img">
-                <amp-img width="200" height="140" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
+                <amp-img width="251" height="160" alt="List icon" src="https://amp.dev/static/samples/img/image3.jpg"></amp-img>
             </div>
             <div class="rending-title">Title of the read</div>
             <div class="trending-excerpt">content excerpt</div>
