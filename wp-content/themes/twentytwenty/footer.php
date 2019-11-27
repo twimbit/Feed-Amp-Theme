@@ -1,22 +1,20 @@
-<?php
-
-/**
- * The template for displaying the footer
- *
- * Contains the opening of the #site-footer div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package WordPress
- * @subpackage Twenty_Twenty
- * @since 1.0.0
- */
-
-?>
-
-
 <?php wp_footer(); ?>
-
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-home footer-icon">
+            home
+        </div>
+        <div class="footer-search footer-icon">
+            search
+        </div>
+        <div class="footer-explore footer-icon">
+            explore
+        </div>
+        <div class="footer-profile footer-icon">
+            profile
+        </div>
+    </div>
+</footer>
 </body>
 
 </html>

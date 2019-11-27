@@ -1,56 +1,17 @@
 /*
-Theme Name: Twenty Twenty
-Text Domain: twentytwenty
+Theme Name: Twimcast
+Text Domain: twimcast
 Version: 1.0
 Requires at least: 4.7
 Requires PHP: 5.2.4
-Description: Our default theme for 2020 is designed to take full advantage of the flexibility of the block editor. Organizations and businesses have the ability to create dynamic landing pages with endless layouts using the group and column blocks. The centered content column and fine-tuned typography also makes it perfect for traditional blogs. Complete editor styles give you a good idea of what your content will look like, even before you publish. You can give your site a personal touch by changing the background colors and the accent color in the Customizer. The colors of all elements on your site are automatically calculated based on the colors you pick, ensuring a high, accessible color contrast for your visitors.
-Tags: blog, one-column, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, accessibility-ready
+Description: Developed and maintained by twimbit tech team.
 Author: the WordPress team
-Author URI: https://wordpress.org/
-Theme URI: https://wordpress.org/themes/twentytwenty/
+Author URI: https://twimbit.com/
+Theme URI: https://twimbit.com
 License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://twimbit.com
 
-All files, unless otherwise stated, are released under the GNU General Public
-License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned
-with others.
 */
-
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-
-	0. 	CSS Reset
-	1. 	Document Setup
-	2. 	Element Base
-	3. 	Helper Classes
-	4. 	Site Header
-	5. 	Menu Modal
-	6. 	Search Modal
-	7. 	Page Templates
-		a. 	Template: Cover Template
-		c. 	Template: Full Width
-	8.  Post: Archive
-	9.  Post: Single
-	10. Blocks
-	11. Entry Content
-	12. Comments
-	13. Site Pagination
-	14. Error 404
-	15. Widgets
-	16. Site Footer
-	17. Media Queries
-
------------------------------------------------------------------------------ */
-
-/* -------------------------------------------------------------------------- */
-
-/*	0. CSS Reset
-/* -------------------------------------------------------------------------- */
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap");
 html,
@@ -143,26 +104,55 @@ body {
   word-wrap: break-word;
 }
 
-.twimcast-text {
-    margin: 100px 0;
-    text-align: center;
-    font-size: 29px;
+.footer-icon {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
 }
-.twimcast-text h2{font-weight: 400;color: #494949;}
+
+footer.main-footer {
+    height: 100px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    align-items: center;
+}
+
+.twimcast-text {
+  margin: 100px 0;
+  text-align: center;
+  font-size: 29px;
+}
+.twimcast-text h2 {
+  font-weight: 400;
+  color: #494949;
+}
 
 .featured-img {
-    width: 200px;
-    height: 140px;
+  width: 200px;
+  height: 140px;
 }
 
 .featrued-card-container {
-    width: 211px;
-    background: linear-gradient(#fff0 0%, #ffffff78 50.9%);
-    padding: 5px;
+  width: 211px;
+  background: linear-gradient(#fff0 0%, #ffffff78 50.9%);
+  padding: 5px;
 }
 
 .suggested-widget {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
+  /* overflow: hidden; */
 }
 
 .trending-type {
@@ -355,41 +345,41 @@ path {
   margin: 5px 0;
 }
 
-.explore-all hr{
-	width: 88%;
+.explore-all hr {
+  width: 88%;
 }
 .sub-cat-inner-container {
-    display: flex!important;
-    margin-bottom: 10px;
+  display: flex !important;
+  margin-bottom: 10px;
 }
 .sub-cat a {
-    text-decoration: none;
+  text-decoration: none;
 }
 .sub-cat-img {
-    height: 90px;
-    background-color: #000;
-    border-radius: 4px;
-    margin-right: 20px;
-    white-space: normal;
-    width: 160px;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+  height: 90px;
+  background-color: #000;
+  border-radius: 4px;
+  margin-right: 20px;
+  white-space: normal;
+  width: 160px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 }
 .sub-cat amp-img {
-    opacity: .5;
+  opacity: 0.5;
 }
 .sub-cat p {
-    position: relative;
-    top: -90px;
-    left: 15px;
-    width: 120px;
-    font-size: 17px;
-    color: #fff;
+  position: relative;
+  top: -90px;
+  left: 15px;
+  width: 120px;
+  font-size: 17px;
+  color: #fff;
 }
 .sub-cat img {
-    object-fit: cover;
-    border-radius: 4px;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 .featured-carousel a {
-    text-decoration: none;
+  text-decoration: none;
 }
