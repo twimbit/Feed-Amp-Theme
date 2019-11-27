@@ -38,6 +38,18 @@ get_header();
 		<div class="trending-widget explore-all">
 			<?php get_template_part('widgets/widget', 'latest'); ?>
 		</div>
+
+		<div class="trending-widget explore-all">
+			<?php get_template_part('widgets/widget', 'banking'); ?>
+		</div>
+
+		<div class="trending-widget explore-all">
+			<?php get_template_part('widgets/widget', 'digital'); ?>
+		</div>
+
+		<div class="suggested-widget explore-all">
+			<?php get_template_part('widgets/widget', 'suggested'); ?>
+		</div>
 	</section>
 </main><!-- #site-content -->
 

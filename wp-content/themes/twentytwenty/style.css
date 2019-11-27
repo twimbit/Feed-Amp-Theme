@@ -299,7 +299,7 @@ path {
   top: 14px;
   text-align: end;
   color: #9d9283;
-  right: 10px;
+  right: 23px;
 }
 .explore-all span {
   /* margin-top: 13px; */
@@ -331,4 +331,39 @@ path {
   height: 100px;
   /* background-color: #fff; */
   margin: 5px 0;
+}
+
+.explore-all hr{
+	width: 88%;
+}
+.sub-cat-inner-container {
+    display: flex!important;
+    margin-bottom: 10px;
+}
+.sub-cat a {
+    text-decoration: none;
+}
+.sub-cat-img {
+    height: 90px;
+    background-color: #000;
+    border-radius: 4px;
+    margin-right: 20px;
+    white-space: normal;
+    width: 160px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+}
+.sub-cat amp-img {
+    opacity: .5;
+}
+.sub-cat p {
+    position: relative;
+    top: -90px;
+    left: 15px;
+    width: 120px;
+    font-size: 17px;
+    color: #fff;
+}
+.sub-cat img {
+    object-fit: cover;
+    border-radius: 4px;
 }
