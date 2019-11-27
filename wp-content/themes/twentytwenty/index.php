@@ -34,6 +34,10 @@ get_header();
 		<div class="trending-widget explore-all">
 			<?php get_template_part('widgets/widget', 'trending'); ?>
 		</div>
+
+		<div class="trending-widget explore-all">
+			<?php get_template_part('widgets/widget', 'latest'); ?>
+		</div>
 	</section>
 </main><!-- #site-content -->
 
