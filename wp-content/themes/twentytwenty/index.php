@@ -23,12 +23,16 @@ get_header();
 	<section id="main-widget-area" class="widget-area-section">
 		<?php
 		$widgets = get_field('add_widgets', 'options'); ?>
-		<div class="custom-carousel amp-carousel-style">
+		<div class="custom-carousel amp-carousel-style explore-all">
 			<?php get_template_part('widgets/widget', 'custom'); ?>
 		</div>
 
-		<div class="featured-widget amp-carousel-style">
+		<div class="featured-widget amp-carousel-style explore-all">
 			<?php get_template_part('widgets/widget', 'featured'); ?>
+		</div>
+
+		<div class="trending-widget explore-all">
+			<?php get_template_part('widgets/widget', 'trending'); ?>
 		</div>
 	</section>
 </main><!-- #site-content -->
