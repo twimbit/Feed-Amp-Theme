@@ -120,6 +120,11 @@ footer.main-footer {
     bottom: 0;
     right: 0;
     left: 0;
+    background: transparent;
+    filter: drop-shadow(0px -1px 5px rgba(0, 0, 0, 0.08)); /* Note: currently only Safari supports backdrop-filter */
+    backdrop-filter: blur(50px);
+    --webkit-backdrop-filter: blur(50px);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-container {
