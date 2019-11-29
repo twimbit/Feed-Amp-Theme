@@ -88,8 +88,7 @@ body {
   background: #ebebe0;
   box-sizing: border-box;
   color: #000;
-  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
-    Helvetica, sans-serif;
+  font-family: "medium-content-serif-font",Georgia,Cambria,"Times New Roman",Times,serif;
   font-size: 1.8rem;
   letter-spacing: -0.015em;
   text-align: left;
