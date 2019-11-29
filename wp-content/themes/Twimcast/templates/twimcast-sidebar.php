@@ -97,4 +97,27 @@
             </a>
         </li>
     </ul>
+    <div class="sidebar-divider"></div>
+    <ul class="sidebar-menu-ul-category">
+        <li class="sidebar-list-item">
+            <a href="#">
+                Twimbit
+            </a>
+        </li>
+        <li class="sidebar-list-item">
+            <a href="#">
+                Creator
+            </a>
+        </li>
+        <li class="sidebar-list-item">
+            <a href="#">
+                Library
+            </a>
+        </li>
+        <li class="sidebar-list-item sidebar-explore-all">
+            <a href="#">
+                More...
+            </a>
+        </li>
+    </ul>
 </div>

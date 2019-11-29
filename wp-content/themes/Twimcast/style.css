@@ -104,6 +104,14 @@ body {
   word-wrap: break-word;
 }
 
+.sidebar-divider {
+    margin-left: 20px;
+    width: 100px;
+    height: 1px;
+    background-color: #000;
+    margin-top: 30px;
+}
+
 .sidebar-explore-all {text-align: left;font: Bold 12px/16px Montserrat;letter-spacing: 0;color: #494949;opacity: 1;}
 
 li.sidebar-list-item {
@@ -245,7 +253,7 @@ input#searchTerm {
 
 section#twimcast-sidebar {
   width: 300px;
-  background-color: #fff;
+  /* background-color: #fff; */
   border-radius: 10px;
   display: none;
 }
@@ -583,9 +591,13 @@ path {
   }
   section#twimcast-sidebar {
     width: 300px;
-    background-color: #fff;
     border-radius: 15px;
+    background-color: #ffffffb3;
     display: block;
+    border-radius: 0px 15px 15px 0px;
+    opacity: 1;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
   }
   #site-content {
     overflow: hidden;
