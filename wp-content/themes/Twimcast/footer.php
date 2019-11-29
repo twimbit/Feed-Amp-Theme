@@ -1,4 +1,4 @@
-<footer class="main-footer">
+<footer class="main-footer show-mobile">
     <div class="footer-container">
         <div class="footer-home footer-icon">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21.988" viewBox="0 0 21 21.988">

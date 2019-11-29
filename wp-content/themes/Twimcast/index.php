@@ -19,7 +19,11 @@ get_header();
 ?>
 
 <main id="site-content" role="main">
-
+	<section id="twimcast-sidebar">
+		<div class="twimcast-sidebar-container">
+			<h3>this is twimcast sidebar</h3>
+		</div>
+	</section>
 	<section id="main-widget-area" class="widget-area-section">
 		<?php
 		$widgets = get_field('add_widgets', 'options'); ?>
@@ -51,7 +55,7 @@ get_header();
 			<?php get_template_part('widgets/widget', 'suggested'); ?>
 		</div>
 
-		<div class="suggested-widget explore-all">
+		<div class="suggested-widget explore-all" style="max-width:900px">
 			<?php get_template_part('widgets/widget', 'report'); ?>
 		</div>
 
