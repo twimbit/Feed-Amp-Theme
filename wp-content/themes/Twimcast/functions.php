@@ -803,3 +803,66 @@ function cal_post_time($post_id)
 		update_field('length', $getReadingTime, $post_id);
 	}
 }
+
+
+
+// Function for adding tags and category in page
+add_action( 'init', 'myplugin_settings' );
+
+function myplugin_settings() {
+    // Add tag metabox to page
+    register_taxonomy_for_object_type('post_tag', 'page');
+    // Add category metabox to page
+    register_taxonomy_for_object_type('category', 'page');
+}
+// Add to the admin_init hook of your theme functions.php file
+add_action( 'init', 'myplugin_settings' );
+
+
+// Function for default fullscreen in editor
+function se337302_fullscreen_editor()
+{
+    $js_code = "jQuery(document).ready(function(){" .
+        "   var isFullScreenMode = wp.data.select('core/edit-post').isFeatureActive('fullscreenMode');" .
+        "   if ( !isFullScreenMode )" .
+        "       wp.data.dispatch('core/edit-post').toggleFeature('fullscreenMode');" .
+        "});";
+    wp_add_inline_script( 'wp-blocks', $js_code );
+
+}
+add_action( 'enqueue_block_editor_assets', 'se337302_fullscreen_editor' );
+
+
+// Restricted block types for editor
+add_filter( 'allowed_block_types', 'final_allowed_block_types' );
+
+function final_allowed_block_types( $allowed_blocks ) {
+
+    return array(
+        'core/image',
+        'core/paragraph',
+        'core/heading',
+        'core/list',
+        'core/video',
+        'core/file',
+        'core/table',
+        'core/verse',
+        'core/separator',
+        'core/nextpage',
+        'core/media-text',
+        'core/columns',
+        'core/embed'
+    );
+
+}
+
+//Function to remove description box from post and pages
+function yikes_remove_description_tab( $tabs ) {
+
+    // Remove the description tab
+    if ( isset( $tabs['description'] ) ) unset( $tabs['description'] );
+    return $tabs;
+}
+
+
+
