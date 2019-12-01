@@ -105,6 +105,14 @@ body {
   word-wrap: break-word;
 }
 
+section.widget-area {
+    /* position: relative; */
+    /* left: 280px; */
+    flex: 1;
+    /* width: 100%; */
+    margin-left: 280px;
+}
+
 .postArea-container {
     display: flex;
     flex: 1;
@@ -126,7 +134,7 @@ body {
     color: #494949;
     opacity: 1;
     font-size: 18px;
-    border-bottom: 1px solid #00000052;
+    /* border-bottom: 1px solid #00000052; */
     padding-bottom: 35px;
 }
 
@@ -209,12 +217,9 @@ div#main-post-area {
 
 section.postArea {
     flex: 1;
-    /* min-width: 998px; */
-    /* max-width: 1366px; */
-    /* margin: 0 auto; */
     display: flex;
-    margin-left: 350px;
-    padding-left: 50px;
+    margin-left: 280px;
+    padding-left: 54px;
 }
 
 .post-right-container {
@@ -748,7 +753,7 @@ path {
     max-width: 900px;
   }
   section#twimcast-sidebar {
-    width: 300px;
+    width: 280px;
     border-radius: 15px;
     background-color: #ffffffb3;
     display: block;
@@ -773,7 +778,7 @@ path {
     /* left: 0; */
     overflow: auto;
     /* right: 0; */
-    padding: 0 80px;
+    padding: 0px 54px;
   }
   .explore-all img {
     object-fit: cover !important;
